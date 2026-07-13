@@ -39,6 +39,26 @@
       .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
       .reveal.in { opacity: 1; transform: none; }
     }
+
+    /* --- Crisp stopgap: never upscale a screenshot past its native pixel width. --- */
+    /* Images render at natural size (capped to the container on small screens) and centre, */
+    /* so low-res source PNGs stay sharp instead of being stretched. */
+    .shot > img,
+    img.shot,
+    figure.rounded-2xl > img {
+      width: auto !important;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-inline: auto;
+    }
+    /* Card wrappers hug their image so no white/card background bleeds around it. */
+    div.shot,
+    figure.rounded-2xl {
+      width: fit-content;
+      max-width: 100%;
+      margin-inline: auto;
+    }
   </style>
 </head>
 
