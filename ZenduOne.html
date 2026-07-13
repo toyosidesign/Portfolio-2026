@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZenduONE · The admin layer that makes a telematics platform usable | Omotoyosi Adegbite</title>
+  <meta name="description" content="Case study: an end-to-end redesign of ZenduONE's admin portal — 16 scattered configuration areas reshaped into one guided, self-serve console for fleet, video, safety and dispatch." />
+
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            base: '#0b0a0a', card: '#141210', panel: '#16120e',
+            header: '#171717', accent: '#ffd8e4', brown: '#ac7f5e', ink: '#0e0c0a',
+            amber: '#f5a623', blue: '#3B82F6',
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    ::selection { background: #ffd8e4; color: #000; }
+    .eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ffd8e4; font-weight: 700; }
+    .label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8a8a; font-weight: 700; }
+    .shot { border-radius: 14px; box-shadow: 0 24px 60px rgba(0,0,0,.5); background:#fff; overflow:hidden; }
+    .pill { display:inline-flex; align-items:center; border-radius:9999px; background:#1b1917; border:1px solid rgba(255,255,255,.1); padding:5px 12px; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#e7e5e4; }
+    .chip { display:inline-flex; align-items:center; gap:7px; border-radius:9999px; background:#141210; border:1px solid rgba(255,255,255,.1); padding:6px 12px; font-size:13px; color:#d6d3d1; }
+    .chip::before { content:""; width:5px; height:5px; border-radius:9999px; background:#ffd8e4; }
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+      .reveal.in { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-base text-white font-sans antialiased">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="sticky top-0 z-50 pt-6 px-4 sm:px-6">
+    <div class="max-w-[1280px] mx-auto">
+      <nav class="flex items-center justify-between h-[54px] rounded-full border border-[#3d3e3f] bg-header/90 backdrop-blur-xl px-5 shadow-[0_4px_10px_rgba(0,0,0,0.35)]">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="grid place-items-center size-7 rounded-full bg-accent text-black text-xs font-bold">O</span>
+          <span class="text-base font-semibold tracking-tight text-white">Omotoyosi Adegbite</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm">
+          <li><a href="index.html#work" class="font-bold text-accent">Work</a></li>
+          <li><a href="index.html#about" class="text-[#c0c0c0] hover:text-white transition-colors">About</a></li>
+          <li><a href="index.html#contact" class="text-[#c0c0c0] hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 pt-14 sm:pt-20">
+    <div class="flex items-center justify-between mb-10">
+      <a href="index.html#work" class="inline-flex items-center gap-1.5 text-sm text-[#8a8a8a] hover:text-white transition-colors">← Back to all work</a>
+      <a href="#" class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-white transition-colors">View live project →</a>
+    </div>
+
+    <p class="text-sm text-[#8a8a8a]">Zenduit(Gofleet) &nbsp;|&nbsp; Fleet Management System</p>
+
+    <h1 class="mt-3 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.02]">
+      The admin layer that makes a telematics platform usable.
+    </h1>
+    <p class="max-w-4xl mt-6 text-lg text-[#c7c7cc] leading-relaxed">
+      An end-to-end redesign of ZenduONE's admin portal, 16 scattered configuration areas reshaped into one guided, self-serve console for fleet, video, safety and dispatch.
+    </p>
+
+    <!-- meta row -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="label">My role</p><p class="max-w-4xl mt-2 text-sm text-[#c7c7cc] leading-relaxed">Lead Product Designer → research → IA → UI → prototype → handoff</p></div>
+      <div class="bg-base p-5"><p class="label">Scope</p><p class="max-w-4xl mt-2 text-sm text-[#c7c7cc] leading-relaxed">16 admin modules · 1 design system · 3 roles</p></div>
+      <div class="bg-base p-5"><p class="label">Timeline</p><p class="max-w-4xl mt-2 text-sm text-[#c7c7cc] leading-relaxed">6 months</p></div>
+      <div class="bg-base p-5"><p class="label">Platform</p><p class="max-w-4xl mt-2 text-sm text-[#c7c7cc] leading-relaxed">Responsive web admin + mobile driver app</p></div>
+    </div>
+
+    <!-- hero image -->
+    <div class="mt-8 shot">
+      <img src="assets/zendu-hero-admin-settings-hub.png" alt="ZenduONE Admin Settings hub — three configuration groups, per-item status and a setup-progress tracker." class="w-full h-auto block" />
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-10 reveal">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-4xl font-bold">16 <span class="text-accent">→ 1</span></p><p class="mt-2 text-sm text-[#a1a1aa]">Config areas unified into one hub</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-4xl font-bold text-accent">40%</p><p class="mt-2 text-sm text-[#a1a1aa]">Faster onboarding for a new fleet</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-4xl font-bold text-accent">−55%</p><p class="mt-2 text-sm text-[#a1a1aa]">Setup-related support tickets</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-4xl font-bold">3 <span class="text-accent">roles</span></p><p class="mt-2 text-sm text-[#a1a1aa]">Admin · dispatcher · viewer, one IA</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 01 · THE PROBLEM ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">01</span><span class="eyebrow">The problem</span></p>
+    <div class="mt-8 grid lg:grid-cols-2 gap-10 lg:gap-16">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.02em] leading-[1.08]">Best-in-class telematics. Brutal to set up.</h2>
+        <p class="max-w-4xl mt-5 text-[15px] text-[#a1a1aa] leading-relaxed">The data engine was world-class. But everything an admin had to configure before getting value lived in disconnected screens, no order, no guidance, no sense of what was done.</p>
+        <p class="mt-8 text-2xl sm:text-3xl font-semibold tracking-[-0.01em] leading-snug">“I can track a truck across the country, but I can't onboard one without calling support.”</p>
+        <p class="mt-5 text-sm font-semibold text-[#8a8a8a]">— Synthesized from <span class="text-white underline decoration-dotted underline-offset-4">12</span> admin interviews</p>
+      </div>
+      <div class="space-y-4">
+        <div class="rounded-2xl border border-white/10 bg-card p-5 flex gap-4"><span class="grid place-items-center shrink-0 size-8 rounded-full border border-white/15 text-sm font-bold text-[#a1a1aa]">1</span><div><p class="font-semibold">No map of "what do I configure?"</p><p class="max-w-4xl mt-1 text-sm text-[#a1a1aa] leading-relaxed">16 settings areas with no hierarchy. New admins couldn't tell foundations from optional modules, or what blocked go-live.</p></div></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 flex gap-4"><span class="grid place-items-center shrink-0 size-8 rounded-full border border-white/15 text-sm font-bold text-[#a1a1aa]">2</span><div><p class="font-semibold">Zero sense of progress</p><p class="max-w-4xl mt-1 text-sm text-[#a1a1aa] leading-relaxed">Nothing showed how far through setup an admin was, what needed attention, or what was safe to skip.</p></div></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 flex gap-4"><span class="grid place-items-center shrink-0 size-8 rounded-full border border-white/15 text-sm font-bold text-[#a1a1aa]">3</span><div><p class="font-semibold">Every module looked different</p><p class="max-w-4xl mt-1 text-sm text-[#a1a1aa] leading-relaxed">Feature-by-feature growth left inconsistent tables, forms and toggles, relearning the UI on every screen.</p></div></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 flex gap-4"><span class="grid place-items-center shrink-0 size-8 rounded-full border border-white/15 text-sm font-bold text-[#a1a1aa]">4</span><div><p class="font-semibold">Telematics jargon everywhere</p><p class="max-w-4xl mt-1 text-sm text-[#a1a1aa] leading-relaxed">Driver-flow, coaching and device policies hid behind language only the implementation team understood.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · BEFORE & AFTER ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">02</span><span class="eyebrow">Before &amp; after</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">What admins were actually working with.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">The legacy portal buried every configuration surface under a single Admin menu, nine dense tabs of telematics data tables with no hierarchy, no setup guidance, and a different layout on every screen. These are the real screens I started from.</p>
+
+    <!-- legacy screenshot grid 3x3 -->
+    <div class="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+      <figure class="rounded-2xl bg-card overflow-hidden"><img src="assets/zendu-legacy-users.png" alt="Legacy Users screen" class="w-full h-auto block" /><figcaption class="p-4"><p class="font-semibold text-sm">Users</p><p class="max-w-4xl mt-1 text-xs text-[#8a8a8a] leading-relaxed">Users, Drivers, Passengers &amp; Technicians split across five tabs</p></figcaption></figure>
+      <figure class="rounded-2xl bg-card overflow-hidden"><img src="assets/zendu-legacy-groups.png" alt="Legacy Groups screen" class="w-full h-auto block" /><figcaption class="p-4"><p class="font-semibold text-sm">Groups</p><p class="max-w-4xl mt-1 text-xs text-[#8a8a8a] leading-relaxed">Org structure as a tangle of vehicle-icon nodes</p></figcaption></figure>
+      <figure class="rounded-2xl bg-card overflow-hidden"><img src="assets/zendu-legacy-tags.png" alt="Legacy Tags screen" class="w-full h-auto block" /><figcaption class="p-4"><p class="font-semibold text-sm">Tags</p><p class="max-w-4xl mt-1 text-xs text-[#8a8a8a] leading-relaxed">100+ labels in a flat table, archived one at a time</p></figcaption></figure>
+      <figure class="rounded-2xl bg-card overflow-hidden"><img src="assets/zendu-legacy-locations.png" alt="Legacy Locations screen" class="w-full h-auto block" /><figcaption class="p-4"><p class="font-semibold text-sm">Locations</p><p class="max-w-4xl mt-1 text-xs text-[#8a8a8a] leading-relaxed">234 sites, address-only, status as a coloured dot</p></figcaption></figure>
+      <figure class="rounded-2xl bg-card overflow-hidden"><img src="assets/zendu-legacy-custom-maps.png" alt="Legacy Custom Maps screen" class="w-full h-auto block" /><figcaption class="p-4"><p class="font-semibold text-sm">Custom Maps</p><p class="max-w-4xl mt-1 text-xs text-[#8a8a8a] leading-relaxed">Indoor floor plans and GIS layers mixed in one list</p></figcaption></figure>
+      <figure class="rounded-2xl bg-card overflow-hidden"><img src="assets/zendu-legacy-rules.png" alt="Legacy Rules screen" class="w-full h-auto block" /><figcaption class="p-4"><p class="font-semibold text-sm">Rules</p><p class="max-w-4xl mt-1 text-xs text-[#8a8a8a] leading-relaxed">161 rules; placeholder text, no severity to scan</p></figcaption></figure>
+      <figure class="rounded-2xl bg-card overflow-hidden"><img src="assets/zendu-legacy-audit.png" alt="Legacy Audit screen" class="w-full h-auto block" /><figcaption class="p-4"><p class="font-semibold text-sm">Audit</p><p class="max-w-4xl mt-1 text-xs text-[#8a8a8a] leading-relaxed">A flat event log with no grouping or visual rhythm</p></figcaption></figure>
+      <figure class="rounded-2xl bg-card overflow-hidden"><img src="assets/zendu-legacy-driver-assignment.png" alt="Legacy Driver Assignment screen" class="w-full h-auto block" /><figcaption class="p-4"><p class="font-semibold text-sm">Driver Assignment</p><p class="max-w-4xl mt-1 text-xs text-[#8a8a8a] leading-relaxed">Familiar-Faces camera recognition, grid of cab photos</p></figcaption></figure>
+      <figure class="rounded-2xl bg-card overflow-hidden"><img src="assets/zendu-legacy-system-settings.png" alt="Legacy System Settings screen" class="w-full h-auto block" /><figcaption class="p-4"><p class="font-semibold text-sm">System Settings</p><p class="max-w-4xl mt-1 text-xs text-[#8a8a8a] leading-relaxed">One long form mixing company, fuel &amp; streaming fields</p></figcaption></figure>
+    </div>
+
+    <p class="max-w-4xl mt-14 text-lg text-[#c7c7cc] leading-relaxed">Five of the transformations, side by side, the legacy screen on the left, the screen I shipped on the right.</p>
+
+    <!-- before / after rows -->
+    <div class="mt-8 space-y-8">
+      <!-- Users -->
+      <div class="rounded-2xl border border-white/10 bg-card/40 p-6 sm:p-8">
+        <span class="pill">Users</span>
+        <h3 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">From five tabs to one source of truth</h3>
+        <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Five tabs of drivers, passengers, technicians and admins collapse into one table, role, group, status and last login at a glance.</p>
+        <div class="mt-6 grid md:grid-cols-2 gap-5"><img src="assets/zendu-ba-users-legacy.png" alt="Legacy Users screen" class="w-full h-auto shot" /><img src="assets/zendu-ba-users-redesigned.png" alt="Redesigned User Management screen" class="w-full h-auto shot" /></div>
+      </div>
+      <!-- Groups -->
+      <div class="rounded-2xl border border-white/10 bg-card/40 p-6 sm:p-8">
+        <span class="pill">Groups</span>
+        <h3 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">From icon soup to a readable hierarchy</h3>
+        <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">A tangle of identical vehicle icons becomes a readable hierarchy that surfaces user, asset and rule counts per branch.</p>
+        <div class="mt-6 grid md:grid-cols-2 gap-5"><img src="assets/zendu-ba-groups-legacy.png" alt="Legacy Groups screen" class="w-full h-auto shot" /><img src="assets/zendu-ba-groups-redesigned.png" alt="Redesigned Groups screen" class="w-full h-auto shot" /></div>
+      </div>
+      <!-- System Settings -->
+      <div class="rounded-2xl border border-white/10 bg-card/40 p-6 sm:p-8">
+        <span class="pill">System Settings → Organization</span>
+        <h3 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">From one dense form to a structured profile</h3>
+        <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">One dense, equally-weighted form becomes a structured profile whose completeness feeds the setup tracker.</p>
+        <div class="mt-6 grid md:grid-cols-2 gap-5"><img src="assets/zendu-ba-system-settings-legacy.png" alt="Legacy System Settings screen" class="w-full h-auto shot" /><img src="assets/zendu-ba-organization-redesigned.png" alt="Redesigned Organization Details screen" class="w-full h-auto shot" /></div>
+      </div>
+      <!-- Audit Log -->
+      <div class="rounded-2xl border border-white/10 bg-card/40 p-6 sm:p-8">
+        <span class="pill">Audit Log</span>
+        <h3 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">From a flat stream to "what changed?" in seconds</h3>
+        <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">A flat login/event stream becomes a structured table, entity, user, before to after value and groups, with date-range and filters to answer "what changed?" fast.</p>
+        <div class="mt-6 grid md:grid-cols-2 gap-5"><img src="assets/zendu-ba-audit-legacy.png" alt="Legacy audit screen" class="w-full h-auto shot" /><img src="assets/zendu-ba-audit-redesigned.png" alt="Redesigned Audit Log screen" class="w-full h-auto shot" /></div>
+      </div>
+      <!-- Driver Assignment -->
+      <div class="rounded-2xl border border-white/10 bg-card/40 p-6 sm:p-8">
+        <span class="pill">Driver's Assignment</span>
+        <h3 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">From "Unknown Person · 100%" to a triage queue</h3>
+        <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">A grid of cab captures all labelled "Unknown Person · 100%" becomes a triage queue: each capture gets a real confidence score and a one-click confirm, so drivers stop being mismatched and admins clear the backlog in minutes.</p>
+        <div class="mt-6 grid md:grid-cols-2 gap-5"><img src="assets/zendu-ba-driver-assignment-legacy.png" alt="Legacy driver assignment screen" class="w-full h-auto shot" /><img src="assets/zendu-ba-driver-assignment-redesigned.png" alt="Redesigned Driver Assignment screen" class="w-full h-auto shot" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · THE CORE IDEA ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">02</span><span class="eyebrow">The core idea</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.06]">One hub, organized around the admin's mental model, with progress built in.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I reframed 16 settings into three plain-language groups that map to how a fleet comes online: lay your foundations, turn on the modules you bought, then automate your process. A setup tracker makes "am I done?" answerable at a glance.</p>
+
+    <figure class="mt-10">
+      <div class="shot"><img src="assets/zendu-idea-admin-settings-hub.png" alt="Admin Settings hub — three groups, per-item status and a setup-progress tracker." class="w-full h-auto block" /></div>
+      <figcaption class="mt-3 flex flex-wrap items-center gap-3 text-sm text-[#8a8a8a]"><span class="pill">Admin Settings</span> The hub. Three groups, per-item status (Completed · Incomplete · Not Set Up), and a setup-progress tracker top-right.</figcaption>
+    </figure>
+
+    <!-- three buckets -->
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="label">Group 01</p>
+        <p class="mt-2 text-lg font-semibold">Setup Your Fleet</p>
+        <p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">The foundations, people, places and structure everything else references.</p>
+        <div class="mt-4 flex flex-wrap gap-2"><span class="chip">User Management</span><span class="chip">Groups</span><span class="chip">Locations</span><span class="chip">Tags</span><span class="chip">Custom Fields</span></div>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="label">Group 02</p>
+        <p class="mt-2 text-lg font-semibold">Configure Modules</p>
+        <p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Per-product configuration, only what a customer actually bought is shown.</p>
+        <div class="mt-4 flex flex-wrap gap-2"><span class="chip">Video &amp; Safety</span><span class="chip">Work Settings</span><span class="chip">Driver Flow</span><span class="chip">Indoor Tracking</span><span class="chip">Bus · Maintenance</span></div>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="label">Group 03</p>
+        <p class="mt-2 text-lg font-semibold">Automation &amp; Process</p>
+        <p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">The rules engine and workflows that run the fleet once it's live.</p>
+        <div class="mt-4 flex flex-wrap gap-2"><span class="chip">Rules</span><span class="chip">Coaching</span><span class="chip">Applications</span><span class="chip">Audit Log</span></div>
+      </div>
+    </div>
+
+    <!-- callout -->
+    <div class="mt-6 rounded-2xl border border-accent/20 bg-accent/[0.04] p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+      <svg viewBox="0 0 36 36" class="size-20 shrink-0 -rotate-90"><circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="3"></circle><circle cx="18" cy="18" r="15.9" fill="none" stroke="#ffd8e4" stroke-width="3" stroke-dasharray="50 100" stroke-linecap="round"></circle><text x="18" y="18" transform="rotate(90 18 18)" text-anchor="middle" dominant-baseline="central" fill="#fff" font-size="9" font-weight="700">50%</text></svg>
+      <div>
+        <p class="font-semibold text-lg">A setup tracker that answers "am I done?"</p>
+        <p class="max-w-4xl mt-1.5 text-[15px] text-[#c7c7cc] leading-relaxed">"8 of 16 configured · 2 need attention", a one-click Resume Setup, and per-item states turn open-ended config sprawl into a finishable checklist, the biggest driver of faster onboarding.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · THE SOLUTION ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">03</span><span class="eyebrow">The solution, in detail</span></p>
+
+    <!-- Pillar 01 -->
+    <div class="mt-10 flex items-start gap-5">
+      <span class="text-3xl font-bold text-[#5b5751] tabular-nums">01</span>
+      <div>
+        <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Setup Your Fleet, the foundations</h3>
+        <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">People, places and structure. These records are referenced everywhere downstream, so they had to be fast to manage in bulk and consistent to scan.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 space-y-16">
+      <!-- User Management (shot right) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div>
+          <span class="pill">User Management</span>
+          <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">One source of truth for everyone in the fleet</h4>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Drivers, dispatchers, technicians and admins all lived in separate places before. I unified them into a single table where you can see role, group membership, status and last login at a glance, and act on people in bulk.</p>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Access is governed by role-based Clearances, so an admin grants exactly the permissions a role needs without touching code.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Role-based clearances</span><span class="chip">Bulk actions</span><span class="chip">Group assignment</span><span class="chip">Status &amp; last login</span></div>
+        </div>
+        <img src="assets/zendu-sol-user-management.png" alt="User Management table" class="w-full h-auto shot lg:order-last" />
+      </div>
+      <!-- Groups (shot left) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <img src="assets/zendu-sol-groups.png" alt="Groups hierarchy" class="w-full h-auto shot" />
+        <div>
+          <span class="pill">Groups</span>
+          <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Structure that mirrors how the business is run</h4>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Groups let a fleet model its own org, by region, division or contract, as a hierarchy. Every group surfaces its user, asset and rule counts, so an admin can see the shape and weight of the organization without drilling in.</p>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Because everything downstream references groups, getting this layer right makes permissions, rules and reporting fall into place.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Nested hierarchy</span><span class="chip">User / asset / rule counts</span><span class="chip">Drives permissions &amp; rules</span></div>
+        </div>
+      </div>
+      <!-- Locations (shot right) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div>
+          <span class="pill">Locations</span>
+          <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Every depot, yard and site in one registry</h4>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Physical places power geofencing, dispatch and reporting. The locations registry keeps each site's tags, contacts and on-site inventory together, so a place is defined once and reused everywhere it's needed.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Geofence-ready</span><span class="chip">Tags &amp; contacts</span><span class="chip">On-site inventory</span></div>
+        </div>
+        <img src="assets/zendu-sol-locations.png" alt="Locations registry" class="w-full h-auto shot lg:order-last" />
+      </div>
+      <!-- Tags (shot left) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <img src="assets/zendu-sol-tags.png" alt="Tags" class="w-full h-auto shot" />
+        <div>
+          <span class="pill">Tags</span>
+          <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">One labelling language across the platform</h4>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Rather than a separate category system per module, I designed a single shared tagging layer that applies to assets, drivers, locations and orders alike. Define a tag once and it becomes a filter, a grouping and a report dimension everywhere.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Cross-entity</span><span class="chip">Powers filtering</span><span class="chip">Reusable everywhere</span></div>
+        </div>
+      </div>
+      <!-- Custom Fields (shot right) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div>
+          <span class="pill">Custom Fields</span>
+          <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Let each customer model their own data</h4>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">No two fleets track the same things. Custom Fields let admins attach their own data to any entity and organize it into reusable sets, extending the platform to their workflow without engineering involvement.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Any entity</span><span class="chip">Grouped into sets</span><span class="chip">No-code extensibility</span></div>
+        </div>
+        <img src="assets/zendu-sol-custom-fields.png" alt="Custom Fields" class="w-full h-auto shot lg:order-last" />
+      </div>
+      <!-- Organization Details (shot left) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <img src="assets/zendu-sol-organization-details.png" alt="Organization Details settings" class="w-full h-auto shot" />
+        <div>
+          <span class="pill">Organization Details</span>
+          <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Company-wide defaults, set once</h4>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">This is where regional formats, system identifiers and platform-wide defaults are configured, the settings everything else inherits. An Incomplete badge here feeds straight into the setup tracker, so an unfinished profile is impossible to forget.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Regional defaults</span><span class="chip">System identifiers</span><span class="chip">Feeds setup tracker</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 02 -->
+    <div class="mt-16 pt-16 border-t border-white/10 flex items-start gap-5">
+      <span class="text-3xl font-bold text-[#5b5751] tabular-nums">02</span>
+      <div>
+        <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Configure Modules, per-product setup</h3>
+        <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Dense, settings-heavy surfaces made approachable: grouped sections, smart defaults, inline diagnostics, and a live mobile preview so admins see exactly what drivers will.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 space-y-16">
+      <!-- Driver Flow (shot right) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div>
+          <span class="pill">Driver Flow</span>
+          <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Design the driver's day, and see it instantly</h4>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Admins configure the driver's start, and end-of-day flow, inspections, prompts, required fields on the left. The signature move: a live mobile preview on the right renders the exact app experience the driver will get, updating as each toggle changes.</p>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">It turned a blind, error-prone configuration into something an admin could confidently get right the first time.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Live mobile preview</span><span class="chip">Step builder</span><span class="chip">Required-field control</span></div>
+        </div>
+        <img src="assets/zendu-sol-driver-flow.png" alt="Driver Flow configuration with live mobile preview" class="w-full h-auto shot lg:order-last" />
+      </div>
+      <!-- Video & Safety (shot left) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <img src="assets/zendu-sol-video-settings.png" alt="Video & Safety settings" class="w-full h-auto shot" />
+        <div>
+          <span class="pill">Video &amp; Safety</span>
+          <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Camera policy without the complexity</h4>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">One of the densest surfaces in the product. I grouped upload policy, live-stream defaults, retention rules and usage analytics into clear sections, and surfaced live device diagnostics so admins can confirm cameras are healthy before relying on them.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Upload &amp; retention policy</span><span class="chip">Live-stream defaults</span><span class="chip">Device diagnostics</span></div>
+        </div>
+      </div>
+      <!-- Work Settings (shot right) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div>
+          <span class="pill">Work Settings</span>
+          <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">The operational identity of the business</h4>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Branding, operating hours, customer communications and marketplace integrations all sit together here, the settings that make the platform feel like an extension of the customer's own business rather than generic software.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Branding</span><span class="chip">Operating hours</span><span class="chip">Customer comms</span></div>
+        </div>
+        <img src="assets/zendu-sol-work-settings.png" alt="Work Settings" class="w-full h-auto shot lg:order-last" />
+      </div>
+      <!-- Indoor Tracking (shot left) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <img src="assets/zendu-sol-indoor-tracking.png" alt="Indoor Tracking & Maps" class="w-full h-auto shot" />
+        <div>
+          <span class="pill">Indoor Tracking &amp; Maps</span>
+          <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Indoor and outdoor, one mental model</h4>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Floor plans, beacons and gateways are managed alongside GIS/outdoor maps in a single filterable list, so an admin configuring a warehouse and a yard uses the same patterns instead of learning two separate tools.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Floor plans &amp; beacons</span><span class="chip">Indoor + outdoor types</span><span class="chip">Unified, filterable</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 03 -->
+    <div class="mt-16 pt-16 border-t border-white/10 flex items-start gap-5">
+      <span class="text-3xl font-bold text-[#5b5751] tabular-nums">03</span>
+      <div>
+        <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Automation &amp; Manage Process</h3>
+        <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">The rules engine that runs the fleet once it's live, readable at a glance, with severity, trigger frequency and routing surfaced on each rule.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 space-y-16">
+      <!-- Rules (shot right) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div>
+          <span class="pill">Rules</span>
+          <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">An automation engine you can actually read</h4>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">A fleet may run 39+ rules across General, Safety, Dispatch, Maintenance and Bus. Instead of an opaque list, each rule wears its severity, queue routing and live trigger frequency on its face, so an admin can spot a noisy or misrouted rule instantly and filter by status or severity to tune it.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Severity at a glance</span><span class="chip">Trigger frequency</span><span class="chip">Queue routing</span><span class="chip">Status / severity filters</span></div>
+        </div>
+        <img src="assets/zendu-sol-rules.png" alt="Rules automation engine" class="w-full h-auto shot lg:order-last" />
+      </div>
+      <!-- Coaching (shot left) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <img src="assets/zendu-sol-coaching.png" alt="Coaching Management" class="w-full h-auto shot" />
+        <div>
+          <span class="pill">Coaching Management</span>
+          <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Turn safety events into driver improvement</h4>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Coaching closes the loop on safety. Events route into a review queue with managed video review, and coaches are assigned to drivers automatically, turning raw alerts into a repeatable workflow that actually changes behaviour on the road.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Review queue</span><span class="chip">Managed video review</span><span class="chip">Auto coach assignment</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 · THE SYSTEM UNDERNEATH ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">04</span><span class="eyebrow">The system underneath</span></p>
+    <div class="mt-8 grid lg:grid-cols-2 gap-10 lg:gap-16">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.02em] leading-[1.08]">Consistency was the feature.</h2>
+      <div>
+        <p class="max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">The reason 16 modules feel like one product: a token-based component library built alongside the screens. One persistent shell, dark left rail, breadcrumb, settings header, wraps every page.</p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="font-semibold text-sm">Shared shell &amp; nav</p><p class="max-w-4xl mt-1.5 text-xs text-[#a1a1aa] leading-relaxed">Left rail, breadcrumb and a save/cancel header that behave identically everywhere.</p></div>
+          <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="font-semibold text-sm">One data table</p><p class="max-w-4xl mt-1.5 text-xs text-[#a1a1aa] leading-relaxed">Search, filter, tag chips, status and pagination reused across 8+ list views.</p></div>
+          <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="font-semibold text-sm">Settings primitives</p><p class="max-w-4xl mt-1.5 text-xs text-[#a1a1aa] leading-relaxed">Section cards, labelled toggles, steppers and icon chips give every page the same rhythm.</p></div>
+          <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="font-semibold text-sm">Status language</p><p class="max-w-4xl mt-1.5 text-xs text-[#a1a1aa] leading-relaxed">Completed / Incomplete / Not Set Up and severity read the same in every context.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 · PROCESS & DECISIONS ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">05</span><span class="eyebrow">Process &amp; decisions</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">How I worked the problem.</h2>
+
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <div><p class="text-sm font-bold text-accent">01 · Discover</p><p class="mt-2 font-semibold">Interviews &amp; ticket audit</p><p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Shadowed admins as they onboarded fleets, reviewed all 16 settings sections, and analyzed support tickets to identify setup issues.</p></div>
+      <div><p class="text-sm font-bold text-accent">02 · Define</p><p class="mt-2 font-semibold">IA &amp; card sort</p><p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Organized 16 modules into three categories, Foundations, Modules, and Automation, based on the admin's mental model for better clarity.</p></div>
+      <div><p class="text-sm font-bold text-accent">03 · Design</p><p class="mt-2 font-semibold">System &amp; high-fi</p><p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Created the component library and established a progress model, then designed each module based on that foundation.</p></div>
+      <div><p class="text-sm font-bold text-accent">04 · Validate</p><p class="mt-2 font-semibold">Prototype &amp; handoff</p><p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Conducted usability tests on the hub and main workflows, refined them based on feedback, and delivered detailed specifications and design tokens to the engineering team.</p></div>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label text-[#8a8a8a]">Before</p><p class="mt-1 font-semibold">A flat A–Z list of settings</p><p class="mt-1 text-sm text-[#8a8a8a]">16 equally-weighted links. No hierarchy, no go-live path.</p><p class="mt-4 label" style="color:#ffd8e4">Decision</p><p class="mt-1 font-semibold text-accent">Three mental-model groups</p><p class="mt-1 text-sm text-[#c7c7cc]">Foundations → Modules → Automation, mirroring how a fleet comes online.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label text-[#8a8a8a]">Before</p><p class="mt-1 font-semibold">Setup was open-ended</p><p class="mt-1 text-sm text-[#8a8a8a]">No way to know how far along you were or what blocked go-live.</p><p class="mt-4 label" style="color:#ffd8e4">Decision</p><p class="mt-1 font-semibold text-accent">A finishable tracker</p><p class="mt-1 text-sm text-[#c7c7cc]">Progress ring, "needs attention" counts and per-item status.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label text-[#8a8a8a]">Before</p><p class="mt-1 font-semibold">Show every module always</p><p class="mt-1 text-sm text-[#8a8a8a]">Customers saw config for products they hadn't bought.</p><p class="mt-4 label" style="color:#ffd8e4">Decision</p><p class="mt-1 font-semibold text-accent">Surface what's relevant</p><p class="mt-1 text-sm text-[#c7c7cc]">Modules reflect entitlements; "Set Up" vs a live summary signals state.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label text-[#8a8a8a]">Before</p><p class="mt-1 font-semibold">Blind toggles for drivers</p><p class="mt-1 text-sm text-[#8a8a8a]">Admins configured the driver flow with no idea what drivers saw.</p><p class="mt-4 label" style="color:#ffd8e4">Decision</p><p class="mt-1 font-semibold text-accent">Live mobile preview</p><p class="mt-1 text-sm text-[#c7c7cc]">The driver app renders in real time beside the settings.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · IMPACT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">06</span><span class="eyebrow">Impact</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">What changed after launch.</h2>
+
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><span class="grid place-items-center size-9 rounded-lg bg-white/5 text-lg">↓</span><p class="mt-6 text-4xl font-bold text-amber underline decoration-dotted decoration-amber/50 underline-offset-8">40%</p><p class="max-w-4xl mt-4 text-sm text-[#a1a1aa] leading-relaxed">Faster to onboard a new fleet end-to-end</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><span class="grid place-items-center size-9 rounded-lg bg-white/5 text-lg">↓</span><p class="mt-6 text-4xl font-bold text-amber underline decoration-dotted decoration-amber/50 underline-offset-8">55%</p><p class="max-w-4xl mt-4 text-sm text-[#a1a1aa] leading-relaxed">Fewer setup &amp; config support tickets</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><span class="grid place-items-center size-9 rounded-lg bg-white/5 text-lg">↑</span><p class="mt-6 text-4xl font-bold text-amber underline decoration-dotted decoration-amber/50 underline-offset-8">+18</p><p class="max-w-4xl mt-4 text-sm text-[#a1a1aa] leading-relaxed">Point lift in SUS usability score</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><span class="grid place-items-center size-9 rounded-lg bg-white/5 text-lg">★</span><p class="mt-6 text-4xl font-bold text-amber underline decoration-dotted decoration-amber/50 underline-offset-8">4.6</p><p class="max-w-4xl mt-4 text-sm text-[#a1a1aa] leading-relaxed">Post-launch admin satisfaction (of 5)</p></div>
+    </div>
+
+    <div class="mt-6 rounded-2xl border border-white/10 bg-card p-8 sm:p-10">
+      <p class="text-2xl sm:text-3xl font-semibold tracking-[-0.01em] leading-snug"><span class="text-amber">"This wasn't a reskin, it changed how our customers experience the product.</span> The setup tracker alone took the most-complained-about part of onboarding off the table."</p>
+      <p class="mt-5 text-sm font-semibold text-amber/90">— Dave, Product Manager, Zenduit (GoFleet)</p>
+    </div>
+  </section>
+
+  <!-- ============ 07 · REFLECTION ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">07</span><span class="eyebrow">Reflection</span></p>
+    <div class="mt-8 grid lg:grid-cols-2 gap-10 lg:gap-16">
+      <h2 class="text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">What I'd carry into the next role.</h2>
+      <div class="space-y-7">
+        <div><p class="font-semibold text-lg">Structure beats screens.</p><p class="max-w-4xl mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">Re-grouping the IA and adding a progress model moved the metrics more than any single screen. The mental model was the design.</p></div>
+        <div><p class="font-semibold text-lg">Support tickets are research gold.</p><p class="max-w-4xl mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">The most honest map of broken flows came from what admins were already calling in about.</p></div>
+        <div><p class="font-semibold text-lg">Invest in the system early.</p><p class="max-w-4xl mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">The component library slowed the first release and sped up all sixteen that followed, and it's what makes the product feel like one thing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEXT PROJECT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24">
+    <a href="Fluent.html" class="group block rounded-2xl border border-white/10 bg-card hover:bg-white/[0.04] transition-colors p-6 sm:p-8">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Next project</p>
+      <div class="mt-3 flex items-center justify-between gap-4">
+        <p class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Fluent Conveyors · Asset Management System</p>
+        <span class="text-2xl text-[#8a8a8a] group-hover:text-white transition-colors shrink-0">→</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="relative mt-24 sm:mt-32 overflow-hidden border-t border-white/10">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(120% 100% at 50% -10%, #1b1618 0%, #130f0e 42%, #0b0a0a 100%);"></div>
+    <div class="absolute -z-10 top-[-160px] left-1/2 -translate-x-1/2 size-[560px] rounded-full bg-accent/10 blur-[150px]"></div>
+
+    <div class="max-w-[1280px] mx-auto px-6 py-24 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-accent">Thanks for reading</p>
+      <h2 class="mt-6 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05] mx-auto">Let's Design Products That Move People Forward.</h2>
+      <p class="mt-6 max-w-xl mx-auto text-lg text-[#c7c7cc] leading-relaxed">I'm a product designer who likes hard, technical problems. If that's useful to your team, let's talk.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:toyosi.design@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-white/90 transition"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> toyosi.design@gmail.com</a>
+        <a href="https://calendly.com/toyosi-design" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/5 transition">Book a 30-min intro ↗</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-[1280px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-[#8a8a8a]">© 2026 Omotoyosi Adegbite.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>

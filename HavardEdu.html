@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOM · An AI that gets student life | Omotoyosi Adegbite</title>
+  <meta name="description" content="Case study: TOM, an AI personal assistant that helps university students manage academic, social, and life admin, designed around transparency and trust." />
+
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            base: '#0b0a0a', card: '#141210', panel: '#16120e',
+            header: '#171717', accent: '#ffd8e4', brown: '#ac7f5e', ink: '#0e0c0a',
+            /* product / functional tokens (from TOM design system) */
+            blue: '#3B82F6', crimson: '#A51C30', paper: '#F4EFE8',
+            cHigh: '#16A34A', cMed: '#D97706', cLow: '#DC2626',
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    ::selection { background: #ffd8e4; color: #000; }
+    .eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ffd8e4; font-weight: 700; }
+    /* iOS phone shell — fixed portrait ratio so mockups always read as real phones */
+    .phone { background:#000; border-radius: 44px; padding: 11px; box-shadow: 0 30px 70px rgba(0,0,0,.55); }
+    .phone-screen { background:#fff; color:#0e0c0a; border-radius: 33px; overflow-y: auto; overflow-x: hidden; aspect-ratio: 9 / 19.5; scrollbar-width: none; -ms-overflow-style: none; }
+    .phone-screen::-webkit-scrollbar { display: none; }
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+      .reveal.in { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-base text-white font-sans antialiased">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="sticky top-0 z-50 pt-6 px-4 sm:px-6">
+    <div class="max-w-[1280px] mx-auto">
+      <nav class="flex items-center justify-between h-[54px] rounded-full border border-[#3d3e3f] bg-header/90 backdrop-blur-xl px-5 shadow-[0_4px_10px_rgba(0,0,0,0.35)]">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="grid place-items-center size-7 rounded-full bg-accent text-black text-xs font-bold">O</span>
+          <span class="text-base font-semibold tracking-tight text-white">Omotoyosi Adegbite</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm">
+          <li><a href="index.html#work" class="font-bold text-accent">Work</a></li>
+          <li><a href="index.html#about" class="text-[#c0c0c0] hover:text-white transition-colors">About</a></li>
+          <li><a href="index.html#contact" class="text-[#c0c0c0] hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 pt-14 sm:pt-20">
+    <div class="flex items-center justify-between mb-10">
+      <a href="index.html#work" class="inline-flex items-center gap-1.5 text-sm text-[#8a8a8a] hover:text-white transition-colors">← Back to all work</a>
+      <a href="#" class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-white transition-colors">View live project →</a>
+    </div>
+
+    <p class="text-sm text-[#8a8a8a]">Harvard Edu &nbsp;|&nbsp; AI Personal Assistant</p>
+
+    <h1 class="mt-3 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.02]">
+      Designing an AI that actually gets student life.
+    </h1>
+    <p class="max-w-4xl mt-6 text-lg text-[#c7c7cc] leading-relaxed">
+      TOM is an AI personal assistant that helps university students manage academic, social, and
+      life admin, without the overwhelm.
+    </p>
+
+    <!-- Hero meta -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5">
+        <p class="eyebrow">My role</p>
+        <p class="mt-2 font-medium text-white text-sm">Solo Product Designer</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Institution</p>
+        <p class="mt-2 font-medium text-white text-sm">Havard Edu</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Timeline</p>
+        <p class="mt-2 font-medium text-white text-sm">6 weeks</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Focus</p>
+        <p class="mt-2 font-medium text-white text-sm">AI Transparency &amp; Trust</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SIGNATURE IDEA (hero image) ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-16 sm:mt-20 reveal">
+    <h2 class="sr-only">The signature idea: every suggestion shows how confident TOM is, and why. Trust, made visible.</h2>
+    <!-- Replace with the exported hero graphic: assets/tom-hero.png -->
+    <div class="rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a]">
+      <img src="assets/tom-hero.png"
+        alt="The signature idea — every suggestion shows how confident TOM is, and why. Two TOM app screens: a flashcards view and a morning agenda with an AI suggestion carrying a High confidence label."
+        class="w-full h-auto block"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[1100/708] p-8">
+        Add hero image → assets/tom-hero.png
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 · THE PROBLEM ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">01</span><span class="eyebrow">The Problem</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Students don't have a focus problem. They have a coordination problem.</h2>
+    <div class="mt-6 space-y-4 text-lg text-[#a1a1aa] leading-relaxed">
+      <p>University life in 2024 means managing a lecture schedule, three group projects, a part-time job, a social life, and rent, all at once. Students aren't lazy or disorganised. They're operating at the edge of their cognitive capacity with tools that weren't built for them.</p>
+      <p>Google Calendar tells you when something is due. Notion helps you write things down. ChatGPT helps you draft an email. But nothing connects the dots. Nothing watches your back.</p>
+      <p>Deadlines sneak up. Budgets spiral. Group projects fall apart. And by Week 8, burnout sets in quietly, not with a bang, but with a student staring at a blank document at 2am wondering where the time went.</p>
+      <p class="text-white">The real problem isn't that students need another productivity app. It's that they need something that thinks ahead for them, so they don't have to think about everything all at once. That's the gap TOM was designed to fill.</p>
+    </div>
+
+    <!-- HMW callout -->
+    <div class="mt-10 rounded-2xl border border-accent/20 bg-accent/[0.04] p-6 sm:p-8">
+      <p class="eyebrow">How might we</p>
+      <p class="mt-3 text-xl sm:text-2xl font-semibold tracking-[-0.01em] leading-snug">Design an AI personal assistant that proactively coordinates a student's academic, financial, and social responsibilities, reducing cognitive overload and building trust through transparency.</p>
+    </div>
+
+    <!-- Before TOM export: assets/tom-before.png -->
+    <div class="mt-10">
+      <img src="assets/tom-before.png"
+        alt="Before TOM, a typical week. Five disconnected app tiles: Calendar with 4 events today, Notes untouched since Sept, Group chat with 23 unread, Email with 17 unread, and To-dos overdue ×6. Five tools. None of them talk to each other."
+        class="w-full h-auto block"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[2200/842] p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">
+        Add Before TOM section → assets/tom-before.png
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · UNDERSTANDING THE USER ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">02</span><span class="eyebrow">Understanding the User</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">I wasn't looking for features. I was looking for friction.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">With the list of interview questions I prepared, the stakeholder spoke with five Harvard students across different concentrations, looking for the specific points in their week where things fell apart. Three themes came up consistently.</p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-accent font-bold">01</p>
+        <p class="mt-3 text-lg font-semibold">The coordination gap</p>
+        <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Information was scattered everywhere, deadlines in one app, notes in another, emails in their inbox. The mental load of connecting it all was exhausting.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-accent font-bold">02</p>
+        <p class="mt-3 text-lg font-semibold">Deadline anxiety peaks early</p>
+        <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Students panicked two or three days before, not on the day. The problem wasn't the deadline. It was the lack of a warning system with enough runway.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-accent font-bold">03</p>
+        <p class="mt-3 text-lg font-semibold">AI distrust is real</p>
+        <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Every student had a story of an AI tool confidently giving wrong information. They'd learned to double-check everything, which defeated the purpose.</p>
+      </div>
+    </div>
+    <p class="mt-6 text-[#a1a1aa]">These three insights shaped every major design decision that followed.</p>
+  </section>
+
+  <!-- ============ 03 · INTERVIEWS ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">03</span><span class="eyebrow">Interviews · Method</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Five students. Thirty minutes each. One question under every question.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Semi-structured conversations across years and concentrations, walking each student through a real week. We weren't testing a solution, we were hunting for the exact moments a week falls apart.</p>
+
+    <div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="eyebrow">Participants</p><p class="mt-2 text-xl font-semibold">5 students</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Length</p><p class="mt-2 text-xl font-semibold">30 min each</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Years</p><p class="mt-2 text-xl font-semibold">1 – 4</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Format</p><p class="mt-2 text-xl font-semibold">Semi-structured</p></div>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-3 gap-4">
+      <blockquote class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-accent text-3xl leading-none">“</p>
+        <p class="max-w-4xl mt-2 text-[15px] leading-relaxed">I don't forget that things are due. I forget to start them early enough to do them well.</p>
+        <footer class="mt-4 text-sm text-[#8a8a8a]">3rd-year, Engineering</footer>
+      </blockquote>
+      <blockquote class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-accent text-3xl leading-none">“</p>
+        <p class="max-w-4xl mt-2 text-[15px] leading-relaxed">Every app holds one piece of my life. I'm the integration layer, and I'm exhausted.</p>
+        <footer class="mt-4 text-sm text-[#8a8a8a]">2nd-year, Economics</footer>
+      </blockquote>
+      <blockquote class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-accent text-3xl leading-none">“</p>
+        <p class="max-w-4xl mt-2 text-[15px] leading-relaxed">I've been burned by AI being confidently wrong, so now I double check everything, which is more work.</p>
+        <footer class="mt-4 text-sm text-[#8a8a8a]">4th-year, Psychology</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ 04 · AFFINITY MAPPING ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">04</span><span class="eyebrow">Affinity Mapping</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Sixty scattered notes wanted to fall into three piles.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I pulled every observation onto sticky notes and clustered them. The same three tensions surfaced again and again, and they became the backbone of the whole product.</p>
+
+    <!-- Affinity map export: assets/tom-affinity.png -->
+    <div class="mt-10 rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a]">
+      <img src="assets/tom-affinity.png"
+        alt="Affinity map with three clusters. Coordination gap: deadlines in Calendar, notes in Notion, tasks in my head; “I'm the integration layer”; re-checks 4–5 apps every morning. Deadline anxiety: panic spikes 2–3 days before, not on the day; “I forget to start, not that it's due”; big tasks freeze me. Trust in AI: been burned by confidently-wrong answers; double-checks AI, so it saves no time; wants to know why before trusting a nudge."
+        class="w-full h-auto block"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[2200/680] p-8">
+        Add affinity map → assets/tom-affinity.png
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 · DEFINING THE USER (PERSONA) ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">05</span><span class="eyebrow">Defining the User</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Maya doesn't need more features. She needs fewer decisions.</h2>
+
+    <div class="mt-10 rounded-2xl border border-white/10 bg-card p-6 sm:p-8 grid lg:grid-cols-[260px_1fr] gap-8">
+      <div>
+        <div class="size-16 rounded-2xl bg-gradient-to-br from-accent/30 to-accent/5 border border-white/10 grid place-items-center text-2xl font-bold text-accent">M</div>
+        <p class="mt-4 text-2xl font-bold">Maya</p>
+        <p class="text-sm text-[#8a8a8a]">20 · she/her</p>
+        <p class="mt-4 text-xs font-semibold text-[#8a8a8a] uppercase tracking-wide">Course</p>
+        <p class="text-sm">2nd-year Economics concentrator</p>
+        <p class="mt-3 text-xs font-semibold text-[#8a8a8a] uppercase tracking-wide">Life right now</p>
+        <p class="text-sm">Lectures 4 days/week, weekend dining-hall shifts, one group project already behind.</p>
+        <p class="mt-3 text-xs font-semibold text-[#8a8a8a] uppercase tracking-wide">Tools she half-uses</p>
+        <p class="text-sm">Calendar, Notion, 17 unread emails</p>
+      </div>
+      <div>
+        <p class="text-xl sm:text-2xl font-semibold italic text-white leading-snug">“I'm capable, I'm just always one step behind.”</p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-6">
+          <div>
+            <p class="text-sm font-semibold text-cLow">Frustrations</p>
+            <ul class="mt-3 space-y-2 text-[15px] text-[#c7c7cc]">
+              <li class="flex gap-2"><span class="text-cLow">−</span>Forgets deadlines until it's too late to do her best work</li>
+              <li class="flex gap-2"><span class="text-cLow">−</span>Overspends without realising where it went</li>
+              <li class="flex gap-2"><span class="text-cLow">−</span>Group projects collapse on coordination</li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-cHigh">Goals</p>
+            <ul class="mt-3 space-y-2 text-[15px] text-[#c7c7cc]">
+              <li class="flex gap-2"><span class="text-cHigh">+</span>Stay on top of academics without constant stress</li>
+              <li class="flex gap-2"><span class="text-cHigh">+</span>More time for social life and rest</li>
+              <li class="flex gap-2"><span class="text-cHigh">+</span>Feel genuinely in control of her schedule</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · USER JOURNEY MAP ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">06</span><span class="eyebrow">User Journey Map</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Maya's week has a cliff. It's Thursday night.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I mapped a typical assignment week against her emotional state. The low point isn't the deadline itself, it's the night before, when there's no runway left. That's where TOM has to intervene.</p>
+
+    <div class="mt-10 overflow-x-auto">
+      <div class="min-w-[760px] grid grid-cols-[120px_repeat(5,1fr)] gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10 text-sm">
+        <!-- header row -->
+        <div class="bg-panel p-4 font-semibold text-[#8a8a8a]">Stage</div>
+        <div class="bg-panel p-4"><p class="font-semibold">Sunday</p><p class="text-xs text-[#8a8a8a]">Planning</p></div>
+        <div class="bg-panel p-4"><p class="font-semibold">Mon–Wed</p><p class="text-xs text-[#8a8a8a]">Coasting</p></div>
+        <div class="bg-panel p-4"><p class="font-semibold">Thursday</p><p class="text-xs text-[#8a8a8a]">Realisation</p></div>
+        <div class="bg-panel p-4"><p class="font-semibold">Fri night</p><p class="text-xs text-[#8a8a8a]">Crunch</p></div>
+        <div class="bg-panel p-4"><p class="font-semibold">Saturday</p><p class="text-xs text-[#8a8a8a]">Relief</p></div>
+        <!-- emotion -->
+        <div class="bg-base p-4 font-semibold text-[#8a8a8a]">Emotion</div>
+        <div class="bg-base p-4">🙂 <span class="text-[#a1a1aa]">Optimistic</span></div>
+        <div class="bg-base p-4">😑 <span class="text-[#a1a1aa]">Distracted</span></div>
+        <div class="bg-base p-4">😯 <span class="text-[#a1a1aa]">Anxious</span></div>
+        <div class="bg-base p-4">😭 <span class="text-[#a1a1aa]">Overwhelmed</span></div>
+        <div class="bg-base p-4">😌 <span class="text-[#a1a1aa]">Drained but done</span></div>
+        <!-- thinking -->
+        <div class="bg-base p-4 font-semibold text-[#8a8a8a]">Thinking</div>
+        <div class="bg-base p-4 text-[#a1a1aa]">“Loads of time this week.”</div>
+        <div class="bg-base p-4 text-[#a1a1aa]">“I'll start it soon.”</div>
+        <div class="bg-base p-4 text-[#a1a1aa]">“Wait, that's due Saturday?”</div>
+        <div class="bg-base p-4 text-[#a1a1aa]">“Why didn't I start earlier?”</div>
+        <div class="bg-base p-4 text-[#a1a1aa]">“Never again. (Until next time.)”</div>
+        <!-- TOM's move -->
+        <div class="bg-base p-4 font-semibold text-accent">TOM's move</div>
+        <div class="bg-base p-4 text-[#c7c7cc]">Spot the deadline early; reserve calm time.</div>
+        <div class="bg-base p-4 text-[#c7c7cc]">Drop a low-pressure first step into the day.</div>
+        <div class="bg-accent/[0.06] p-4 text-white font-medium">Step in HERE: “start today, here's why.”</div>
+        <div class="bg-base p-4 text-[#c7c7cc]">Protect the morning; break work into chunks.</div>
+        <div class="bg-base p-4 text-[#c7c7cc]">Reflect: lighten next week's load.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 · CARD SORTING ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">07</span><span class="eyebrow">Card Sorting</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Stakeholder handed students 18 cards. They built the menu for them.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">An open card sort of every possible feature. Four groupings emerged almost unanimously, and they mapped one-to-one onto the navigation, so the structure came from users, not from me.</p>
+
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-5">
+        <p class="font-semibold">Today / Now</p>
+        <p class="text-xs text-accent mt-0.5">named by 5 / 5</p>
+        <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]"><li>Schedule &amp; agenda</li><li>TOM suggestions</li><li>Quick add</li></ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5">
+        <p class="font-semibold">My Work</p>
+        <p class="text-xs text-accent mt-0.5">named by 5 / 5</p>
+        <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]"><li>Deadline tracker</li><li>Lecture summaries</li><li>Group projects</li></ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5">
+        <p class="font-semibold">Money</p>
+        <p class="text-xs text-accent mt-0.5">named by 4 / 5</p>
+        <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]"><li>Budget tracker</li><li>Spending alerts</li></ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5">
+        <p class="font-semibold">Me &amp; Wellbeing</p>
+        <p class="text-xs text-accent mt-0.5">named by 4 / 5</p>
+        <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]"><li>Burnout / load</li><li>Trust &amp; settings</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 · INFORMATION ARCHITECTURE ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">08</span><span class="eyebrow">Information Architecture</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Four destinations. Nothing more than two taps deep.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">The card sort translated directly into a deliberately flat tree. A shallow architecture is a kindness to an overloaded brain, every core action is reachable without hunting.</p>
+
+    <div class="mt-10 rounded-2xl border border-white/10 bg-card p-6 sm:p-8">
+      <div class="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-4 text-center font-semibold">TOM · Home</div>
+      <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="rounded-xl border border-white/10 p-5"><p class="font-semibold">Today</p><ul class="mt-3 space-y-2 text-sm text-[#c7c7cc]"><li>Agenda</li><li>Suggestions</li><li>Quick add</li></ul></div>
+        <div class="rounded-xl border border-white/10 p-5"><p class="font-semibold">Tasks</p><ul class="mt-3 space-y-2 text-sm text-[#c7c7cc]"><li>Deadlines</li><li>Summaries</li><li>Group projects</li></ul></div>
+        <div class="rounded-xl border border-white/10 p-5"><p class="font-semibold">Money</p><ul class="mt-3 space-y-2 text-sm text-[#c7c7cc]"><li>Budget</li><li>Alerts</li></ul></div>
+        <div class="rounded-xl border border-white/10 p-5"><p class="font-semibold">You</p><ul class="mt-3 space-y-2 text-sm text-[#c7c7cc]"><li>Wellbeing</li><li>Trust &amp; AI</li><li>Settings</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 09 · TASK FLOW ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">09</span><span class="eyebrow">Task Flow</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">The flow that defines TOM: a suggestion, with a way out.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">The core proactive loop, from detection to the user's choice. A confidence check sits in the middle, and every path ends with the user in control, accept, dismiss, or correct.</p>
+
+    <div class="mt-10 flex flex-wrap items-stretch gap-3 text-sm">
+      <div class="rounded-xl border border-white/10 bg-card px-4 py-3 flex items-center">TOM detects an upcoming deadline</div>
+      <div class="grid place-items-center text-accent">→</div>
+      <div class="rounded-xl border border-white/10 bg-card px-4 py-3 flex items-center">Checks calendar density &amp; history</div>
+      <div class="grid place-items-center text-accent">→</div>
+      <div class="rounded-xl border border-accent/30 bg-accent/[0.05] px-4 py-3 flex items-center font-medium">Confident enough?</div>
+      <div class="grid place-items-center text-accent">→</div>
+      <div class="grid gap-2">
+        <div class="rounded-xl border border-cHigh/30 bg-cHigh/[0.06] px-4 py-3"><span class="font-semibold text-cHigh">Yes · High/Med</span>: surface with reason + confidence</div>
+        <div class="rounded-xl border border-cLow/30 bg-cLow/[0.06] px-4 py-3"><span class="font-semibold text-cLow">No · Low</span>: ask a clarifying question first</div>
+      </div>
+      <div class="grid place-items-center text-accent">→</div>
+      <div class="rounded-xl border border-white/10 bg-card px-4 py-3 flex items-center">User chooses: Add, Not now, or Correct → plan updates</div>
+    </div>
+  </section>
+
+  <!-- ============ 10 · LOW-FIDELITY SKETCHES ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">10</span><span class="eyebrow">Low-Fidelity Sketches</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Before pixels, paper. Fast and disposable.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I sketched the core screens to test layouts in minutes. Three weak ideas died on paper in an afternoon, far cheaper than discovering them in Figma a week later.</p>
+
+    <!-- Low-fidelity sketches export: assets/tom-sketches.png -->
+    <div class="mt-10 rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a]">
+      <img src="assets/tom-sketches.png"
+        alt="Three paper sketches of TOM's core screens: Home, Suggestion, and Group project, testing layout and hierarchy before any hi-fidelity design."
+        class="w-full h-auto block"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[2356/943] p-8">
+        Add sketches → assets/tom-sketches.png
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11 · WIREFRAMES ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <!-- Wireframes export: assets/tom-wireframes.png -->
+    <img src="assets/tom-wireframes.png"
+      alt="11 · Wireframes. Greyscale first, so colour could be about emphasis, not layout. Mid-fidelity wireframes locked hierarchy and spacing before a single brand colour appeared. Validating structure in grey meant every later colour choice did one job: direct attention to what matters. Three greyscale wireframe screens: Home, Suggestion detail, and Group coordinator."
+      class="w-full h-auto block"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[2200/1782] p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">
+      Add wireframes section → assets/tom-wireframes.png
+    </div>
+  </section>
+
+  <!-- ============ 12 · DESIGN SYSTEM ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">12</span><span class="eyebrow">Design System</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">A small system that keeps TOM calm and consistent.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">One typeface, a restrained palette, and a handful of components. The confidence chip is the one component doing the most trust work, so it earned its own fixed, unmistakable language.</p>
+
+    <!-- Design system export: assets/tom-design-system.png -->
+    <div class="mt-10 rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a]">
+      <img src="assets/tom-design-system.png"
+        alt="TOM design system. Colour: Ink #0E0C0A, Surface #16120E, Accent #3B82F6, Harvard crimson #A51C30, Paper text #F4EFE8, Confidence High #16A34A, Medium #D97706, Low #DC2626. Type: Inter — Display 700/-3%, Section heading 700/-2%, Body copy 1.7 line height, Label/eyebrow 700/+14%. Components: Primary, Secondary and Ghost buttons, High/Medium/Low confidence chips, radius 12/18/24, spacing 4·8·16·24."
+        class="w-full h-auto block"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[2200/1168] p-8">
+        Add design system → assets/tom-design-system.png
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 13 · THE DECISIONS THAT MATTERED ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">13</span><span class="eyebrow">The Decisions That Mattered</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">A lot of decisions went into TOM. Four shaped it most.</h2>
+
+    <!-- Decision 1 -->
+    <div class="mt-14 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div>
+        <p class="text-accent font-bold text-lg">1</p>
+        <h3 class="mt-2 text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Proactive over reactive</h3>
+        <p class="mt-3 text-accent/90 font-medium">Most assistants wait to be asked. TOM needed to speak first.</p>
+        <p class="max-w-4xl mt-4 text-[15px] text-[#a1a1aa] leading-relaxed">Instead of waiting for Maya to check her schedule, TOM surfaces what matters before she thinks to look. Three days before an assignment is due, it breaks the work into daily tasks. The night before an exam, it quietly clears her morning.</p>
+        <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">A small interaction shift that changed the entire personality of the product, from a tool into something closer to a thoughtful collaborator.</p>
+      </div>
+      <!-- Proactive export: assets/tom-proactive.png -->
+      <div class="w-full max-w-[400px] mx-auto">
+        <img src="assets/tom-proactive.png"
+          alt="TOM's Wind down screen at 21:30, 'Tomorrow, handled.' Morning cleared: non-essential notifications muted till 11am, exam at 9. Essay broken into 3 steps: first step added to Thursday, Friday is full. Alarm set for 7:15, 15 minutes earlier because the campus shuttle is running late this week."
+          class="w-full h-auto block"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[800/1462] p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">
+          Add proactive screen → assets/tom-proactive.png
+        </div>
+      </div>
+    </div>
+
+    <!-- Decision 2 · Confidence Indicator export: assets/tom-confidence.png -->
+    <div class="mt-16">
+      <img src="assets/tom-confidence.png"
+        alt="2 · The AI Confidence Indicator. The decision I'm most proud of, and it came straight from research. Students didn't trust AI because they couldn't tell how reliable a suggestion was. So every AI-generated suggestion carries a confidence level, high, medium, or low, and a one-line reason: 'I'm suggesting you start today because your Friday is fully booked and the deadline is Saturday. Confidence: High.' Trust went up. Dismissals went down. And when TOM was wrong, users understood why, rather than losing faith in the product entirely. The phone shows a TOM suggestions screen, 'Why you're seeing this', with Start your essay today at Confidence High, Skip the gym today at Confidence Medium, and Text Sam about the slides at Confidence Low."
+        class="w-full h-auto block"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[2200/1498] p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">
+        Add confidence section → assets/tom-confidence.png
+      </div>
+    </div>
+
+    <!-- Decision 3 · Designing for when AI fails export: assets/tom-failure-states.png -->
+    <div class="mt-16">
+      <img src="assets/tom-failure-states.png"
+        alt="3 · Designing for when AI fails. Most AI designs only handle the happy path. Students don't live there. Designing for failure isn't pessimistic, it's what separates a trustworthy product from a fragile one. I designed three distinct failure states. 01 · Confident but wrong: TOM says 'I moved your shift to Sunday' with a High confidence chip; the student replies 'Actually, it's Saturday' and TOM corrects itself with an Undo my changes option, a one-tap correction with a brief explanation so TOM learns the preference. 02 · Uncertain: TOM asks 'Before I add this, which project did you mean?' with 'I'd rather ask than guess', offering Marketing group project or Business Ethics essay, flagging missing information rather than guessing. 03 · Out of scope: to 'Can you write my essay for me?' TOM replies 'That's not something I'll do, it's your work to own' and offers to build an outline instead, stating clearly what it won't do and offering a useful alternative."
+        class="w-full h-auto block"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[2304/1863] p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">
+        Add failure states section → assets/tom-failure-states.png
+      </div>
+    </div>
+
+    <!-- Decision 4 · Burnout export: assets/tom-burnout.png -->
+    <div class="mt-16">
+      <img src="assets/tom-burnout.png"
+        alt="4 · Burnout as a design consideration. When Maya is overloaded, TOM creates space, it doesn't fill it. No assistant I reviewed treated wellbeing as a core principle, they optimised for productivity: more tasks, more reminders, more engagement. I took a different position. When her schedule crosses a threshold of density, TOM suggests what to defer rather than what to add. It nudges her to wind down. This made TOM feel less like a productivity tool and more like something genuinely on Maya's side. The phone shows a Wellbeing screen, 'Your week's load', with a bar chart peaking Thursday and Friday, and a 'Heads up' card: that's five back-to-back days, Friday looks heavy, want me to move your gym session to next week? with Defer it and Keep it options."
+        class="w-full h-auto block"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[2266/1510] p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">
+        Add burnout section → assets/tom-burnout.png
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE FULL SYSTEM ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p class="eyebrow">The Full System</p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Six features. One assistant.</h2>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-2xl">◎</p><p class="mt-3 font-semibold">Smart Deadline Tracker</p><p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Breaks assignments into daily micro-tasks. Students freeze at big deadlines, smaller steps reduce anxiety.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-2xl">☷</p><p class="mt-3 font-semibold">Lecture Summariser</p><p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Paste notes, get summaries and flashcards. Active recall beats passive re-reading.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-2xl">♥</p><p class="mt-3 font-semibold">Burnout Detector</p><p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Flags overloaded days, suggests lighter alternatives. Wellbeing, not just productivity.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-2xl text-accent">★</p><p class="mt-3 font-semibold">AI Confidence Indicator</p><p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Every suggestion shows a confidence level and reason. Transparency builds trust.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-2xl">☷</p><p class="mt-3 font-semibold">Group Project Coordinator</p><p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Tracks tasks per member, sends nudges. The #1 pain point in interviews.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-2xl">£</p><p class="mt-3 font-semibold">Student Budget Tracker</p><p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Logs spending, alerts near limits. Financial stress directly hits academic performance.</p></div>
+    </div>
+
+    <!-- Group Project Coordinator (web) export: assets/tom-coordinator.png -->
+    <div class="mt-12">
+      <img src="assets/tom-coordinator.png"
+        alt="Group Project Coordinator · Web. A TOM.app browser view of Marketing Strategy — Group 4, due in 4 days, 62% complete: Maya · Build the slides (In progress), Sam · Market research (Done), Priya · Write the intro (Not started), Jordan · Final edit & proof (Waiting). A 'TOM is coordinating' panel notes Priya hasn't started the intro and it blocks Jordan's edit, and offers to send a gentle nudge at Confidence Medium, with Send a friendly nudge or Not now. TOM tracks each member's tasks and only nudges when something is genuinely blocking the team."
+        class="w-full h-auto block"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[2560/1482] p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">
+        Add coordinator mockup → assets/tom-coordinator.png
+      </div>
+    </div>
+
+    <!-- Feature trio export: assets/tom-features-trio.png -->
+    <div class="mt-8">
+      <img src="assets/tom-features-trio.png"
+        alt="Three more TOM screens. Budget Tracker: October, £312 of £500 left, Eating out £88, Groceries £64, with a Heads up: you're £12 from your eating-out limit, with 9 days left. Onboarding · Trust: 'Hey Maya! Here's the deal, upfront.' I can plan ahead, break down deadlines, and watch your week for you; I won't do your work for you, or act on anything without showing my reasoning, with a 'Got it, let's start' button. Lecture Summariser: Week 6 · Microeconomics Summary, elasticity measures how demand responds to price, necessities are inelastic and luxuries are elastic, revenue peaks where elasticity equals one, with 12 flashcards ready from your pasted notes."
+        class="w-full h-auto block"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[2200/1414] p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">
+        Add feature trio → assets/tom-features-trio.png
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 14 · PROTOTYPE WALKTHROUGH ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">14</span><span class="eyebrow">Prototype Walkthrough</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">See it move: one morning, start to finish.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">A short, looping walkthrough of the core flow. The whole loop is the product in miniature: a proactive nudge, its reasoning, a confidence level, and a choice that always belongs to the student.</p>
+
+    <!-- Live Figma prototype embed -->
+    <div class="mt-10 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a]">
+      <iframe class="w-full h-full block" allowfullscreen loading="lazy"
+        title="TOM prototype walkthrough"
+        src="https://embed.figma.com/proto/a5pM8cbc59WWN8KX7wYx6U/Portfolio?node-id=156-572&scaling=scale-down&content-scaling=fixed&hide-ui=1&embed-host=share"></iframe>
+    </div>
+  </section>
+
+  <!-- ============ 15 · KEY DESIGN CHALLENGES ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">15</span><span class="eyebrow">Key Design Challenges</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Three hard questions. Three deliberate answers.</h2>
+
+    <div class="mt-10 divide-y divide-white/10 border-t border-white/10">
+      <div class="grid md:grid-cols-2 gap-4 md:gap-10 py-7">
+        <div><p class="text-xs font-bold text-[#8a8a8a] uppercase tracking-wide">Challenge</p><p class="mt-2 text-lg font-semibold">How do you make AI feel helpful, not intrusive?</p></div>
+        <div><p class="text-xs font-bold text-accent uppercase tracking-wide">Decision</p><p class="max-w-4xl mt-2 text-[15px] text-[#c7c7cc] leading-relaxed">A “not now” dismiss on every nudge, with no penalty. Saying no is always free.</p></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4 md:gap-10 py-7">
+        <div><p class="text-xs font-bold text-[#8a8a8a] uppercase tracking-wide">Challenge</p><p class="mt-2 text-lg font-semibold">How do you handle when AI gets something wrong?</p></div>
+        <div><p class="text-xs font-bold text-accent uppercase tracking-wide">Decision</p><p class="max-w-4xl mt-2 text-[15px] text-[#c7c7cc] leading-relaxed">Clear error states with a one-tap correction flow, so a mistake builds the relationship instead of breaking it.</p></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4 md:gap-10 py-7">
+        <div><p class="text-xs font-bold text-[#8a8a8a] uppercase tracking-wide">Challenge</p><p class="mt-2 text-lg font-semibold">How do you build trust with first-time users?</p></div>
+        <div><p class="text-xs font-bold text-accent uppercase tracking-wide">Decision</p><p class="max-w-4xl mt-2 text-[15px] text-[#c7c7cc] leading-relaxed">Onboarding that explains what TOM can and can't do upfront, before it ever makes a suggestion.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 16 · WHAT I'D DO DIFFERENTLY + TAKEAWAY ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">16</span><span class="eyebrow">What I'd Do Differently</span></p>
+    <div class="mt-6 grid md:grid-cols-2 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent font-bold">01</p><p class="max-w-4xl mt-3 text-[15px] text-[#c7c7cc] leading-relaxed">Test the confidence indicator with more users before settling on the design. The concept resonated, but the visual treatment took several iterations I'd want structured feedback on.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent font-bold">02</p><p class="max-w-4xl mt-3 text-[15px] text-[#c7c7cc] leading-relaxed">Invest far more in onboarding. First-time users needed more context on what TOM could and couldn't do before they trusted it enough to engage.</p></div>
+    </div>
+
+    <div class="mt-10 rounded-2xl border border-accent/20 bg-accent/[0.04] p-8 sm:p-10">
+      <p class="eyebrow">What this project taught me</p>
+      <p class="mt-4 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-snug">Designing for AI isn't primarily a visual challenge. It's a trust challenge.</p>
+      <p class="max-w-4xl mt-5 text-[15px] text-[#c7c7cc] leading-relaxed">The hardest problems weren't layout or colour or typography. They were: How do you help a user understand why an AI is making a suggestion? How do you design for the moments it gets things wrong? How do you build something that feels helpful rather than intrusive? These are the questions I'll carry into every AI product I work on next.</p>
+    </div>
+  </section>
+
+  <!-- ============ NEXT PROJECT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24">
+    <a href="ZenduOne.html" class="group block rounded-2xl border border-white/10 bg-card hover:bg-white/[0.04] transition-colors p-6 sm:p-8">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Next project</p>
+      <div class="mt-3 flex items-center justify-between gap-4">
+        <p class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Zenduit (GoFleet) · Fleet Management System</p>
+        <span class="text-2xl text-[#8a8a8a] group-hover:text-white transition-colors shrink-0">→</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="relative mt-24 sm:mt-32 overflow-hidden border-t border-white/10">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(120% 100% at 50% -10%, #1b1618 0%, #130f0e 42%, #0b0a0a 100%);"></div>
+    <div class="absolute -z-10 top-[-160px] left-1/2 -translate-x-1/2 size-[560px] rounded-full bg-accent/10 blur-[150px]"></div>
+
+    <div class="max-w-[1280px] mx-auto px-6 py-24 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-accent">Thanks for reading</p>
+      <h2 class="mt-6 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05] mx-auto">Let's Design Products That Move People Forward.</h2>
+      <p class="mt-6 max-w-xl mx-auto text-lg text-[#c7c7cc] leading-relaxed">I'm a product designer who likes hard, technical problems. If that's useful to your team, let's talk.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:toyosi.design@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-white/90 transition"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> toyosi.design@gmail.com</a>
+        <a href="https://calendly.com/toyosi-design" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/5 transition">Book a 30-min intro ↗</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-[1280px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-[#8a8a8a]">© 2026 Omotoyosi Adegbite.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- scroll reveal -->
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.08 });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluent Conveyors · Asset Management System | Omotoyosi Adegbite</title>
+  <meta name="description" content="Case study: product design for Fluent Conveyors' self-service asset management platform." />
+
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            base: '#0b0a0a', card: '#141210', panel: '#16120e',
+            header: '#171717', accent: '#ffd8e4', brown: '#ac7f5e',
+            fluentBlue: '#2453E6', fluentCyan: '#00A3E0', ink: '#131418',
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    ::selection { background: #ffd8e4; color: #000; }
+  </style>
+</head>
+
+<body class="bg-base text-white font-sans antialiased">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="sticky top-0 z-50 pt-6 px-4 sm:px-6">
+    <div class="max-w-[1280px] mx-auto">
+      <nav class="flex items-center justify-between h-[54px] rounded-full border border-[#3d3e3f] bg-header/90 backdrop-blur-xl px-5 shadow-[0_4px_10px_rgba(0,0,0,0.35)]">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="grid place-items-center size-7 rounded-full bg-accent text-black text-xs font-bold">O</span>
+          <span class="text-base font-semibold tracking-tight text-white">Omotoyosi Adegbite</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm">
+          <li><a href="index.html#work" class="font-bold text-accent">Work</a></li>
+          <li><a href="index.html#about" class="text-[#c0c0c0] hover:text-white transition-colors">About</a></li>
+          <li><a href="index.html#contact" class="text-[#c0c0c0] hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 pt-14 sm:pt-20">
+    <div class="flex items-center justify-between mb-10">
+      <a href="index.html#work" class="inline-flex items-center gap-1.5 text-sm text-[#8a8a8a] hover:text-white transition-colors">← Back to all work</a>
+      <a href="https://fluentconveyors.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-white transition-colors">View live project →</a>
+    </div>
+
+    <p class="text-sm text-[#8a8a8a]">Fluent Conveyors &nbsp;|&nbsp; Asset Management System</p>
+
+    <h1 class="mt-3 text-4xl sm:text-6xl font-semibold tracking-[-0.03em] leading-[1.05]">
+      Bringing the conveyor buying &amp; service journey online.
+    </h1>
+    <p class="max-w-4xl mt-6 text-lg text-[#c7c7cc] leading-relaxed">
+      A self-service customer platform for Fluent Conveyors, where facility operators manage their
+      equipment, order parts, request and sign quotes, pay invoices, track shipments, and stay ahead
+      of maintenance, all in one place.
+    </p>
+
+    <!-- Hero meta -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5">
+        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">My role</p>
+        <p class="mt-1.5 font-medium text-white">Product Designer</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Scope</p>
+        <p class="mt-1.5 font-medium text-white">Customer Portal</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Surfaces</p>
+        <p class="mt-1.5 font-medium text-white">12 screens</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Platform</p>
+        <p class="mt-1.5 font-medium text-white">Responsive Web</p>
+      </div>
+      <div class="bg-base p-5 col-span-2 md:col-span-4 lg:col-span-1">
+        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Focus</p>
+        <p class="mt-1.5 font-medium text-white text-sm leading-snug">Customer, Vendor, Sales, Dashboard, Payment Gateway, Email Templates, and Websites</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HERO COVER IMAGE ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-12">
+    <!-- Figma node 1:6627 "Screenshot 2026-06-03" - dashboard cover. Replace with real export: assets/fluent-dashboard.png -->
+    <div class="relative aspect-[1343/816] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] overflow-hidden grid place-items-center text-[#5a5a5a] text-sm shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img src="assets/fluent-dashboard.png" alt="Fluent asset management dashboard" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" />
+    </div>
+  </section>
+
+  <!-- ============ 01 · PROCESS OVERVIEW ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">01 The approach</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
+      A user-centered design process, end to end.
+    </h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      Rather than start from screens, the project moved through six deliberate phases, grounding every
+      design decision in how Fluent's operators and dealers actually work.
+    </p>
+
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5">
+        <p class="text-accent text-sm font-semibold">01</p>
+        <p class="mt-2 font-medium text-white">Research</p>
+        <p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">Interviews, field visits &amp; the problem as users live it</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-accent text-sm font-semibold">02</p>
+        <p class="mt-2 font-medium text-white">Define</p>
+        <p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">Personas, journey maps &amp; sharp design goals</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-accent text-sm font-semibold">03</p>
+        <p class="mt-2 font-medium text-white">Ideate</p>
+        <p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">How-might-we, architecture &amp; lo-fi wireframes</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-accent text-sm font-semibold">04</p>
+        <p class="mt-2 font-medium text-white">Design</p>
+        <p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">The hi-fi platform &amp; its visual system</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-accent text-sm font-semibold">05</p>
+        <p class="mt-2 font-medium text-white">Test</p>
+        <p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">Usability sessions &amp; the iterations they drove</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-accent text-sm font-semibold">06</p>
+        <p class="mt-2 font-medium text-white">Deliver</p>
+        <p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">One connected, self-service experience</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE PROBLEM ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+      <div>
+        <div class="flex items-center gap-3 mb-5">
+          <span class="text-sm font-medium text-accent tracking-wide uppercase">The problem</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
+          Buying and servicing a conveyor lived in inboxes and phone calls.
+        </h2>
+        <p class="max-w-4xl mt-6 text-lg text-[#a1a1aa] leading-relaxed">
+          Fluent engineers and manufactures heavy-duty conveyors for recycling and waste facilities,
+          equipment that can't afford downtime. But once a machine shipped, everything that came after
+          it was manual.
+        </p>
+      </div>
+
+      <div class="divide-y divide-white/10 border-t border-white/10">
+        <div class="flex gap-5 py-6">
+          <span class="text-accent font-semibold text-sm mt-0.5">A</span>
+          <div>
+            <p class="font-medium text-white">No single source of truth</p>
+            <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Operators tracked assets, parts, and service history in spreadsheets or not at all.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 py-6">
+          <span class="text-accent font-semibold text-sm mt-0.5">B</span>
+          <div>
+            <p class="font-medium text-white">Quotes by email, signed by PDF</p>
+            <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Requesting parts, getting a quote, and signing it bounced between sales reps and printers.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 py-6">
+          <span class="text-accent font-semibold text-sm mt-0.5">C</span>
+          <div>
+            <p class="font-medium text-white">Reactive, not preventive maintenance</p>
+            <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Teams discovered a worn bearing only when a line went down costing throughput.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 py-6">
+          <span class="text-accent font-semibold text-sm mt-0.5">D</span>
+          <div>
+            <p class="font-medium text-white">No visibility after ordering</p>
+            <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">"Where's my shipment?" meant another phone call to the dealer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Research stats -->
+    <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-6">
+        <p class="text-4xl font-semibold text-white">14</p>
+        <p class="mt-3 font-medium text-white text-sm">Stakeholder interviews</p>
+        <p class="mt-1 text-sm text-[#8a8a8a]">Operators, maintenance leads &amp; dealers</p>
+      </div>
+      <div class="bg-base p-6">
+        <p class="text-4xl font-semibold text-white">3</p>
+        <p class="mt-3 font-medium text-white text-sm">Facility visits</p>
+        <p class="mt-1 text-sm text-[#8a8a8a]">Recycling &amp; waste sites, on the floor</p>
+      </div>
+      <div class="bg-base p-6">
+        <p class="text-4xl font-semibold text-white">2</p>
+        <p class="mt-3 font-medium text-white text-sm">Dealer ride-alongs</p>
+        <p class="mt-1 text-sm text-[#8a8a8a]">Shadowing the current quote process</p>
+      </div>
+      <div class="bg-base p-6">
+        <p class="text-4xl font-semibold text-white">40+</p>
+        <p class="mt-3 font-medium text-white text-sm">Support tickets</p>
+        <p class="mt-1 text-sm text-[#8a8a8a]">Reviewed for recurring friction</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT WE HEARD ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">What we heard</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Voices from the floor.</h2>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <figure class="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex flex-col">
+        <blockquote class="text-white leading-relaxed flex-1">"I have <span class="text-[#c9a57e]">six spreadsheets</span> open just to know which parts go with which line. If someone's out sick, that knowledge walks out the door."</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <span class="relative size-9 rounded-full overflow-hidden shrink-0 grid place-items-center text-xs font-semibold text-white" style="background:#7a6a5c">ML
+            <img src="assets/voice-1.jpg" alt="Maintenance Lead" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" />
+          </span>
+          <span>
+            <span class="block text-sm font-medium text-white">Maintenance Lead</span>
+            <span class="block text-sm text-[#8a8a8a]">Single-stream recycling facility</span>
+          </span>
+        </figcaption>
+      </figure>
+      <figure class="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex flex-col">
+        <blockquote class="text-white leading-relaxed flex-1">"Getting a quote is three emails and a day of waiting. By the time it's signed, the line's already been down too long."</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <span class="relative size-9 rounded-full overflow-hidden shrink-0 grid place-items-center text-xs font-semibold text-white" style="background:#55606e">PM
+            <img src="assets/voice-2.jpg" alt="Plant Operations Manager" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" />
+          </span>
+          <span>
+            <span class="block text-sm font-medium text-white">Plant Operations Manager</span>
+            <span class="block text-sm text-[#8a8a8a]">Waste transfer station</span>
+          </span>
+        </figcaption>
+      </figure>
+      <figure class="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex flex-col">
+        <blockquote class="text-white leading-relaxed flex-1">"Customers call <span class="text-[#c9a57e]">me</span> to ask where their shipment is. I'm a salesperson, I'm just forwarding tracking numbers all day."</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <span class="relative size-9 rounded-full overflow-hidden shrink-0 grid place-items-center text-xs font-semibold text-white" style="background:#6d5a66">FD
+            <img src="assets/voice-3.jpg" alt="Fluent Dealer" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" />
+          </span>
+          <span>
+            <span class="block text-sm font-medium text-white">Fluent Dealer</span>
+            <span class="block text-sm text-[#8a8a8a]">Regional territory</span>
+          </span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ EMPATHY MAP ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">Empathy map · the operator</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Inside an operator's day.</h2>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-7">
+        <p class="text-sm font-semibold uppercase tracking-wide text-accent mb-4">Says</p>
+        <ul class="space-y-2.5 text-[#c7c7cc]">
+          <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-white/30 shrink-0"></span>"Just tell me which part fits this machine."</li>
+          <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-white/30 shrink-0"></span>"I don't have time to chase a quote."</li>
+          <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-white/30 shrink-0"></span>"Downtime is the number we get judged on."</li>
+        </ul>
+      </div>
+      <div class="bg-base p-7">
+        <p class="text-sm font-semibold uppercase tracking-wide text-accent mb-4">Thinks</p>
+        <ul class="space-y-2.5 text-[#c7c7cc]">
+          <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-white/30 shrink-0"></span>Worries a wear part will fail mid-shift.</li>
+          <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-white/30 shrink-0"></span>Unsure if maintenance is actually up to date.</li>
+          <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-white/30 shrink-0"></span>Doesn't trust that the order went through.</li>
+        </ul>
+      </div>
+      <div class="bg-base p-7">
+        <p class="text-sm font-semibold uppercase tracking-wide text-accent mb-4">Does</p>
+        <ul class="space-y-2.5 text-[#c7c7cc]">
+          <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-white/30 shrink-0"></span>Keeps part numbers in a notebook and spreadsheets.</li>
+          <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-white/30 shrink-0"></span>Calls the dealer for quotes and status.</li>
+          <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-white/30 shrink-0"></span>Reacts to breakdowns instead of planning.</li>
+        </ul>
+      </div>
+      <div class="bg-base p-7">
+        <p class="text-sm font-semibold uppercase tracking-wide text-accent mb-4">Feels</p>
+        <ul class="space-y-2.5 text-[#c7c7cc]">
+          <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-white/30 shrink-0"></span>Anxious about unplanned downtime.</li>
+          <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-white/30 shrink-0"></span>Frustrated by slow, opaque processes.</li>
+          <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-white/30 shrink-0"></span>Out of the loop once an order is placed.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · DEFINE ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">02 Define</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
+      From what we heard to who we're building for.
+    </h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      Research converged into two primary users, a map of the journey they endure today, and a tight
+      set of goals the platform had to hit.
+    </p>
+
+    <!-- Personas -->
+    <div class="mt-10 grid md:grid-cols-2 gap-5">
+      <!-- Persona 1 -->
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-7">
+        <div class="flex items-center gap-4">
+          <span class="relative size-12 rounded-xl overflow-hidden shrink-0 grid place-items-center text-base font-semibold text-white" style="background:#7a6a5c">DR<img src="assets/persona-1.jpg" alt="Doug Reyes" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></span>
+          <span>
+            <span class="block text-xl font-semibold text-white">Doug Reyes</span>
+            <span class="block text-sm text-[#8a8a8a]">Facility Operations / Maintenance Lead</span>
+          </span>
+        </div>
+        <p class="max-w-4xl mt-5 pl-4 border-l-2 border-accent/50 text-[#c7c7cc] italic leading-relaxed">"My job is keeping the lines running. Every minute one's down, I'm the one explaining why."</p>
+        <dl class="mt-6 space-y-4 text-sm">
+          <div class="flex flex-col sm:flex-row sm:gap-6">
+            <dt class="w-32 shrink-0 text-[#8a8a8a] mb-1 sm:mb-0">Goals</dt>
+            <dd class="text-[#c7c7cc] space-y-1"><p>Zero unplanned downtime</p><p>Right part, first time</p><p>See service history fast</p></dd>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:gap-6 border-t border-white/5 pt-4">
+            <dt class="w-32 shrink-0 text-[#8a8a8a] mb-1 sm:mb-0">Frustrations</dt>
+            <dd class="text-[#c7c7cc] space-y-1"><p>Tribal knowledge in spreadsheets</p><p>Slow, manual quoting</p><p>No status after ordering</p></dd>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:gap-6 border-t border-white/5 pt-4">
+            <dt class="w-32 shrink-0 text-[#8a8a8a] mb-1 sm:mb-0">Context</dt>
+            <dd class="text-[#c7c7cc]">On the floor, often on mobile, juggling several lines at once.</dd>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:gap-6 border-t border-white/5 pt-4">
+            <dt class="w-32 shrink-0 text-[#8a8a8a] mb-1 sm:mb-0">Tech comfort</dt>
+            <dd class="text-[#c7c7cc]">Confident with tools that are fast and get out of the way.</dd>
+          </div>
+        </dl>
+      </div>
+      <!-- Persona 2 -->
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-7">
+        <div class="flex items-center gap-4">
+          <span class="relative size-12 rounded-xl overflow-hidden shrink-0 grid place-items-center text-base font-semibold text-white" style="background:#55606e">MT<img src="assets/persona-2.jpg" alt="Marcus Trank" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></span>
+          <span>
+            <span class="block text-xl font-semibold text-white">Marcus Trank</span>
+            <span class="block text-sm text-[#8a8a8a]">Fluent Dealer / Account Rep</span>
+          </span>
+        </div>
+        <p class="max-w-4xl mt-5 pl-4 border-l-2 border-accent/50 text-[#c7c7cc] italic leading-relaxed">"I want to sell and advise, not spend my day forwarding tracking numbers and chasing signatures."</p>
+        <dl class="mt-6 space-y-4 text-sm">
+          <div class="flex flex-col sm:flex-row sm:gap-6">
+            <dt class="w-32 shrink-0 text-[#8a8a8a] mb-1 sm:mb-0">Goals</dt>
+            <dd class="text-[#c7c7cc] space-y-1"><p>Faster quote turnaround</p><p>Fewer status phone calls</p><p>Stronger customer relationships</p></dd>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:gap-6 border-t border-white/5 pt-4">
+            <dt class="w-32 shrink-0 text-[#8a8a8a] mb-1 sm:mb-0">Frustrations</dt>
+            <dd class="text-[#c7c7cc] space-y-1"><p>Quotes stuck in email threads</p><p>Repetitive support requests</p><p>No shared source of truth</p></dd>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:gap-6 border-t border-white/5 pt-4">
+            <dt class="w-32 shrink-0 text-[#8a8a8a] mb-1 sm:mb-0">Context</dt>
+            <dd class="text-[#c7c7cc]">Splits time between desk and customer sites across a region.</dd>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:gap-6 border-t border-white/5 pt-4">
+            <dt class="w-32 shrink-0 text-[#8a8a8a] mb-1 sm:mb-0">Tech comfort</dt>
+            <dd class="text-[#c7c7cc]">Lives in CRM and email; wants the portal to mirror that.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- Journey map -->
+    <div class="mt-16">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="text-sm font-medium text-accent tracking-wide uppercase">Journey map · current vs. future</span>
+      </div>
+      <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
+        Where the experience breaks, and where it should flow.
+      </h3>
+
+      <div class="mt-8 overflow-x-auto rounded-2xl border border-white/10">
+        <table class="w-full min-w-[900px] border-collapse text-sm">
+          <thead>
+            <tr class="bg-white/[0.03]">
+              <th class="text-left font-medium text-[#8a8a8a] p-4 w-28">Stage</th>
+              <th class="text-left font-medium text-white p-4 border-l border-white/10">Notice a need</th>
+              <th class="text-left font-medium text-white p-4 border-l border-white/10">Get a quote</th>
+              <th class="text-left font-medium text-white p-4 border-l border-white/10">Approve &amp; order</th>
+              <th class="text-left font-medium text-white p-4 border-l border-white/10">Receive shipment</th>
+              <th class="text-left font-medium text-white p-4 border-l border-white/10">Maintain</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-white/10 align-top">
+              <td class="p-4 font-medium text-[#8a8a8a]">Before</td>
+              <td class="p-4 border-l border-white/10 text-[#c7c7cc]">Spot a worn part by eye; dig through spreadsheets for the number.<span class="mt-3 inline-block rounded-md bg-red-500/10 text-red-300 text-xs px-2 py-0.5">Anxious</span></td>
+              <td class="p-4 border-l border-white/10 text-[#c7c7cc]">Email the dealer; wait a day for a PDF quote.<span class="mt-3 inline-block rounded-md bg-red-500/10 text-red-300 text-xs px-2 py-0.5">Stalled</span></td>
+              <td class="p-4 border-l border-white/10 text-[#c7c7cc]">Print, sign, scan, email back; reorder by phone.<span class="mt-3 inline-block rounded-md bg-amber-500/10 text-amber-300 text-xs px-2 py-0.5">Tedious</span></td>
+              <td class="p-4 border-l border-white/10 text-[#c7c7cc]">Call to ask "where is it?"; no live status.<span class="mt-3 inline-block rounded-md bg-red-500/10 text-red-300 text-xs px-2 py-0.5">In the dark</span></td>
+              <td class="p-4 border-l border-white/10 text-[#c7c7cc]">React after a breakdown; no schedule.<span class="mt-3 inline-block rounded-md bg-red-500/10 text-red-300 text-xs px-2 py-0.5">Reactive</span></td>
+            </tr>
+            <tr class="border-t border-white/10 align-top bg-accent/[0.03]">
+              <td class="p-4 font-medium text-accent">After</td>
+              <td class="p-4 border-l border-white/10 text-[#c7c7cc]">Open the asset; its exact parts are listed and in stock.<span class="mt-3 inline-block rounded-md bg-emerald-500/10 text-emerald-300 text-xs px-2 py-0.5">Confident</span></td>
+              <td class="p-4 border-l border-white/10 text-[#c7c7cc]">Add to cart → request quote; reply arrives in-app.<span class="mt-3 inline-block rounded-md bg-emerald-500/10 text-emerald-300 text-xs px-2 py-0.5">Fast</span></td>
+              <td class="p-4 border-l border-white/10 text-[#c7c7cc]">Review, e-sign and place the order in one screen.<span class="mt-3 inline-block rounded-md bg-emerald-500/10 text-emerald-300 text-xs px-2 py-0.5">Seamless</span></td>
+              <td class="p-4 border-l border-white/10 text-[#c7c7cc]">Pay the invoice and watch live shipment tracking.<span class="mt-3 inline-block rounded-md bg-emerald-500/10 text-emerald-300 text-xs px-2 py-0.5">In control</span></td>
+              <td class="p-4 border-l border-white/10 text-[#c7c7cc]">See due, upcoming &amp; late tasks before lines stop.<span class="mt-3 inline-block rounded-md bg-emerald-500/10 text-emerald-300 text-xs px-2 py-0.5">Proactive</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Design goals -->
+    <div class="mt-16">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="text-sm font-medium text-accent tracking-wide uppercase">Design goals</span>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div>
+          <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">One portal, the entire lifecycle.</h3>
+          <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+            Reflecting Fluent's mission, simplifying engineering and connecting dealers to customers
+            faster and better, the platform had to turn every post-sale touchpoint into self-service.
+          </p>
+          <blockquote class="mt-8 rounded-2xl border border-white/10 bg-white/[0.02] p-7 border-l-2 border-l-fluentCyan">
+            <p class="max-w-4xl text-lg text-white leading-relaxed">"Powering the future of conveyor engineering &amp; manufacturing, connecting our dealers to customers, faster and better."</p>
+            <footer class="mt-4 text-sm text-[#8a8a8a]">Fluent Conveyors mission</footer>
+          </blockquote>
+        </div>
+        <div class="space-y-4">
+          <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex gap-4">
+            <span class="grid place-items-center size-9 rounded-lg bg-accent/10 text-accent shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            </span>
+            <div>
+              <p class="font-medium text-white">See every asset at a glance</p>
+              <p class="max-w-4xl mt-1 text-[#a1a1aa] leading-relaxed">Health, parts, history and maintenance for each line in one view.</p>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex gap-4">
+            <span class="grid place-items-center size-9 rounded-lg bg-accent/10 text-accent shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </span>
+            <div>
+              <p class="font-medium text-white">Quote → sign → order without leaving</p>
+              <p class="max-w-4xl mt-1 text-[#a1a1aa] leading-relaxed">Build a cart, request a quote, sign and place the order in-app.</p>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex gap-4">
+            <span class="grid place-items-center size-9 rounded-lg bg-accent/10 text-accent shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+            </span>
+            <div>
+              <p class="font-medium text-white">Pay and track in the same flow</p>
+              <p class="max-w-4xl mt-1 text-[#a1a1aa] leading-relaxed">Invoice → payment → shipment tracking, fully connected.</p>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex gap-4">
+            <span class="grid place-items-center size-9 rounded-lg bg-accent/10 text-accent shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
+            </span>
+            <div>
+              <p class="font-medium text-white">Get ahead of downtime</p>
+              <p class="max-w-4xl mt-1 text-[#a1a1aa] leading-relaxed">Surface due, upcoming and late maintenance before lines stop.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · IDEATE ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">03 Ideate</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
+      Reframing pain points into design opportunities.
+    </h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      With the problem and people defined, we opened up the solution space turning frustrations into
+      "how might we" prompts, shaping the information architecture, then sketching fast and rough.
+    </p>
+
+    <!-- HMW grid -->
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-accent">HMW 01</p>
+        <p class="mt-4 text-lg text-white leading-snug">How might we let an operator find the right part for a machine in seconds?</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-accent">HMW 02</p>
+        <p class="mt-4 text-lg text-white leading-snug">How might we collapse <span class="text-accent">quote → sign → order</span> into a single uninterrupted flow?</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-accent">HMW 03</p>
+        <p class="mt-4 text-lg text-white leading-snug">How might we give live visibility into payment and shipment without a phone call?</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-accent">HMW 04</p>
+        <p class="mt-4 text-lg text-white leading-snug">How might we make maintenance proactive so lines stop on our terms, not theirs?</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-accent">HMW 05</p>
+        <p class="mt-4 text-lg text-white leading-snug">How might we anchor everything to the asset so context is never lost?</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-accent">HMW 06</p>
+        <p class="mt-4 text-lg text-white leading-snug">How might we free the dealer from repetitive status requests?</p>
+      </div>
+    </div>
+
+    <!-- Information architecture -->
+    <div class="mt-16">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="text-sm font-medium text-accent tracking-wide uppercase">Information architecture</span>
+      </div>
+      <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
+        Assets as home base, everything branches from the machine.
+      </h3>
+
+      <div class="mt-8 rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="grid place-items-center size-8 rounded-lg bg-accent/10 text-accent">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6"/></svg>
+          </span>
+          <span class="text-lg font-semibold text-white">Customer Portal</span>
+        </div>
+        <div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
+          <div class="border-t border-white/10 pt-4">
+            <p class="font-medium text-white mb-3">Dashboard</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Health overview</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Open actions</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Recent activity</span>
+            </div>
+          </div>
+          <div class="border-t border-white/10 pt-4">
+            <p class="font-medium text-white mb-3">My Assets</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Asset detail</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Parts catalog</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Service history</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Tickets &amp; tasks</span>
+            </div>
+          </div>
+          <div class="border-t border-white/10 pt-4">
+            <p class="font-medium text-white mb-3">Cart &amp; Quotes</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Cart</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Request quote</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Open quotes</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">E-sign</span>
+            </div>
+          </div>
+          <div class="border-t border-white/10 pt-4">
+            <p class="font-medium text-white mb-3">Orders &amp; Invoices</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Invoices</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Payment</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Order history</span>
+            </div>
+          </div>
+          <div class="border-t border-white/10 pt-4">
+            <p class="font-medium text-white mb-3">Shipments</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Live tracking</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Delivery history</span>
+            </div>
+          </div>
+          <div class="border-t border-white/10 pt-4">
+            <p class="font-medium text-white mb-3">Maintenance &amp; Support</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Schedule</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Due / late</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">Help desk</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-[#c7c7cc]">AI assistant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lo-fi wireframes -->
+    <div class="mt-16">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="text-sm font-medium text-accent tracking-wide uppercase">Lo-fi wireframes</span>
+      </div>
+      <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Sketching the flow before the polish.</h3>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-5">
+        <div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-4 aspect-[352/230]">
+            <div class="flex h-full gap-3">
+              <div class="w-1/5 rounded-lg border border-white/10 bg-white/[0.04]"></div>
+              <div class="flex-1 flex flex-col gap-2">
+                <div class="h-6 rounded bg-white/25"></div>
+                <div class="flex gap-2"><div class="h-8 flex-1 rounded border border-white/10 bg-white/[0.04]"></div><div class="h-8 flex-1 rounded border border-white/10 bg-white/[0.04]"></div><div class="h-8 flex-1 rounded bg-white/20"></div></div>
+                <div class="flex-1 rounded border border-white/10 bg-white/[0.04]"></div>
+              </div>
+            </div>
+          </div>
+          <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-accent">S-01</p>
+          <p class="mt-1 font-medium text-white">Dashboard</p>
+          <p class="mt-1 text-sm text-[#8a8a8a] leading-snug">Asset health and open actions surfaced the moment you land.</p>
+        </div>
+        <div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-4 aspect-[352/230]">
+            <div class="flex h-full flex-col gap-2">
+              <div class="flex items-center gap-2"><div class="h-2.5 flex-1 rounded bg-white/10"></div><div class="h-5 w-16 rounded bg-white/20"></div></div>
+              <div class="flex gap-2"><div class="h-2 w-20 rounded bg-white/10"></div><div class="h-2 w-20 rounded bg-white/10"></div></div>
+              <div class="flex flex-1 gap-2">
+                <div class="flex-[2] rounded border border-white/10 bg-white/[0.04]"></div>
+                <div class="flex-1 flex flex-col gap-2"><div class="h-1/3 rounded border border-white/10 bg-white/[0.04]"></div><div class="flex-1 rounded border border-white/10 bg-white/[0.04]"></div></div>
+              </div>
+            </div>
+          </div>
+          <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-accent">S-02</p>
+          <p class="mt-1 font-medium text-white">Asset detail</p>
+          <p class="mt-1 text-sm text-[#8a8a8a] leading-snug">Parts list beside ticket and maintenance context, never out of view.</p>
+        </div>
+        <div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-4 aspect-[352/230]">
+            <div class="flex h-full flex-col gap-2">
+              <div class="h-2.5 w-full rounded bg-white/10"></div>
+              <div class="flex flex-1 gap-2">
+                <div class="flex-1 flex flex-col gap-2"><div class="h-8 rounded border border-white/10 bg-white/[0.04]"></div><div class="h-8 rounded border border-white/10 bg-white/[0.04]"></div><div class="h-8 rounded border border-white/10 bg-white/[0.04]"></div></div>
+                <div class="flex-1 flex flex-col gap-2"><div class="flex-1 rounded border border-white/10 bg-white/[0.04]"></div><div class="h-8 rounded bg-white/20"></div></div>
+              </div>
+            </div>
+          </div>
+          <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-accent">S-03</p>
+          <p class="mt-1 font-medium text-white">Cart → quote</p>
+          <p class="mt-1 text-sm text-[#8a8a8a] leading-snug">A running summary that turns a cart straight into a quote request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 · THE PLATFORM ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">04 The platform</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
+      One connected flow, anchored to the asset.
+    </h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      The portal is organized around a single mental model: your assets are the home base, and every
+      action, parts, quotes, payment, service, flows from them.
+    </p>
+
+    <div class="mt-14">
+      <!-- Step 01 -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">01 / Asset detail</p>
+          <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Everything about a line, in one place.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">Drill into any conveyor to see its full bill of parts. From here an operator can add a part to the cart, open a help-desk ticket against the asset, or log a maintenance task, without losing the context of which machine they're on.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Searchable parts catalog per asset</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>One tap to add to cart</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Raise a ticket or task in context</li>
+          </ul>
+        </div>
+        <!-- Figma node 1:7189 - screen mockup. Replace with assets/fluent-asset-detail.png -->
+        <div class="relative overflow-hidden aspect-[620/530] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] grid place-items-center text-[#5a5a5a] text-sm shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img src="assets/fluent-asset-detail.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+      </div>
+
+      <!-- Step 02 (image left) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center border-t border-white/10 pt-16 mt-16">
+        <!-- Figma node 1:7191 -->
+        <div class="order-2 lg:order-1 relative overflow-hidden aspect-[620/530] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] grid place-items-center text-[#5a5a5a] text-sm shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img src="assets/fluent-cart-quote.png" alt="Cart to quote screen" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+        <div class="order-1 lg:order-2">
+          <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">02 / Cart → Quote</p>
+          <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">A cart that becomes a quote.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">Because conveyor parts are made-to-order and freight varies, the cart doesn't check out, it sends a quote request to the dealer. The customer keeps a running estimate while the dealer firms up freight and lead time.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Parts grouped by the asset they belong to</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Request routes straight to Open Quotes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center border-t border-white/10 pt-16 mt-16">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">03 / Open Quotes</p>
+          <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Compare, sign, and order in one motion.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">Every request lands on the Open Quotes page. The customer can compare quotes, read the line-item breakdown, e-sign, and place the order in one motion. Signing converts the quote into a confirmed order and triggers the invoice.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>All quotes &amp; their status in one list</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>In-line e-signature → place order</li>
+          </ul>
+        </div>
+        <!-- Figma node 1:7231 -->
+        <div class="relative overflow-hidden aspect-[620/530] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] grid place-items-center text-[#5a5a5a] text-sm shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img src="assets/fluent-open-quotes.png" alt="Open quotes screen" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+      </div>
+
+      <!-- Step 04 (image left) -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center border-t border-white/10 pt-16 mt-16">
+        <!-- Figma node 35:509 "Screenshot 2026-07-07" - invoice / tracking. Replace with assets/fluent-invoice-track.png -->
+        <div class="order-2 lg:order-1 relative overflow-hidden aspect-[620/530] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] grid place-items-center text-[#5a5a5a] text-sm shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+          <img src="assets/fluent-invoice-track.png" alt="Invoice, pay and track screen" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" />
+        </div>
+        <div class="order-1 lg:order-2">
+          <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">04 / Invoice → Pay → Track</p>
+          <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Pay the invoice, then watch it ship.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">Placing an order generates an invoice on the Invoices page, where the customer picks which to pay. Payment fires a shipment notification, and the same order is now trackable end-to-end, no phone call required.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Pay any open invoice in-app</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Live shipment tracking with ETA</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Step 05 -->
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center border-t border-white/10 pt-16 mt-16">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">05 / Maintenance</p>
+          <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Stay ahead of downtime.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">A dedicated maintenance page groups every task by urgency; due, upcoming, and late, so teams service equipment before it fails. Completing a task logs it back to the asset's history and reschedules the next interval.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Late / due / upcoming, at a glance</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Complete a task → logs to asset history</li>
+          </ul>
+        </div>
+        <!-- Figma node 1:7273 -->
+        <div class="relative overflow-hidden aspect-[620/530] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] grid place-items-center text-[#5a5a5a] text-sm shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img src="assets/fluent-maintenance.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE REST OF THE WORKSPACE ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">The rest of the workspace</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">And everything around the core flow.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      Beyond the purchase-to-service loop, the platform rounds out the operator's day with planning,
+      support, and account tools, including an AI assistant trained on Fluent's catalog and manuals.
+    </p>
+
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- 06 -->
+      <div>
+        <div class="relative overflow-hidden aspect-[356/210] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] grid place-items-center text-[#5a5a5a] text-xs shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img src="assets/fluent-calendar.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+        <div class="mt-4 flex items-baseline gap-2"><span class="text-sm text-[#8a8a8a]">06</span><p class="font-medium text-white">Calendar</p></div>
+        <p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">Maintenance windows, deliveries and service visits on one shared schedule.</p>
+      </div>
+      <!-- 07 -->
+      <div>
+        <div class="relative overflow-hidden aspect-[356/210] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] grid place-items-center text-[#5a5a5a] text-xs shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img src="assets/fluent-helpdesk.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+        <div class="mt-4 flex items-baseline gap-2"><span class="text-sm text-[#8a8a8a]">07</span><p class="font-medium text-white">Help desk</p></div>
+        <p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">Tickets raised from any asset, tracked through to resolution.</p>
+      </div>
+      <!-- 08 -->
+      <div>
+        <div class="relative overflow-hidden aspect-[356/210] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] grid place-items-center text-[#5a5a5a] text-xs shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img src="assets/fluent-projects.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+        <div class="mt-4 flex items-baseline gap-2"><span class="text-sm text-[#8a8a8a]">08</span><p class="font-medium text-white">Projects</p></div>
+        <p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">Group quotes, orders and tasks under bigger initiatives.</p>
+      </div>
+      <!-- 09 -->
+      <div>
+        <div class="relative overflow-hidden aspect-[356/230] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] grid place-items-center text-[#5a5a5a] text-xs shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img src="assets/fluent-ai-assistant.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+        <div class="mt-4 flex items-baseline gap-2"><span class="text-sm text-[#8a8a8a]">09</span><p class="font-medium text-white">AI assistant</p></div>
+        <p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">Answers spec questions and drafts carts from the catalog &amp; manuals.</p>
+      </div>
+      <!-- 10 -->
+      <div>
+        <div class="relative overflow-hidden aspect-[356/230] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] grid place-items-center text-[#5a5a5a] text-xs shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img src="assets/fluent-settings.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+        <div class="mt-4 flex items-baseline gap-2"><span class="text-sm text-[#8a8a8a]">10</span><p class="font-medium text-white">Settings</p></div>
+        <p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">Team, notifications, payment terms and facility details.</p>
+      </div>
+      <!-- 11 -->
+      <div>
+        <div class="relative overflow-hidden aspect-[356/210] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] grid place-items-center text-[#5a5a5a] text-xs shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img src="assets/fluent-auth.png" alt="Authentication screens" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+        <div class="mt-4 flex items-baseline gap-2"><span class="text-sm text-[#8a8a8a]">11</span><p class="font-medium text-white">Auth</p></div>
+        <p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">Branded auth screens that carry the dark, engineered identity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 · DESIGN LANGUAGE ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">05 Design language</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
+      Built on Fluent's brand: bold, durable, engineered.
+    </h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      A restrained palette of blue, black and a single confident cyan, paired with Archivo's
+      industrial confidence and IBM Plex's technical precision, keeps a data-dense product calm and legible.
+    </p>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-5">
+      <!-- Color -->
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-8">
+        <p class="text-lg font-semibold text-white mb-5">Color</p>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="rounded-lg h-20 flex items-end p-3 text-xs font-medium" style="background:#2453E6;color:#fff">Blue #2453E6</div>
+          <div class="rounded-lg h-20 flex items-end p-3 text-xs font-medium border border-white/10" style="background:#131418;color:#fff">Ink #131418</div>
+          <div class="rounded-lg h-20 flex items-end p-3 text-xs font-medium" style="background:#00A3E0;color:#001018">Cyan #00A3E0</div>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mt-3">
+          <div class="rounded-lg h-14 grid place-items-center text-xs font-medium" style="background:#479e5e;color:#fff">Healthy</div>
+          <div class="rounded-lg h-14 grid place-items-center text-xs font-medium" style="background:#b5872a;color:#fff">Due</div>
+          <div class="rounded-lg h-14 grid place-items-center text-xs font-medium" style="background:#c04f4b;color:#fff">Late</div>
+        </div>
+      </div>
+      <!-- Type -->
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-8">
+        <p class="text-lg font-semibold text-white mb-5">Font</p>
+        <div class="divide-y divide-white/10">
+          <div class="pb-5">
+            <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Eurostile</p>
+            <p class="mt-1.5 text-2xl font-bold text-white tracking-tight">Conveyors without compromise</p>
+          </div>
+          <div class="py-5">
+            <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Inter · UI &amp; body</p>
+            <p class="mt-1.5 text-lg text-[#c7c7cc]">Manage assets, parts, quotes and maintenance.</p>
+          </div>
+          <div class="pt-5">
+            <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Inter · Labels &amp; SKUs</p>
+            <p class="mt-1.5 text-base tracking-wide font-medium" style="color:#4f7cf7">FC-MTR-15-3 · RCC-1200</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · TEST ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">07 Test</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
+      Putting the prototype in front of the people who'd use it.
+    </h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      We ran moderated usability sessions with operators and dealers on a clickable prototype, watching
+      them complete real tasks, then folding what we learned back into the design.
+    </p>
+
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-6">
+        <p class="text-4xl font-semibold text-white">8</p>
+        <p class="mt-3 text-sm text-[#8a8a8a]">Participants · operators &amp; dealers</p>
+      </div>
+      <div class="bg-base p-6">
+        <p class="text-4xl font-semibold text-white">5</p>
+        <p class="mt-3 text-sm text-[#8a8a8a]">Core tasks tested end to end</p>
+      </div>
+      <div class="bg-base p-6">
+        <p class="text-4xl font-semibold text-white">88%</p>
+        <p class="mt-3 text-sm text-[#8a8a8a]">Task completion across sessions</p>
+      </div>
+      <div class="bg-base p-6">
+        <p class="text-4xl font-semibold text-white">82</p>
+        <p class="mt-3 text-sm text-[#8a8a8a]">SUS usability score (placeholder)</p>
+      </div>
+    </div>
+
+    <h3 class="mt-14 text-sm font-semibold uppercase tracking-wide text-white">What testing changed</h3>
+    <div class="mt-5 overflow-x-auto rounded-2xl border border-white/10">
+      <table class="w-full min-w-[760px] border-collapse text-sm">
+        <thead>
+          <tr class="bg-white/[0.03] text-[#8a8a8a]">
+            <th class="text-left font-medium p-4 w-28">Severity</th>
+            <th class="text-left font-medium p-4">What we observed</th>
+            <th class="text-left font-medium p-4">What we changed</th>
+          </tr>
+        </thead>
+        <tbody class="align-top">
+          <tr class="border-t border-white/10">
+            <td class="p-4"><span class="rounded-md bg-red-500/10 text-red-300 text-xs px-2 py-0.5">High</span></td>
+            <td class="p-4"><p class="font-medium text-white">Cart → quote felt like a dead end</p><p class="mt-1 text-[#a1a1aa]">Users built a cart but weren't sure how to turn it into a quote request.</p></td>
+            <td class="p-4 text-[#c7c7cc]">Added a persistent "Request quote" summary panel with a clear primary action on the cart itself.</td>
+          </tr>
+          <tr class="border-t border-white/10">
+            <td class="p-4"><span class="rounded-md bg-red-500/10 text-red-300 text-xs px-2 py-0.5">High</span></td>
+            <td class="p-4"><p class="font-medium text-white">E-signature was missed</p><p class="mt-1 text-[#a1a1aa]">Several operators scrolled past the signature step and tried to place the order.</p></td>
+            <td class="p-4 text-[#c7c7cc]">Made signing an explicit, blocking step with an inline sign-and-accept affordance before order placement.</td>
+          </tr>
+          <tr class="border-t border-white/10">
+            <td class="p-4"><span class="rounded-md bg-amber-500/10 text-amber-300 text-xs px-2 py-0.5">Medium</span></td>
+            <td class="p-4"><p class="font-medium text-white">Maintenance status read as decorative</p><p class="mt-1 text-[#a1a1aa]">Due / late chips weren't perceived as actionable.</p></td>
+            <td class="p-4 text-[#c7c7cc]">Promoted overdue items to the dashboard with count badges and a direct link to schedule.</td>
+          </tr>
+          <tr class="border-t border-white/10">
+            <td class="p-4"><span class="rounded-md bg-amber-500/10 text-amber-300 text-xs px-2 py-0.5">Medium</span></td>
+            <td class="p-4"><p class="font-medium text-white">Part-to-asset link unclear</p><p class="mt-1 text-[#a1a1aa]">Users weren't certain a part fit their specific machine.</p></td>
+            <td class="p-4 text-[#c7c7cc]">Anchored the parts catalog inside the asset and labeled compatibility explicitly.</td>
+          </tr>
+          <tr class="border-t border-white/10">
+            <td class="p-4"><span class="rounded-md bg-amber-500/10 text-amber-300 text-xs px-2 py-0.5">Medium</span></td>
+            <td class="p-4"><p class="font-medium text-white">Shipment ETA hard to scan</p><p class="mt-1 text-[#a1a1aa]">Tracking timeline was understood but ETA took a beat to find.</p></td>
+            <td class="p-4 text-[#c7c7cc]">Surfaced the next milestone &amp; ETA at the top of the tracking panel.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 07 · OUTCOME ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">08 Outcome</span>
+    </div>
+    <h2 class="text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">
+      One connected experience, from spec to service.
+    </h2>
+    <p class="max-w-4xl mt-6 text-lg text-[#c7c7cc] leading-relaxed">
+      The platform collapses a scattered, manual post-sale process into a single self-service portal,
+      exactly the kind of technology Fluent set out to build for its dealers and customers.
+    </p>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-8">
+        <p class="text-5xl font-semibold text-accent">12</p>
+        <p class="mt-4 text-[#c7c7cc]">Connected surfaces, one mental model</p>
+      </div>
+      <div class="bg-base p-8">
+        <p class="text-5xl font-semibold text-accent">0 calls</p>
+        <p class="mt-4 text-[#c7c7cc]">Quote, sign, pay &amp; track without picking up the phone</p>
+      </div>
+      <div class="bg-base p-8">
+        <p class="text-5xl font-semibold text-accent">1 portal</p>
+        <p class="mt-4 text-[#c7c7cc]">Asset → parts → quote → order → invoice → shipment</p>
+      </div>
+    </div>
+
+    <div class="mt-16 text-center">
+      <a href="index.html#work" class="inline-block rounded-lg bg-accent px-6 py-3 text-sm font-medium text-black hover:brightness-95 transition">← Back to all work</a>
+    </div>
+  </section>
+
+  <!-- ============ NEXT PROJECT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24">
+    <a href="Propel.html" class="group block rounded-2xl border border-white/10 bg-card hover:bg-white/[0.04] transition-colors p-6 sm:p-8">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Next project</p>
+      <div class="mt-3 flex items-center justify-between gap-4">
+        <p class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Propel · Community-as-a-Service Platform</p>
+        <span class="text-2xl text-[#8a8a8a] group-hover:text-white transition-colors shrink-0">→</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="relative mt-24 sm:mt-32 overflow-hidden border-t border-white/10">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(120% 100% at 50% -10%, #1b1618 0%, #130f0e 42%, #0b0a0a 100%);"></div>
+    <div class="absolute -z-10 top-[-160px] left-1/2 -translate-x-1/2 size-[560px] rounded-full bg-accent/10 blur-[150px]"></div>
+
+    <div class="max-w-[1280px] mx-auto px-6 py-24 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-accent">Thanks for reading</p>
+      <h2 class="mt-6 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05] mx-auto">Let's Design Products That Move People Forward.</h2>
+      <p class="mt-6 max-w-xl mx-auto text-lg text-[#c7c7cc] leading-relaxed">I'm a product designer who likes hard, technical problems. If that's useful to your team, let's talk.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:toyosi.design@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-white/90 transition"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> toyosi.design@gmail.com</a>
+        <a href="https://calendly.com/toyosi-design" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/5 transition">Book a 30-min intro ↗</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-[1280px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-[#8a8a8a]">© 2026 Omotoyosi Adegbite.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

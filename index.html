@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omotoyosi Adegbite · Product Designer</title>
+  <meta name="description" content="Omotoyosi Adegbite, senior product designer with 7+ years shipping end-to-end products across enterprise SaaS, fintech, and AI." />
+
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            base: '#0b0a0a',      // page background
+            card: '#141210',      // project card
+            panel: '#16120e',     // approach card
+            header: '#171717',    // top bar
+            accent: '#ffd8e4',    // pink CTA / highlight
+            brown: '#ac7f5e',     // footer border
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Subtle radial glow used on project cards (top-right corner) */
+    .card-glow {
+      background-image: radial-gradient(
+        60% 75% at 80% 0%,
+        rgba(147, 148, 151, 0.14) 0%,
+        rgba(181, 183, 187, 0) 55%
+      );
+    }
+    ::selection { background: #ffd8e4; color: #000; }
+
+    /* Organic "blob" mask for the About-section photo (from Figma, inlined) */
+    .about-photo {
+      -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20336.419%20297'%20preserveAspectRatio='none'%3E%3Cpath%20d='M47.4155%2065.5977C57.8155%2045.1226%2055.4155%2013.6679%2052.9155%200.5H333.415L335.915%20207.477C309.916%20223.056%20241.916%20296.5%20200.916%20296.5C159.916%20296.5%20150.377%20267.011%20125.916%20237.523C107.916%20215.823%2071.5821%20207.477%2056.9154%20207.477C41.2488%20204.325%2011.6154%20198.019%202.41543%20173.538C-9.08457%20142.936%2034.4155%2091.1917%2047.4155%2065.5977Z'%20fill='white'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+              mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20336.419%20297'%20preserveAspectRatio='none'%3E%3Cpath%20d='M47.4155%2065.5977C57.8155%2045.1226%2055.4155%2013.6679%2052.9155%200.5H333.415L335.915%20207.477C309.916%20223.056%20241.916%20296.5%20200.916%20296.5C159.916%20296.5%20150.377%20267.011%20125.916%20237.523C107.916%20215.823%2071.5821%20207.477%2056.9154%20207.477C41.2488%20204.325%2011.6154%20198.019%202.41543%20173.538C-9.08457%20142.936%2034.4155%2091.1917%2047.4155%2065.5977Z'%20fill='white'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+    }
+  </style>
+</head>
+
+<body class="bg-base text-white font-sans antialiased">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="sticky top-0 z-50 pt-6 px-4 sm:px-6">
+    <div class="max-w-[1280px] mx-auto">
+      <nav class="flex items-center justify-between h-[54px] rounded-full border border-[#3d3e3f] bg-header/90 backdrop-blur-xl px-5 shadow-[0_4px_10px_rgba(0,0,0,0.35)]">
+        <a href="#" class="flex items-center gap-3">
+          <span class="grid place-items-center size-7 rounded-full bg-accent text-black text-xs font-bold">O</span>
+          <span class="text-base font-semibold tracking-tight text-white">Omotoyosi Adegbite</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm">
+          <li><a href="#work" class="font-bold text-accent">Work</a></li>
+          <li><a href="#about" class="text-[#c0c0c0] hover:text-white transition-colors">About</a></li>
+          <li><a href="#contact" class="text-[#c0c0c0] hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="max-w-[1024px] mx-auto px-6 pt-20 sm:pt-24 pb-8 flex flex-col items-center text-center">
+    <h1 class="font-semibold text-white tracking-[-0.045em] text-[44px] leading-[1.05] sm:text-[64px] lg:text-[78px] lg:leading-[88px]">
+      Designing products<br />
+      people <span class="text-white">actually</span> want<br />
+      to use.
+    </h1>
+    <p class="mt-8 max-w-[814px] text-[#f2f2f7] text-lg sm:text-xl leading-relaxed">
+      I'm Omotoyosi, a senior product designer with 7+ years shipping end-to-end
+      products across enterprise SaaS, fintech, and AI.
+    </p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <a href="https://calendly.com/toyosi-design" target="_blank" rel="noopener" class="rounded-lg bg-accent px-5 py-3 text-sm font-medium text-black hover:brightness-95 transition">Get in touch</a>
+      <a href="https://docs.google.com/document/d/1ITqhh_fLRFJvXcp84Z-rrI_5-yQVW9PPjywMWhamkkw/export?format=pdf" target="_blank" rel="noopener" class="rounded-lg bg-white border border-[#e5e5e5] px-5 py-3 text-sm font-medium text-black hover:bg-slate-100 transition">Download resume ↓</a>
+    </div>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section id="work" class="max-w-[1280px] mx-auto px-6 py-20">
+    <div class="flex items-center justify-between mb-12">
+      <h2 class="text-2xl sm:text-4xl font-semibold tracking-[-0.02em]">Recent projects, real outcomes.</h2>
+      <span class="hidden sm:block text-sm font-bold text-accent whitespace-nowrap">6 of 12 case studies</span>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-2" id="project-grid">
+      <!-- cards injected by JS -->
+    </div>
+
+    <div class="flex justify-center mt-12">
+      <a href="https://www.behance.net/omotoyoadegbit" target="_blank" rel="noopener" class="rounded-full bg-accent px-5 py-3 text-sm font-medium text-black hover:brightness-95 transition">View More Use Cases →</a>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="max-w-[1024px] mx-auto px-6 py-20">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 mb-14">
+      <img src="assets/portrait.jpg" alt="Portrait of Omotoyosi Adegbite"
+           class="about-photo w-full max-w-[335px] aspect-[335/297] object-cover shrink-0" />
+      <div class="flex flex-col gap-6 max-w-[542px]">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-tight">
+          A designer who ships, mentors, and measures.
+        </h2>
+        <p class="text-[#c7c7cc] text-lg leading-relaxed">
+          I am Omotoyosi Adegbite, serving as the lead designer for various platforms,
+          including fleet management and IoT telematics. My work involves effectively
+          transforming connected vehicle data into comprehensive operational dashboards
+          and analytics workflows.
+        </p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="https://calendly.com/toyosi-design" target="_blank" rel="noopener" class="rounded-lg bg-accent px-5 py-3 text-sm font-medium text-black hover:brightness-95 transition">Get in touch</a>
+          <a href="https://docs.google.com/document/d/1ITqhh_fLRFJvXcp84Z-rrI_5-yQVW9PPjywMWhamkkw/export?format=pdf" target="_blank" rel="noopener" class="rounded-lg bg-white border border-[#e5e5e5] px-5 py-3 text-sm font-medium text-black hover:bg-slate-100 transition">Download resume ↓</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2" id="approach-grid">
+      <!-- cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- ============ FOOTER / CONTACT ============ -->
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="relative mt-24 sm:mt-32 overflow-hidden border-t border-white/10">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(120% 100% at 50% -10%, #1b1618 0%, #130f0e 42%, #0b0a0a 100%);"></div>
+    <div class="absolute -z-10 top-[-160px] left-1/2 -translate-x-1/2 size-[560px] rounded-full bg-accent/10 blur-[150px]"></div>
+
+    <div class="max-w-[1280px] mx-auto px-6 py-24 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-accent">Thanks for reading</p>
+      <h2 class="mt-6 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05] max-w-[18ch] mx-auto">Let's Design Products That Move People Forward.</h2>
+      <p class="mt-6 max-w-xl mx-auto text-lg text-[#c7c7cc] leading-relaxed">I'm a product designer who likes hard, technical problems. If that's useful to your team, let's talk.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:toyosi.design@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-white/90 transition"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> toyosi.design@gmail.com</a>
+        <a href="https://calendly.com/toyosi-design" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/5 transition">Book a 30-min intro ↗</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-[1280px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-[#8a8a8a]">© 2026 Omotoyosi Adegbite.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ---- Project case studies ----
+    const projects = [
+      {
+        tag: 'SaaS + IoT', dot: '#d9482b', year: '2026',
+        company: 'Zenduit (GoFleet)', title: 'Fleet Management System',
+        url: 'ZenduOne.html',
+        desc: 'Product design for enterprise fleet management and IoT SaaS, creating intuitive workflows, dashboards, and analytics for fleet operators.',
+        stats: [['+212', 'Adoption'], ['9 min', 'TTI'], ['9', 'NPS']],
+      },
+      {
+        tag: 'B2B industrial software platform', dot: '#0ea5e9', year: '2025',
+        company: 'Fluent Conveyors', title: 'Asset Management System',
+        url: 'Fluent.html',
+        desc: 'Product design for a self-service customer platform, where facility operators manage their equipment, order parts, request and sign quotes, pay invoices, track shipments, all in one place.',
+        stats: [['20+', 'Stakeholder Workshops'], ['50+', 'Requirements Defined'], ['100%', 'Design QA Ownership']],
+      },
+      {
+        tag: 'Community-as-a-Service platform', dot: '#f59e0b', year: '2023',
+        company: 'Propel', title: 'Community-as-a-Service Platform',
+        url: 'Propel.html',
+        desc: 'End-to-end product design for Propel.io, a Community-as-a-Service platform connecting 250+ technology communities with global organisations.',
+        stats: [['250+', 'Communities Connected'], ['40%', 'Onboarding Completion Rise'], ['98%', 'Design System Efficiency Gain']],
+      },
+      {
+        tag: 'Fintech · Open banking system', dot: '#d732a8', year: '2023',
+        company: 'Condueet', title: 'Open Banking System across Africa',
+        url: 'Condueet.html',
+        desc: 'End-to-end product design for an Open Banking system focused on unifying financial footprint across Africa, making banking easy with customer-focused solutions.',
+        stats: [['+38%', 'Onboarding Completion'], ['3 min', 'Time to First API Call'], ['−58%', 'Time to Connect']],
+      },
+      {
+        tag: 'Prompt engineering design', dot: '#6155f5', year: '2023',
+        company: 'Harvard Edu', title: 'AI Personal Assistant',
+        url: 'HavardEdu.html',
+        desc: 'End-to-end product design for an AI personal assistant that helps university students coordinate academic, financial, and social life, making every suggestion transparent with visible confidence levels.',
+        stats: [['78%', 'Suggestion Acceptance'], ['5/5', 'Preferred Confidence UI'], ['6 wks', 'Research to Prototype']],
+      },
+      {
+        tag: 'Cross-industry SaaS and AI products', dot: '#ffcc00', year: '2022',
+        company: 'Toptal', title: 'Cross-Industry Product Design',
+        url: 'https://www.toptal.com/designers/resume/omotoyosi-adegbite',
+        desc: 'Product design across AI, fintech, edtech, legal tech, wellness, and B2B SaaS, crafting intuitive experiences and scalable systems that increased adoption and efficiency.',
+        stats: [['5', 'Projects Delivered'], ['5', 'Industries Served'], ['44%', 'Highest Engagement Growth']],
+      },
+    ];
+
+    document.getElementById('project-grid').innerHTML = projects.map(p => `
+      <a href="${p.url || '#'}" ${p.url && p.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''} class="group block rounded-xl border border-white/5 bg-card overflow-hidden hover:border-white/15 transition-colors">
+        <div class="card-glow px-6 pt-6 pb-8 flex flex-col gap-24">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-black/70 px-2 py-1">
+              <span class="size-1.5 rounded-full" style="background:${p.dot}"></span>
+              <span class="text-[11px] font-medium uppercase tracking-wide">${p.tag}</span>
+            </span>
+            <span class="text-xs text-[#8a8a8a]">${p.year}</span>
+          </div>
+          <div class="flex items-end justify-between gap-4">
+            <div>
+              <p class="text-sm font-medium text-[#8a8a8a] mb-1">${p.company}</p>
+              <h3 class="text-2xl sm:text-[30px] font-semibold tracking-[-0.02em] leading-tight">${p.title}</h3>
+            </div>
+            <span class="grid place-items-center size-11 shrink-0 rounded-full bg-black text-white group-hover:bg-accent group-hover:text-black transition-colors">↗</span>
+          </div>
+        </div>
+        <div class="px-6 pb-6 flex flex-col gap-4">
+          <p class="text-[15px] text-white leading-relaxed">${p.desc}</p>
+          <hr class="border-white/10" />
+          <div class="flex items-start justify-between gap-2">
+            ${p.stats.map(([v, l]) => `
+              <div>
+                <p class="text-xl font-semibold">${v}</p>
+                <p class="text-xs text-[#c7c7cc] mt-0.5">${l}</p>
+              </div>`).join('')}
+          </div>
+        </div>
+      </a>
+    `).join('');
+
+    // ---- Approach cards ----
+    const approach = [
+      ['0 → 1 product design', 'Frame the problem, run the discovery, ship the first version.'],
+      ['Data-informed iteration', 'Pair research with analytics and experimentation.'],
+      ['Design leadership', 'Mentor ICs, run crits, partner with PM/ENG leads.'],
+      ['Systems & velocity', 'Tokens, primitives, and tooling that let small teams ship big.'],
+    ];
+
+    document.getElementById('approach-grid').innerHTML = approach.map(([title, desc]) => `
+      <div class="rounded-2xl border border-white/5 bg-panel p-6">
+        <span class="grid place-items-center size-10 rounded-xl bg-accent text-panel text-base mb-6">✦</span>
+        <h3 class="text-lg font-semibold mb-2">${title}</h3>
+        <p class="text-[15px] text-[#c7c7cc] leading-relaxed">${desc}</p>
+      </div>
+    `).join('');
+  </script>
+</body>
+</html>

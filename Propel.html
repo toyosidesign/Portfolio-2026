@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propel · Helping African tech talent grow without borders | Omotoyosi Adegbite</title>
+  <meta name="description" content="Case study: end-to-end product design for Propel, a three-sided platform connecting African tech talent, communities, and global companies, with financing built in." />
+
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            base: '#0b0a0a', card: '#141210', panel: '#16120e',
+            header: '#171717', accent: '#ffd8e4', brown: '#ac7f5e', ink: '#131418',
+            /* per-audience accents */
+            talent: '#4f7cff', primary: '#2f6bff', leader: '#f5a623',
+            company: '#16b364', finance: '#7c5cff', cyan: '#38d3ee',
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    ::selection { background: #ffd8e4; color: #000; }
+    .eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ffd8e4; font-weight: 700; }
+    /* subtle scroll reveal */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+      .reveal.in { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-base text-white font-sans antialiased">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="sticky top-0 z-50 pt-6 px-4 sm:px-6">
+    <div class="max-w-[1280px] mx-auto">
+      <nav class="flex items-center justify-between h-[54px] rounded-full border border-[#3d3e3f] bg-header/90 backdrop-blur-xl px-5 shadow-[0_4px_10px_rgba(0,0,0,0.35)]">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="grid place-items-center size-7 rounded-full bg-accent text-black text-xs font-bold">O</span>
+          <span class="text-base font-semibold tracking-tight text-white">Omotoyosi Adegbite</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm">
+          <li><a href="index.html#work" class="font-bold text-accent">Work</a></li>
+          <li><a href="index.html#about" class="text-[#c0c0c0] hover:text-white transition-colors">About</a></li>
+          <li><a href="index.html#contact" class="text-[#c0c0c0] hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 pt-14 sm:pt-20">
+    <div class="flex items-center justify-between mb-10">
+      <a href="index.html#work" class="inline-flex items-center gap-1.5 text-sm text-[#8a8a8a] hover:text-white transition-colors">← Back to all work</a>
+      <a href="#" class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-white transition-colors">View live project →</a>
+    </div>
+
+    <p class="text-sm text-[#8a8a8a]">Propel &nbsp;|&nbsp; Community-as-a-Service Platform</p>
+
+    <h1 class="mt-3 text-4xl sm:text-6xl font-semibold tracking-[-0.03em] leading-[1.03]">
+      Helping African tech talent grow without borders.
+    </h1>
+    <p class="max-w-4xl mt-6 text-lg text-[#c7c7cc] leading-relaxed">
+      Redesigning Propel into one connected platform where talent finds global jobs, communities
+      grow their members, and companies hire from a trusted network, with financing built in for
+      the moments that matter.
+    </p>
+
+    <!-- Hero meta -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5">
+        <p class="eyebrow">My role</p>
+        <p class="mt-2 font-medium text-white text-sm leading-snug">Lead Product Designer<br /><span class="text-[#8a8a8a]">End-to-end ownership</span></p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Timeline</p>
+        <p class="mt-2 font-medium text-white text-sm leading-snug">14 weeks<br /><span class="text-[#8a8a8a]">Q1–Q2 2025</span></p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Team</p>
+        <p class="mt-2 font-medium text-white text-sm leading-snug">2 PMs · 2 Engineers<br /><span class="text-[#8a8a8a]">1 Researcher</span></p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Platform</p>
+        <p class="mt-2 font-medium text-white text-sm leading-snug">iOS · Android · Web<br /><span class="text-[#8a8a8a]">Talent · Community · B2B</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HERO MOCKUP - Jobs dashboard ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-12">
+    <div class="rounded-2xl border border-white/10 bg-white text-[#0f172a] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.55)]">
+      <!-- browser bar -->
+      <div class="flex items-center gap-2 px-4 h-9 bg-[#f1f3f5] border-b border-black/5">
+        <span class="size-2.5 rounded-full bg-[#ff5f57]"></span>
+        <span class="size-2.5 rounded-full bg-[#febc2e]"></span>
+        <span class="size-2.5 rounded-full bg-[#28c840]"></span>
+        <span class="ml-3 text-[11px] text-[#8a94a6]">app.propel.community/jobs</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr]">
+        <!-- sidebar -->
+        <aside class="hidden sm:flex flex-col gap-1 p-4 border-r border-black/5 bg-[#fafbfc] text-sm">
+          <div class="flex items-center gap-2 mb-4 rounded-lg border border-black/10 px-2.5 py-2">
+            <span class="grid place-items-center size-6 rounded-md bg-primary/10 text-primary text-xs font-bold">◎</span>
+            <span class="font-semibold text-[13px]">GirlsCanCode</span>
+          </div>
+          <a class="rounded-md px-2.5 py-1.5 text-[#5b6472] hover:bg-black/[0.03]">Dashboard</a>
+          <a class="rounded-md px-2.5 py-1.5 bg-primary/10 text-primary font-semibold flex items-center justify-between">Jobs <span class="text-[10px] bg-primary text-white rounded px-1.5 py-0.5">9+</span></a>
+          <a class="rounded-md px-2.5 py-1.5 text-[#5b6472] hover:bg-black/[0.03]">Finance</a>
+          <a class="rounded-md px-2.5 py-1.5 text-[#5b6472] hover:bg-black/[0.03]">Events</a>
+          <a class="rounded-md px-2.5 py-1.5 text-[#5b6472] hover:bg-black/[0.03]">Propel Learning</a>
+          <a class="rounded-md px-2.5 py-1.5 text-[#5b6472] hover:bg-black/[0.03]">Mentorships</a>
+          <a class="rounded-md px-2.5 py-1.5 text-[#5b6472] hover:bg-black/[0.03]">Community Wall</a>
+        </aside>
+        <!-- main -->
+        <div class="p-5 sm:p-6">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold tracking-tight">Jobs</h3>
+            <div class="flex items-center gap-2 text-xs text-[#5b6472]">
+              <span class="rounded-full bg-black/[0.04] px-2 py-1">Refer &amp; Earn</span>
+              <span class="flex items-center gap-1.5"><span class="size-5 rounded-full bg-leader/70"></span>Beth ▾</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-5 mt-3 text-[13px] border-b border-black/5 pb-2">
+            <span class="font-semibold text-primary border-b-2 border-primary pb-2 -mb-2">All Jobs <span class="text-[10px] text-[#8a94a6]">9+</span></span>
+            <span class="text-[#8a94a6]">Applied</span>
+            <span class="text-[#8a94a6]">Saved</span>
+          </div>
+          <div class="mt-3 flex items-center gap-2">
+            <div class="flex-1 rounded-lg border border-black/10 px-3 py-2 text-[13px] text-[#8a94a6]">Search roles, companies, skills…</div>
+            <div class="rounded-lg border border-black/10 px-3 py-2 text-[13px] text-[#5b6472]">Filters</div>
+          </div>
+          <p class="mt-3 text-[12px] text-[#5b6472]"><span class="font-semibold text-[#0f172a]">12 matches</span> for your profile · sorted by best fit</p>
+
+          <!-- best-match job card -->
+          <div class="mt-3 rounded-xl border border-primary/30 ring-1 ring-primary/10 p-4">
+            <span class="inline-block text-[10px] font-bold tracking-wide text-primary bg-primary/10 rounded px-1.5 py-0.5">BEST MATCH</span>
+            <div class="mt-2 flex items-start justify-between gap-4">
+              <div class="flex gap-3">
+                <span class="grid place-items-center size-9 rounded-lg bg-[#16b364] text-white text-xs font-bold">FM</span>
+                <div>
+                  <p class="font-semibold text-[14px]">Product Designer, Growth <span class="text-[10px] text-company font-semibold">● Open</span></p>
+                  <p class="text-[12px] text-[#5b6472]">FairMoney · Fintech · Posted 1w ago</p>
+                  <p class="mt-2 text-[12px] text-primary">✔ Matches your Figma, User Research &amp; 3 more skills</p>
+                </div>
+              </div>
+              <div class="text-right shrink-0">
+                <p class="text-[13px] font-bold">€34k<span class="font-normal text-[#8a94a6] text-[11px]">/year</span></p>
+                <div class="mt-1 grid place-items-center size-10 ml-auto rounded-full border-2 border-company text-company text-[11px] font-bold">94%</div>
+                <button class="mt-1 rounded-lg bg-primary text-white text-[12px] font-semibold px-4 py-1.5">Apply</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- second job card -->
+          <div class="mt-3 rounded-xl border border-black/10 p-4 flex items-start justify-between gap-4">
+            <div class="flex gap-3">
+              <span class="grid place-items-center size-9 rounded-lg bg-finance text-white text-xs font-bold">RH</span>
+              <div>
+                <p class="font-semibold text-[14px]">Senior UX Designer <span class="text-[10px] text-company font-semibold">● Open</span></p>
+                <p class="text-[12px] text-[#5b6472]">Reliance Healthcare · Health · Posted 1w ago</p>
+                <p class="mt-2 text-[12px] text-primary">✔ Matches your Wireframing &amp; Systems Thinking</p>
+              </div>
+            </div>
+            <div class="text-right shrink-0">
+              <p class="text-[13px] font-bold">€28k<span class="font-normal text-[#8a94a6] text-[11px]">/year</span></p>
+              <div class="mt-1 grid place-items-center size-10 ml-auto rounded-full border-2 border-primary text-primary text-[11px] font-bold">86%</div>
+              <button class="mt-1 rounded-lg bg-primary text-white text-[12px] font-semibold px-4 py-1.5">Apply</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mt-3 text-xs text-[#5a5a5a] text-center">Talent dashboard, role-aware matching with transparent fit scores.</p>
+  </section>
+
+  <!-- ============ SNAPSHOT / TL;DR ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p class="eyebrow">The snapshot</p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">Three audiences, one borderless network.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      Propel sits between three very different people: the developer in Lagos chasing a remote role,
+      the community leader trying to deliver value to thousands of members, and the recruiter anywhere
+      in the world who needs vetted talent fast. They were living in disconnected products. I unified them.
+    </p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-xs font-semibold tracking-wide text-[#8a8a8a]">01 / CHALLENGE</p>
+        <p class="mt-4 text-xl font-semibold">A fragmented ecosystem</p>
+        <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Talent, communities, and companies each used separate, half-built surfaces. Value leaked at every handoff, and trust with it.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-xs font-semibold tracking-wide text-[#8a8a8a]">02 / MY ROLE</p>
+        <p class="mt-4 text-xl font-semibold">Design lead, 0→1 + 1→n</p>
+        <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Owned research synthesis, IA, interaction design, the component system, and validation across talent, community, and B2B surfaces.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-xs font-semibold tracking-wide text-[#8a8a8a]">03 / OUTCOME</p>
+        <p class="mt-4 text-xl font-semibold">One account, three jobs</p>
+        <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">A role-aware platform that grew activation and gave communities a reason to stay, with measurable lifts across the funnel.</p>
+      </div>
+    </div>
+
+    <!-- headline stats -->
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <p class="text-4xl sm:text-5xl font-semibold tracking-tight">+38<span class="text-2xl align-top text-[#8a8a8a]">%</span></p>
+        <p class="mt-2 text-sm text-[#a1a1aa]">Talent onboarding completion</p>
+      </div>
+      <div>
+        <p class="text-4xl sm:text-5xl font-semibold tracking-tight">2.4<span class="text-2xl align-top text-[#8a8a8a]">×</span></p>
+        <p class="mt-2 text-sm text-[#a1a1aa]">Qualified applications per role</p>
+      </div>
+      <div>
+        <p class="text-4xl sm:text-5xl font-semibold tracking-tight">−41<span class="text-2xl align-top text-[#8a8a8a]">%</span></p>
+        <p class="mt-2 text-sm text-[#a1a1aa]">Time-to-first-application</p>
+      </div>
+      <div>
+        <p class="text-4xl sm:text-5xl font-semibold tracking-tight">+27<span class="text-2xl align-top text-[#8a8a8a]">%</span></p>
+        <p class="mt-2 text-sm text-[#a1a1aa]">90-day community retention</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTEXT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16">
+      <div>
+        <p class="eyebrow">Context</p>
+        <h2 class="mt-3 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">What Propel is.</h2>
+      </div>
+      <div>
+        <p class="text-xl font-semibold leading-snug">Propel connects the African tech-talent ecosystem to the global workforce. It runs as a three-sided network.</p>
+        <p class="max-w-4xl mt-5 text-[15px] text-[#a1a1aa] leading-relaxed">
+          On one side, hundreds of thousands of members across specialised tech communities. On another,
+          community leaders who organise and grow them. On the third, companies who tap that network
+          on-demand to hire, beta-test, and run hackathons. The product's job is to make value flow between
+          all three, and to keep talent equipped enough to actually show up for the opportunity, which is
+          where financing comes in.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-2.5 text-[13px]">
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/[0.04] border border-white/10 px-3 py-1.5"><span class="size-1.5 rounded-full bg-talent"></span>Talent</span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/[0.04] border border-white/10 px-3 py-1.5"><span class="size-1.5 rounded-full bg-leader"></span>Community leaders</span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/[0.04] border border-white/10 px-3 py-1.5"><span class="size-1.5 rounded-full bg-primary"></span>Companies</span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/[0.04] border border-white/10 px-3 py-1.5"><span class="size-1.5 rounded-full bg-company"></span>Embedded finance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p class="eyebrow">The problem</p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">Everyone was one tab away from giving up.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      The opportunity was real, but the experience asked too much of people who already had the least
+      margin for friction.
+    </p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-lg font-semibold">Talent bounced early</p>
+        <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Long, generic onboarding asked for everything up front and matched poorly. People left before they ever saw a relevant role.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-lg font-semibold">Communities had no reason to stay</p>
+        <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Leaders couldn't see member outcomes or earn from them. Without proof of value, engagement and revenue both stalled.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-lg font-semibold">Companies couldn't trust the pipeline</p>
+        <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Recruiters got volume, not signal, no shared view of vetting, community context, or relocation-readiness.</p>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-xl border border-cyan/20 bg-cyan/[0.06] px-6 py-5">
+      <p class="text-lg text-[#e6f9ff]">A platform that connects three sides only works if <em class="text-cyan not-italic font-semibold">all three feel the value on day one.</em></p>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p class="eyebrow">Discovery &amp; research</p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">I went looking for where trust breaks.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      A mixed-methods sprint to understand all three sides before drawing a single screen.
+    </p>
+
+    <!-- methods -->
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5">
+        <p class="eyebrow">Method</p>
+        <p class="mt-3 text-xl font-semibold">24 interviews</p>
+        <p class="mt-2 text-sm text-[#8a8a8a] leading-snug">13 talent, 6 community leaders, 5 recruiters across 4 countries.</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Method</p>
+        <p class="mt-3 text-xl font-semibold">610 survey responses</p>
+        <p class="mt-2 text-sm text-[#8a8a8a] leading-snug">Members ranking their biggest blockers to getting hired.</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Method</p>
+        <p class="mt-3 text-xl font-semibold">Funnel teardown</p>
+        <p class="mt-2 text-sm text-[#8a8a8a] leading-snug">Drop-off analysis across signup → profile → apply.</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Method</p>
+        <p class="mt-3 text-xl font-semibold">3 community ride-alongs</p>
+        <p class="mt-2 text-sm text-[#8a8a8a] leading-snug">Shadowing leaders running events and job shares.</p>
+      </div>
+    </div>
+
+    <!-- insights -->
+    <div class="mt-12 divide-y divide-white/10 border-t border-white/10">
+      <div class="grid sm:grid-cols-[3rem_1fr] gap-4 py-7">
+        <p class="text-sm font-semibold text-[#8a8a8a]">01</p>
+        <div>
+          <p class="text-xl font-semibold">Relevance beats volume.</p>
+          <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Members didn't want more jobs, they wanted to believe the few they saw were actually attainable. Match confidence, not catalogue size, drove whether they applied.</p>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-[3rem_1fr] gap-4 py-7">
+        <p class="text-sm font-semibold text-[#8a8a8a]">02</p>
+        <div>
+          <p class="text-xl font-semibold">The blocker was often a device, not a skill.</p>
+          <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">A recurring, under-served story: qualified people stalling because of a broken laptop or upfront relocation costs. Capability was never the issue; cash-flow was.</p>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-[3rem_1fr] gap-4 py-7">
+        <p class="text-sm font-semibold text-[#8a8a8a]">03</p>
+        <div>
+          <p class="text-xl font-semibold">Leaders are the trust layer.</p>
+          <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Members trusted opportunities far more when they came through their community. But leaders had no tooling to surface, track, or get credit for those outcomes.</p>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-[3rem_1fr] gap-4 py-7">
+        <p class="text-sm font-semibold text-[#8a8a8a]">04</p>
+        <div>
+          <p class="text-xl font-semibold">Companies pay for signal, not sourcing.</p>
+          <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Recruiters valued community vetting and context over raw reach, but the product gave them a résumé pile with none of that context attached.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PERSONAS ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p class="eyebrow">Who we're designing for</p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">Three people, one network.</h2>
+
+    <div class="mt-10 space-y-4">
+      <!-- Amara -->
+      <div class="rounded-2xl border border-white/10 bg-card p-6 sm:p-7 grid sm:grid-cols-[92px_1fr] gap-6 items-start">
+        <div class="size-[92px] rounded-xl bg-gradient-to-br from-accent/25 to-accent/5 border border-white/10 grid place-items-center text-2xl font-semibold text-accent">A</div>
+        <div>
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <p class="text-xl font-semibold">Amara, 24</p>
+            <p class="text-xs font-semibold tracking-wide text-accent uppercase">The Talent · Lagos, Nigeria</p>
+          </div>
+          <p class="mt-3 text-lg italic text-[#e6e6e6]">"I know I can do the work. I just need someone to actually look at me."</p>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Self-taught frontend developer, two years in. Applies constantly, hears back rarely, and isn't sure which roles are even realistic for her from Lagos.</p>
+          <div class="mt-4 flex flex-wrap gap-x-6 gap-y-1.5 text-sm">
+            <p><span class="text-[#8a8a8a]">Goal:</span> A remote role with a growing company</p>
+            <p><span class="text-[#8a8a8a]">Blocker:</span> No signal that she's a real match</p>
+            <p><span class="text-[#8a8a8a]">Need:</span> A reliable laptop</p>
+          </div>
+        </div>
+      </div>
+      <!-- Kwame -->
+      <div class="rounded-2xl border border-white/10 bg-card p-6 sm:p-7 grid sm:grid-cols-[92px_1fr] gap-6 items-start">
+        <div class="size-[92px] rounded-xl bg-gradient-to-br from-accent/25 to-accent/5 border border-white/10 grid place-items-center text-2xl font-semibold text-accent">K</div>
+        <div>
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <p class="text-xl font-semibold">Kwame, 31</p>
+            <p class="text-xs font-semibold tracking-wide text-accent uppercase">The Community Leader · Accra, Ghana</p>
+          </div>
+          <p class="mt-3 text-lg italic text-[#e6e6e6]">"My members keep growing, but I can't prove the impact, or fund the work."</p>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Runs a 500-member data community. Shares jobs in a chat thread, manually. Wants to show outcomes and earn something to keep the lights on.</p>
+          <div class="mt-4 flex flex-wrap gap-x-6 gap-y-1.5 text-sm">
+            <p><span class="text-[#8a8a8a]">Goal:</span> Member outcomes + sustainable revenue</p>
+            <p><span class="text-[#8a8a8a]">Blocker:</span> No analytics, no payout</p>
+            <p><span class="text-[#8a8a8a]">Need:</span> One-click job sharing</p>
+          </div>
+        </div>
+      </div>
+      <!-- Lena -->
+      <div class="rounded-2xl border border-white/10 bg-card p-6 sm:p-7 grid sm:grid-cols-[92px_1fr] gap-6 items-start">
+        <div class="size-[92px] rounded-xl bg-gradient-to-br from-accent/25 to-accent/5 border border-white/10 grid place-items-center text-2xl font-semibold text-accent">L</div>
+        <div>
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <p class="text-xl font-semibold">Lena, 38</p>
+            <p class="text-xs font-semibold tracking-wide text-accent uppercase">The Recruiter · Berlin, Germany</p>
+          </div>
+          <p class="mt-3 text-lg italic text-[#e6e6e6]">"I don't need a thousand CVs. I need ten I can trust."</p>
+          <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Heads talent at a 120-person scaleup. Needs vetted, relocation-ready engineers quickly, with the community context that tells her who's a real fit.</p>
+          <div class="mt-4 flex flex-wrap gap-x-6 gap-y-1.5 text-sm">
+            <p><span class="text-[#8a8a8a]">Goal:</span> Fast, high-trust hires</p>
+            <p><span class="text-[#8a8a8a]">Blocker:</span> No vetting signal</p>
+            <p><span class="text-[#8a8a8a]">Need:</span> Context-rich shortlists</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEFINE / PRINCIPLES ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16">
+      <div>
+        <p class="eyebrow">Framing the work</p>
+        <h2 class="mt-3 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">From insights to a point of view.</h2>
+        <p class="max-w-4xl mt-6 text-[15px] text-[#a1a1aa] leading-relaxed">I reframed the brief from "add more features to three apps" into one question:</p>
+        <p class="mt-4 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-snug">How might we make <em class="text-accent not-italic">one account</em> deliver three different jobs, without diluting any of them?</p>
+        <p class="max-w-4xl mt-6 text-[15px] text-[#a1a1aa] leading-relaxed">That led to four principles I held every decision against.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10 self-start">
+        <div class="bg-base p-6">
+          <p class="eyebrow">Principle 01</p>
+          <p class="mt-3 text-lg font-semibold">Show the match, not the maze</p>
+          <p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Lead with relevance and confidence. Earn the next tap before asking for more.</p>
+        </div>
+        <div class="bg-base p-6">
+          <p class="eyebrow">Principle 02</p>
+          <p class="mt-3 text-lg font-semibold">Remove the real blocker</p>
+          <p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">If a device or upfront cost stands between talent and a job, treat that as a design problem.</p>
+        </div>
+        <div class="bg-base p-6">
+          <p class="eyebrow">Principle 03</p>
+          <p class="mt-3 text-lg font-semibold">Make leaders heroes</p>
+          <p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Give communities visible outcomes and real revenue. Their trust is the product.</p>
+        </div>
+        <div class="bg-base p-6">
+          <p class="eyebrow">Principle 04</p>
+          <p class="mt-3 text-lg font-semibold">Sell signal, not volume</p>
+          <p class="max-w-4xl mt-2 text-sm text-[#a1a1aa] leading-relaxed">Carry community vetting and context all the way to the recruiter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INFORMATION ARCHITECTURE ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p class="eyebrow">Information architecture</p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">One identity, role-aware surfaces.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      Instead of three apps, a single account that reshapes itself around who you are and what you're here to do.
+    </p>
+
+    <div class="mt-10 rounded-2xl border border-white/10 bg-card p-6 sm:p-8">
+      <div class="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-5 text-center">
+        <p class="font-semibold">One Propel account</p>
+        <p class="mt-1 text-sm text-[#8a8a8a]">Shared identity · profile · trust graph · wallet</p>
+      </div>
+      <div class="mt-6 grid md:grid-cols-3 gap-4">
+        <div class="rounded-xl border border-white/10 p-5">
+          <p class="flex items-center gap-2 font-semibold"><span class="size-2 rounded-full bg-talent"></span>Talent space</p>
+          <ul class="mt-4 space-y-2.5 text-sm text-[#c7c7cc]">
+            <li>Guided matching &amp; profile</li>
+            <li>Apply &amp; track</li>
+            <li>Community feed</li>
+            <li>Wallet &amp; financing</li>
+          </ul>
+        </div>
+        <div class="rounded-xl border border-white/10 p-5">
+          <p class="flex items-center gap-2 font-semibold"><span class="size-2 rounded-full bg-leader"></span>Leader console</p>
+          <ul class="mt-4 space-y-2.5 text-sm text-[#c7c7cc]">
+            <li>Member analytics</li>
+            <li>One-click job board</li>
+            <li>Commissions &amp; payouts</li>
+            <li>Resources &amp; events</li>
+          </ul>
+        </div>
+        <div class="rounded-xl border border-white/10 p-5">
+          <p class="flex items-center gap-2 font-semibold"><span class="size-2 rounded-full bg-company"></span>Company hub</p>
+          <ul class="mt-4 space-y-2.5 text-sm text-[#c7c7cc]">
+            <li>Brief &amp; community match</li>
+            <li>Context-rich shortlists</li>
+            <li>Pipeline &amp; hackathons</li>
+            <li>Outcome reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p class="eyebrow">How it came together</p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">The process.</h2>
+
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5">
+        <p class="text-sm font-semibold text-[#8a8a8a]">01</p>
+        <p class="mt-2 font-semibold">Discover</p>
+        <p class="mt-2 text-sm text-[#8a8a8a] leading-snug">Interviews, survey, funnel teardown, community ride-alongs.</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-sm font-semibold text-[#8a8a8a]">02</p>
+        <p class="mt-2 font-semibold">Define</p>
+        <p class="mt-2 text-sm text-[#8a8a8a] leading-snug">Personas, JTBD, principles, one reframed problem.</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-sm font-semibold text-[#8a8a8a]">03</p>
+        <p class="mt-2 font-semibold">Ideate</p>
+        <p class="mt-2 text-sm text-[#8a8a8a] leading-snug">Crazy-8s, IA mapping, flow sketches across all three sides.</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-sm font-semibold text-[#8a8a8a]">04</p>
+        <p class="mt-2 font-semibold">Design</p>
+        <p class="mt-2 text-sm text-[#8a8a8a] leading-snug">Hi-fi flows, a shared component system, prototypes.</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-sm font-semibold text-[#8a8a8a]">05</p>
+        <p class="mt-2 font-semibold">Validate</p>
+        <p class="mt-2 text-sm text-[#8a8a8a] leading-snug">Usability tests, iteration, measurement plan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOLUTION ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p class="eyebrow">The solution</p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">Five surfaces that pass trust forward.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      Each surface is designed for one of our people, but every one hands context to the next, so the
+      network compounds instead of leaking.
+    </p>
+
+    <!-- SURFACE 01 - mockup left, text right -->
+    <div class="mt-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div class="rounded-2xl border border-white/10 bg-white text-[#0f172a] overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.5)]">
+        <div class="flex items-center gap-2 px-4 h-9 bg-[#f1f3f5] border-b border-black/5">
+          <span class="size-2.5 rounded-full bg-[#ff5f57]"></span><span class="size-2.5 rounded-full bg-[#febc2e]"></span><span class="size-2.5 rounded-full bg-[#28c840]"></span>
+          <span class="ml-3 text-[11px] text-[#8a94a6]">app.propel.community/jobs</span>
+        </div>
+        <div class="p-5">
+          <p class="text-[13px] font-bold">Matches for you</p>
+          <p class="text-[11px] text-[#8a94a6]">12 new roles · sorted by fit</p>
+          <div class="mt-3 rounded-xl border border-primary/30 ring-1 ring-primary/10 p-4">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex gap-2.5">
+                <span class="grid place-items-center size-8 rounded-lg bg-[#0f172a] text-white text-xs font-bold">N</span>
+                <div>
+                  <p class="font-semibold text-[13px]">Frontend Engineer</p>
+                  <p class="text-[11px] text-[#8a94a6]">Nordic · Remote (EU hrs)</p>
+                </div>
+              </div>
+              <div class="text-right"><p class="text-company font-bold text-[13px]">94%</p><p class="text-[10px] text-[#8a94a6]">match</p></div>
+            </div>
+            <div class="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+              <span class="rounded bg-company/10 text-company px-2 py-0.5">React ✓</span>
+              <span class="rounded bg-company/10 text-company px-2 py-0.5">TypeScript ✓</span>
+              <span class="rounded bg-company/10 text-company px-2 py-0.5">Relocation ✓</span>
+            </div>
+            <button class="mt-3 w-full rounded-lg bg-primary text-white text-[12px] font-semibold py-2">Apply with vouched profile</button>
+          </div>
+          <div class="mt-3 rounded-xl border border-black/10 p-4 flex items-center justify-between">
+            <div class="flex gap-2.5">
+              <span class="grid place-items-center size-8 rounded-lg bg-leader text-white text-xs font-bold">F</span>
+              <div><p class="font-semibold text-[13px]">UI Engineer</p><p class="text-[11px] text-[#8a94a6]">Farah · Remote</p></div>
+            </div>
+            <div class="text-right"><p class="text-primary font-bold text-[13px]">88%</p><p class="text-[10px] text-primary/70">Add CSS Grid →</p></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-semibold tracking-wide text-accent uppercase">Surface 01 · For Amara (Community Member)</p>
+        <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Job matching that earns the apply.</h3>
+        <p class="max-w-4xl mt-4 text-[15px] text-[#a1a1aa] leading-relaxed">A guided, progressive profile replaces the wall of fields. Every role leads with a transparent match score and the why behind it, so talent spends energy on jobs they can actually win, and applies with confidence.</p>
+        <ul class="mt-5 space-y-2.5 text-[15px] text-[#c7c7cc]">
+          <li class="flex gap-3"><span class="text-accent">✦</span>Progressive profiling, three taps to a first match</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>Explainable match score with skill-gap nudges</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>One-tap apply with a community-vouched profile</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>Status tracking so no one is left guessing</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SURFACE 02 - text left, mockup right -->
+    <div class="mt-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div class="lg:order-2 rounded-2xl border border-white/10 bg-white text-[#0f172a] overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.5)]">
+        <div class="flex items-center gap-2 px-4 h-9 bg-[#f1f3f5] border-b border-black/5">
+          <span class="size-2.5 rounded-full bg-[#ff5f57]"></span><span class="size-2.5 rounded-full bg-[#febc2e]"></span><span class="size-2.5 rounded-full bg-[#28c840]"></span>
+          <span class="ml-3 text-[11px] text-[#8a94a6]">app.propel.community/onboarding</span>
+        </div>
+        <div class="p-5">
+          <p class="text-[11px] font-semibold tracking-wide text-primary">JOIN YOUR COMMUNITY</p>
+          <p class="text-lg font-bold mt-1">Welcome to Propel 👋</p>
+          <p class="text-[12px] text-[#5b6472]">via Data Community Africa</p>
+          <div class="mt-4 rounded-xl border border-black/10 p-4">
+            <p class="text-[13px] font-semibold">What do you build with?</p>
+            <p class="text-[11px] text-[#8a94a6]">Pulled 4 skills from your community profile</p>
+            <div class="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+              <span class="rounded-full bg-company/10 text-company px-2.5 py-1">Python ✓</span>
+              <span class="rounded-full bg-company/10 text-company px-2.5 py-1">SQL ✓</span>
+              <span class="rounded-full bg-company/10 text-company px-2.5 py-1">Pandas ✓</span>
+              <span class="rounded-full border border-black/10 text-[#5b6472] px-2.5 py-1">+ Add</span>
+            </div>
+            <button class="mt-4 w-full rounded-lg bg-primary text-white text-[12px] font-semibold py-2">Continue</button>
+          </div>
+          <div class="mt-3 rounded-xl border border-company/30 bg-company/[0.06] p-3 flex items-center gap-2.5">
+            <span class="grid place-items-center size-6 rounded-full bg-company text-white text-xs">✓</span>
+            <div><p class="text-[12px] font-semibold">Vouched by your community</p><p class="text-[11px] text-[#5b6472]">Boosts your match visibility</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:order-1">
+        <p class="text-xs font-semibold tracking-wide text-accent uppercase">Surface 02 · For Amara &amp; Kwame (Member &amp; Leader)</p>
+        <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Onboarding through community, not a form.</h3>
+        <p class="max-w-4xl mt-4 text-[15px] text-[#a1a1aa] leading-relaxed">New members arrive via the community they already trust. Onboarding inherits that context: your community vouches for you, your first roles are pre-filtered to your stack, and value shows up before any heavy data entry.</p>
+        <ul class="mt-5 space-y-2.5 text-[15px] text-[#c7c7cc]">
+          <li class="flex gap-3"><span class="text-accent">✦</span>Invite-aware onboarding tied to a community</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>Value-first: see real matches before full signup</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>Skills imported from community activity</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>Warm handoff into the member feed</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SURFACE 03 - mockup left, text right -->
+    <div class="mt-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div class="rounded-2xl border border-white/10 bg-white text-[#0f172a] overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.5)]">
+        <div class="flex items-center gap-2 px-4 h-9 bg-[#f1f3f5] border-b border-black/5">
+          <span class="size-2.5 rounded-full bg-[#ff5f57]"></span><span class="size-2.5 rounded-full bg-[#febc2e]"></span><span class="size-2.5 rounded-full bg-[#28c840]"></span>
+          <span class="ml-3 text-[11px] text-[#8a94a6]">app.propel.community/wallet/financing</span>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center justify-between">
+            <div><p class="text-[11px] font-semibold tracking-wide text-finance">GET EQUIPPED</p><p class="text-lg font-bold">Device financing</p></div>
+            <span class="rounded-full bg-company/10 text-company text-[11px] font-semibold px-2.5 py-1">✓ You qualify</span>
+          </div>
+          <p class="mt-1 text-[12px] text-[#5b6472]">Offered because <span class="font-semibold text-[#0f172a]">Frontend Engineer · Nordic</span> needs a reliable laptop to start.</p>
+          <div class="mt-4 rounded-xl border border-black/10 p-4">
+            <div class="flex items-center justify-between">
+              <div class="flex gap-3 items-center">
+                <span class="text-2xl">💻</span>
+                <div><p class="text-[13px] font-semibold">MacBook Air M3</p><p class="text-[11px] text-[#8a94a6]">13" · 16GB · Work-ready</p></div>
+              </div>
+              <div class="text-right"><p class="text-lg font-bold">₦18,500<span class="text-[11px] font-normal text-[#8a94a6]">/mo</span></p><p class="text-[10px] text-[#8a94a6]">6 of 12 months</p></div>
+            </div>
+            <div class="mt-3 h-1.5 rounded-full bg-black/10 overflow-hidden"><div class="h-full w-1/2 bg-finance"></div></div>
+            <div class="mt-3 flex items-center justify-between text-[11px]">
+              <span class="text-[#5b6472]">Total cost shown up front · 0 hidden fees</span>
+              <span class="text-finance font-semibold">See full terms →</span>
+            </div>
+            <button class="mt-3 w-full rounded-lg bg-primary text-white text-[12px] font-semibold py-2">Accept &amp; get equipped</button>
+          </div>
+          <div class="mt-3 rounded-xl border border-black/10 p-3 flex items-center gap-2.5">
+            <span class="text-lg">✈️</span>
+            <div><p class="text-[12px] font-semibold">Relocation advance</p><p class="text-[11px] text-[#5b6472]">Repay after your first paycheck</p></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-semibold tracking-wide text-accent uppercase">Surface 03 · For Amara (Community Member)</p>
+        <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Financing that removes the real blocker.</h3>
+        <p class="max-w-4xl mt-4 text-[15px] text-[#a1a1aa] leading-relaxed">When the only thing between a member and a role is a working laptop or relocation cash, Propel offers transparent device and credit financing, surfaced at the exact moment of need, with plain-language terms and no dark patterns.</p>
+        <ul class="mt-5 space-y-2.5 text-[15px] text-[#c7c7cc]">
+          <li class="flex gap-3"><span class="text-accent">✦</span>Device &amp; relocation financing, surfaced in-context</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>Total cost shown up front, zero hidden fees</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>Plain-language terms, no dark patterns</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>Repay after your first paycheck</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SURFACE 04 - text left, mockup right -->
+    <div class="mt-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div class="lg:order-2 rounded-2xl border border-white/10 bg-white text-[#0f172a] overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.5)]">
+        <div class="flex items-center gap-2 px-4 h-9 bg-[#f1f3f5] border-b border-black/5">
+          <span class="size-2.5 rounded-full bg-[#ff5f57]"></span><span class="size-2.5 rounded-full bg-[#febc2e]"></span><span class="size-2.5 rounded-full bg-[#28c840]"></span>
+          <span class="ml-3 text-[11px] text-[#8a94a6]">propel.community/leaders/data-africa</span>
+        </div>
+        <div class="p-6">
+          <div class="grid grid-cols-3 gap-4">
+            <div><p class="text-2xl font-bold">9,240</p><p class="text-[11px] text-[#8a94a6]">Members</p></div>
+            <div><p class="text-2xl font-bold">147</p><p class="text-[11px] text-[#8a94a6]">Hired this year</p></div>
+            <div><p class="text-2xl font-bold text-company">$6.1k</p><p class="text-[11px] text-[#8a94a6]">Commission earned</p></div>
+          </div>
+          <button class="mt-5 w-full rounded-lg bg-primary text-white text-[12px] font-semibold py-2.5">Share a role with 9,240 members · Post job</button>
+          <div class="mt-5">
+            <p class="text-[11px] text-[#8a94a6] mb-2">Engagement · last 30 days</p>
+            <div class="flex items-end gap-1.5 h-16">
+              <div class="flex-1 bg-primary/20 rounded-t" style="height:40%"></div>
+              <div class="flex-1 bg-primary/30 rounded-t" style="height:60%"></div>
+              <div class="flex-1 bg-primary/40 rounded-t" style="height:50%"></div>
+              <div class="flex-1 bg-primary/50 rounded-t" style="height:75%"></div>
+              <div class="flex-1 bg-primary/60 rounded-t" style="height:65%"></div>
+              <div class="flex-1 bg-primary/80 rounded-t" style="height:90%"></div>
+              <div class="flex-1 bg-primary rounded-t" style="height:100%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:order-1">
+        <p class="text-xs font-semibold tracking-wide text-accent uppercase">Surface 04 · For Kwame (Community Leader)</p>
+        <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">A console that makes leaders heroes.</h3>
+        <p class="max-w-4xl mt-4 text-[15px] text-[#a1a1aa] leading-relaxed">Leaders finally see what their community produces: members hired, skills growing, opportunities shared, and they earn commission on every hire. Sharing a role is one click; the impact and the payout are right there next to it.</p>
+        <ul class="mt-5 space-y-2.5 text-[15px] text-[#c7c7cc]">
+          <li class="flex gap-3"><span class="text-accent">✦</span>Member outcome analytics &amp; engagement</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>One-click job board to the whole community</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>Commission tracking &amp; transparent payouts</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>Resource &amp; event distribution</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SURFACE 05 - mockup left, text right -->
+    <div class="mt-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div class="rounded-2xl border border-white/10 bg-white text-[#0f172a] overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.5)]">
+        <div class="flex items-center gap-2 px-4 h-9 bg-[#f1f3f5] border-b border-black/5">
+          <span class="size-2.5 rounded-full bg-[#ff5f57]"></span><span class="size-2.5 rounded-full bg-[#febc2e]"></span><span class="size-2.5 rounded-full bg-[#28c840]"></span>
+          <span class="ml-3 text-[11px] text-[#8a94a6]">propel.io/hire/pipeline</span>
+        </div>
+        <div class="p-5">
+          <div class="grid grid-cols-4 gap-2 text-[11px]">
+            <div>
+              <div class="flex items-center justify-between mb-2"><span class="font-semibold">Sourced</span><span class="text-[#8a94a6]">14</span></div>
+              <div class="space-y-1.5">
+                <div class="rounded-lg border border-black/10 p-2"><p class="font-semibold text-[11px]">Amara O.</p><p class="text-[10px] text-company">94% · Vouched ✓</p></div>
+                <div class="rounded-lg border border-black/10 p-2"><p class="font-semibold text-[11px]">Tunde A.</p><p class="text-[10px] text-company">90% · Reloc ✓</p></div>
+                <div class="rounded-lg border border-black/10 p-2"><p class="font-semibold text-[11px]">Hannah A.</p><p class="text-[10px] text-company">90% · Reloc ✓</p></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-2"><span class="font-semibold">Screened</span><span class="text-[#8a94a6]">6</span></div>
+              <div class="space-y-1.5">
+                <div class="rounded-lg border border-black/10 p-2"><p class="font-semibold text-[11px]">Grace M.</p><p class="text-[10px] text-company">Project ✓</p></div>
+                <div class="rounded-lg border border-black/10 p-2"><p class="font-semibold text-[11px]">Sade J.</p><p class="text-[10px] text-company">90% · Reloc ✓</p></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-2"><span class="font-semibold">Interview</span><span class="text-[#8a94a6]">3</span></div>
+              <div class="space-y-1.5">
+                <div class="rounded-lg border border-black/10 p-2"><p class="font-semibold text-[11px]">Sade J.</p><p class="text-[10px] text-[#8a94a6]">Mon 11:00</p></div>
+                <div class="rounded-lg border border-black/10 p-2"><p class="font-semibold text-[11px]">Grace M.</p><p class="text-[10px] text-[#8a94a6]">Tue 13:30</p></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-2"><span class="font-semibold">Offer</span><span class="text-[#8a94a6]">1</span></div>
+              <div class="space-y-1.5">
+                <div class="rounded-lg border border-company/30 bg-company/[0.06] p-2"><p class="font-semibold text-[11px]">Sam K.</p><p class="text-[10px] text-company">Sent ✓</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-semibold tracking-wide text-accent uppercase">Surface 05 · For Lena (Recruiter)</p>
+        <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Hiring built on signal, not stacks of CVs.</h3>
+        <p class="max-w-4xl mt-4 text-[15px] text-[#a1a1aa] leading-relaxed">Companies brief a goal and Propel matches them to the right communities. Shortlists arrive carrying the context that builds trust: community vetting, relocation-readiness, and real project work, all in a pipeline her team can move through together.</p>
+        <ul class="mt-5 space-y-2.5 text-[15px] text-[#c7c7cc]">
+          <li class="flex gap-3"><span class="text-accent">✦</span>Brief a goal, get matched to the right communities</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>Context-rich shortlists: vetting, relocation, projects</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>A shared pipeline the whole team moves through</li>
+          <li class="flex gap-3"><span class="text-accent">✦</span>Outcome reporting back to every stakeholder</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESIGN SYSTEM ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p class="eyebrow">Craft</p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">A system the whole network shares.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      One token set and component library spanning talent, leader, and company surfaces, so three
+      audiences feel like one product, and engineering ships faster.
+    </p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-lg font-semibold">Type</p>
+        <p class="mt-4 text-5xl font-semibold tracking-tight">Aa</p>
+        <p class="max-w-4xl mt-4 text-sm text-[#a1a1aa] leading-relaxed">Editorial display for warmth and confidence; a clean grotesk for dense product UI. Built for multilingual reach.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-lg font-semibold">Color</p>
+        <div class="mt-4 flex gap-2">
+          <span class="size-8 rounded-lg bg-primary"></span>
+          <span class="size-8 rounded-lg bg-white"></span>
+          <span class="size-8 rounded-lg bg-finance"></span>
+          <span class="size-8 rounded-lg bg-company"></span>
+          <span class="size-8 rounded-lg bg-leader"></span>
+          <span class="size-8 rounded-lg bg-[#ef4444]"></span>
+        </div>
+        <p class="max-w-4xl mt-4 text-sm text-[#a1a1aa] leading-relaxed">A warm, optimistic core with one accent per audience; used sparingly, on a generous white canvas.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-lg font-semibold">Components</p>
+        <button class="mt-4 w-full rounded-lg bg-primary text-white text-sm font-semibold py-2.5">Primary action</button>
+        <div class="mt-3 flex flex-wrap gap-2 text-[11px]">
+          <span class="rounded-full bg-company/15 text-company px-2.5 py-1">Match score</span>
+          <span class="rounded-full bg-talent/15 text-talent px-2.5 py-1">Vouched</span>
+          <span class="rounded-full bg-leader/15 text-leader px-2.5 py-1">Relocation</span>
+        </div>
+        <p class="max-w-4xl mt-4 text-sm text-[#a1a1aa] leading-relaxed">Match cards, trust badges, financing tiles, pipeline lanes, accessible by default.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALIDATION ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p class="eyebrow">Testing &amp; iteration</p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">What testing changed.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      Two rounds of moderated usability tests across all three personas. The biggest wins came from
+      getting out of people's way.
+    </p>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-black p-6">
+        <p class="text-xs font-bold tracking-wide text-[#8a8a8a] uppercase">Before</p>
+        <ul class="mt-4 space-y-3 text-[15px] text-[#a1a1aa]">
+          <li class="flex gap-3"><span class="text-[#5a5a5a]">•</span>Profile asked for 14 fields before showing a single job.</li>
+          <li class="flex gap-3"><span class="text-[#5a5a5a]">•</span>Match scores with no explanation read as arbitrary.</li>
+          <li class="flex gap-3"><span class="text-[#5a5a5a]">•</span>Financing felt buried and slightly suspicious.</li>
+          <li class="flex gap-3"><span class="text-[#5a5a5a]">•</span>Leaders couldn't tell which shares led to hires.</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-cyan/25 bg-cyan/[0.05] p-6">
+        <p class="text-xs font-bold tracking-wide text-cyan uppercase">After</p>
+        <ul class="mt-4 space-y-3 text-[15px] text-[#d7f4fb]">
+          <li class="flex gap-3"><span class="text-cyan">•</span>Three taps to a first match; profile completes over time.</li>
+          <li class="flex gap-3"><span class="text-cyan">•</span>Every score shows its reasoning and a way to improve it.</li>
+          <li class="flex gap-3"><span class="text-cyan">•</span>Financing surfaced in-context with total cost up front.</li>
+          <li class="flex gap-3"><span class="text-cyan">•</span>Leaders see hire attribution and payout side by side.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p class="eyebrow">Impact</p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">Value, finally flowing both ways.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      Projected from the validation cohort and instrumented for launch. Numbers are illustrative
+      placeholders, swap in your real results.
+    </p>
+
+    <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+      <div>
+        <p class="text-4xl sm:text-5xl font-semibold tracking-tight">+38<span class="text-2xl align-top text-[#8a8a8a]">%</span></p>
+        <p class="mt-2 text-sm text-[#a1a1aa]">Onboarding completion vs. baseline</p>
+      </div>
+      <div>
+        <p class="text-4xl sm:text-5xl font-semibold tracking-tight">2.4<span class="text-2xl align-top text-[#8a8a8a]">×</span></p>
+        <p class="mt-2 text-sm text-[#a1a1aa]">Qualified applications per open role</p>
+      </div>
+      <div>
+        <p class="text-4xl sm:text-5xl font-semibold tracking-tight">−41<span class="text-2xl align-top text-[#8a8a8a]">%</span></p>
+        <p class="mt-2 text-sm text-[#a1a1aa]">Time from signup to first application</p>
+      </div>
+      <div>
+        <p class="text-4xl sm:text-5xl font-semibold tracking-tight">+27<span class="text-2xl align-top text-[#8a8a8a]">%</span></p>
+        <p class="mt-2 text-sm text-[#a1a1aa]">90-day community retention</p>
+      </div>
+      <div>
+        <p class="text-4xl sm:text-5xl font-semibold tracking-tight">+63<span class="text-2xl align-top text-[#8a8a8a]">%</span></p>
+        <p class="mt-2 text-sm text-[#a1a1aa]">Leaders posting a role monthly</p>
+      </div>
+      <div>
+        <p class="text-4xl sm:text-5xl font-semibold tracking-tight">4.6<span class="text-2xl align-top text-[#8a8a8a]">/5</span></p>
+        <p class="mt-2 text-sm text-[#a1a1aa]">Recruiter shortlist-quality rating</p>
+      </div>
+      <div>
+        <p class="text-4xl sm:text-5xl font-semibold tracking-tight">+19<span class="text-2xl align-top text-[#8a8a8a]">%</span></p>
+        <p class="mt-2 text-sm text-[#a1a1aa]">Financing-assisted members hired</p>
+      </div>
+      <div>
+        <p class="text-4xl sm:text-5xl font-semibold tracking-tight">−34<span class="text-2xl align-top text-[#8a8a8a]">%</span></p>
+        <p class="mt-2 text-sm text-[#a1a1aa]">Recruiter time-to-shortlist</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFLECTION ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16">
+      <div>
+        <p class="eyebrow">Reflection</p>
+        <h2 class="mt-3 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">What I'd carry forward.</h2>
+      </div>
+      <div class="divide-y divide-white/10 border-t border-white/10">
+        <div class="py-6 flex gap-5">
+          <span class="text-accent text-xl">→</span>
+          <div>
+            <p class="text-lg font-semibold">Trust is an interface.</p>
+            <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">The highest-leverage design decisions weren't screens, they were where we chose to show vetting, attribution, and cost. Make trust visible and the funnel takes care of itself.</p>
+          </div>
+        </div>
+        <div class="py-6 flex gap-5">
+          <span class="text-accent text-xl">→</span>
+          <div>
+            <p class="text-lg font-semibold">Design the blocker, not just the flow.</p>
+            <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Embedding financing at the moment of need reframed what "product design" meant here: sometimes the kindest UX is removing a real-world barrier, not polishing a button.</p>
+          </div>
+        </div>
+        <div class="py-6 flex gap-5">
+          <span class="text-accent text-xl">→</span>
+          <div>
+            <p class="text-lg font-semibold">Next: deepen the leader economy.</p>
+            <p class="max-w-4xl mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">I'd explore richer payout models and community-to-community referrals, plus an offline-first mode for low-connectivity members.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEXT PROJECT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24">
+    <a href="Condueet.html" class="group block rounded-2xl border border-white/10 bg-card hover:bg-white/[0.04] transition-colors p-6 sm:p-8">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Next project</p>
+      <div class="mt-3 flex items-center justify-between gap-4">
+        <p class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Condueet · Open Banking System across Africa</p>
+        <span class="text-2xl text-[#8a8a8a] group-hover:text-white transition-colors shrink-0">→</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="relative mt-24 sm:mt-32 overflow-hidden border-t border-white/10">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(120% 100% at 50% -10%, #1b1618 0%, #130f0e 42%, #0b0a0a 100%);"></div>
+    <div class="absolute -z-10 top-[-160px] left-1/2 -translate-x-1/2 size-[560px] rounded-full bg-accent/10 blur-[150px]"></div>
+
+    <div class="max-w-[1280px] mx-auto px-6 py-24 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-accent">Thanks for reading</p>
+      <h2 class="mt-6 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05] mx-auto">Let's Design Products That Move People Forward.</h2>
+      <p class="mt-6 max-w-xl mx-auto text-lg text-[#c7c7cc] leading-relaxed">I'm a product designer who likes hard, technical problems. If that's useful to your team, let's talk.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:toyosi.design@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-white/90 transition"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> toyosi.design@gmail.com</a>
+        <a href="https://calendly.com/toyosi-design" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/5 transition">Book a 30-min intro ↗</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-[1280px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-[#8a8a8a]">© 2026 Omotoyosi Adegbite.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- scroll reveal -->
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.12 });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
+
+</body>
+</html>

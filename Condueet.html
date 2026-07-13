@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Condueet · Simplifying open banking across Africa | Omotoyosi Adegbite</title>
+  <meta name="description" content="Case study: Condueet, an open-banking platform that lets businesses securely access financial data from banks across Africa through a single integration. A user-centered design process from discovery to iteration." />
+
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            base: '#0b0a0a', card: '#141210', panel: '#16120e',
+            header: '#171717', accent: '#ffd8e4', brown: '#ac7f5e', ink: '#0e0c0a',
+            amber: '#f5a623', blue: '#3B82F6', violet: '#8b5cf6',
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    ::selection { background: #ffd8e4; color: #000; }
+    .eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ffd8e4; font-weight: 700; }
+    .label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8a8a; font-weight: 700; }
+    .subeyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8a8a; font-weight: 700; }
+    .shot { border-radius: 14px; box-shadow: 0 24px 60px rgba(0,0,0,.5); background:#fff; overflow:hidden; }
+    .pill { display:inline-flex; align-items:center; border-radius:9999px; background:#1b1917; border:1px solid rgba(255,255,255,.1); padding:5px 12px; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#e7e5e4; }
+    .chip { display:inline-flex; align-items:center; gap:7px; border-radius:9999px; background:#141210; border:1px solid rgba(255,255,255,.1); padding:6px 12px; font-size:13px; color:#d6d3d1; }
+    .chip::before { content:""; width:5px; height:5px; border-radius:9999px; background:#ffd8e4; }
+    .feat { display:flex; gap:.6rem; }
+    .feat::before { content:"→"; color:#ffd8e4; }
+    .slot { border:1px dashed rgba(255,255,255,.18); border-radius:16px; background:rgba(20,18,16,.4); display:grid; place-items:center; text-align:center; padding:2rem; color:#6b6b6b; font-size:14px; }
+    .hand { font-family:'Caveat', cursive; }
+    .bar { background:rgba(255,255,255,.10); border-radius:9999px; }
+    .blk { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:8px; }
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+      .reveal.in { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-base text-white font-sans antialiased">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="sticky top-0 z-50 pt-6 px-4 sm:px-6">
+    <div class="max-w-[1280px] mx-auto">
+      <nav class="flex items-center justify-between h-[54px] rounded-full border border-[#3d3e3f] bg-header/90 backdrop-blur-xl px-5 shadow-[0_4px_10px_rgba(0,0,0,0.35)]">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="grid place-items-center size-7 rounded-full bg-accent text-black text-xs font-bold">O</span>
+          <span class="text-base font-semibold tracking-tight text-white">Omotoyosi Adegbite</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm">
+          <li><a href="index.html#work" class="font-bold text-accent">Work</a></li>
+          <li><a href="index.html#about" class="text-[#c0c0c0] hover:text-white transition-colors">About</a></li>
+          <li><a href="index.html#contact" class="text-[#c0c0c0] hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 pt-14 sm:pt-20">
+    <div class="flex items-center justify-between mb-10">
+      <a href="index.html#work" class="inline-flex items-center gap-1.5 text-sm text-[#8a8a8a] hover:text-white transition-colors">← Back to all work</a>
+      <a href="https://condueet.netlify.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-white transition-colors">View live project →</a>
+    </div>
+
+    <p class="text-sm text-[#8a8a8a]">Product Design &nbsp;·&nbsp; Fintech &nbsp;·&nbsp; Open Banking</p>
+
+    <h1 class="mt-3 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.02]">
+      Simplifying open banking across Africa.
+    </h1>
+    <p class="mt-6 max-w-4xl text-lg text-[#c7c7cc] leading-relaxed">
+      Condueet lets businesses securely access financial data from banks across the continent through a single integration. I designed the experiences that make complex, regulated infrastructure feel effortless, for business users and developers alike, using a user-centered process from discovery through iteration.
+    </p>
+
+    <div class="mt-6 flex flex-wrap gap-2">
+      <span class="chip">Onboarding &amp; Connections</span>
+      <span class="chip">Insights Dashboard</span>
+      <span class="chip">Developer Experience</span>
+      <span class="chip">Consent &amp; Security</span>
+      <span class="chip">Website Design</span>
+    </div>
+
+    <!-- meta row -->
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-5 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="label">Role</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Product Designer</p></div>
+      <div class="bg-base p-5"><p class="label">Focus</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Onboarding · Data · Dev tools · Website</p></div>
+      <div class="bg-base p-5"><p class="label">Timeline</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">2024–25</p></div>
+      <div class="bg-base p-5"><p class="label">Platform</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Web · Mobile · Developer API</p></div>
+      <div class="bg-base p-5"><p class="label">Domain</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Open Banking · Africa</p></div>
+    </div>
+
+    <!-- hero image -->
+    <div class="mt-8 shot">
+      <img src="assets/condueet-4e7030d7-2034-4ad3-b3f2-92e48f0cd10f.png" alt="Condueet marketing website — the product's front door." class="w-full h-auto block" />
+    </div>
+  </section>
+
+  <!-- ============ OVERVIEW ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="eyebrow">The snapshot</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">One integration. Every bank.</h2>
+    <p class="mt-5 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Building a fintech product in Africa meant wiring up dozens of banks, each with its own API, onboarding, and data shape. Condueet collapses that into a single, secure connection, and my job was to make that power approachable.</p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">01 · Challenge</p><p class="mt-3 text-lg font-semibold">Fragmented bank rails</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Every institution had different APIs, verification, and data structures. Integration was slow, brittle, and hard to trust.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">02 · My role</p><p class="mt-3 text-lg font-semibold">End-to-end product design</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Owned onboarding, account connections, analytics, developer tooling, and API workflows, research through UI.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">03 · Outcome</p><p class="mt-3 text-lg font-semibold">Accessible infrastructure</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">A unified, security-first platform that business users and developers can adopt with confidence.</p></div>
+    </div>
+
+    <div class="mt-5 grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-4xl font-bold">1<span class="text-accent">×</span></p><p class="mt-2 text-sm text-[#a1a1aa]">Integration to reach every connected bank</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-4xl font-bold text-accent">−58%</p><p class="mt-2 text-sm text-[#a1a1aa]">Time to first successful connection</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-4xl font-bold">3<span class="text-accent">min</span></p><p class="mt-2 text-sm text-[#a1a1aa]">Median developer time-to-first-call</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-4xl font-bold text-accent">+44%</p><p class="mt-2 text-sm text-[#a1a1aa]">Onboarding completion rate</p></div>
+    </div>
+    <p class="mt-4 text-xs text-[#6b6b6b]">Independent case study presenting real product work. Metrics are illustrative placeholders, swap in verified results.</p>
+  </section>
+
+  <!-- ============ CONTEXT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="eyebrow">Context</span></p>
+    <div class="mt-8 grid lg:grid-cols-2 gap-10 lg:gap-16">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.02em] leading-[1.08]">Open banking, built for the realities of Africa.</h2>
+      <div>
+        <p class="text-lg text-[#c7c7cc] leading-relaxed">Condueet aggregates APIs from banks and financial institutions and exposes them to third-party companies through one secure layer.</p>
+        <p class="mt-4 text-[15px] text-[#a1a1aa] leading-relaxed">For a fintech founder, that means shipping lending, payments, or budgeting products without negotiating and maintaining a separate integration for every bank. The hard part isn't only engineering, it's <span class="text-white font-semibold">trust</span>. Moving someone's financial data demands an experience that's transparent, secure, and legible at every step. That's the design problem I focused on.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS OVERVIEW ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="eyebrow">The approach</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">A user-centered design process.</h2>
+    <p class="mt-5 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Five phases, run pragmatically, so every screen traces back to a real user need and a measurable goal. The sections below walk through each phase and the work it produced.</p>
+    <div class="mt-8 grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-sm font-bold text-accent">01 · Discover</p><p class="mt-2 text-xs text-[#8a8a8a] leading-relaxed">Strategy · Competitive analysis · Understand the user · Personas · Affinity mapping · Use case + HMW</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-sm font-bold text-accent">02 · Specify</p><p class="mt-2 text-xs text-[#8a8a8a] leading-relaxed">User journey · User flow · Card sorting · Information architecture</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-sm font-bold text-accent">03 · Design</p><p class="mt-2 text-xs text-[#8a8a8a] leading-relaxed">Sketches · Wireframes · Design system · User interface</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-sm font-bold text-accent">04 · Evaluate</p><p class="mt-2 text-xs text-[#8a8a8a] leading-relaxed">Prototype · QA testing · Conclusion</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-sm font-bold text-accent">05 · Iterate</p><p class="mt-2 text-xs text-[#8a8a8a] leading-relaxed">Tweaks that fix real usability issues</p></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ============ PHASE 01 · DISCOVER ============ -->
+  <!-- ============================================================ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="flex items-center gap-5 border-b border-white/10 pb-6">
+      <span class="text-5xl sm:text-6xl font-bold text-[#3a3632] tabular-nums">01</span>
+      <div><p class="eyebrow">Phase 01</p><h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.02em]">Discover</h2></div>
+    </div>
+    <p class="mt-6 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Understand the two audiences and the trust problem before proposing anything. I worked across both sides of the platform, the businesses consuming data and the developers wiring it up.</p>
+
+    <!-- Strategy -->
+    <div class="mt-12">
+      <p class="subeyebrow">Strategy</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">The goal was adoption, not features.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">The strategic bet wasn't "build a dashboard", it was to make regulated open-banking infrastructure adoptable by two very different audiences at once. I framed success around three pillars that every later decision had to serve.</p>
+      <div class="mt-5 grid md:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">Earn trust</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Make sharing bank data feel safe enough for an end user to say yes.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">Turn data into decisions</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Give businesses answers, not transaction firehoses.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">Developer velocity</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Get a developer to a first successful call in minutes, not days.</p></div>
+      </div>
+    </div>
+
+    <!-- Competitive Analysis -->
+    <div class="mt-14">
+      <p class="subeyebrow">Competitive analysis</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Where the market left an opening.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">I benchmarked global infrastructure and regional open-banking players against the realities of local bank rails, to find the gap Condueet could own.</p>
+      <div class="mt-5 grid md:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Global infrastructure</p><p class="mt-3 font-semibold">Plaid · TrueLayer</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Best-in-class developer experience and polished consent, but built for US/UK rails with limited African coverage.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Regional players</p><p class="mt-3 font-semibold">Mono · Okra · Stitch</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Real coverage of local banks and growing APIs, but trust and consent UX vary and developer onboarding is uneven.</p></div>
+        <div class="rounded-2xl border border-accent/20 bg-accent/[0.04] p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Condueet's opening</p><p class="mt-3 font-semibold text-accent">Trust + velocity, localised</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Pair security-first, plain-language consent with a genuinely fast developer experience, tuned to African bank rails.</p></div>
+      </div>
+    </div>
+
+    <!-- Understand the User -->
+    <div class="mt-14">
+      <p class="subeyebrow">Understand the user</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Three groups felt the friction, and all three had to succeed.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Interviews with founders, ops teams and developers, plus a review of support tickets and where users dropped off, mapped the friction to three groups.</p>
+      <div class="mt-5 grid md:grid-cols-3 gap-5">
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">End users</p><p class="mt-3 text-lg font-semibold">Wary of connecting</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">People hesitated to link a bank account to an app they didn't yet trust with their financial data.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Businesses</p><p class="mt-3 text-lg font-semibold">Drowning in raw data</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Even once connected, teams got firehoses of transactions with no clear way to turn them into insight.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Developers</p><p class="mt-3 text-lg font-semibold">Slow to integrate</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Unclear docs, keys, and sandboxes meant days of setup before a first successful API call.</p></div>
+      </div>
+    </div>
+
+    <!-- User Persona -->
+    <div class="mt-14">
+      <p class="subeyebrow">User persona</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Two people I designed for.</h3>
+      <div class="mt-5 grid md:grid-cols-2 gap-5">
+        <div class="rounded-2xl border border-white/10 bg-card p-6">
+          <div class="flex items-center gap-4">
+            <span class="grid place-items-center size-14 rounded-full bg-accent text-black text-lg font-bold">A</span>
+            <div><p class="text-lg font-semibold">Amara Okafor</p><p class="text-sm text-[#8a8a8a]">Ops Lead · Lending fintech</p></div>
+          </div>
+          <p class="mt-4 text-sm text-[#a1a1aa] leading-relaxed">Runs operations at an early lending product. Needs a live picture of customers' cash-flow to make credit decisions, without a data team.</p>
+          <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
+            <div><p class="label">Goals</p><ul class="mt-2 space-y-1 text-[#c7c7cc]"><li>See cash-flow across banks</li><li>Act on insight, not rows</li><li>Customers who trust the link</li></ul></div>
+            <div><p class="label">Frustrations</p><ul class="mt-2 space-y-1 text-[#c7c7cc]"><li>Drop-off at bank connection</li><li>Meaningless data dumps</li><li>Every bank is different</li></ul></div>
+          </div>
+          <p class="mt-4 text-sm italic text-white">“I don't need more data. I need decisions I can trust.”</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6">
+          <div class="flex items-center gap-4">
+            <span class="grid place-items-center size-14 rounded-full bg-blue text-white text-lg font-bold">D</span>
+            <div><p class="text-lg font-semibold">Daniel Mensah</p><p class="text-sm text-[#8a8a8a]">Backend Developer · Payments startup</p></div>
+          </div>
+          <p class="mt-4 text-sm text-[#a1a1aa] leading-relaxed">Evaluating open-banking providers. Success is a working call in an afternoon, not a two-week integration.</p>
+          <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
+            <div><p class="label">Goals</p><ul class="mt-2 space-y-1 text-[#c7c7cc]"><li>First successful call fast</li><li>Scoped keys + sandbox</li><li>Clear errors and docs</li></ul></div>
+            <div><p class="label">Frustrations</p><ul class="mt-2 space-y-1 text-[#c7c7cc]"><li>Days lost to unclear docs</li><li>No safe place to test</li><li>Opaque error messages</li></ul></div>
+          </div>
+          <p class="mt-4 text-sm italic text-white">“If I can't get a call working today, we'll try someone else.”</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Affinity Mapping -->
+    <div class="mt-14">
+      <p class="subeyebrow">Affinity mapping</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Clustering the research into themes.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">I grouped interview notes and support findings into four themes, the patterns that shaped every design decision downstream.</p>
+      <div class="mt-5 grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="font-semibold">Trust &amp; consent</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Users won't link a bank they don't trust; the connection moment is where they drop.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="font-semibold">Data → decisions</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Businesses want answers, cash-flow, spend, KPIs, not transaction firehoses.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="font-semibold">Developer velocity</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Time-to-first-call decides whether a team commits to the platform.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="font-semibold">Coverage &amp; reliability</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">One integration must reliably reach every connected bank.</p></div>
+      </div>
+    </div>
+
+    <!-- Use Case + HMW -->
+    <div class="mt-14">
+      <p class="subeyebrow">Use case &amp; How Might We</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Turning themes into design questions.</h3>
+      <div class="mt-5 grid lg:grid-cols-2 gap-5">
+        <div>
+          <p class="label">Primary use cases</p>
+          <ul class="mt-3 space-y-2 text-[15px] text-[#c7c7cc]">
+            <li class="feat">A lending startup pulls verified cash-flow to underwrite a loan.</li>
+            <li class="feat">A budgeting app reads categorised spend across a user's banks.</li>
+            <li class="feat">A developer connects a sandbox and ships a balance check in an afternoon.</li>
+          </ul>
+        </div>
+        <div>
+          <p class="label">How Might We</p>
+          <div class="mt-3 space-y-3">
+            <div class="rounded-xl border border-accent/20 bg-accent/[0.04] p-4 text-[15px] text-[#c7c7cc]">How might we make sharing bank data feel safe enough to say yes?</div>
+            <div class="rounded-xl border border-accent/20 bg-accent/[0.04] p-4 text-[15px] text-[#c7c7cc]">How might we turn raw transactions into decisions a team can act on?</div>
+            <div class="rounded-xl border border-accent/20 bg-accent/[0.04] p-4 text-[15px] text-[#c7c7cc]">How might we get a developer to a first successful call in minutes?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ============ PHASE 02 · SPECIFY ============ -->
+  <!-- ============================================================ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="flex items-center gap-5 border-b border-white/10 pb-6">
+      <span class="text-5xl sm:text-6xl font-bold text-[#3a3632] tabular-nums">02</span>
+      <div><p class="eyebrow">Phase 02</p><h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.02em]">Specify</h2></div>
+    </div>
+    <p class="mt-6 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Turn insight into structure, the journeys, flows and information architecture the product hangs on.</p>
+
+    <!-- User Journey -->
+    <div class="mt-12">
+      <p class="subeyebrow">User journey</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Where trust is won or lost.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Mapping the business user's path surfaced the emotional low point, the moment of connecting a bank and granting consent, and told me exactly where to invest.</p>
+      <div class="mt-6 grid grid-cols-2 md:grid-cols-5 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+        <div class="bg-base p-5"><p class="label">01 · Discover</p><p class="mt-2 text-sm font-semibold">Curious</p><p class="mt-1 text-xs text-[#8a8a8a] leading-relaxed">Finds Condueet, wonders if it's safe and worth it.</p></div>
+        <div class="bg-base p-5"><p class="label">02 · Sign up</p><p class="mt-2 text-sm font-semibold">Willing</p><p class="mt-1 text-xs text-[#8a8a8a] leading-relaxed">Quick account creation; low commitment so far.</p></div>
+        <div class="bg-base p-5"><p class="label">03 · Connect bank</p><p class="mt-2 text-sm font-semibold text-accent">Hesitant ▾</p><p class="mt-1 text-xs text-[#8a8a8a] leading-relaxed">The riskiest moment, "is my data safe?" Drop-off peaks.</p></div>
+        <div class="bg-base p-5"><p class="label">04 · Grant consent</p><p class="mt-2 text-sm font-semibold">Reassured</p><p class="mt-1 text-xs text-[#8a8a8a] leading-relaxed">Sees exactly what's shared and stays in control.</p></div>
+        <div class="bg-base p-5"><p class="label">05 · First value</p><p class="mt-2 text-sm font-semibold">Confident</p><p class="mt-1 text-xs text-[#8a8a8a] leading-relaxed">Insight appears; the effort pays off, trust compounds.</p></div>
+      </div>
+    </div>
+
+    <!-- User Flow -->
+    <div class="mt-14">
+      <p class="subeyebrow">User flow</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">The connect, consent and console flows.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">I detailed the decision points and states for each core flow, the branching of bank selection, verification, consent scopes, and the developer's key-to-first-call path, before any pixels.</p>
+      <div class="mt-5 rounded-2xl border border-white/10 bg-card p-6 sm:p-8 overflow-x-auto">
+        <div class="flex items-stretch gap-2 min-w-[920px]">
+          <div class="shrink-0 w-[132px] rounded-xl border border-white/10 bg-[#0e0c0a] p-3 text-center"><p class="label">Start</p><p class="mt-1 text-sm font-semibold">Sign up</p></div>
+          <div class="shrink-0 self-center text-accent text-lg">→</div>
+          <div class="shrink-0 w-[132px] rounded-xl border border-white/10 bg-[#0e0c0a] p-3 text-center"><p class="label">Step</p><p class="mt-1 text-sm font-semibold">Choose bank</p></div>
+          <div class="shrink-0 self-center text-accent text-lg">→</div>
+          <div class="shrink-0 w-[132px] rounded-xl border border-white/10 bg-[#0e0c0a] p-3 text-center"><p class="label">Step</p><p class="mt-1 text-sm font-semibold">Login method</p></div>
+          <div class="shrink-0 self-center text-accent text-lg">→</div>
+          <div class="shrink-0 w-[132px] rounded-xl border border-white/10 bg-[#0e0c0a] p-3 text-center"><p class="label">Step</p><p class="mt-1 text-sm font-semibold">Bank login</p></div>
+          <div class="shrink-0 self-center text-accent text-lg">→</div>
+          <div class="shrink-0 w-[148px] rounded-xl border border-accent/40 bg-accent/[0.06] p-3 text-center"><p class="label" style="color:#ffd8e4">Decision</p><p class="mt-1 text-sm font-semibold text-accent">Consent</p><p class="mt-1 text-[11px] text-[#8a8a8a]">Approve · Deny</p></div>
+          <div class="shrink-0 self-center text-accent text-lg">→</div>
+          <div class="shrink-0 w-[132px] rounded-xl border border-white/10 bg-[#0e0c0a] p-3 text-center"><p class="label">Success</p><p class="mt-1 text-sm font-semibold">Connected</p></div>
+          <div class="shrink-0 self-center text-accent text-lg">→</div>
+          <div class="shrink-0 w-[132px] rounded-xl border border-white/10 bg-[#0e0c0a] p-3 text-center"><p class="label">Value</p><p class="mt-1 text-sm font-semibold">Insights</p></div>
+        </div>
+      </div>
+      <p class="mt-3 text-sm text-[#6b6b6b]">The connect &amp; consent flow. The highlighted step is the make-or-break moment, so it earned the most design attention.</p>
+    </div>
+
+    <!-- Card Sorting -->
+    <div class="mt-14">
+      <p class="subeyebrow">Card sorting</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Letting users group the product.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Open-ended card sorts with users collapsed a sprawl of features and settings into three mental-model groups, the spine of the navigation.</p>
+      <div class="mt-5 grid md:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">Connect &amp; consent</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Everything about linking a bank and controlling access.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">Understand</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Insights, balances, spending and trends for businesses.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">Build</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Keys, environments, docs and logs for developers.</p></div>
+      </div>
+    </div>
+
+    <!-- Information Architecture -->
+    <div class="mt-14">
+      <p class="subeyebrow">Information architecture</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">One system, mapped for two audiences.</h3>
+      <div class="mt-5 grid md:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Business app</p><ul class="mt-3 space-y-1.5 text-sm text-[#c7c7cc]"><li>Home · KPIs</li><li>Insights · balance, spend, trends</li><li>Connections · linked accounts</li><li>Settings · organisation</li></ul></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Developer console</p><ul class="mt-3 space-y-1.5 text-sm text-[#c7c7cc]"><li>Apps &amp; keys · test / live</li><li>API explorer</li><li>Docs &amp; snippets</li><li>Logs &amp; status</li></ul></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Consent layer</p><ul class="mt-3 space-y-1.5 text-sm text-[#c7c7cc]"><li>Data scopes</li><li>Per-scope permissions</li><li>Revoke access</li><li>Access record</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ============ PHASE 03 · DESIGN ============ -->
+  <!-- ============================================================ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="flex items-center gap-5 border-b border-white/10 pb-6">
+      <span class="text-5xl sm:text-6xl font-bold text-[#3a3632] tabular-nums">03</span>
+      <div><p class="eyebrow">Phase 03</p><h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.02em]">Design</h2></div>
+    </div>
+    <p class="mt-6 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">From rough thinking to a shared, high-fidelity system, sketches and wireframes, a token-based design system, and the final user interface.</p>
+
+    <!-- Sketches -->
+    <div class="mt-12">
+      <p class="subeyebrow">Sketches</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Cheap, fast exploration.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Low-fidelity sketches let me explore the connect, consent and console flows quickly, stress-testing consent language until non-technical users could explain it back.</p>
+      <div class="mt-5 grid sm:grid-cols-3 gap-5">
+        <!-- Sketch: connect -->
+        <div class="rounded-2xl border border-dashed border-white/15 bg-card/60 p-4">
+          <div class="relative rounded-lg bg-[#0e0c0a] border border-white/5 p-4 aspect-[4/3]">
+            <div class="bar h-2.5 w-14"></div>
+            <div class="mt-3 h-9 rounded-md border border-dashed border-white/15"></div>
+            <div class="mt-3 space-y-2">
+              <div class="flex items-center gap-2"><div class="size-5 rounded-full border border-white/15"></div><div class="bar h-2.5 flex-1"></div></div>
+              <div class="flex items-center gap-2"><div class="size-5 rounded-full border border-white/15"></div><div class="bar h-2.5 w-3/4"></div></div>
+              <div class="flex items-center gap-2"><div class="size-5 rounded-full border border-white/15"></div><div class="bar h-2.5 w-2/3"></div></div>
+            </div>
+            <span class="hand absolute bottom-2 right-3 text-xl text-accent -rotate-6">pick a bank →</span>
+          </div>
+          <p class="mt-3 text-sm text-[#8a8a8a]">Early idea · bank connection</p>
+        </div>
+        <!-- Sketch: consent -->
+        <div class="rounded-2xl border border-dashed border-white/15 bg-card/60 p-4">
+          <div class="relative rounded-lg bg-[#0e0c0a] border border-white/5 p-4 aspect-[4/3]">
+            <div class="bar h-2.5 w-20"></div>
+            <div class="mt-3 grid grid-cols-3 gap-2">
+              <div class="h-10 rounded-md border border-dashed border-white/15"></div>
+              <div class="h-10 rounded-md border border-dashed border-white/15"></div>
+              <div class="h-10 rounded-md border border-dashed border-white/15"></div>
+            </div>
+            <div class="mt-3 bar h-2.5 w-4/5"></div>
+            <div class="mt-4 h-7 rounded-full border border-accent/40"></div>
+            <span class="hand absolute top-2 right-3 text-xl text-accent rotate-3">3 promises!</span>
+          </div>
+          <p class="mt-3 text-sm text-[#8a8a8a]">Early idea · consent screen</p>
+        </div>
+        <!-- Sketch: dashboard -->
+        <div class="rounded-2xl border border-dashed border-white/15 bg-card/60 p-4">
+          <div class="relative rounded-lg bg-[#0e0c0a] border border-white/5 p-4 aspect-[4/3]">
+            <div class="grid grid-cols-3 gap-2">
+              <div class="h-8 rounded-md border border-dashed border-white/15"></div>
+              <div class="h-8 rounded-md border border-dashed border-white/15"></div>
+              <div class="h-8 rounded-md border border-dashed border-white/15"></div>
+            </div>
+            <div class="mt-3 h-14 rounded-md border border-dashed border-white/15"></div>
+            <div class="mt-3 space-y-1.5"><div class="bar h-2 w-full"></div><div class="bar h-2 w-5/6"></div></div>
+            <span class="hand absolute bottom-2 right-3 text-xl text-accent -rotate-3">KPIs first</span>
+          </div>
+          <p class="mt-3 text-sm text-[#8a8a8a]">Early idea · insights dashboard</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wireframes -->
+    <div class="mt-14">
+      <p class="subeyebrow">Wireframes</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Structure before style.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Mid-fidelity wireframes locked hierarchy and flow, KPIs above raw tables, security cues at the connection step, keys and status first in the console, before any visual design.</p>
+      <div class="mt-5 grid sm:grid-cols-3 gap-5">
+        <!-- Wireframe: connect -->
+        <div class="rounded-2xl border border-white/10 bg-card p-4">
+          <div class="rounded-xl bg-[#0e0c0a] border border-white/10 p-4">
+            <div class="flex items-center justify-between"><div class="bar h-3 w-24"></div><div class="size-6 rounded-full blk"></div></div>
+            <div class="mt-3 blk h-9"></div>
+            <div class="mt-3 space-y-2">
+              <div class="flex items-center gap-3 blk p-2.5"><div class="size-7 rounded-md bg-white/10"></div><div class="bar h-2.5 flex-1"></div></div>
+              <div class="flex items-center gap-3 blk p-2.5"><div class="size-7 rounded-md bg-white/10"></div><div class="bar h-2.5 w-3/4"></div></div>
+              <div class="flex items-center gap-3 blk p-2.5"><div class="size-7 rounded-md bg-white/10"></div><div class="bar h-2.5 w-2/3"></div></div>
+              <div class="flex items-center gap-3 blk p-2.5"><div class="size-7 rounded-md bg-white/10"></div><div class="bar h-2.5 w-4/5"></div></div>
+            </div>
+          </div>
+          <p class="mt-3 text-sm text-[#8a8a8a]">Connect · searchable bank directory</p>
+        </div>
+        <!-- Wireframe: consent -->
+        <div class="rounded-2xl border border-white/10 bg-card p-4">
+          <div class="rounded-xl bg-[#0e0c0a] border border-white/10 p-4">
+            <div class="bar h-3 w-28"></div>
+            <div class="mt-1.5 bar h-2 w-40 opacity-60"></div>
+            <div class="mt-3 space-y-2">
+              <div class="flex items-center justify-between blk p-3"><div class="bar h-2.5 w-24"></div><div class="h-4 w-8 rounded-full bg-accent/30"></div></div>
+              <div class="flex items-center justify-between blk p-3"><div class="bar h-2.5 w-20"></div><div class="h-4 w-8 rounded-full bg-accent/30"></div></div>
+              <div class="flex items-center justify-between blk p-3"><div class="bar h-2.5 w-28"></div><div class="h-4 w-8 rounded-full bg-white/10"></div></div>
+            </div>
+            <div class="mt-4 h-9 rounded-lg bg-accent/20 border border-accent/30"></div>
+          </div>
+          <p class="mt-3 text-sm text-[#8a8a8a]">Consent · per-scope permissions</p>
+        </div>
+        <!-- Wireframe: dashboard -->
+        <div class="rounded-2xl border border-white/10 bg-card p-4">
+          <div class="rounded-xl bg-[#0e0c0a] border border-white/10 p-4">
+            <div class="grid grid-cols-3 gap-2">
+              <div class="blk p-2.5"><div class="bar h-2 w-8"></div><div class="mt-2 bar h-3 w-12"></div></div>
+              <div class="blk p-2.5"><div class="bar h-2 w-8"></div><div class="mt-2 bar h-3 w-10"></div></div>
+              <div class="blk p-2.5"><div class="bar h-2 w-8"></div><div class="mt-2 bar h-3 w-12"></div></div>
+            </div>
+            <div class="mt-3 blk h-16 flex items-end gap-1.5 p-3">
+              <div class="w-full bg-accent/30 rounded-sm" style="height:40%"></div>
+              <div class="w-full bg-accent/40 rounded-sm" style="height:70%"></div>
+              <div class="w-full bg-accent/30 rounded-sm" style="height:55%"></div>
+              <div class="w-full bg-accent/50 rounded-sm" style="height:90%"></div>
+              <div class="w-full bg-accent/30 rounded-sm" style="height:60%"></div>
+            </div>
+            <div class="mt-3 space-y-1.5"><div class="bar h-2.5 w-full"></div><div class="bar h-2.5 w-5/6"></div></div>
+          </div>
+          <p class="mt-3 text-sm text-[#8a8a8a]">Dashboard · KPIs above the table</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design System -->
+    <div class="mt-14">
+      <p class="subeyebrow">Design system</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">One system, two audiences.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">A shared token set and component library spanning the business app and the developer console, so a regulated product still feels cohesive and calm.</p>
+      <div class="mt-5 grid md:grid-cols-3 gap-5">
+        <div class="rounded-2xl border border-white/10 bg-card p-6">
+          <div class="h-24 grid place-items-center rounded-xl bg-[#0e0c0a] border border-white/5"><span class="text-5xl font-bold tracking-[-0.03em]">Aa</span></div>
+          <p class="mt-4 text-lg font-semibold">Type</p>
+          <p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">A characterful grotesque for headlines, a neutral sans for UI, and mono for everything code &amp; data.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6">
+          <div class="h-24 flex items-center gap-2 rounded-xl bg-[#0e0c0a] border border-white/5 px-4">
+            <span class="size-9 rounded-full bg-accent"></span>
+            <span class="size-9 rounded-full bg-blue"></span>
+            <span class="size-9 rounded-full bg-violet"></span>
+            <span class="size-9 rounded-full bg-amber"></span>
+            <span class="size-9 rounded-full bg-[#0e0c0a] border border-white/20"></span>
+          </div>
+          <p class="mt-4 text-lg font-semibold">Color</p>
+          <p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">A black canvas with a trustworthy accent, plus a safe data-viz palette for clarity.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6">
+          <div class="h-24 flex flex-wrap content-center items-center gap-2 rounded-xl bg-[#0e0c0a] border border-white/5 px-4">
+            <span class="chip">Action</span>
+            <span class="chip">Encrypted</span>
+            <span class="chip">GET</span>
+          </div>
+          <p class="mt-4 text-lg font-semibold">Components</p>
+          <p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Consent toggles, KPI cards, key rows, charts, built for trust and accessibility.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- User Interface -->
+    <div class="mt-14">
+      <p class="subeyebrow">User interface</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Five experiences that build trust and momentum.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Each surface below is shown with the design decision behind it, and the research insight that drove that decision.</p>
+
+      <div class="mt-10 space-y-16">
+        <!-- Surface 01 (image right) -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div>
+            <span class="pill">Surface 01 · For end users</span>
+            <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Onboarding &amp; Account Connection</h4>
+            <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">A guided, security-first flow to verify identity and link a bank in a few taps. Recognisable bank branding, plain-language steps, and visible encryption cues turn the riskiest moment into a confident one.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]">
+              <li class="feat">Searchable directory of supported banks</li>
+              <li class="feat">Progressive verification, minimal fields up front</li>
+              <li class="feat">Visible security &amp; encryption signals throughout</li>
+              <li class="feat">Clear progress so users always know what's next</li>
+            </ul>
+            <div class="mt-5 rounded-xl border border-accent/20 bg-accent/[0.04] p-4"><p class="text-xs font-bold tracking-wide text-accent uppercase">Design decision · from insight 01</p><p class="mt-1.5 text-sm text-[#c7c7cc] leading-relaxed">Drop-off peaked at bank connection, so I led with recognisable bank logos, a search-first directory, and minimal fields, moving verification later so trust is earned before effort is asked.</p></div>
+          </div>
+          <img src="assets/condueet-aa03fd51-b723-4d28-b7c9-f7df5f32fdba.png" alt="Choose your bank — searchable directory of supported banks." class="w-full h-auto shot lg:order-last" />
+        </div>
+        <!-- Surface 02 (image left) -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <img src="assets/condueet-3f663b7b-3e4b-4e50-8773-d5de4e627c82.png" alt="Business home — overview KPIs and API summary chart." class="w-full h-auto shot" />
+          <div>
+            <span class="pill">Surface 02 · For businesses</span>
+            <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">The Insights Dashboard</h4>
+            <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Aggregated data from every connected account, turned into decisions: cash-flow at a glance, spending by category, and performance trends, so teams act on insight instead of parsing rows.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]">
+              <li class="feat">Unified balance &amp; cash-flow across institutions</li>
+              <li class="feat">Categorised spending with clear visual hierarchy</li>
+              <li class="feat">Trends and KPIs designed for quick scanning</li>
+              <li class="feat">Accessible, colour-blind-safe data visualisation</li>
+            </ul>
+            <div class="mt-5 rounded-xl border border-accent/20 bg-accent/[0.04] p-4"><p class="text-xs font-bold tracking-wide text-accent uppercase">Design decision · from insight 02</p><p class="mt-1.5 text-sm text-[#c7c7cc] leading-relaxed">Businesses asked for answers, not rows, so the home screen leads with KPIs and an API summary chart, and raw transaction tables sit one level deeper, behind the decision they support.</p></div>
+          </div>
+        </div>
+        <!-- Surface 03 (image right) -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div>
+            <span class="pill">Surface 03 · For developers</span>
+            <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Developer Experience &amp; API Tools</h4>
+            <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Everything a developer needs to reach a first successful call fast: scoped keys, test and live environments, copy-paste snippets, and a live response panel, so integration takes minutes, not days.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]">
+              <li class="feat">Test / live environment toggle with scoped keys</li>
+              <li class="feat">Copy-ready code samples in multiple languages</li>
+              <li class="feat">Endpoint explorer with inline request/response</li>
+              <li class="feat">Clear errors and one-click key rotation</li>
+            </ul>
+            <div class="mt-5 rounded-xl border border-accent/20 bg-accent/[0.04] p-4"><p class="text-xs font-bold tracking-wide text-accent uppercase">Design decision · from insight 03</p><p class="mt-1.5 text-sm text-[#c7c7cc] leading-relaxed">Time-to-first-call was the real sales pitch, so keys, test/live toggle, and app status live on one screen. A developer never hunts for the thing that proves the product works.</p></div>
+          </div>
+          <img src="assets/condueet-65f33787-2420-48ba-a36c-48e3a189b58a.png" alt="Developer console — app details with client keys and status." class="w-full h-auto shot lg:order-last" />
+        </div>
+        <!-- Surface 04 (image left) -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <img src="assets/condueet-76a5f111-e8ca-45a6-86c9-bd7540e3b5da.png" alt="Consent screen — Secured, Protected, Private commitments before linking." class="w-full h-auto shot" />
+          <div>
+            <span class="pill">Surface 04 · Trust &amp; security</span>
+            <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Consent &amp; Data-Access Controls</h4>
+            <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">A transparent permission layer that shows exactly what a business can access, lets users grant or deny each scope, and makes revoking access a single tap, security-first UX that makes trust the default.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]">
+              <li class="feat">Granular, per-scope data permissions</li>
+              <li class="feat">Plain-language explanation of every access</li>
+              <li class="feat">Read-only by default; revoke access anytime</li>
+              <li class="feat">Clear record of who can see what, and why</li>
+            </ul>
+            <div class="mt-5 rounded-xl border border-accent/20 bg-accent/[0.04] p-4"><p class="text-xs font-bold tracking-wide text-accent uppercase">Design decision · from insight 01</p><p class="mt-1.5 text-sm text-[#c7c7cc] leading-relaxed">Consent is the conversion moment, so the screen makes three promises in plain language (Secured, Protected, Private) before asking for anything, and agreement is an explicit, unhurried choice.</p></div>
+          </div>
+        </div>
+        <!-- Surface 05 (image right) -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div>
+            <span class="pill">Surface 05 · Marketing</span>
+            <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">The Marketing Website</h4>
+            <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">The product's front door: a conversion-focused site that explains a complex, regulated platform in plain language, leads with trust and coverage, and routes the two audiences, businesses and developers, to the right next step.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]">
+              <li class="feat">Clear value proposition above the fold</li>
+              <li class="feat">Audience-split paths for businesses &amp; developers</li>
+              <li class="feat">Trust signals: coverage, security, partner banks</li>
+              <li class="feat">A reusable brand &amp; component system, fully responsive</li>
+            </ul>
+            <div class="mt-5 rounded-xl border border-accent/20 bg-accent/[0.04] p-4"><p class="text-xs font-bold tracking-wide text-accent uppercase">Design decision</p><p class="mt-1.5 text-sm text-[#c7c7cc] leading-relaxed">Two audiences, one front door, the site splits businesses and developers within the first scroll, so each reaches proof (coverage and security, or docs and keys) without wading through the other's story.</p></div>
+          </div>
+          <img src="assets/condueet-4e7030d7-2034-4ad3-b3f2-92e48f0cd10f.png" alt="Condueet marketing website — landing page." class="w-full h-auto shot lg:order-last" />
+        </div>
+      </div>
+
+      <!-- More screens -->
+      <p class="mt-16"><span class="subeyebrow">More from the shipped product</span></p>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <figure><img src="assets/condueet-816fc4b4-2f83-4a0b-b841-d12b19c4003e.png" alt="Get Access — business signup." class="w-full h-auto shot" /><figcaption class="mt-3 text-sm text-[#8a8a8a]">Get Access, progressive business signup</figcaption></figure>
+        <figure><img src="assets/condueet-684b9911-4244-41af-b236-19746581dc8b.png" alt="Choose login method modal." class="w-full h-auto shot" /><figcaption class="mt-3 text-sm text-[#8a8a8a]">Choose login method, internet or mobile banking</figcaption></figure>
+        <figure><img src="assets/condueet-ab34ead8-4a9e-4877-99fd-aca14b02c5ee.png" alt="Bank login inside the connect flow." class="w-full h-auto shot" /><figcaption class="mt-3 text-sm text-[#8a8a8a]">Bank login, credentials never exposed to Condueet</figcaption></figure>
+        <figure><img src="assets/condueet-62cb669b-4fd0-4013-b42b-f1b8f9984cf4.png" alt="Customer insights products." class="w-full h-auto shot" /><figcaption class="mt-3 text-sm text-[#8a8a8a]">Insights, balance, statement, credit, debit, identity</figcaption></figure>
+        <figure><img src="assets/condueet-7652e7f0-eee8-49a0-b953-a2b70a059a67.jpg" alt="Pricing plans." class="w-full h-auto shot" /><figcaption class="mt-3 text-sm text-[#8a8a8a]">Billing, plans that scale with connected accounts</figcaption></figure>
+        <figure><img src="assets/condueet-baa830c8-35d7-4c42-81ab-8eb9b2c24a58.png" alt="Fund wallet flow." class="w-full h-auto shot" /><figcaption class="mt-3 text-sm text-[#8a8a8a]">Wallet funding, clear, reversible-feeling steps</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ============ PHASE 04 · EVALUATE ============ -->
+  <!-- ============================================================ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="flex items-center gap-5 border-b border-white/10 pb-6">
+      <span class="text-5xl sm:text-6xl font-bold text-[#3a3632] tabular-nums">04</span>
+      <div><p class="eyebrow">Phase 04</p><h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.02em]">Evaluate</h2></div>
+    </div>
+    <p class="mt-6 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Put the flows in front of users and pressure-test them against the goals set in discovery.</p>
+
+    <!-- Prototype -->
+    <div class="mt-12">
+      <p class="subeyebrow">Prototype</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Interactive, end to end.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">I built interactive prototypes of the connect, consent, dashboard and developer flows, close enough to the real thing to test the riskiest moments with people.</p>
+      <div class="mt-5"><a href="https://condueet.netlify.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-white/90 transition">Open the live prototype ↗</a></div>
+    </div>
+
+    <!-- QA Testing -->
+    <div class="mt-14">
+      <p class="subeyebrow">QA testing</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Testing the two moments that matter.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Moderated usability sessions and QA passes focused on the two make-or-break questions, plus functional checks against real API constraints.</p>
+      <div class="mt-5 grid md:grid-cols-2 gap-5">
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">Consent comprehension</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Could users explain, in their own words, what data they were sharing? Consent copy went through three rounds until non-technical users could.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">Time-to-first-call</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">How fast could a developer reach a successful call? The console was re-ordered so keys, environment and status sit first.</p></div>
+      </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="mt-14">
+      <p class="subeyebrow">Conclusion</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">The flows held up, and told me what to fix.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Testing validated the core structure, KPIs over rows, security-first consent, keys-first console, and pinpointed the specific frictions to resolve in the next pass: verification timing, consent wording, and console ordering.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ============ PHASE 05 · ITERATE ============ -->
+  <!-- ============================================================ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="flex items-center gap-5 border-b border-white/10 pb-6">
+      <span class="text-5xl sm:text-6xl font-bold text-[#3a3632] tabular-nums">05</span>
+      <div><p class="eyebrow">Phase 05</p><h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.02em]">Iterate</h2></div>
+    </div>
+    <p class="mt-6 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Close the loop, make tweaks that fix real usability issues rather than adding surface. Each pass targeted one finding from evaluation.</p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Fix 01</p><p class="mt-3 text-lg font-semibold">Verification, moved later</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Trust is earned before effort is asked, so I front-loaded recognisable banks and search, and pushed verification back in the flow.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Fix 02</p><p class="mt-3 text-lg font-semibold">Consent, in plain language</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Three promises, Secured, Protected, Private, replaced legalese, so agreement is an explicit, understood choice.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Fix 03</p><p class="mt-3 text-lg font-semibold">Console, proof-first</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Keys, environment toggle and status moved to the top, so the thing that proves the product works is never buried.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="eyebrow">Impact</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Complex infrastructure, made adoptable.</h2>
+    <p class="mt-5 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Measured across business users and developers after rollout. Figures are illustrative placeholders, replace with verified results.</p>
+
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Connection</p><p class="mt-4 text-4xl font-bold text-amber">+44%</p><p class="mt-3 text-sm text-[#a1a1aa]">Onboarding completion</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Speed</p><p class="mt-4 text-4xl font-bold text-amber">−58%</p><p class="mt-3 text-sm text-[#a1a1aa]">Time to first connection</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Developers</p><p class="mt-4 text-4xl font-bold text-amber">3 min</p><p class="mt-3 text-sm text-[#a1a1aa]">Median time-to-first-call</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Trust</p><p class="mt-4 text-4xl font-bold text-amber">100%</p><p class="mt-3 text-sm text-[#a1a1aa]">Consent approval rate</p></div>
+    </div>
+  </section>
+
+  <!-- ============ REFLECTION ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="eyebrow">Reflection</span></p>
+    <div class="mt-8 grid lg:grid-cols-2 gap-10 lg:gap-16">
+      <h2 class="text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">What I'd carry forward.</h2>
+      <div class="space-y-7">
+        <div><p class="font-semibold text-lg">Trust is a design system.</p><p class="mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">Security cues, plain language, and visible control aren't decoration, they're the product. Designing them as reusable patterns paid off on every screen.</p></div>
+        <div><p class="font-semibold text-lg">DX is product design.</p><p class="mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">Treating the developer journey with the same rigor as the consumer flow turned integration speed into a growth lever.</p></div>
+        <div><p class="font-semibold text-lg">Next: localisation &amp; scale.</p><p class="mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">I'd extend the system across more markets, currencies, and languages, and explore richer financial-health insights for businesses.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TAKEAWAY ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="rounded-2xl border border-accent/20 bg-accent/[0.04] p-8 sm:p-12">
+      <p class="eyebrow">What this project taught me</p>
+      <h2 class="mt-4 text-3xl sm:text-4xl font-bold tracking-[-0.02em] leading-[1.1] max-w-4xl">In regulated products, clarity <span class="text-accent">is the feature.</span></h2>
+      <p class="mt-5 max-w-4xl text-[15px] text-[#c7c7cc] leading-relaxed">Condueet taught me that adoption of complex infrastructure isn't won with more capability, it's won by making every step legible. Plain-language consent, a three-minute first API call, visible security: each one turned hesitation into momentum. The best design decision was rarely adding something; it was making what already existed impossible to misunderstand.</p>
+    </div>
+  </section>
+
+  <!-- ============ NEXT PROJECT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24">
+    <a href="HavardEdu.html" class="group block rounded-2xl border border-white/10 bg-card hover:bg-white/[0.04] transition-colors p-6 sm:p-8">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Next project</p>
+      <div class="mt-3 flex items-center justify-between gap-4">
+        <p class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Harvard Edu · AI Personal Assistant</p>
+        <span class="text-2xl text-[#8a8a8a] group-hover:text-white transition-colors shrink-0">→</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="relative mt-24 sm:mt-32 overflow-hidden border-t border-white/10">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(120% 100% at 50% -10%, #1b1618 0%, #130f0e 42%, #0b0a0a 100%);"></div>
+    <div class="absolute -z-10 top-[-160px] left-1/2 -translate-x-1/2 size-[560px] rounded-full bg-accent/10 blur-[150px]"></div>
+
+    <div class="max-w-[1280px] mx-auto px-6 py-24 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-accent">Thanks for reading</p>
+      <h2 class="mt-6 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05] max-w-[18ch] mx-auto">Let's Design Products That Move People Forward.</h2>
+      <p class="mt-6 max-w-xl mx-auto text-lg text-[#c7c7cc] leading-relaxed">I'm a product designer who likes hard, technical problems. If that's useful to your team, let's talk.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:toyosi.design@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-white/90 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          toyosi.design@gmail.com
+        </a>
+        <a href="https://condueet.netlify.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/5 transition">View live project ↗</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-[1280px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-[#8a8a8a]">© 2026 Omotoyosi Adegbite.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
