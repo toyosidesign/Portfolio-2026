@@ -6,22 +6,8 @@
   <title>ZenduONE · The admin layer that makes a telematics platform usable | Omotoyosi Adegbite</title>
   <meta name="description" content="Case study: an end-to-end redesign of ZenduONE's admin portal — 16 scattered configuration areas reshaped into one guided, self-serve console for fleet, video, safety and dispatch." />
 
-  <!-- Tailwind CSS (Play CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-          colors: {
-            base: '#0b0a0a', card: '#141210', panel: '#16120e',
-            header: '#171717', accent: '#ffd8e4', brown: '#ac7f5e', ink: '#0e0c0a',
-            amber: '#f5a623', blue: '#3B82F6',
-          },
-        },
-      },
-    };
-  </script>
+  <!-- Tailwind CSS (precompiled -- rebuild with: npm run build:css) -->
+  <link rel="stylesheet" href="assets/tailwind.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

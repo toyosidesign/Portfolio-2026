@@ -6,24 +6,8 @@
   <title>TOM · An AI that gets student life | Omotoyosi Adegbite</title>
   <meta name="description" content="Case study: TOM, an AI personal assistant that helps university students manage academic, social, and life admin, designed around transparency and trust." />
 
-  <!-- Tailwind CSS (Play CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-          colors: {
-            base: '#0b0a0a', card: '#141210', panel: '#16120e',
-            header: '#171717', accent: '#ffd8e4', brown: '#ac7f5e', ink: '#0e0c0a',
-            /* product / functional tokens (from TOM design system) */
-            blue: '#3B82F6', crimson: '#A51C30', paper: '#F4EFE8',
-            cHigh: '#16A34A', cMed: '#D97706', cLow: '#DC2626',
-          },
-        },
-      },
-    };
-  </script>
+  <!-- Tailwind CSS (precompiled -- rebuild with: npm run build:css) -->
+  <link rel="stylesheet" href="assets/tailwind.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
