@@ -24,6 +24,13 @@
     }
     ::selection { background: #ffd8e4; color: #000; }
 
+    /* Keep project-card contents aligned across a row: equal-height cards,
+       consistent title area, and stats anchored to the bottom. */
+    #project-grid > a { display: flex; flex-direction: column; height: 100%; }
+    #project-grid .p-body { flex: 1 1 auto; }
+    #project-grid .p-foot { margin-top: auto; }
+    #project-grid h3 { min-height: 2.4em; }
+
     /* Organic "blob" mask for the About-section photo (from Figma, inlined) */
     .about-photo {
       -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20336.419%20297'%20preserveAspectRatio='none'%3E%3Cpath%20d='M47.4155%2065.5977C57.8155%2045.1226%2055.4155%2013.6679%2052.9155%200.5H333.415L335.915%20207.477C309.916%20223.056%20241.916%20296.5%20200.916%20296.5C159.916%20296.5%20150.377%20267.011%20125.916%20237.523C107.916%20215.823%2071.5821%20207.477%2056.9154%20207.477C41.2488%20204.325%2011.6154%20198.019%202.41543%20173.538C-9.08457%20142.936%2034.4155%2091.1917%2047.4155%2065.5977Z'%20fill='white'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
@@ -193,7 +200,7 @@
     ];
 
     document.getElementById('project-grid').innerHTML = projects.map(p => `
-      <a href="${p.url || '#'}" ${p.url && p.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''} class="group block rounded-xl border border-white/5 bg-card overflow-hidden hover:border-white/15 transition-colors">
+      <a href="${p.url || '#'}" ${p.url && p.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''} class="group rounded-xl border border-white/5 bg-card overflow-hidden hover:border-white/15 transition-colors">
         <div class="card-glow px-6 pt-6 pb-8 flex flex-col gap-24">
           <div class="flex items-center justify-between">
             <span class="inline-flex items-center gap-1.5 rounded-full bg-black/70 px-2 py-1">
@@ -210,15 +217,17 @@
             <span class="grid place-items-center size-11 shrink-0 rounded-full bg-black text-white group-hover:bg-accent group-hover:text-black transition-colors">↗</span>
           </div>
         </div>
-        <div class="px-6 pb-6 flex flex-col gap-4">
+        <div class="px-6 pb-6 flex flex-col gap-4 p-body">
           <p class="text-[15px] text-white leading-relaxed">${p.desc}</p>
-          <hr class="border-white/10" />
-          <div class="flex items-start justify-between gap-2">
-            ${p.stats.map(([v, l]) => `
-              <div>
-                <p class="text-xl font-semibold">${v}</p>
-                <p class="text-xs text-[#c7c7cc] mt-0.5">${l}</p>
-              </div>`).join('')}
+          <div class="p-foot flex flex-col gap-4">
+            <hr class="border-white/10" />
+            <div class="flex items-start justify-between gap-2">
+              ${p.stats.map(([v, l]) => `
+                <div>
+                  <p class="text-xl font-semibold">${v}</p>
+                  <p class="text-xs text-[#c7c7cc] mt-0.5">${l}</p>
+                </div>`).join('')}
+            </div>
           </div>
         </div>
       </a>
