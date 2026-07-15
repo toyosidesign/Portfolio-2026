@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChefConnect · A culinary community web app | Omotoyosi Adegbite</title>
+  <meta name="description" content="Case study: ChefConnect, a responsive web app for an online culinary community where cooking enthusiasts discover, share, and interact around recipes." />
+
+  <!-- Tailwind CSS (precompiled -- rebuild with: npm run build:css) -->
+  <link rel="stylesheet" href="assets/tailwind.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    ::selection { background: #ffd8e4; color: #000; }
+    .eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ffd8e4; font-weight: 700; }
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+      .reveal.in { opacity: 1; transform: none; }
+    }
+    /* Bespoke helpers (kept as plain CSS so they don't depend on a Tailwind rebuild) */
+    .chip { display:inline-flex; align-items:center; gap:6px; border-radius:9999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); padding:6px 12px; font-size:13px; color:#c7c7cc; }
+    .swatch { height:104px; border-radius:16px 16px 0 0; }
+    .ph16 { aspect-ratio: 16 / 9; }
+    .dot-list { list-style:none; margin:0; padding:0; }
+    .dot-list li { position:relative; padding-left:20px; margin-top:10px; color:#a1a1aa; line-height:1.65; }
+    .dot-list li::before { content:''; position:absolute; left:2px; top:9px; width:6px; height:6px; border-radius:9999px; background:#ffd8e4; }
+    .quote-list { list-style:none; margin:0; padding:0; }
+    .quote-list li { margin-top:10px; color:#c7c7cc; line-height:1.6; font-size:15px; }
+  </style>
+</head>
+
+<body class="bg-base text-white font-sans antialiased">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="sticky top-0 z-50 pt-6 px-4 sm:px-6">
+    <div class="max-w-[1280px] mx-auto">
+      <nav class="flex items-center justify-between h-[54px] rounded-full border border-[#3d3e3f] bg-header/90 backdrop-blur-xl px-5 shadow-[0_4px_10px_rgba(0,0,0,0.35)]">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="grid place-items-center size-7 rounded-full bg-accent text-black text-xs font-bold">O</span>
+          <span class="text-base font-semibold tracking-tight text-white">Omotoyosi Adegbite</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm">
+          <li><a href="index.html#work" class="font-bold text-accent">Work</a></li>
+          <li><a href="index.html#about" class="text-[#c0c0c0] hover:text-white transition-colors">About</a></li>
+          <li><a href="index.html#contact" class="text-[#c0c0c0] hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 pt-14 sm:pt-20">
+    <div class="flex items-center justify-between mb-10">
+      <a href="index.html#work" class="inline-flex items-center gap-1.5 text-sm text-[#8a8a8a] hover:text-white transition-colors">← Back to all work</a>
+      <a href="https://www.figma.com/design/0JTkcyZwMEMGtAv6eQvkfG/ChefConnect" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-white transition-colors">View case in Figma →</a>
+    </div>
+
+    <p class="text-sm text-[#8a8a8a]">ChefConnect &nbsp;·&nbsp; Culinary Community Web App</p>
+
+    <h1 class="mt-3 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.02]">
+      A culinary community that finally works for the cooks in it.
+    </h1>
+    <p class="max-w-4xl mt-6 text-lg text-[#c7c7cc] leading-relaxed">
+      ChefConnect is a responsive web app for an online culinary community, where cooking
+      enthusiasts in Lagos discover, share, and interact around recipes, without the
+      restrictions of the social platforms they'd outgrown.
+    </p>
+
+    <!-- Hero meta -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5">
+        <p class="eyebrow">My role</p>
+        <p class="mt-2 font-medium text-white text-sm">Solo Product Designer</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Client</p>
+        <p class="mt-2 font-medium text-white text-sm">Aisha, food vlogger, Lagos</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Timeline</p>
+        <p class="mt-2 font-medium text-white text-sm">10-hour design sprint</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Focus</p>
+        <p class="mt-2 font-medium text-white text-sm">Community &amp; Responsive Web</p>
+      </div>
+    </div>
+    <div class="mt-4 flex flex-wrap items-center gap-2">
+      <span class="text-xs text-[#8a8a8a] mr-1">Tools</span>
+      <span class="chip">Figma</span>
+      <span class="chip">Coolors.co</span>
+      <span class="chip">Trustpilot</span>
+      <span class="chip">Material.io</span>
+    </div>
+  </section>
+
+  <!-- ============ OVERVIEW IMAGE ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-16 sm:mt-20 reveal">
+    <div class="rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a]">
+      <img src="assets/chef-hero.png"
+        alt="ChefConnect responsive UI: recipe home feed, recipe view, and community screens across laptop, tablet and mobile."
+        class="w-full h-auto block"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8">
+        Add UI hero → assets/chef-hero.png
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 · THE PROBLEM ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">01</span><span class="eyebrow">Problem Discovery</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Aisha's community lived on platforms built against her.</h2>
+    <div class="mt-6 space-y-4 text-lg text-[#a1a1aa] leading-relaxed">
+      <p>ChefConnect began with Aisha, a food vlogger in Lagos with a growing Instagram following. She loved cooking and engaging with other enthusiasts, but the social platforms she relied on kept getting in her way, burying her posts, limiting how she could build community, and giving her no real way to earn from her work.</p>
+      <p class="text-white">She wanted a space of her own: a web app where she and other food lovers could discover, interact, and share recipes on their own terms. Three problems defined that gap.</p>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-accent font-bold">01</p>
+        <p class="mt-3 text-lg font-semibold">Content control</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Algorithms decided who saw her content, and platform rules limited how she could present it. She had no ownership over her own audience.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-accent font-bold">02</p>
+        <p class="mt-3 text-lg font-semibold">Limited engagement</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Generic social features weren't built for cooks. Real interaction, following, commenting, sharing recipes, was shallow and hard to sustain.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-accent font-bold">03</p>
+        <p class="mt-3 text-lg font-semibold">Monetization challenges</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">There was no straightforward way to turn a loyal audience into income from the content she was already creating every week.</p>
+      </div>
+    </div>
+
+    <!-- Goal callout -->
+    <div class="mt-10 rounded-2xl border border-accent/20 bg-accent/[0.04] p-6 sm:p-8">
+      <p class="eyebrow">The goal</p>
+      <p class="mt-3 text-xl sm:text-2xl font-semibold tracking-[-0.01em] leading-snug">Design a responsive web app for an online culinary community in Lagos, Nigeria, fostering connection, culinary creativity, and personal growth within a supportive, engaging environment.</p>
+    </div>
+
+    <h3 class="mt-14 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Three directions to solve for</h3>
+    <div class="mt-6 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-lg font-semibold">Interactive engagement</p>
+        <ul class="dot-list mt-3 text-[15px]">
+          <li>Follow, share, comment, like, and save recipes.</li>
+          <li>Discussion forums, comment sections, and live chat.</li>
+          <li>Gamification, badges and rewards, to spark participation.</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-lg font-semibold">Monetization &amp; analytics</p>
+        <ul class="dot-list mt-3 text-[15px]">
+          <li>Premium subscriptions, ads, and sponsored content.</li>
+          <li>Affiliate links so viewers can buy the tools in a video.</li>
+          <li>Analytics on behaviour, engagement, and performance.</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-lg font-semibold">Responsive &amp; customizable</p>
+        <ul class="dot-list mt-3 text-[15px]">
+          <li>Fully responsive across every major device.</li>
+          <li>Accessibility options like dark and light mode.</li>
+          <li>Social sign-up and integration (Instagram, Facebook).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · SECONDARY RESEARCH ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">02</span><span class="eyebrow">Secondary Research</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">I read the complaints people had already written.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Using journals, articles, and Trustpilot reviews of existing communities on Instagram, Pinterest, and Facebook, I looked for recurring themes in why people join these spaces and where they fall short. I deliberately set aside pure functionality and integration complaints that fell outside this project's scope.</p>
+
+    <h3 class="mt-10 text-lg font-semibold">Recurring themes in the reviews</h3>
+    <div class="mt-6 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Intrusive onboarding</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Sign-up asked for unnecessary details like date of birth, opting out of communities was hard, and ads were relentless.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Weak discovery</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Users struggled to find new communities or search specific topics, especially on Facebook. Search wasn't robust enough.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Notification overload</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Too many community notifications, hard to manage and genuinely overwhelming to keep up with.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Buried content</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Algorithms hid members' posts, so people felt they were constantly missing relevant updates.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Thin moderation</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Offensive content, hate speech, and bullying went unaddressed; moderators felt absent.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Disruptive changes</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Frequent feature and UI changes broke people's familiarity with platforms they used daily.</p></div>
+    </div>
+
+    <h3 class="mt-12 text-lg font-semibold">Who I was designing for, by the numbers</h3>
+    <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">To ground the audience, I pulled data on how Nigerians use social platforms, their gender split, and age bands, useful signals for attention span, tone, and technology choices.</p>
+    <div class="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="eyebrow">Social users (NG)</p><p class="mt-2 text-2xl font-semibold">31.6M</p><p class="mt-1 text-xs text-[#8a8a8a]">Active, Jan 2023</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Gender split</p><p class="mt-2 text-2xl font-semibold">55.3 / 44.7</p><p class="mt-1 text-xs text-[#8a8a8a]">% male / female</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Largest age band</p><p class="mt-2 text-2xl font-semibold">37%</p><p class="mt-1 text-xs text-[#8a8a8a]">Aged 25 – 34</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Next age band</p><p class="mt-2 text-2xl font-semibold">32.8%</p><p class="mt-1 text-xs text-[#8a8a8a]">Aged 18 – 24</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · COMPETITIVE ANALYSIS ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">03</span><span class="eyebrow">Competitive Analysis</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Everyone did one thing well. Nobody did all three.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I studied three category leaders to see what strong recipe products already got right, and where a community-first, creator-friendly product could differentiate.</p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-lg font-semibold">Tasty</p>
+        <ul class="dot-list mt-3 text-[15px]">
+          <li>High-quality, easy-to-follow video recipes.</li>
+          <li>Collections across cuisines and dietary needs.</li>
+          <li>Social sharing built in.</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-lg font-semibold">Allrecipes</p>
+        <ul class="dot-list mt-3 text-[15px]">
+          <li>Personalized recipe recommendations.</li>
+          <li>Robust dietary filters and allergy alerts.</li>
+          <li>Meal planning and shopping-list generator.</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="text-lg font-semibold">Cookpad</p>
+        <ul class="dot-list mt-3 text-[15px]">
+          <li>Large, user-generated recipe database.</li>
+          <li>Adjustable serving sizes.</li>
+          <li>Active community and forums.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="mt-10 text-lg font-semibold">Features I benchmarked</h3>
+    <div class="mt-4 flex flex-wrap gap-2">
+      <span class="chip">Community</span>
+      <span class="chip">Mobile app</span>
+      <span class="chip">Social integration</span>
+      <span class="chip">Recipe sharing</span>
+      <span class="chip">Notification alerts</span>
+      <span class="chip">Follow users</span>
+      <span class="chip">Save recipe</span>
+      <span class="chip">Upload videos</span>
+      <span class="chip">Customization</span>
+      <span class="chip">Clean UI</span>
+      <span class="chip">Monetization</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-accent/20 bg-accent/[0.04] p-6">
+      <p class="text-[15px] text-white leading-relaxed"><span class="font-semibold">The opening:</span> no competitor combined a genuine cooking community with creator monetization and full responsive customization. That intersection became ChefConnect's position.</p>
+    </div>
+  </section>
+
+  <!-- ============ 04 · UNDERSTANDING THE USER ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">04</span><span class="eyebrow">Understanding the User</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">One audience, four things they need to do.</h2>
+
+    <div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="eyebrow">Age</p><p class="mt-2 text-xl font-semibold">18 and above</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Reach</p><p class="mt-2 text-xl font-semibold">Global</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Language</p><p class="mt-2 text-xl font-semibold">English</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Devices</p><p class="mt-2 text-xl font-semibold">Desktop · Tablet · Mobile</p></div>
+    </div>
+
+    <div class="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent font-bold">01</p><p class="mt-2 font-semibold">Browse the platform</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Explore recipes posted by others, and post their own.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent font-bold">02</p><p class="mt-2 font-semibold">Follow, like &amp; comment</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Follow fellow enthusiasts and engage with their posts.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent font-bold">03</p><p class="mt-2 font-semibold">Save &amp; message</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Save recipes and send direct messages to other users.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent font-bold">04</p><p class="mt-2 font-semibold">Affiliate links</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Add links to the tools in a video and earn from them.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 05 · USER PERSONA ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">05</span><span class="eyebrow">User Persona</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Meet Funmi Davis.</h2>
+
+    <div class="mt-10 grid lg:grid-cols-2 gap-4">
+      <!-- Persona identity card -->
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <div class="flex items-center gap-4">
+          <span class="grid place-items-center size-14 rounded-full bg-accent text-black text-lg font-bold shrink-0">FD</span>
+          <div>
+            <p class="text-xl font-semibold">Funmi Davis</p>
+            <p class="text-[15px] text-[#a1a1aa]">Marketing Manager · Lagos</p>
+          </div>
+        </div>
+        <div class="mt-6 grid grid-cols-2 gap-px bg-white/10 rounded-xl overflow-hidden border border-white/10">
+          <div class="bg-base p-4"><p class="eyebrow">Age</p><p class="mt-1 text-sm font-medium">38</p></div>
+          <div class="bg-base p-4"><p class="eyebrow">Status</p><p class="mt-1 text-sm font-medium">Married</p></div>
+          <div class="bg-base p-4"><p class="eyebrow">Gender</p><p class="mt-1 text-sm font-medium">Female</p></div>
+          <div class="bg-base p-4"><p class="eyebrow">Location</p><p class="mt-1 text-sm font-medium">Lagos, Nigeria</p></div>
+          <div class="bg-base p-4"><p class="eyebrow">Industry</p><p class="mt-1 text-sm font-medium">Commercial Real Estate</p></div>
+          <div class="bg-base p-4"><p class="eyebrow">Experience</p><p class="mt-1 text-sm font-medium">10+ years</p></div>
+        </div>
+      </div>
+
+      <!-- Narrative -->
+      <div class="grid gap-4">
+        <div class="rounded-2xl border border-white/10 bg-card p-6">
+          <p class="eyebrow">Background</p>
+          <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">A passionate food enthusiast who fell for cooking in college. She grew up watching her grandmother and mother cook from scratch, memories that still shape her. She loves experimenting with diverse cuisines and hunting for unique ingredients at local markets.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl border border-white/10 bg-card p-6">
+            <p class="eyebrow">Goals &amp; motivations</p>
+            <ul class="dot-list mt-3 text-[15px]">
+              <li>Keep improving, master techniques and world cuisines.</li>
+              <li>Stay health-conscious with nutritious recipes.</li>
+              <li>Connect with a like-minded cooking community.</li>
+              <li>Plan and prep efficiently around a busy job.</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-card p-6">
+            <p class="eyebrow">Challenges</p>
+            <ul class="dot-list mt-3 text-[15px]">
+              <li>Balancing a demanding job with her love of cooking.</li>
+              <li>Stuck in a culinary rut, cooking the same dishes.</li>
+              <li>Making informed dietary and nutrition choices.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · EMPATHY MAP ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">06</span><span class="eyebrow">Empathy Map</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">What Funmi says, thinks, does, and feels.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">An empathy map turned everything I'd learned about Funmi into a single, shared view of her mindset.</p>
+
+    <div class="mt-10 grid sm:grid-cols-2 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="eyebrow">Says</p>
+        <ul class="quote-list mt-3">
+          <li>"I love trying out new recipes and cooking techniques."</li>
+          <li>"Balancing work and my passion for cooking can be overwhelming."</li>
+          <li>"I wish I had more time to connect with the cooking community."</li>
+          <li>"I'm always on the lookout for healthy, delicious recipes."</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="eyebrow">Thinks</p>
+        <ul class="quote-list mt-3">
+          <li>"I want to keep improving my cooking skills and knowledge."</li>
+          <li>"Finding quick and nutritious recipes is a top priority."</li>
+          <li>"Connecting with a food community would be so inspiring."</li>
+          <li>"I need a solution that helps me plan meals efficiently."</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="eyebrow">Does</p>
+        <ul class="quote-list mt-3">
+          <li>Searches the internet and social media for inspiration.</li>
+          <li>Tries to plan meals in advance, but often finds it hard.</li>
+          <li>Occasionally joins online cooking forums and groups.</li>
+          <li>Experiments with new ingredients and techniques.</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="eyebrow">Feels</p>
+        <ul class="quote-list mt-3">
+          <li>Enthusiastic about cooking and discovering new flavors.</li>
+          <li>Overwhelmed by her job and limited free time.</li>
+          <li>Excited to connect with fellow enthusiasts.</li>
+          <li>Frustrated when she runs out of creative ideas.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 · USE CASE + HMW ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">07</span><span class="eyebrow">Use Cases → How Might We</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Turning Funmi's problems into opportunities.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I reframed each goal as a "How might we," then paired it with a concrete design response, my bridge into ideation.</p>
+
+    <div class="mt-10 grid gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6 sm:p-8">
+        <p class="text-lg sm:text-xl font-semibold tracking-[-0.01em] leading-snug">How might we give Funmi an app to find recipes that improve her cooking skills?</p>
+        <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-accent font-semibold">Design response, </span>let her sort and filter recipes by country and cooking tradition.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6 sm:p-8">
+        <p class="text-lg sm:text-xl font-semibold tracking-[-0.01em] leading-snug">How might we help Funmi maintain a healthy diet through the recipes on the platform?</p>
+        <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-accent font-semibold">Design response, </span>filter recipes by nutritional purpose, lose, maintain, or gain weight.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6 sm:p-8">
+        <p class="text-lg sm:text-xl font-semibold tracking-[-0.01em] leading-snug">How might we help Funmi connect with like-minded people?</p>
+        <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-accent font-semibold">Design response, </span>let her see other members, like and comment on posts, and get notified when they post a video.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6 sm:p-8">
+        <p class="text-lg sm:text-xl font-semibold tracking-[-0.01em] leading-snug">How might we help Funmi organize her cooking and shopping?</p>
+        <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-accent font-semibold">Design response, </span>let her print a recipe's ingredients straight into a shopping list.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 · USER JOURNEY ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">08</span><span class="eyebrow">User Journey Map</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Six stages, from first hearing about it to recommending it.</h2>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <div class="flex items-center justify-between"><p class="text-accent font-bold">Step 1</p><span class="text-lg" title="Curious / Happy">🙂</span></div>
+        <p class="mt-2 text-lg font-semibold">Onboarding</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Goal, </span>find an app to enhance her skills, connect with a community, and plan meals.</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Pain, </span>limited time, no recipe variety, no way to connect.</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-accent">Opportunity, </span>show recipe complexity, add filters, let her join communities.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <div class="flex items-center justify-between"><p class="text-accent font-bold">Step 2</p><span class="text-lg" title="Confused">🤔</span></div>
+        <p class="mt-2 text-lg font-semibold">Initial use</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Goal, </span>discover daily recipes, plan weekly meals, generate shopping lists, meet others.</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Pain, </span>can't find diverse, healthy recipes or plan meals with them.</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-accent">Opportunity, </span>dietary filters, a print-to-shopping-list button, friendly forums.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <div class="flex items-center justify-between"><p class="text-accent font-bold">Step 3</p><span class="text-lg" title="Unguided">🫤</span></div>
+        <p class="mt-2 text-lg font-semibold">Daily use</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Goal, </span>improve skills, gain nutrition knowledge, connect with the community.</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Pain, </span>stuck in a rut; wants deeper insight and a way to react to recipes.</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-accent">Opportunity, </span>advanced tutorials, detailed guides, nutritional info.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <div class="flex items-center justify-between"><p class="text-accent font-bold">Step 4</p><span class="text-lg" title="Disappointment">☹️</span></div>
+        <p class="mt-2 text-lg font-semibold">Inspiration</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Goal, </span>fresh ideas and flavors; cooking for a birthday gathering.</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Pain, </span>feels uninspired; needs quick new ideas for the occasion.</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-accent">Opportunity, </span>a new-recipe category with curated, top-rated, trending content.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <div class="flex items-center justify-between"><p class="text-accent font-bold">Step 5</p><span class="text-lg" title="Frustrated">😠</span></div>
+        <p class="mt-2 text-lg font-semibold">Achievement</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Goal, </span>culinary growth and a healthy lifestyle with meals she enjoys.</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Pain, </span>balancing work and cooking; unsure about dietary choices.</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-accent">Opportunity, </span>progress tracking, plus clear nutrition and health cues.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <div class="flex items-center justify-between"><p class="text-accent font-bold">Step 6</p><span class="text-lg" title="Hopeful">🙂</span></div>
+        <p class="mt-2 text-lg font-semibold">Advocacy</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Goal, </span>become a loyal user, recommend it, and help others in the community.</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Pain, </span>little motivation to refer; missed chances for involvement.</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed"><span class="text-accent">Opportunity, </span>referral gift cards and prompts to contribute.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 09 · INFORMATION ARCHITECTURE ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">09</span><span class="eyebrow">Card Sorting → Information Architecture</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">A structure users could actually navigate.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Card sorting turned the feature set into eight clear navigation areas, each with its own logical sub-structure.</p>
+
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Home</p><p class="mt-2 text-[15px] text-[#a1a1aa]">All recipes</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Search</p><p class="mt-2 text-[15px] text-[#a1a1aa]">By user · By recipe · By category</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Communities</p><p class="mt-2 text-[15px] text-[#a1a1aa]">Vegan · Healthy living · Baking</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Notifications</p><p class="mt-2 text-[15px] text-[#a1a1aa]">Today · Yesterday · Week · Month</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Messages</p><p class="mt-2 text-[15px] text-[#a1a1aa]">Direct · Tags</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Saved</p><p class="mt-2 text-[15px] text-[#a1a1aa]">Saved recipes</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Add recipe</p><p class="mt-2 text-[15px] text-[#a1a1aa]">Upload recipe</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Profile</p><p class="mt-2 text-[15px] text-[#a1a1aa]">Edit · Settings &amp; privacy · Logout</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 10 · USER FLOW ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">10</span><span class="eyebrow">User Flow</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">One path, mapped end to end.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">The core flow traces how Funmi would launch the app, sign in, browse all recipes, filter and select one, then watch, like, and comment, and join a community, from a single entry point.</p>
+    <div class="mt-8 flex flex-wrap items-center gap-2 text-[13px]">
+      <span class="chip">Launch</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">Logged in?</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">Sign up / Sign in</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">Main page</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">All recipes</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">Filter &amp; select</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">Recipe video</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">Like · Save · Comment · Share</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">Join community</span>
+    </div>
+    <div class="mt-8">
+      <img src="assets/chef-userflow.png"
+        alt="ChefConnect user flow diagram from app launch through sign-in, browsing and filtering recipes, engaging with a recipe video, and joining a community."
+        class="w-full h-auto block rounded-2xl border border-white/10"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">
+        Add user-flow diagram → assets/chef-userflow.png
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11 · SKETCHES & WIREFRAMES ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">11</span><span class="eyebrow">Sketches → Wireframes</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">From pen and paper to digital wireframes.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I started with low-fidelity pen sketches of the join-the-platform flow and key responsive screens, then rebuilt them as digital wireframes in Figma before adding any visual polish.</p>
+    <div class="mt-8 grid sm:grid-cols-2 gap-4">
+      <div>
+        <img src="assets/chef-sketches.png" alt="Low-fidelity pen-and-paper sketches of ChefConnect's core responsive screens."
+          class="w-full h-auto block rounded-2xl border border-white/10"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[4/3] p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add sketches → assets/chef-sketches.png</div>
+      </div>
+      <div>
+        <img src="assets/chef-wireframes.png" alt="Digital low-fidelity wireframes of ChefConnect built in Figma."
+          class="w-full h-auto block rounded-2xl border border-white/10"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[4/3] p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add wireframes → assets/chef-wireframes.png</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12 · DESIGN SYSTEM ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">12</span><span class="eyebrow">Design System</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Warm colors for a warm subject.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">To build the hi-fi mockups, I set a system for color, typography, and grid. Cooking is warmth, appetite, and comfort, so the palette leans into warm reds and oranges grounded by earthy and neutral tones.</p>
+
+    <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div class="rounded-2xl overflow-hidden border border-white/10 bg-card">
+        <div class="swatch" style="background:#BF3604"></div>
+        <div class="p-4"><p class="font-semibold text-sm">Mahogany</p><p class="text-xs text-[#8a8a8a] mt-1">#BF3604 · Warm Red</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-white/10 bg-card">
+        <div class="swatch" style="background:#D97904"></div>
+        <div class="p-4"><p class="font-semibold text-sm">Mustard Brown</p><p class="text-xs text-[#8a8a8a] mt-1">#D97904 · Warm Orange</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-white/10 bg-card">
+        <div class="swatch" style="background:#400101"></div>
+        <div class="p-4"><p class="font-semibold text-sm">Dark Chocolate</p><p class="text-xs text-[#8a8a8a] mt-1">#400101 · Earthy Brown</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-white/10 bg-card">
+        <div class="swatch" style="background:#111111"></div>
+        <div class="p-4"><p class="font-semibold text-sm">Chinese Black</p><p class="text-xs text-[#8a8a8a] mt-1">#111111 · Ink</p></div>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-white/10 bg-card">
+        <div class="swatch" style="background:#FFFFFF"></div>
+        <div class="p-4"><p class="font-semibold text-sm">White</p><p class="text-xs text-[#8a8a8a] mt-1">#FFFFFF · Surface</p></div>
+      </div>
+    </div>
+
+    <div class="mt-6 grid md:grid-cols-2 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="eyebrow">Typography</p>
+        <p class="mt-3 text-2xl font-semibold">Lato</p>
+        <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">A versatile, highly readable sans-serif that matched the brand's friendly, modern personality. I leaned on bold and semibold weights to stay legible for users with low vision.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="eyebrow">Grid</p>
+        <ul class="dot-list mt-3 text-[15px]">
+          <li><span class="text-white">Large screen, </span>12 columns · 70px margin · 20px gutter.</li>
+          <li><span class="text-white">Tablet, </span>12 columns · 32px margin · 20px gutter.</li>
+          <li><span class="text-white">Mobile, </span>4 columns · 20px margin · 20px gutter.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 13 · UI DESIGN ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">13</span><span class="eyebrow">UI Design · ChefConnect</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Where the research becomes a product.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">From the wireframes, I built the responsive interface around the tasks that mattered most, sign up and onboard, browse the home feed, filter and sort recipes, open a recipe to watch, save, share, print, or comment, follow other cooks, and join communities.</p>
+
+    <!-- Auth -->
+    <div class="mt-12">
+      <h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Authentication</h3>
+      <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Responsive sign-up with username, email, phone, and password, or Google, Instagram, and Facebook. Users are nudged to set up a profile (photo, short bio, country, gender) but can skip and finish later. Login supports credentials or a linked social account.</p>
+      <div class="mt-6">
+        <img src="assets/chef-auth.png" alt="ChefConnect sign-up and login screens across laptop, tablet, and mobile."
+          class="w-full h-auto block rounded-2xl border border-white/10"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add authentication screens → assets/chef-auth.png</div>
+      </div>
+    </div>
+
+    <!-- Home -->
+    <div class="mt-12">
+      <h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Home feed</h3>
+      <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Once registered, users land on a home page full of recipes posted by the community, directly answering "how might we help her find recipes that improve her cooking skills."</p>
+      <div class="mt-6">
+        <img src="assets/chef-home.png" alt="ChefConnect home feed of community recipes, shown responsively."
+          class="w-full h-auto block rounded-2xl border border-white/10"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add home feed → assets/chef-home.png</div>
+      </div>
+    </div>
+
+    <!-- Recipe view -->
+    <div class="mt-12">
+      <h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Recipe view</h3>
+      <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Opening a recipe reveals the video, ingredient list, and nutritional values, with actions to like, share, print, comment, and follow the creator, solving both the healthy-diet and shopping-list "how might we"s at once.</p>
+      <div class="mt-6">
+        <img src="assets/chef-recipe.png" alt="ChefConnect recipe view page with video, ingredients, nutrition, and social actions."
+          class="w-full h-auto block rounded-2xl border border-white/10"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add recipe view → assets/chef-recipe.png</div>
+      </div>
+    </div>
+
+    <!-- Community -->
+    <div class="mt-12">
+      <h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Community page</h3>
+      <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">From the menu, users open a community, say, Vegan, to see its members and videos, and browse its about and membership details, answering the "connect with like-minded people" goal.</p>
+      <div class="mt-6">
+        <img src="assets/chef-community.png" alt="ChefConnect community page showing the Vegan community's members and videos."
+          class="w-full h-auto block rounded-2xl border border-white/10"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add community page → assets/chef-community.png</div>
+      </div>
+    </div>
+
+    <!-- Dark mode -->
+    <div class="mt-12">
+      <h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Light &amp; dark themes</h3>
+      <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">An accessibility-minded appearance switch lets users move from a daylight theme to a dark one across the app.</p>
+      <div class="mt-6">
+        <img src="assets/chef-darkmode.png" alt="ChefConnect switching from a light daylight theme to a dark theme."
+          class="w-full h-auto block rounded-2xl border border-white/10"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add light/dark screens → assets/chef-darkmode.png</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 14 · PROTOTYPE ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">14</span><span class="eyebrow">Prototype</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">See it in motion.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">The full interactive flow lives in Figma, with walkthroughs mirrored on video. Add your links below.</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#" class="rounded-lg bg-accent px-5 py-3 text-sm font-medium text-black hover:brightness-95 transition">Prototype on Figma →</a>
+      <a href="#" class="rounded-lg bg-white/10 px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Walkthrough on Vimeo →</a>
+      <a href="#" class="rounded-lg bg-white/10 px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Walkthrough on YouTube →</a>
+      <a href="https://www.figma.com/design/0JTkcyZwMEMGtAv6eQvkfG/ChefConnect" target="_blank" rel="noopener" class="rounded-lg bg-white/10 px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Use case on Figma →</a>
+    </div>
+  </section>
+
+  <!-- ============ 15 · REFLECTION ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">15</span><span class="eyebrow">Reflection &amp; Next Steps</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">What I'd validate, and what I'd watch.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">With more time, I'd close the loop with real users, A/B and usability testing via surveys, one-on-one interviews, and in-app feedback, then prioritize changes by impact and feasibility with the development team.</p>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="eyebrow">KPIs I'd track</p>
+        <ul class="dot-list mt-3 text-[15px]">
+          <li>User engagement</li>
+          <li>Time on task</li>
+          <li>Drop-off rates</li>
+          <li>System Usability Scale (SUS)</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="eyebrow">Risks &amp; responses</p>
+        <ul class="dot-list mt-3 text-[15px]">
+          <li><span class="text-white">Standing out, </span>AI recommendations, user-generated challenges, and creator partnerships.</li>
+          <li><span class="text-white">Slow loading (video-heavy), </span>image/code optimization, caching, and CDNs.</li>
+          <li><span class="text-white">Accessibility, </span>dark/light themes, screen-reader support, and tooltips.</li>
+          <li><span class="text-white">Onboarding, </span>guided walkthroughs and progressive tooltips.</li>
+          <li><span class="text-white">Security, </span>encryption, authentication, and regular audits.</li>
+          <li><span class="text-white">Content control, </span>a review team to uphold quality and policy.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEXT PROJECT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <a href="aria.html" class="group block rounded-2xl border border-white/10 bg-card hover:bg-white/[0.04] transition-colors p-6 sm:p-8">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Next project</p>
+      <div class="mt-3 flex items-center justify-between gap-4">
+        <p class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Aria · AI Student Assistant</p>
+        <span class="text-2xl text-[#8a8a8a] group-hover:text-white transition-colors shrink-0">→</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="relative mt-24 sm:mt-32 overflow-hidden border-t border-white/10">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(120% 100% at 50% -10%, #1b1618 0%, #130f0e 42%, #0b0a0a 100%);"></div>
+    <div class="absolute -z-10 top-[-160px] left-1/2 -translate-x-1/2 size-[560px] rounded-full bg-accent/10 blur-[150px]"></div>
+
+    <div class="max-w-[1280px] mx-auto px-6 py-24 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-accent">Thanks for reading</p>
+      <h2 class="mt-6 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05] max-w-[18ch] mx-auto">Let's Design Products That Move People Forward.</h2>
+      <p class="mt-6 max-w-xl mx-auto text-lg text-[#c7c7cc] leading-relaxed">I'm a product designer who likes hard, technical problems. If that's useful to your team, let's talk.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:toyosi.design@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-white/90 transition"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> toyosi.design@gmail.com</a>
+        <a href="https://calendly.com/toyosi-design" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/5 transition">Book a 30-min intro ↗</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-[1280px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-[#8a8a8a]">© 2026 Omotoyosi Adegbite.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Reveal-on-scroll (respects prefers-reduced-motion via CSS)
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+  </script>
+</body>
+</html>
