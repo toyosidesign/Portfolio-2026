@@ -56,6 +56,41 @@
     .paper { position:relative; background:#f2ead9; background-image:linear-gradient(#f4ecdb,#ece2cf); border-radius:8px; padding:16px 16px 12px; box-shadow:0 14px 30px rgba(0,0,0,.42); }
     .paper .lbl { font-family:'Caveat', ui-sans-serif, cursive; color:#3d3a34; font-size:24px; line-height:1; margin-bottom:8px; }
     .paper svg { width:100%; height:auto; display:block; }
+    /* Hi-fi marketplace mockup (light product UI in a browser frame) */
+    .win { border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.12); box-shadow:0 30px 70px rgba(0,0,0,.5); }
+    .win-bar { display:flex; align-items:center; gap:8px; padding:11px 14px; background:#e2e6f0; }
+    .win-dot { width:11px; height:11px; border-radius:9999px; }
+    .win-url { margin-left:8px; flex:1; background:#fff; border-radius:7px; padding:5px 12px; font-size:12px; color:#8a90a8; }
+    .mk { background:#f4f6fc; color:#1f2547; padding:20px; }
+    .mk-nav { display:flex; align-items:center; gap:14px; }
+    .mk-brand { display:flex; align-items:center; gap:8px; font-weight:800; color:#1e2a5a; font-size:16px; white-space:nowrap; }
+    .mk-search { flex:1; min-width:60px; background:#fff; border:1px solid #dfe3ee; border-radius:9999px; padding:9px 14px; font-size:13px; color:#9aa0b5; }
+    .mk-btn { background:#1e2a5a; color:#fff; border-radius:9px; padding:9px 15px; font-size:13px; font-weight:600; white-space:nowrap; }
+    .mk-head { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-top:20px; flex-wrap:wrap; }
+    .mk-h { font-size:23px; font-weight:800; color:#1e2a5a; }
+    .mk-sub { color:#6b7291; font-size:13px; margin-top:3px; }
+    .mk-filters { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+    .mk-chip { background:#fff; border:1px solid #dfe3ee; border-radius:9999px; padding:7px 13px; font-size:12px; color:#3a4266; font-weight:500; }
+    .mk-chip.on { background:#eef1fb; color:#1e2a5a; border-color:#c7d0ec; font-weight:600; }
+    .mk-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:18px; }
+    .mk-card { background:#fff; border:1px solid #e6e9f2; border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(30,42,90,.06); }
+    .mk-photo { position:relative; height:104px; }
+    .mk-photo svg { position:absolute; right:10px; bottom:8px; opacity:.9; }
+    .mk-badge { position:absolute; top:9px; left:9px; color:#fff; font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:9999px; letter-spacing:.02em; }
+    .mk-heart { position:absolute; top:9px; right:9px; width:26px; height:26px; border-radius:9999px; background:rgba(255,255,255,.9); display:grid; place-items:center; color:#1e2a5a; font-size:13px; }
+    .mk-body { padding:13px 13px 15px; }
+    .mk-loc { font-size:10.5px; color:#8a90a8; text-transform:uppercase; letter-spacing:.05em; font-weight:600; }
+    .mk-title { font-size:14.5px; font-weight:700; color:#1e2a5a; margin-top:3px; }
+    .mk-meta { display:flex; align-items:baseline; justify-content:space-between; margin-top:10px; }
+    .mk-price { font-size:16px; font-weight:800; color:#1e2a5a; }
+    .mk-price span { font-size:11px; font-weight:500; color:#8a90a8; }
+    .mk-roi { font-size:12px; font-weight:800; color:#16a34a; background:#e7f6ec; padding:3px 8px; border-radius:9999px; }
+    .mk-track { height:6px; background:#eceef6; border-radius:9999px; margin-top:12px; overflow:hidden; }
+    .mk-fill { height:100%; background:#f26a2e; border-radius:9999px; }
+    .mk-fund { display:flex; justify-content:space-between; font-size:10.5px; color:#8a90a8; margin-top:7px; }
+    .mk-cta { display:block; margin-top:12px; background:#1e2a5a; color:#fff; text-align:center; border-radius:9px; padding:9px; font-size:12.5px; font-weight:600; }
+    @media (max-width:760px){ .mk-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:460px){ .mk-grid{ grid-template-columns:1fr; } .mk-search{ display:none; } }
   </style>
 </head>
 
@@ -487,10 +522,128 @@
       <div class="mt-6 space-y-4">
         <div>
           <p class="text-sm font-medium text-[#c7c7cc] mb-2">Marketplace</p>
-          <img src="assets/shortlet-ui-marketplace.png" alt="Shortlet Lagos marketplace screen."
-            class="w-full h-auto block rounded-2xl border border-white/10"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add marketplace → assets/shortlet-ui-marketplace.png</div>
+          <div class="win">
+            <div class="win-bar">
+              <span class="win-dot" style="background:#ff5f57"></span>
+              <span class="win-dot" style="background:#febc2e"></span>
+              <span class="win-dot" style="background:#28c840"></span>
+              <span class="win-url">shortlet-lagos.com/marketplace</span>
+            </div>
+            <div class="mk">
+              <div class="mk-nav">
+                <span class="mk-brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e2a5a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg> ShortletLagos</span>
+                <span class="mk-search">Search by location, price, or yield…</span>
+                <span class="mk-btn">Connect Wallet</span>
+              </div>
+              <div class="mk-head">
+                <div>
+                  <div class="mk-h">Invest in Lagos rental properties</div>
+                  <div class="mk-sub">Fractional ownership from $50 · management included</div>
+                </div>
+                <span class="mk-chip">Sort: Highest ROI ▾</span>
+              </div>
+              <div class="mk-filters">
+                <span class="mk-chip on">All</span>
+                <span class="mk-chip">Ikoyi</span>
+                <span class="mk-chip">Lekki</span>
+                <span class="mk-chip">Under $60</span>
+                <span class="mk-chip">15%+ ROI</span>
+                <span class="mk-chip">Condo</span>
+              </div>
+              <div class="mk-grid">
+                <!-- 1 -->
+                <div class="mk-card">
+                  <div class="mk-photo" style="background:linear-gradient(135deg,#5b7cc9,#28376e)">
+                    <span class="mk-badge" style="background:#f26a2e">Featured</span><span class="mk-heart">♡</span>
+                    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9.5 21v-5h5v5"/></svg>
+                  </div>
+                  <div class="mk-body">
+                    <div class="mk-loc">Ikoyi · Condo</div>
+                    <div class="mk-title">Luxury 2-Bedroom Apartment</div>
+                    <div class="mk-meta"><span class="mk-price">$50<span> / token</span></span><span class="mk-roi">15% ROI</span></div>
+                    <div class="mk-track"><div class="mk-fill" style="width:62%"></div></div>
+                    <div class="mk-fund"><span>62% funded</span><span>38,000 tokens left</span></div>
+                    <span class="mk-cta">Invest</span>
+                  </div>
+                </div>
+                <!-- 2 -->
+                <div class="mk-card">
+                  <div class="mk-photo" style="background:linear-gradient(135deg,#efa15c,#d96b3f)">
+                    <span class="mk-heart">♡</span>
+                    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9.5 21v-5h5v5"/></svg>
+                  </div>
+                  <div class="mk-body">
+                    <div class="mk-loc">Lekki Phase 1 · Apartment</div>
+                    <div class="mk-title">Serviced 1-Bed Studio</div>
+                    <div class="mk-meta"><span class="mk-price">$50<span> / token</span></span><span class="mk-roi">12% ROI</span></div>
+                    <div class="mk-track"><div class="mk-fill" style="width:45%"></div></div>
+                    <div class="mk-fund"><span>45% funded</span><span>55,000 tokens left</span></div>
+                    <span class="mk-cta">Invest</span>
+                  </div>
+                </div>
+                <!-- 3 -->
+                <div class="mk-card">
+                  <div class="mk-photo" style="background:linear-gradient(135deg,#6fb3a8,#2f7d72)">
+                    <span class="mk-badge" style="background:#16a34a">Almost funded</span><span class="mk-heart">♡</span>
+                    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9.5 21v-5h5v5"/></svg>
+                  </div>
+                  <div class="mk-body">
+                    <div class="mk-loc">Victoria Island · Penthouse</div>
+                    <div class="mk-title">Skyline Penthouse</div>
+                    <div class="mk-meta"><span class="mk-price">$75<span> / token</span></span><span class="mk-roi">18% ROI</span></div>
+                    <div class="mk-track"><div class="mk-fill" style="width:82%"></div></div>
+                    <div class="mk-fund"><span>82% funded</span><span>18,000 tokens left</span></div>
+                    <span class="mk-cta">Invest</span>
+                  </div>
+                </div>
+                <!-- 4 -->
+                <div class="mk-card">
+                  <div class="mk-photo" style="background:linear-gradient(135deg,#8a7fc4,#463f86)">
+                    <span class="mk-heart">♡</span>
+                    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9.5 21v-5h5v5"/></svg>
+                  </div>
+                  <div class="mk-body">
+                    <div class="mk-loc">Ikoyi · Duplex</div>
+                    <div class="mk-title">Garden Duplex</div>
+                    <div class="mk-meta"><span class="mk-price">$60<span> / token</span></span><span class="mk-roi">14% ROI</span></div>
+                    <div class="mk-track"><div class="mk-fill" style="width:30%"></div></div>
+                    <div class="mk-fund"><span>30% funded</span><span>70,000 tokens left</span></div>
+                    <span class="mk-cta">Invest</span>
+                  </div>
+                </div>
+                <!-- 5 -->
+                <div class="mk-card">
+                  <div class="mk-photo" style="background:linear-gradient(135deg,#e08aa0,#a94f6e)">
+                    <span class="mk-heart">♡</span>
+                    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9.5 21v-5h5v5"/></svg>
+                  </div>
+                  <div class="mk-body">
+                    <div class="mk-loc">Lekki · Condo</div>
+                    <div class="mk-title">Ocean-View Flat</div>
+                    <div class="mk-meta"><span class="mk-price">$50<span> / token</span></span><span class="mk-roi">16% ROI</span></div>
+                    <div class="mk-track"><div class="mk-fill" style="width:55%"></div></div>
+                    <div class="mk-fund"><span>55% funded</span><span>45,000 tokens left</span></div>
+                    <span class="mk-cta">Invest</span>
+                  </div>
+                </div>
+                <!-- 6 -->
+                <div class="mk-card">
+                  <div class="mk-photo" style="background:linear-gradient(135deg,#7aa9d9,#356296)">
+                    <span class="mk-heart">♡</span>
+                    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9.5 21v-5h5v5"/></svg>
+                  </div>
+                  <div class="mk-body">
+                    <div class="mk-loc">Yaba · Apartment</div>
+                    <div class="mk-title">Smart Studio</div>
+                    <div class="mk-meta"><span class="mk-price">$50<span> / token</span></span><span class="mk-roi">11% ROI</span></div>
+                    <div class="mk-track"><div class="mk-fill" style="width:25%"></div></div>
+                    <div class="mk-fund"><span>25% funded</span><span>75,000 tokens left</span></div>
+                    <span class="mk-cta">Invest</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div>
           <p class="text-sm font-medium text-[#c7c7cc] mb-2">Property detail &amp; invest</p>
