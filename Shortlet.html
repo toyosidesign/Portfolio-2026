@@ -11,7 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
 
   <style>
     ::selection { background: #ffd8e4; color: #000; }
@@ -35,7 +35,7 @@
     .note { border-radius:10px; padding:10px 12px; font-size:13.5px; line-height:1.5; color:#e6e6e6; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.10); border-left:3px solid #ffd8e4; }
     /* Flow diagram (horizontal, scrolls on overflow) */
     .flow { list-style:none; margin:0; padding:0 0 6px; display:flex; gap:20px; overflow-x:auto; }
-    .flow li { position:relative; flex:1 0 150px; background:#211d1a; border:1px solid rgba(255,255,255,.13); border-radius:14px; padding:14px; }
+    .flow li { position:relative; flex:1 1 0; min-width:140px; background:#211d1a; border:1px solid rgba(255,255,255,.13); border-radius:14px; padding:14px; }
     .flow li::after { content:'→'; position:absolute; right:-15px; top:22px; color:rgba(255,255,255,.45); font-size:15px; z-index:2; }
     .flow li:last-child::after { display:none; }
     .flow .node { width:28px; height:28px; border-radius:9999px; display:grid; place-items:center; background:#ffd8e4; color:#000; font-weight:700; font-size:12px; margin-bottom:10px; }
@@ -52,6 +52,10 @@
     .wf-b { background:rgba(255,255,255,.11); border:1px solid rgba(255,255,255,.09); border-radius:7px; }
     .wf-l { height:8px; border-radius:4px; background:rgba(255,255,255,.22); }
     .wf-btn { background:#ffd8e4; color:#000; border-radius:6px; font-size:11px; font-weight:700; display:grid; place-items:center; }
+    /* Paper sketch cards (hand-drawn) */
+    .paper { position:relative; background:#f2ead9; background-image:linear-gradient(#f4ecdb,#ece2cf); border-radius:8px; padding:16px 16px 12px; box-shadow:0 14px 30px rgba(0,0,0,.42); }
+    .paper .lbl { font-family:'Caveat', ui-sans-serif, cursive; color:#3d3a34; font-size:24px; line-height:1; margin-bottom:8px; }
+    .paper svg { width:100%; height:auto; display:block; }
   </style>
 </head>
 
@@ -352,41 +356,61 @@
         <li><span class="node">1</span><p class="t">Browse the marketplace</p><p class="s">Filter by location, price, and projected yield.</p></li>
         <li><span class="node">2</span><p class="t">Open a property</p><p class="s">Photos, location, and token details.</p></li>
         <li><span class="node">3</span><p class="t">Review returns &amp; risk</p><p class="s">Plain-language ROI, occupancy, and liquidity.</p></li>
-        <li><span class="node dec">?</span><p class="t">Wallet connected?</p><p class="s">If not, connect a wallet, then continue the flow.</p><div class="mt-2 flex flex-wrap gap-2"><span class="chip">No → Connect wallet</span><span class="chip">Yes → continue</span></div></li>
+        <li><span class="node dec">?</span><p class="t">Wallet connected?</p><p class="s">If not, connect a wallet, then continue.</p><p class="s" style="margin-top:6px;color:#cfcfcf"><span style="color:#ffd8e4;font-weight:700">No →</span> Connect wallet<br><span style="color:#ffd8e4;font-weight:700">Yes →</span> continue</p></li>
         <li><span class="node">4</span><p class="t">Choose tokens</p><p class="s">From $50; see total cost and projected return.</p></li>
         <li><span class="node">5</span><p class="t">Confirm &amp; pay</p><p class="s">Review the summary, confirm, and receive tokens.</p></li>
         <li><span class="node">6</span><p class="t">Track in portfolio</p><p class="s">Watch returns, and sell tokens on-platform anytime.</p></li>
       </ol>
     </div>
 
-    <!-- Early sketches (rendered natively) -->
+    <!-- Early sketches (hand-drawn on paper) -->
     <h3 class="mt-12 text-lg font-semibold">Early sketches</h3>
-    <p class="mt-2 text-[15px] text-[#a1a1aa]">Fast, low-fidelity concepts to test layout before committing. <span class="text-white">[Swap for photos of your real sketches if you have them.]</span></p>
-    <div class="mt-6 grid sm:grid-cols-3 gap-4">
-      <div class="sketch">
-        <p class="text-xs text-[#8a8a8a] mb-3">Marketplace</p>
-        <div class="sk" style="height:14px;width:55%"></div>
-        <div class="mt-3 grid grid-cols-2 gap-2">
-          <div class="sk" style="height:56px"></div><div class="sk" style="height:56px"></div>
-          <div class="sk" style="height:56px"></div><div class="sk" style="height:56px"></div>
-        </div>
-        <div class="sk-l mt-3" style="width:80%"></div>
-        <div class="sk-l mt-2" style="width:45%"></div>
+    <p class="mt-2 text-[15px] text-[#a1a1aa]">Fast, pen-and-paper concepts to test layout before committing pixels. <span class="text-white">[Swap for photos of your real sketches if you have them.]</span></p>
+    <div class="mt-6 grid sm:grid-cols-3 gap-5">
+      <!-- Marketplace -->
+      <div class="paper" style="transform:rotate(-1.3deg)">
+        <p class="lbl">Marketplace</p>
+        <svg viewBox="0 0 320 208" role="img" aria-label="Hand-drawn marketplace sketch">
+          <defs><filter id="rf1" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+          <g filter="url(#rf1)" fill="none" stroke="#514d46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="16" y="14" width="212" height="22" rx="11"/>
+            <circle cx="300" cy="25" r="12"/>
+            <rect x="16" y="52" width="138" height="66" rx="8"/><circle cx="42" cy="76" r="7"/><path d="M24 100 l20 -22 14 15 12 -10 20 20"/><line x1="26" y1="110" x2="120" y2="110"/>
+            <rect x="166" y="52" width="138" height="66" rx="8"/><circle cx="192" cy="76" r="7"/><path d="M174 100 l20 -22 14 15 12 -10 20 20"/><line x1="176" y1="110" x2="270" y2="110"/>
+            <rect x="16" y="128" width="138" height="66" rx="8"/><circle cx="42" cy="152" r="7"/><path d="M24 176 l20 -22 14 15 12 -10 20 20"/><line x1="26" y1="186" x2="120" y2="186"/>
+            <rect x="166" y="128" width="138" height="66" rx="8"/><circle cx="192" cy="152" r="7"/><path d="M174 176 l20 -22 14 15 12 -10 20 20"/><line x1="176" y1="186" x2="270" y2="186"/>
+          </g>
+        </svg>
       </div>
-      <div class="sketch">
-        <p class="text-xs text-[#8a8a8a] mb-3">Property detail</p>
-        <div class="sk" style="height:90px"></div>
-        <div class="sk-l mt-3" style="width:70%"></div>
-        <div class="sk-l mt-2" style="width:90%"></div>
-        <div class="sk-l mt-2" style="width:60%"></div>
-        <div class="sk mt-3" style="height:26px;width:50%"></div>
+      <!-- Property detail -->
+      <div class="paper" style="transform:rotate(0.9deg)">
+        <p class="lbl">Property detail</p>
+        <svg viewBox="0 0 320 208" role="img" aria-label="Hand-drawn property detail sketch">
+          <defs><filter id="rf2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="13" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+          <g filter="url(#rf2)" fill="none" stroke="#514d46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="16" y="14" width="288" height="96" rx="8"/><circle cx="66" cy="46" r="11"/><path d="M28 96 l40 -46 26 28 22 -18 40 40"/>
+            <line x1="16" y1="126" x2="184" y2="126"/>
+            <line x1="16" y1="144" x2="272" y2="144"/>
+            <line x1="16" y1="160" x2="214" y2="160"/>
+            <rect x="16" y="174" width="58" height="22" rx="6"/><rect x="84" y="174" width="58" height="22" rx="6"/><rect x="152" y="174" width="58" height="22" rx="6"/>
+            <rect x="228" y="172" width="76" height="26" rx="8"/><line x1="244" y1="185" x2="288" y2="185"/>
+          </g>
+        </svg>
       </div>
-      <div class="sketch">
-        <p class="text-xs text-[#8a8a8a] mb-3">Invest panel</p>
-        <div class="sk-l mt-1" style="width:40%"></div>
-        <div class="sk mt-3" style="height:34px"></div>
-        <div class="mt-3 flex gap-2"><div class="sk" style="height:26px;width:33%"></div><div class="sk" style="height:26px;width:33%"></div><div class="sk" style="height:26px;width:33%"></div></div>
-        <div class="sk mt-3" style="height:30px"></div>
+      <!-- Invest panel -->
+      <div class="paper" style="transform:rotate(-0.6deg)">
+        <p class="lbl">Invest panel</p>
+        <svg viewBox="0 0 320 208" role="img" aria-label="Hand-drawn invest panel sketch">
+          <defs><filter id="rf3" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="21" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+          <g filter="url(#rf3)" fill="none" stroke="#514d46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="16" y1="18" x2="120" y2="18"/>
+            <rect x="16" y="30" width="288" height="38" rx="8"/><line x1="30" y1="49" x2="72" y2="49"/>
+            <rect x="16" y="82" width="88" height="34" rx="7"/><rect x="116" y="82" width="88" height="34" rx="7"/><rect x="216" y="82" width="88" height="34" rx="7"/>
+            <line x1="16" y1="134" x2="214" y2="134"/>
+            <line x1="16" y1="150" x2="150" y2="150"/>
+            <rect x="16" y="164" width="288" height="36" rx="8"/><line x1="122" y1="182" x2="198" y2="182"/>
+          </g>
+        </svg>
       </div>
     </div>
   </section>
