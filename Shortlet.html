@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shortlet Lagos · Fractional property investment | Omotoyosi Adegbite</title>
+  <meta name="description" content="Case study: Shortlet Lagos, a Web3 platform for fractional investment in tokenized shortlet apartments in Lagos. Structured around the five stages of design thinking." />
+
+  <!-- Tailwind CSS (precompiled -- rebuild with: npm run build:css) -->
+  <link rel="stylesheet" href="assets/tailwind.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    ::selection { background: #ffd8e4; color: #000; }
+    .eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ffd8e4; font-weight: 700; }
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+      .reveal.in { opacity: 1; transform: none; }
+    }
+    /* Bespoke helpers (plain CSS so they don't depend on a Tailwind rebuild) */
+    .chip { display:inline-flex; align-items:center; gap:6px; border-radius:9999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); padding:6px 12px; font-size:13px; color:#c7c7cc; }
+    .stage-num { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:9999px; background:#ffd8e4; color:#000; font-weight:700; font-size:13px; }
+    .swatch { height:104px; border-radius:16px 16px 0 0; }
+    .ph16 { aspect-ratio: 16 / 9; }
+    .ph43 { aspect-ratio: 4 / 3; }
+    .dot-list { list-style:none; margin:0; padding:0; }
+    .dot-list li { position:relative; padding-left:20px; margin-top:10px; color:#a1a1aa; line-height:1.65; }
+    .dot-list li::before { content:''; position:absolute; left:2px; top:9px; width:6px; height:6px; border-radius:9999px; background:#ffd8e4; }
+    .quote-list { list-style:none; margin:0; padding:0; }
+    .quote-list li { margin-top:10px; color:#c7c7cc; line-height:1.6; font-size:15px; }
+  </style>
+</head>
+
+<body class="bg-base text-white font-sans antialiased">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="sticky top-0 z-50 pt-6 px-4 sm:px-6">
+    <div class="max-w-[1280px] mx-auto">
+      <nav class="flex items-center justify-between h-[54px] rounded-full border border-[#3d3e3f] bg-header/90 backdrop-blur-xl px-5 shadow-[0_4px_10px_rgba(0,0,0,0.35)]">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="grid place-items-center size-7 rounded-full bg-accent text-black text-xs font-bold">O</span>
+          <span class="text-base font-semibold tracking-tight text-white">Omotoyosi Adegbite</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm">
+          <li><a href="index.html#work" class="font-bold text-accent">Work</a></li>
+          <li><a href="index.html#about" class="text-[#c0c0c0] hover:text-white transition-colors">About</a></li>
+          <li><a href="index.html#contact" class="text-[#c0c0c0] hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 pt-14 sm:pt-20">
+    <div class="flex items-center justify-between mb-10">
+      <a href="index.html#work" class="inline-flex items-center gap-1.5 text-sm text-[#8a8a8a] hover:text-white transition-colors">← Back to all work</a>
+      <a href="https://www.shortlet-lagos.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-white transition-colors">View live site →</a>
+    </div>
+
+    <p class="text-sm text-[#8a8a8a]">Shortlet Lagos &nbsp;·&nbsp; Fractional Property Investment</p>
+
+    <h1 class="mt-3 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.02]">
+      Making Lagos real estate investable, one token at a time.
+    </h1>
+    <p class="max-w-4xl mt-6 text-lg text-[#c7c7cc] leading-relaxed">
+      Shortlet Lagos is a Web3 platform where anyone can invest in tokenized shortlet apartments
+      in Lagos from as little as $50, and where property owners unlock equity by connecting with
+      a network of investors. <span class="text-white">[Edit this summary to match your framing.]</span>
+    </p>
+
+    <!-- Hero meta -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5">
+        <p class="eyebrow">My role</p>
+        <p class="mt-2 font-medium text-white text-sm">Product Designer</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Client</p>
+        <p class="mt-2 font-medium text-white text-sm">Shortlet Lagos</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Timeline</p>
+        <p class="mt-2 font-medium text-white text-sm">8 weeks</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="eyebrow">Method</p>
+        <p class="mt-2 font-medium text-white text-sm">Design Thinking</p>
+      </div>
+    </div>
+    <div class="mt-4 flex flex-wrap items-center gap-2">
+      <span class="text-xs text-[#8a8a8a] mr-1">Tools</span>
+      <span class="chip">Figma</span>
+      <span class="chip">FigJam</span>
+      <span class="chip">Maze</span>
+      <span class="chip">Notion</span>
+    </div>
+  </section>
+
+  <!-- ============ HERO IMAGE ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-16 sm:mt-20 reveal">
+    <div class="rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a]">
+      <img src="assets/shortlet-hero.png"
+        alt="Shortlet Lagos hero — the fractional property investment marketplace."
+        class="w-full h-auto block"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8">
+        Add hero image → assets/shortlet-hero.png
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OVERVIEW + DESIGN THINKING FRAMEWORK ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="eyebrow">Overview</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">A design-thinking approach to a new kind of investing.</h2>
+    <div class="mt-6 space-y-4 text-lg text-[#a1a1aa] leading-relaxed max-w-4xl">
+      <p>Real estate is one of the safest ways to build wealth, and one of the hardest to access. Shortlet Lagos set out to lower that barrier: fractional, tokenized ownership of premium shortlet apartments, starting at $50, with property management handled end to end.</p>
+      <p class="text-white">Because the product asks people to trust a new model (Web3 + real estate), I structured the work around the five stages of design thinking, keeping real user needs at the centre of every decision. <span class="text-[#a1a1aa]">[Replace with your own overview.]</span></p>
+    </div>
+
+    <!-- Design thinking legend -->
+    <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      <a href="#empathize" class="rounded-2xl border border-white/10 bg-card p-6 hover:bg-white/[0.04] transition-colors">
+        <span class="stage-num">1</span>
+        <p class="mt-3 font-semibold">Empathize</p>
+        <p class="mt-1 text-[13px] text-[#a1a1aa] leading-relaxed">Understand investors &amp; owners.</p>
+      </a>
+      <a href="#define" class="rounded-2xl border border-white/10 bg-card p-6 hover:bg-white/[0.04] transition-colors">
+        <span class="stage-num">2</span>
+        <p class="mt-3 font-semibold">Define</p>
+        <p class="mt-1 text-[13px] text-[#a1a1aa] leading-relaxed">Frame the real problem.</p>
+      </a>
+      <a href="#ideate" class="rounded-2xl border border-white/10 bg-card p-6 hover:bg-white/[0.04] transition-colors">
+        <span class="stage-num">3</span>
+        <p class="mt-3 font-semibold">Ideate</p>
+        <p class="mt-1 text-[13px] text-[#a1a1aa] leading-relaxed">Explore flows &amp; structure.</p>
+      </a>
+      <a href="#prototype" class="rounded-2xl border border-white/10 bg-card p-6 hover:bg-white/[0.04] transition-colors">
+        <span class="stage-num">4</span>
+        <p class="mt-3 font-semibold">Prototype</p>
+        <p class="mt-1 text-[13px] text-[#a1a1aa] leading-relaxed">Wireframes to hi-fi UI.</p>
+      </a>
+      <a href="#test" class="rounded-2xl border border-white/10 bg-card p-6 hover:bg-white/[0.04] transition-colors">
+        <span class="stage-num">5</span>
+        <p class="mt-3 font-semibold">Test</p>
+        <p class="mt-1 text-[13px] text-[#a1a1aa] leading-relaxed">Validate &amp; iterate.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ 01 · EMPATHIZE ============ -->
+  <section id="empathize" class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">01</span><span class="eyebrow">Empathize</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Two very different people have to trust the same product.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I started by understanding the two sides of the marketplace, the first-time investor and the property owner, through interviews, surveys, and secondary research into how people feel about real estate and Web3. <span class="text-white">[Swap in your real methods and sample sizes.]</span></p>
+
+    <!-- Research methods meta -->
+    <div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="eyebrow">Interviews</p><p class="mt-2 text-xl font-semibold">[ 00 ]</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Survey responses</p><p class="mt-2 text-xl font-semibold">[ 000 ]</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">User groups</p><p class="mt-2 text-xl font-semibold">2</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Method</p><p class="mt-2 text-xl font-semibold">Qual + Quant</p></div>
+    </div>
+
+    <!-- Key insights -->
+    <h3 class="mt-12 text-lg font-semibold">What I heard</h3>
+    <div class="mt-6 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent font-bold">01</p><p class="mt-3 text-lg font-semibold">Trust is the whole game</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">People are excited by fractional ownership but wary of "Web3." They need proof, transparency, and plain language before they'll commit money.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent font-bold">02</p><p class="mt-3 text-lg font-semibold">Jargon is a barrier</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Terms like "token," "wallet," and "liquidity" confuse first-time investors. They want to know returns, risk, and how to get their money out.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent font-bold">03</p><p class="mt-3 text-lg font-semibold">Owners want control</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">Property owners will tokenize, but only with clear terms, visibility into occupancy, and confidence they won't lose control of their asset.</p></div>
+    </div>
+
+    <!-- Personas -->
+    <h3 class="mt-12 text-lg font-semibold">Personas</h3>
+    <div class="mt-6 grid md:grid-cols-2 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <div class="flex items-center gap-4">
+          <span class="grid place-items-center size-14 rounded-full bg-accent text-black text-lg font-bold shrink-0">I</span>
+          <div><p class="text-xl font-semibold">The First-Time Investor</p><p class="text-[15px] text-[#a1a1aa]">[ Name · age · occupation ]</p></div>
+        </div>
+        <ul class="dot-list mt-4 text-[15px]">
+          <li><span class="text-white">Goal, </span>grow savings without a huge upfront cost.</li>
+          <li><span class="text-white">Frustration, </span>real estate feels out of reach; crypto feels risky.</li>
+          <li><span class="text-white">Needs, </span>clarity on returns, risk, and how to cash out.</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <div class="flex items-center gap-4">
+          <span class="grid place-items-center size-14 rounded-full bg-accent text-black text-lg font-bold shrink-0">O</span>
+          <div><p class="text-xl font-semibold">The Property Owner</p><p class="text-[15px] text-[#a1a1aa]">[ Name · age · occupation ]</p></div>
+        </div>
+        <ul class="dot-list mt-4 text-[15px]">
+          <li><span class="text-white">Goal, </span>unlock equity and steady occupancy.</li>
+          <li><span class="text-white">Frustration, </span>capital tied up; managing bookings is a grind.</li>
+          <li><span class="text-white">Needs, </span>fair terms, transparency, and retained control.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Empathy map placeholder -->
+    <h3 class="mt-12 text-lg font-semibold">Empathy map</h3>
+    <div class="mt-6 grid sm:grid-cols-2 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="eyebrow">Says</p><ul class="quote-list mt-3"><li>"Is my money actually safe here?"</li><li>"[ Add a real quote from research. ]"</li></ul></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="eyebrow">Thinks</p><ul class="quote-list mt-3"><li>"I want in early, but I don't want to get burned."</li><li>"[ Add a real quote from research. ]"</li></ul></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="eyebrow">Does</p><ul class="quote-list mt-3"><li>Compares returns; reads reviews; asks friends.</li><li>[ Add an observed behaviour. ]</li></ul></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="eyebrow">Feels</p><ul class="quote-list mt-3"><li>Hopeful but cautious; overwhelmed by jargon.</li><li>[ Add an observed emotion. ]</li></ul></div>
+    </div>
+
+    <!-- Research image placeholder -->
+    <div class="mt-8">
+      <img src="assets/shortlet-research.png" alt="Shortlet Lagos research artefacts — affinity map, personas, and empathy maps."
+        class="w-full h-auto block rounded-2xl border border-white/10"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add research / affinity map → assets/shortlet-research.png</div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · DEFINE ============ -->
+  <section id="define" class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">02</span><span class="eyebrow">Define</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">The real problem wasn't access. It was trust.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Synthesizing the research, I reframed the challenge from "how do we let people invest" to "how do we make a brand-new, blockchain-based model feel safe, simple, and worth acting on."</p>
+
+    <!-- Problem statement -->
+    <div class="mt-10 rounded-2xl border border-white/10 bg-card p-6 sm:p-8">
+      <p class="eyebrow">Problem statement</p>
+      <p class="mt-3 text-xl sm:text-2xl font-semibold tracking-[-0.01em] leading-snug">First-time investors want the wealth-building power of Lagos real estate, but the cost, complexity, and unfamiliarity of tokenized ownership stop them from starting. <span class="text-[#a1a1aa] font-normal">[Refine to your exact statement.]</span></p>
+    </div>
+
+    <!-- POV + HMW -->
+    <div class="mt-6 grid md:grid-cols-2 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6">
+        <p class="eyebrow">Point of view</p>
+        <ul class="dot-list mt-3 text-[15px]">
+          <li>A cautious first-time investor needs to feel <span class="text-white">confident and in control</span> because money and unfamiliar tech together feel risky.</li>
+          <li>A property owner needs <span class="text-white">transparency and fair terms</span> because they won't tokenize an asset they can't trust.</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-accent/20 bg-accent/[0.04] p-6">
+        <p class="eyebrow">How might we</p>
+        <ul class="dot-list mt-3 text-[15px]">
+          <li>Make returns, risk, and liquidity understandable at a glance?</li>
+          <li>Turn "Web3" from a barrier into a mark of security?</li>
+          <li>Give owners visible control over their tokenized property?</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Success criteria -->
+    <div class="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="eyebrow">Success looks like</p><p class="mt-2 text-sm font-medium">Investors understand a listing in under a minute</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Success looks like</p><p class="mt-2 text-sm font-medium">First investment completed without help</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Success looks like</p><p class="mt-2 text-sm font-medium">Owners list a property with confidence</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Success looks like</p><p class="mt-2 text-sm font-medium">[ Add your own metric ]</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · IDEATE ============ -->
+  <section id="ideate" class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">03</span><span class="eyebrow">Ideate</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">From messy ideas to a clear structure.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I explored solutions widely, then narrowed to the flows and architecture that best answered the "how might we" questions, sketching fast and cheap before committing pixels.</p>
+
+    <!-- Methods -->
+    <div class="mt-8 flex flex-wrap gap-2">
+      <span class="chip">Brainstorming</span>
+      <span class="chip">Crazy 8s</span>
+      <span class="chip">Information architecture</span>
+      <span class="chip">User flows</span>
+      <span class="chip">Card sorting</span>
+      <span class="chip">Sketching</span>
+    </div>
+
+    <!-- Information architecture -->
+    <h3 class="mt-12 text-lg font-semibold">Information architecture</h3>
+    <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">The product organizes around a few clear areas. <span class="text-white">[Adjust to match your final sitemap.]</span></p>
+    <div class="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Marketplace</p><p class="mt-2 text-[15px] text-[#a1a1aa]">Browse · Filter · Property detail</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Invest</p><p class="mt-2 text-[15px] text-[#a1a1aa]">Connect wallet · Buy tokens · Confirm</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">Portfolio</p><p class="mt-2 text-[15px] text-[#a1a1aa]">Holdings · Returns · Sell tokens</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="font-semibold">List a property</p><p class="mt-2 text-[15px] text-[#a1a1aa]">Onboard · Tokenize · Manage</p></div>
+    </div>
+
+    <!-- User flow -->
+    <h3 class="mt-12 text-lg font-semibold">Core flow, invest in a property</h3>
+    <div class="mt-6 flex flex-wrap items-center gap-2 text-[13px]">
+      <span class="chip">Browse marketplace</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">Open property</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">Review returns &amp; risk</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">Connect wallet</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">Choose tokens</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">Confirm &amp; pay</span><span class="text-[#6b6b6b]">→</span>
+      <span class="chip">Track in portfolio</span>
+    </div>
+    <div class="mt-8 grid sm:grid-cols-2 gap-4">
+      <div>
+        <img src="assets/shortlet-userflow.png" alt="Shortlet Lagos user flow diagram."
+          class="w-full h-auto block rounded-2xl border border-white/10"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph43 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add user flow → assets/shortlet-userflow.png</div>
+      </div>
+      <div>
+        <img src="assets/shortlet-sketches.png" alt="Early low-fidelity sketches for Shortlet Lagos."
+          class="w-full h-auto block rounded-2xl border border-white/10"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph43 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add sketches → assets/shortlet-sketches.png</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 · PROTOTYPE ============ -->
+  <section id="prototype" class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">04</span><span class="eyebrow">Prototype</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Turning structure into a product you can feel.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I moved from wireframes to a design system to high-fidelity, interactive screens, building trust into every surface: clear numbers, plain language, and visible security.</p>
+
+    <!-- Wireframes -->
+    <div class="mt-10">
+      <h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Wireframes</h3>
+      <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Low-fidelity layouts to test hierarchy and the investment flow before visual design.</p>
+      <div class="mt-6">
+        <img src="assets/shortlet-wireframes.png" alt="Shortlet Lagos wireframes."
+          class="w-full h-auto block rounded-2xl border border-white/10"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add wireframes → assets/shortlet-wireframes.png</div>
+      </div>
+    </div>
+
+    <!-- Design system -->
+    <div class="mt-12">
+      <h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Design system</h3>
+      <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">A restrained, premium system, color, type, and components, so the product feels credible and calm. <span class="text-white">[Replace the swatches with your real palette.]</span></p>
+      <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-card"><div class="swatch" style="background:#111827"></div><div class="p-4"><p class="font-semibold text-sm">Ink</p><p class="text-xs text-[#8a8a8a] mt-1">#111827 · [rename]</p></div></div>
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-card"><div class="swatch" style="background:#1F6FEB"></div><div class="p-4"><p class="font-semibold text-sm">Primary</p><p class="text-xs text-[#8a8a8a] mt-1">#1F6FEB · [rename]</p></div></div>
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-card"><div class="swatch" style="background:#16B364"></div><div class="p-4"><p class="font-semibold text-sm">Success</p><p class="text-xs text-[#8a8a8a] mt-1">#16B364 · [rename]</p></div></div>
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-card"><div class="swatch" style="background:#F5F3EF"></div><div class="p-4"><p class="font-semibold text-sm">Paper</p><p class="text-xs text-[#8a8a8a] mt-1">#F5F3EF · [rename]</p></div></div>
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-card"><div class="swatch" style="background:#FFFFFF"></div><div class="p-4"><p class="font-semibold text-sm">White</p><p class="text-xs text-[#8a8a8a] mt-1">#FFFFFF · Surface</p></div></div>
+      </div>
+      <div class="mt-4 grid md:grid-cols-2 gap-4">
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="eyebrow">Typography</p><p class="mt-3 text-2xl font-semibold">[ Typeface ]</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">[ Note why you chose it, weights, and how it supports readability and trust. ]</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="eyebrow">Components</p><ul class="dot-list mt-3 text-[15px]"><li>Buttons, inputs, and wallet states</li><li>Property card &amp; return/risk badges</li><li>[ Add your key components ]</li></ul></div>
+      </div>
+    </div>
+
+    <!-- Hi-fi UI -->
+    <div class="mt-12">
+      <h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">High-fidelity UI</h3>
+      <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">The key screens where trust is won or lost. Add your final designs below.</p>
+
+      <div class="mt-6 space-y-4">
+        <div>
+          <p class="text-sm font-medium text-[#c7c7cc] mb-2">Marketplace</p>
+          <img src="assets/shortlet-ui-marketplace.png" alt="Shortlet Lagos marketplace screen."
+            class="w-full h-auto block rounded-2xl border border-white/10"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add marketplace → assets/shortlet-ui-marketplace.png</div>
+        </div>
+        <div>
+          <p class="text-sm font-medium text-[#c7c7cc] mb-2">Property detail &amp; invest</p>
+          <img src="assets/shortlet-ui-detail.png" alt="Shortlet Lagos property detail and invest screen."
+            class="w-full h-auto block rounded-2xl border border-white/10"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add property detail → assets/shortlet-ui-detail.png</div>
+        </div>
+        <div>
+          <p class="text-sm font-medium text-[#c7c7cc] mb-2">Portfolio dashboard</p>
+          <img src="assets/shortlet-ui-dashboard.png" alt="Shortlet Lagos investor portfolio dashboard."
+            class="w-full h-auto block rounded-2xl border border-white/10"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add dashboard → assets/shortlet-ui-dashboard.png</div>
+        </div>
+        <div>
+          <p class="text-sm font-medium text-[#c7c7cc] mb-2">List a property (owner)</p>
+          <img src="assets/shortlet-ui-owner.png" alt="Shortlet Lagos owner property listing screen."
+            class="w-full h-auto block rounded-2xl border border-white/10"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add owner listing → assets/shortlet-ui-owner.png</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 · TEST ============ -->
+  <section id="test" class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">05</span><span class="eyebrow">Test</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Putting it in front of real people.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I validated the prototype with usability testing, watching people attempt the core tasks, then iterated on what tripped them up. <span class="text-white">[Add your test plan, participants, and tasks.]</span></p>
+
+    <!-- Test setup -->
+    <div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="eyebrow">Participants</p><p class="mt-2 text-xl font-semibold">[ 00 ]</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Format</p><p class="mt-2 text-xl font-semibold">Moderated</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Tasks</p><p class="mt-2 text-xl font-semibold">[ 0 ]</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Tool</p><p class="mt-2 text-xl font-semibold">Maze / Figma</p></div>
+    </div>
+
+    <!-- Findings & iterations -->
+    <h3 class="mt-12 text-lg font-semibold">What changed after testing</h3>
+    <div class="mt-6 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="eyebrow">Finding</p><p class="mt-2 font-semibold">[ What confused users ]</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">[ Describe the issue you observed. ]</p><p class="mt-3 text-[15px]"><span class="text-accent font-semibold">Change, </span>[ what you did about it ].</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="eyebrow">Finding</p><p class="mt-2 font-semibold">[ Where users hesitated ]</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">[ Describe the issue you observed. ]</p><p class="mt-3 text-[15px]"><span class="text-accent font-semibold">Change, </span>[ what you did about it ].</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="eyebrow">Finding</p><p class="mt-2 font-semibold">[ What users loved ]</p><p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed">[ Describe the positive signal. ]</p><p class="mt-3 text-[15px]"><span class="text-accent font-semibold">Change, </span>[ what you doubled down on ].</p></div>
+    </div>
+
+    <div class="mt-8">
+      <img src="assets/shortlet-testing.png" alt="Shortlet Lagos usability testing, before and after iterations."
+        class="w-full h-auto block rounded-2xl border border-white/10"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add testing / before-after → assets/shortlet-testing.png</div>
+    </div>
+  </section>
+
+  <!-- ============ OUTCOME & REFLECTION ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="eyebrow">Outcome &amp; Reflection</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">What shipped, and what I learned.</h2>
+
+    <div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="eyebrow">Result</p><p class="mt-2 text-2xl font-semibold">[ 00% ]</p><p class="mt-1 text-xs text-[#8a8a8a]">[ metric ]</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Result</p><p class="mt-2 text-2xl font-semibold">[ 00 ]</p><p class="mt-1 text-xs text-[#8a8a8a]">[ metric ]</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Result</p><p class="mt-2 text-2xl font-semibold">[ 00 ]</p><p class="mt-1 text-xs text-[#8a8a8a]">[ metric ]</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Result</p><p class="mt-2 text-2xl font-semibold">[ 00 ]</p><p class="mt-1 text-xs text-[#8a8a8a]">[ metric ]</p></div>
+    </div>
+
+    <div class="mt-6 grid md:grid-cols-2 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="eyebrow">What worked</p><ul class="dot-list mt-3 text-[15px]"><li>[ A decision you'd keep. ]</li><li>[ Another win. ]</li></ul></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="eyebrow">What I'd explore next</p><ul class="dot-list mt-3 text-[15px]"><li>[ A next step or open question. ]</li><li>[ Another idea to test. ]</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ============ NEXT PROJECT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <a href="aria.html" class="group block rounded-2xl border border-white/10 bg-card hover:bg-white/[0.04] transition-colors p-6 sm:p-8">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Next project</p>
+      <div class="mt-3 flex items-center justify-between gap-4">
+        <p class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Aria · AI Student Assistant</p>
+        <span class="text-2xl text-[#8a8a8a] group-hover:text-white transition-colors shrink-0">→</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="relative mt-24 sm:mt-32 overflow-hidden border-t border-white/10">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(120% 100% at 50% -10%, #1b1618 0%, #130f0e 42%, #0b0a0a 100%);"></div>
+    <div class="absolute -z-10 top-[-160px] left-1/2 -translate-x-1/2 size-[560px] rounded-full bg-accent/10 blur-[150px]"></div>
+
+    <div class="max-w-[1280px] mx-auto px-6 py-24 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-accent">Thanks for reading</p>
+      <h2 class="mt-6 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05] max-w-[18ch] mx-auto">Let's Design Products That Move People Forward.</h2>
+      <p class="mt-6 max-w-xl mx-auto text-lg text-[#c7c7cc] leading-relaxed">I'm a product designer who likes hard, technical problems. If that's useful to your team, let's talk.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:toyosi.design@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-white/90 transition"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> toyosi.design@gmail.com</a>
+        <a href="https://calendly.com/toyosi-design" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/5 transition">Book a 30-min intro ↗</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-[1280px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-[#8a8a8a]">© 2026 Omotoyosi Adegbite.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Reveal-on-scroll (respects prefers-reduced-motion via CSS)
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+  </script>
+</body>
+</html>
