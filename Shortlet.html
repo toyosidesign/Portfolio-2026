@@ -31,6 +31,27 @@
     .dot-list li::before { content:''; position:absolute; left:2px; top:9px; width:6px; height:6px; border-radius:9999px; background:#ffd8e4; }
     .quote-list { list-style:none; margin:0; padding:0; }
     .quote-list li { margin-top:10px; color:#c7c7cc; line-height:1.6; font-size:15px; }
+    /* Affinity-map sticky notes */
+    .note { border-radius:10px; padding:10px 12px; font-size:13.5px; line-height:1.5; color:#e6e6e6; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.10); border-left:3px solid #ffd8e4; }
+    /* Flow diagram (vertical timeline) */
+    .flow { list-style:none; margin:0; padding:0; }
+    .flow li { position:relative; padding:0 0 22px 48px; }
+    .flow li:last-child { padding-bottom:0; }
+    .flow li::after { content:''; position:absolute; left:15px; top:34px; bottom:2px; width:2px; background:rgba(255,255,255,.14); }
+    .flow li:last-child::after { display:none; }
+    .flow .node { position:absolute; left:0; top:2px; width:32px; height:32px; border-radius:9999px; display:grid; place-items:center; background:#ffd8e4; color:#000; font-weight:700; font-size:13px; z-index:1; }
+    .flow .node.dec { border-radius:7px; background:#141210; border:2px solid #ffd8e4; color:#ffd8e4; }
+    .flow .t { font-weight:600; }
+    .flow .s { color:#a1a1aa; font-size:14px; margin-top:2px; line-height:1.5; }
+    /* Low-fi sketch frames */
+    .sketch { background:#171412; border:2px dashed rgba(255,255,255,.20); border-radius:14px; padding:16px; }
+    .sk { background:rgba(255,255,255,.05); border:1px dashed rgba(255,255,255,.18); border-radius:7px; }
+    .sk-l { height:9px; border-radius:5px; background:rgba(255,255,255,.13); }
+    /* Wireframe frames */
+    .wf { background:#0e0d0c; border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:14px; }
+    .wf-b { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.07); border-radius:7px; }
+    .wf-l { height:8px; border-radius:4px; background:rgba(255,255,255,.14); }
+    .wf-btn { background:#ffd8e4; color:#000; border-radius:6px; font-size:11px; font-weight:700; display:grid; place-items:center; }
   </style>
 </head>
 
@@ -209,12 +230,42 @@
       <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="eyebrow">Feels</p><ul class="quote-list mt-3"><li>Hopeful but cautious; overwhelmed by jargon.</li><li>[ Add an observed emotion. ]</li></ul></div>
     </div>
 
-    <!-- Research image placeholder -->
-    <div class="mt-8">
-      <img src="assets/shortlet-research.png" alt="Shortlet Lagos research artefacts — affinity map, personas, and empathy maps."
-        class="w-full h-auto block rounded-2xl border border-white/10"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add research / affinity map → assets/shortlet-research.png</div>
+    <!-- Affinity map (rendered natively) -->
+    <h3 class="mt-12 text-lg font-semibold">Affinity map</h3>
+    <p class="mt-2 text-[15px] text-[#a1a1aa]">Clustering observations from interviews and reviews into themes. <span class="text-white">[Edit the notes to match your real data.]</span></p>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-5">
+        <p class="text-sm font-semibold">Trust &amp; security</p>
+        <div class="mt-3 grid gap-2">
+          <div class="note">"Is my money actually safe here?"</div>
+          <div class="note">Wants proof and reviews before committing.</div>
+          <div class="note">"Web3" reads as risky, not secure.</div>
+        </div>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5">
+        <p class="text-sm font-semibold">Clarity over jargon</p>
+        <div class="mt-3 grid gap-2">
+          <div class="note">"Token / wallet / liquidity" confuse first-timers.</div>
+          <div class="note">Prefers dollars over crypto terms.</div>
+          <div class="note">Wants plain-language explanations.</div>
+        </div>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5">
+        <p class="text-sm font-semibold">Returns, risk &amp; liquidity</p>
+        <div class="mt-3 grid gap-2">
+          <div class="note">Needs clear ROI up front.</div>
+          <div class="note">"How do I get my money back out?"</div>
+          <div class="note">Compares against savings and other assets.</div>
+        </div>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5">
+        <p class="text-sm font-semibold">Owner confidence</p>
+        <div class="mt-3 grid gap-2">
+          <div class="note">Will tokenize, but only on fair terms.</div>
+          <div class="note">Wants visibility into occupancy.</div>
+          <div class="note">Fears losing control of the asset.</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -295,18 +346,47 @@
       <span class="chip">Confirm &amp; pay</span><span class="text-[#6b6b6b]">→</span>
       <span class="chip">Track in portfolio</span>
     </div>
-    <div class="mt-8 grid sm:grid-cols-2 gap-4">
-      <div>
-        <img src="assets/shortlet-userflow.png" alt="Shortlet Lagos user flow diagram."
-          class="w-full h-auto block rounded-2xl border border-white/10"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph43 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add user flow → assets/shortlet-userflow.png</div>
+    <!-- User flow diagram (rendered natively) -->
+    <div class="mt-8 rounded-2xl border border-white/10 bg-card p-6 sm:p-8">
+      <ol class="flow">
+        <li><span class="node">1</span><p class="t">Browse the marketplace</p><p class="s">Filter by location, price, and projected yield.</p></li>
+        <li><span class="node">2</span><p class="t">Open a property</p><p class="s">Photos, location, and token details.</p></li>
+        <li><span class="node">3</span><p class="t">Review returns &amp; risk</p><p class="s">Plain-language ROI, occupancy, and liquidity.</p></li>
+        <li><span class="node dec">?</span><p class="t">Wallet connected?</p><p class="s">If not, connect a wallet, then continue the flow.</p><div class="mt-2 flex flex-wrap gap-2"><span class="chip">No → Connect wallet</span><span class="chip">Yes → continue</span></div></li>
+        <li><span class="node">4</span><p class="t">Choose tokens</p><p class="s">From $50; see total cost and projected return.</p></li>
+        <li><span class="node">5</span><p class="t">Confirm &amp; pay</p><p class="s">Review the summary, confirm, and receive tokens.</p></li>
+        <li><span class="node">6</span><p class="t">Track in portfolio</p><p class="s">Watch returns, and sell tokens on-platform anytime.</p></li>
+      </ol>
+    </div>
+
+    <!-- Early sketches (rendered natively) -->
+    <h3 class="mt-12 text-lg font-semibold">Early sketches</h3>
+    <p class="mt-2 text-[15px] text-[#a1a1aa]">Fast, low-fidelity concepts to test layout before committing. <span class="text-white">[Swap for photos of your real sketches if you have them.]</span></p>
+    <div class="mt-6 grid sm:grid-cols-3 gap-4">
+      <div class="sketch">
+        <p class="text-xs text-[#8a8a8a] mb-3">Marketplace</p>
+        <div class="sk" style="height:14px;width:55%"></div>
+        <div class="mt-3 grid grid-cols-2 gap-2">
+          <div class="sk" style="height:56px"></div><div class="sk" style="height:56px"></div>
+          <div class="sk" style="height:56px"></div><div class="sk" style="height:56px"></div>
+        </div>
+        <div class="sk-l mt-3" style="width:80%"></div>
+        <div class="sk-l mt-2" style="width:45%"></div>
       </div>
-      <div>
-        <img src="assets/shortlet-sketches.png" alt="Early low-fidelity sketches for Shortlet Lagos."
-          class="w-full h-auto block rounded-2xl border border-white/10"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph43 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add sketches → assets/shortlet-sketches.png</div>
+      <div class="sketch">
+        <p class="text-xs text-[#8a8a8a] mb-3">Property detail</p>
+        <div class="sk" style="height:90px"></div>
+        <div class="sk-l mt-3" style="width:70%"></div>
+        <div class="sk-l mt-2" style="width:90%"></div>
+        <div class="sk-l mt-2" style="width:60%"></div>
+        <div class="sk mt-3" style="height:26px;width:50%"></div>
+      </div>
+      <div class="sketch">
+        <p class="text-xs text-[#8a8a8a] mb-3">Invest panel</p>
+        <div class="sk-l mt-1" style="width:40%"></div>
+        <div class="sk mt-3" style="height:34px"></div>
+        <div class="mt-3 flex gap-2"><div class="sk" style="height:26px;width:33%"></div><div class="sk" style="height:26px;width:33%"></div><div class="sk" style="height:26px;width:33%"></div></div>
+        <div class="sk mt-3" style="height:30px"></div>
       </div>
     </div>
   </section>
@@ -321,11 +401,40 @@
     <div class="mt-10">
       <h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Wireframes</h3>
       <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Low-fidelity layouts to test hierarchy and the investment flow before visual design.</p>
-      <div class="mt-6">
-        <img src="assets/shortlet-wireframes.png" alt="Shortlet Lagos wireframes."
-          class="w-full h-auto block rounded-2xl border border-white/10"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add wireframes → assets/shortlet-wireframes.png</div>
+      <div class="mt-6 grid sm:grid-cols-3 gap-4">
+        <!-- Marketplace wireframe -->
+        <div class="wf">
+          <p class="text-xs text-[#8a8a8a] mb-3">Marketplace</p>
+          <div class="flex items-center gap-2"><div class="wf-b" style="height:16px;width:34%"></div><div class="wf-b" style="height:16px;flex:1"></div></div>
+          <div class="wf-b mt-3" style="height:22px"></div>
+          <div class="mt-3 grid grid-cols-2 gap-2">
+            <div><div class="wf-b" style="height:48px"></div><div class="wf-l mt-2" style="width:80%"></div><div class="wf-l mt-1" style="width:50%"></div></div>
+            <div><div class="wf-b" style="height:48px"></div><div class="wf-l mt-2" style="width:80%"></div><div class="wf-l mt-1" style="width:50%"></div></div>
+            <div><div class="wf-b" style="height:48px"></div><div class="wf-l mt-2" style="width:80%"></div><div class="wf-l mt-1" style="width:50%"></div></div>
+            <div><div class="wf-b" style="height:48px"></div><div class="wf-l mt-2" style="width:80%"></div><div class="wf-l mt-1" style="width:50%"></div></div>
+          </div>
+        </div>
+        <!-- Property detail wireframe -->
+        <div class="wf">
+          <p class="text-xs text-[#8a8a8a] mb-3">Property detail</p>
+          <div class="wf-b" style="height:78px"></div>
+          <div class="wf-l mt-3" style="width:70%"></div>
+          <div class="wf-l mt-2" style="width:90%"></div>
+          <div class="wf-l mt-1.5" style="width:60%"></div>
+          <div class="mt-3 grid grid-cols-3 gap-2"><div class="wf-b" style="height:30px"></div><div class="wf-b" style="height:30px"></div><div class="wf-b" style="height:30px"></div></div>
+          <div class="wf-btn mt-3" style="height:30px">Invest</div>
+        </div>
+        <!-- Portfolio dashboard wireframe -->
+        <div class="wf">
+          <p class="text-xs text-[#8a8a8a] mb-3">Portfolio dashboard</p>
+          <div class="wf-l" style="width:45%"></div>
+          <div class="mt-3 grid grid-cols-3 gap-2"><div class="wf-b" style="height:40px"></div><div class="wf-b" style="height:40px"></div><div class="wf-b" style="height:40px"></div></div>
+          <div class="mt-3 grid gap-2">
+            <div class="flex items-center gap-2"><div class="wf-b" style="height:26px;width:26px"></div><div class="wf-l" style="flex:1"></div><div class="wf-l" style="width:18%"></div></div>
+            <div class="flex items-center gap-2"><div class="wf-b" style="height:26px;width:26px"></div><div class="wf-l" style="flex:1"></div><div class="wf-l" style="width:18%"></div></div>
+            <div class="flex items-center gap-2"><div class="wf-b" style="height:26px;width:26px"></div><div class="wf-l" style="flex:1"></div><div class="wf-l" style="width:18%"></div></div>
+          </div>
+        </div>
       </div>
     </div>
 
