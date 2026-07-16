@@ -33,24 +33,24 @@
     .quote-list li { margin-top:10px; color:#c7c7cc; line-height:1.6; font-size:15px; }
     /* Affinity-map sticky notes */
     .note { border-radius:10px; padding:10px 12px; font-size:13.5px; line-height:1.5; color:#e6e6e6; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.10); border-left:3px solid #ffd8e4; }
-    /* Flow diagram (vertical timeline) */
-    .flow { list-style:none; margin:0; padding:0; }
-    .flow li { position:relative; padding:0 0 22px 48px; }
-    .flow li:last-child { padding-bottom:0; }
-    .flow li::after { content:''; position:absolute; left:15px; top:34px; bottom:2px; width:2px; background:rgba(255,255,255,.14); }
+    /* Flow diagram (horizontal, scrolls on overflow) */
+    .flow { list-style:none; margin:0; padding:0 0 6px; display:flex; gap:20px; overflow-x:auto; }
+    .flow li { position:relative; flex:1 0 150px; background:#211d1a; border:1px solid rgba(255,255,255,.13); border-radius:14px; padding:14px; }
+    .flow li::after { content:'→'; position:absolute; right:-15px; top:22px; color:rgba(255,255,255,.45); font-size:15px; z-index:2; }
     .flow li:last-child::after { display:none; }
-    .flow .node { position:absolute; left:0; top:2px; width:32px; height:32px; border-radius:9999px; display:grid; place-items:center; background:#ffd8e4; color:#000; font-weight:700; font-size:13px; z-index:1; }
+    .flow .node { width:28px; height:28px; border-radius:9999px; display:grid; place-items:center; background:#ffd8e4; color:#000; font-weight:700; font-size:12px; margin-bottom:10px; }
     .flow .node.dec { border-radius:7px; background:#141210; border:2px solid #ffd8e4; color:#ffd8e4; }
-    .flow .t { font-weight:600; }
-    .flow .s { color:#a1a1aa; font-size:14px; margin-top:2px; line-height:1.5; }
+    .flow .t { font-weight:600; font-size:14px; line-height:1.25; }
+    .flow .s { color:#a1a1aa; font-size:12.5px; margin-top:4px; line-height:1.45; }
+    .flow .chip { font-size:11px; padding:4px 8px; }
     /* Low-fi sketch frames */
-    .sketch { background:#171412; border:2px dashed rgba(255,255,255,.20); border-radius:14px; padding:16px; }
-    .sk { background:rgba(255,255,255,.05); border:1px dashed rgba(255,255,255,.18); border-radius:7px; }
-    .sk-l { height:9px; border-radius:5px; background:rgba(255,255,255,.13); }
+    .sketch { background:#2b2621; border:2px dashed rgba(255,255,255,.30); border-radius:14px; padding:16px; }
+    .sk { background:rgba(255,255,255,.10); border:1px dashed rgba(255,255,255,.26); border-radius:7px; }
+    .sk-l { height:9px; border-radius:5px; background:rgba(255,255,255,.22); }
     /* Wireframe frames */
-    .wf { background:#0e0d0c; border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:14px; }
-    .wf-b { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.07); border-radius:7px; }
-    .wf-l { height:8px; border-radius:4px; background:rgba(255,255,255,.14); }
+    .wf { background:#26221e; border:1px solid rgba(255,255,255,.16); border-radius:14px; padding:14px; }
+    .wf-b { background:rgba(255,255,255,.11); border:1px solid rgba(255,255,255,.09); border-radius:7px; }
+    .wf-l { height:8px; border-radius:4px; background:rgba(255,255,255,.22); }
     .wf-btn { background:#ffd8e4; color:#000; border-radius:6px; font-size:11px; font-weight:700; display:grid; place-items:center; }
   </style>
 </head>
