@@ -28,6 +28,10 @@
     .hand { font-family:'Caveat', cursive; }
     .bar { background:rgba(255,255,255,.10); border-radius:9999px; }
     .blk { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:8px; }
+    .paper { position:relative; background:#f2ead9; background-image:linear-gradient(#f4ecdb,#ece2cf); border-radius:8px; padding:16px 16px 12px; box-shadow:0 14px 30px rgba(0,0,0,.42); }
+    .paper .lbl { font-family:'Caveat', cursive; color:#3d3a34; font-size:24px; line-height:1; margin-bottom:8px; }
+    .paper .pen { position:absolute; font-family:'Caveat', cursive; color:#c0466a; font-size:22px; line-height:1; }
+    .paper svg { width:100%; height:auto; display:block; }
     @media (prefers-reduced-motion: no-preference) {
       .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
       .reveal.in { opacity: 1; transform: none; }
@@ -346,45 +350,54 @@
       <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Low-fidelity sketches let me explore the connect, consent and console flows quickly, stress-testing consent language until non-technical users could explain it back.</p>
       <div class="mt-5 grid sm:grid-cols-3 gap-5">
         <!-- Sketch: connect -->
-        <div class="rounded-2xl border border-dashed border-white/15 bg-card/60 p-4">
-          <div class="relative rounded-lg bg-[#0e0c0a] border border-white/5 p-4 aspect-[4/3]">
-            <div class="bar h-2.5 w-14"></div>
-            <div class="mt-3 h-9 rounded-md border border-dashed border-white/15"></div>
-            <div class="mt-3 space-y-2">
-              <div class="flex items-center gap-2"><div class="size-5 rounded-full border border-white/15"></div><div class="bar h-2.5 flex-1"></div></div>
-              <div class="flex items-center gap-2"><div class="size-5 rounded-full border border-white/15"></div><div class="bar h-2.5 w-3/4"></div></div>
-              <div class="flex items-center gap-2"><div class="size-5 rounded-full border border-white/15"></div><div class="bar h-2.5 w-2/3"></div></div>
-            </div>
-            <span class="hand absolute bottom-2 right-3 text-xl text-accent -rotate-6">pick a bank →</span>
+        <div>
+          <div class="paper" style="transform:rotate(-1.3deg)">
+            <p class="lbl">Connect</p>
+            <svg viewBox="0 0 320 200" role="img" aria-label="Hand-drawn bank connection sketch">
+              <defs><filter id="cd1" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+              <g filter="url(#cd1)" fill="none" stroke="#514d46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="16" y="14" width="288" height="26" rx="13"/><circle cx="288" cy="27" r="8"/>
+                <rect x="16" y="54" width="288" height="36" rx="8"/><circle cx="38" cy="72" r="12"/><line x1="60" y1="72" x2="180" y2="72"/>
+                <rect x="16" y="98" width="288" height="36" rx="8"/><circle cx="38" cy="116" r="12"/><line x1="60" y1="116" x2="150" y2="116"/>
+                <rect x="16" y="142" width="288" height="36" rx="8"/><circle cx="38" cy="160" r="12"/><line x1="60" y1="160" x2="200" y2="160"/>
+              </g>
+            </svg>
+            <span class="pen" style="bottom:6px;right:12px;transform:rotate(-6deg)">pick a bank →</span>
           </div>
           <p class="mt-3 text-sm text-[#8a8a8a]">Early idea · bank connection</p>
         </div>
         <!-- Sketch: consent -->
-        <div class="rounded-2xl border border-dashed border-white/15 bg-card/60 p-4">
-          <div class="relative rounded-lg bg-[#0e0c0a] border border-white/5 p-4 aspect-[4/3]">
-            <div class="bar h-2.5 w-20"></div>
-            <div class="mt-3 grid grid-cols-3 gap-2">
-              <div class="h-10 rounded-md border border-dashed border-white/15"></div>
-              <div class="h-10 rounded-md border border-dashed border-white/15"></div>
-              <div class="h-10 rounded-md border border-dashed border-white/15"></div>
-            </div>
-            <div class="mt-3 bar h-2.5 w-4/5"></div>
-            <div class="mt-4 h-7 rounded-full border border-accent/40"></div>
-            <span class="hand absolute top-2 right-3 text-xl text-accent rotate-3">3 promises!</span>
+        <div>
+          <div class="paper" style="transform:rotate(0.9deg)">
+            <p class="lbl">Consent</p>
+            <svg viewBox="0 0 320 200" role="img" aria-label="Hand-drawn consent screen sketch">
+              <defs><filter id="cd2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+              <g filter="url(#cd2)" fill="none" stroke="#514d46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="16" y1="18" x2="150" y2="18"/>
+                <rect x="16" y="32" width="88" height="72" rx="8"/><circle cx="60" cy="56" r="10"/><path d="M52 56 l6 7 12 -14"/><line x1="32" y1="88" x2="88" y2="88"/>
+                <rect x="116" y="32" width="88" height="72" rx="8"/><circle cx="160" cy="56" r="10"/><path d="M152 56 l6 7 12 -14"/><line x1="132" y1="88" x2="188" y2="88"/>
+                <rect x="216" y="32" width="88" height="72" rx="8"/><circle cx="260" cy="56" r="10"/><path d="M252 56 l6 7 12 -14"/><line x1="232" y1="88" x2="288" y2="88"/>
+                <line x1="16" y1="126" x2="272" y2="126"/><line x1="16" y1="142" x2="200" y2="142"/>
+                <rect x="16" y="162" width="288" height="32" rx="16"/><line x1="128" y1="178" x2="192" y2="178"/>
+              </g>
+            </svg>
+            <span class="pen" style="top:6px;right:12px;transform:rotate(4deg)">3 promises!</span>
           </div>
           <p class="mt-3 text-sm text-[#8a8a8a]">Early idea · consent screen</p>
         </div>
         <!-- Sketch: dashboard -->
-        <div class="rounded-2xl border border-dashed border-white/15 bg-card/60 p-4">
-          <div class="relative rounded-lg bg-[#0e0c0a] border border-white/5 p-4 aspect-[4/3]">
-            <div class="grid grid-cols-3 gap-2">
-              <div class="h-8 rounded-md border border-dashed border-white/15"></div>
-              <div class="h-8 rounded-md border border-dashed border-white/15"></div>
-              <div class="h-8 rounded-md border border-dashed border-white/15"></div>
-            </div>
-            <div class="mt-3 h-14 rounded-md border border-dashed border-white/15"></div>
-            <div class="mt-3 space-y-1.5"><div class="bar h-2 w-full"></div><div class="bar h-2 w-5/6"></div></div>
-            <span class="hand absolute bottom-2 right-3 text-xl text-accent -rotate-3">KPIs first</span>
+        <div>
+          <div class="paper" style="transform:rotate(-0.6deg)">
+            <p class="lbl">Dashboard</p>
+            <svg viewBox="0 0 320 200" role="img" aria-label="Hand-drawn insights dashboard sketch">
+              <defs><filter id="cd3" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="16" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+              <g filter="url(#cd3)" fill="none" stroke="#514d46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="16" y="14" width="88" height="48" rx="8"/><rect x="116" y="14" width="88" height="48" rx="8"/><rect x="216" y="14" width="88" height="48" rx="8"/>
+                <rect x="16" y="74" width="288" height="72" rx="8"/><path d="M30 128 l40 -20 40 10 40 -30 40 16 40 -22 44 8"/>
+                <rect x="16" y="156" width="288" height="18" rx="6"/><rect x="16" y="180" width="230" height="14" rx="6"/>
+              </g>
+            </svg>
+            <span class="pen" style="bottom:6px;right:12px;transform:rotate(-3deg)">KPIs first</span>
           </div>
           <p class="mt-3 text-sm text-[#8a8a8a]">Early idea · insights dashboard</p>
         </div>

@@ -11,11 +11,16 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
 
   <style>
     ::selection { background: #ffd8e4; color: #000; }
     .eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ffd8e4; font-weight: 700; }
+    /* Paper sketch cards (hand-drawn) */
+    .paper { position:relative; background:#f2ead9; background-image:linear-gradient(#f4ecdb,#ece2cf); border-radius:8px; padding:16px 16px 12px; box-shadow:0 14px 30px rgba(0,0,0,.42); }
+    .paper .lbl { font-family:'Caveat', ui-sans-serif, cursive; color:#3d3a34; font-size:24px; line-height:1; margin-bottom:8px; }
+    .paper .pen { position:absolute; font-family:'Caveat', ui-sans-serif, cursive; color:#c0466a; font-size:22px; line-height:1; }
+    .paper svg { width:100%; height:auto; display:block; }
     /* iOS phone shell — fixed portrait ratio so mockups always read as real phones */
     .phone { background:#000; border-radius: 44px; padding: 11px; box-shadow: 0 30px 70px rgba(0,0,0,.55); }
     .phone-screen { background:#fff; color:#0e0c0a; border-radius: 33px; overflow-y: auto; overflow-x: hidden; aspect-ratio: 9 / 19.5; scrollbar-width: none; -ms-overflow-style: none; }
@@ -360,14 +365,49 @@
     <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Before pixels, paper. Fast and disposable.</h2>
     <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I sketched the core screens to test layouts in minutes. Three weak ideas died on paper in an afternoon, far cheaper than discovering them in Figma a week later.</p>
 
-    <!-- Low-fidelity sketches export: assets/tom-sketches.png -->
-    <div class="mt-10 rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a]">
-      <img src="assets/tom-sketches.png"
-        alt="Three paper sketches of Aria's core screens: Home, Suggestion, and Group project, testing layout and hierarchy before any hi-fidelity design."
-        class="w-full h-auto block"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[2356/943] p-8">
-        Add sketches → assets/tom-sketches.png
+    <!-- Low-fidelity sketches (hand-drawn on paper) -->
+    <div class="mt-10 grid sm:grid-cols-3 gap-5">
+      <!-- Home -->
+      <div class="paper" style="transform:rotate(-1.3deg)">
+        <p class="lbl">Home</p>
+        <svg viewBox="0 0 320 200" role="img" aria-label="Hand-drawn home screen sketch">
+          <defs><filter id="ar1" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="6" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+          <g filter="url(#ar1)" fill="none" stroke="#514d46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="16" y1="16" x2="96" y2="16"/><line x1="16" y1="32" x2="180" y2="32"/>
+            <rect x="16" y="46" width="288" height="46" rx="8"/><line x1="30" y1="62" x2="58" y2="62"/><line x1="74" y1="62" x2="210" y2="62"/><line x1="30" y1="78" x2="58" y2="78"/><line x1="74" y1="78" x2="180" y2="78"/>
+            <rect x="16" y="104" width="288" height="82" rx="8"/><circle cx="34" cy="122" r="8"/><line x1="50" y1="122" x2="150" y2="122"/><line x1="30" y1="142" x2="284" y2="142"/><line x1="30" y1="156" x2="220" y2="156"/><rect x="30" y="166" width="86" height="14" rx="7"/>
+          </g>
+        </svg>
+        <span class="pen" style="bottom:6px;right:12px;transform:rotate(-6deg)">start today!</span>
+      </div>
+      <!-- Suggestion -->
+      <div class="paper" style="transform:rotate(0.9deg)">
+        <p class="lbl">Suggestion</p>
+        <svg viewBox="0 0 320 200" role="img" aria-label="Hand-drawn suggestion screen sketch">
+          <defs><filter id="ar2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="12" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+          <g filter="url(#ar2)" fill="none" stroke="#514d46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="16" y1="16" x2="150" y2="16"/>
+            <rect x="16" y="30" width="288" height="46" rx="8"/><line x1="30" y1="46" x2="210" y2="46"/><circle cx="32" cy="63" r="3"/><circle cx="44" cy="63" r="3"/><circle cx="56" cy="63" r="3"/>
+            <rect x="16" y="86" width="288" height="46" rx="8"/><line x1="30" y1="102" x2="190" y2="102"/><circle cx="32" cy="119" r="3"/><circle cx="44" cy="119" r="3"/><circle cx="56" cy="119" r="3"/>
+            <rect x="16" y="142" width="288" height="46" rx="8"/><line x1="30" y1="158" x2="170" y2="158"/><circle cx="32" cy="175" r="3"/><circle cx="44" cy="175" r="3"/><circle cx="56" cy="175" r="3"/>
+          </g>
+        </svg>
+        <span class="pen" style="top:6px;right:12px;transform:rotate(4deg)">how sure?</span>
+      </div>
+      <!-- Group project -->
+      <div class="paper" style="transform:rotate(-0.6deg)">
+        <p class="lbl">Group project</p>
+        <svg viewBox="0 0 320 200" role="img" aria-label="Hand-drawn group project sketch">
+          <defs><filter id="ar3" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="18" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+          <g filter="url(#ar3)" fill="none" stroke="#514d46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="16" y1="16" x2="170" y2="16"/>
+            <rect x="16" y="28" width="288" height="14" rx="7"/><path d="M22 35 h150" stroke-width="5"/>
+            <rect x="16" y="54" width="288" height="30" rx="8"/><circle cx="34" cy="69" r="9"/><line x1="52" y1="69" x2="150" y2="69"/><rect x="250" y="61" width="44" height="16" rx="8"/>
+            <rect x="16" y="92" width="288" height="30" rx="8"/><circle cx="34" cy="107" r="9"/><line x1="52" y1="107" x2="140" y2="107"/><rect x="250" y="99" width="44" height="16" rx="8"/>
+            <rect x="16" y="130" width="288" height="30" rx="8"/><circle cx="34" cy="145" r="9"/><line x1="52" y1="145" x2="160" y2="145"/><rect x="250" y="137" width="44" height="16" rx="8"/>
+          </g>
+        </svg>
+        <span class="pen" style="bottom:6px;right:12px;transform:rotate(-3deg)">who's blocked?</span>
       </div>
     </div>
   </section>

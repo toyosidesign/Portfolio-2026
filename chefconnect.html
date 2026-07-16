@@ -11,7 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
 
   <style>
     ::selection { background: #ffd8e4; color: #000; }
@@ -29,6 +29,11 @@
     .dot-list li::before { content:''; position:absolute; left:2px; top:9px; width:6px; height:6px; border-radius:9999px; background:#ffd8e4; }
     .quote-list { list-style:none; margin:0; padding:0; }
     .quote-list li { margin-top:10px; color:#c7c7cc; line-height:1.6; font-size:15px; }
+    /* Paper sketch cards (hand-drawn) */
+    .paper { position:relative; background:#f2ead9; background-image:linear-gradient(#f4ecdb,#ece2cf); border-radius:8px; padding:16px 16px 12px; box-shadow:0 14px 30px rgba(0,0,0,.42); }
+    .paper .lbl { font-family:'Caveat', ui-sans-serif, cursive; color:#3d3a34; font-size:24px; line-height:1; margin-bottom:8px; }
+    .paper .pen { position:absolute; font-family:'Caveat', ui-sans-serif, cursive; color:#c0466a; font-size:22px; line-height:1; }
+    .paper svg { width:100%; height:auto; display:block; }
   </style>
 </head>
 
@@ -497,19 +502,62 @@
     <p><span class="text-accent font-bold mr-2">11</span><span class="eyebrow">Sketches → Wireframes</span></p>
     <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">From pen and paper to digital wireframes.</h2>
     <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I started with low-fidelity pen sketches of the join-the-platform flow and key responsive screens, then rebuilt them as digital wireframes in Figma before adding any visual polish.</p>
-    <div class="mt-8 grid sm:grid-cols-2 gap-4">
-      <div>
-        <img src="assets/chef-sketches.png" alt="Low-fidelity pen-and-paper sketches of ChefConnect's core responsive screens."
-          class="w-full h-auto block rounded-2xl border border-white/10"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[4/3] p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add sketches → assets/chef-sketches.png</div>
+    <!-- Sketches (hand-drawn on paper) -->
+    <div class="mt-8 grid sm:grid-cols-3 gap-5">
+      <!-- Sign up -->
+      <div class="paper" style="transform:rotate(-1.3deg)">
+        <p class="lbl">Sign up</p>
+        <svg viewBox="0 0 320 200" role="img" aria-label="Hand-drawn sign-up sketch">
+          <defs><filter id="cf1" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="5" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+          <g filter="url(#cf1)" fill="none" stroke="#514d46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="16" y1="16" x2="120" y2="16"/>
+            <rect x="16" y="28" width="288" height="30" rx="8"/>
+            <rect x="16" y="66" width="288" height="30" rx="8"/>
+            <rect x="16" y="104" width="288" height="30" rx="8"/>
+            <rect x="16" y="142" width="288" height="32" rx="16"/><line x1="132" y1="158" x2="188" y2="158"/>
+            <circle cx="132" cy="190" r="9"/><circle cx="160" cy="190" r="9"/><circle cx="188" cy="190" r="9"/>
+          </g>
+        </svg>
+        <span class="pen" style="top:6px;right:12px;transform:rotate(4deg)">or social ↓</span>
       </div>
-      <div>
-        <img src="assets/chef-wireframes.png" alt="Digital low-fidelity wireframes of ChefConnect built in Figma."
-          class="w-full h-auto block rounded-2xl border border-white/10"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] aspect-[4/3] p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add wireframes → assets/chef-wireframes.png</div>
+      <!-- Home feed -->
+      <div class="paper" style="transform:rotate(0.9deg)">
+        <p class="lbl">Home feed</p>
+        <svg viewBox="0 0 320 200" role="img" aria-label="Hand-drawn recipe home feed sketch">
+          <defs><filter id="cf2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+          <g filter="url(#cf2)" fill="none" stroke="#514d46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="16" y="14" width="240" height="24" rx="12"/><circle cx="290" cy="26" r="12"/>
+            <rect x="16" y="54" width="138" height="60" rx="8"/><circle cx="42" cy="76" r="7"/><path d="M24 100 l18 -18 12 12 10 -8 16 14"/><line x1="26" y1="108" x2="120" y2="108"/>
+            <rect x="166" y="54" width="138" height="60" rx="8"/><circle cx="192" cy="76" r="7"/><path d="M174 100 l18 -18 12 12 10 -8 16 14"/><line x1="176" y1="108" x2="270" y2="108"/>
+            <rect x="16" y="126" width="138" height="60" rx="8"/><circle cx="42" cy="148" r="7"/><path d="M24 172 l18 -18 12 12 10 -8 16 14"/><line x1="26" y1="180" x2="120" y2="180"/>
+            <rect x="166" y="126" width="138" height="60" rx="8"/><circle cx="192" cy="148" r="7"/><path d="M174 172 l18 -18 12 12 10 -8 16 14"/><line x1="176" y1="180" x2="270" y2="180"/>
+          </g>
+        </svg>
+        <span class="pen" style="bottom:6px;right:12px;transform:rotate(-4deg)">recipes!</span>
       </div>
+      <!-- Recipe view -->
+      <div class="paper" style="transform:rotate(-0.6deg)">
+        <p class="lbl">Recipe</p>
+        <svg viewBox="0 0 320 200" role="img" aria-label="Hand-drawn recipe view sketch">
+          <defs><filter id="cf3" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="19" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+          <g filter="url(#cf3)" fill="none" stroke="#514d46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="16" y="14" width="288" height="86" rx="8"/><circle cx="160" cy="57" r="17"/><path d="M154 48 l16 9 -16 9 z"/>
+            <line x1="16" y1="116" x2="190" y2="116"/>
+            <line x1="16" y1="134" x2="150" y2="134"/><line x1="16" y1="150" x2="180" y2="150"/><line x1="16" y1="166" x2="140" y2="166"/>
+            <circle cx="28" cy="190" r="9"/><circle cx="58" cy="190" r="9"/><circle cx="88" cy="190" r="9"/><circle cx="118" cy="190" r="9"/>
+          </g>
+        </svg>
+        <span class="pen" style="top:6px;right:12px;transform:rotate(4deg)">watch + save</span>
+      </div>
+    </div>
+
+    <!-- Wireframes (add your export) -->
+    <h3 class="mt-12 text-lg font-semibold">Digital wireframes</h3>
+    <div class="mt-4">
+      <img src="assets/chef-wireframes.png" alt="Digital low-fidelity wireframes of ChefConnect built in Figma."
+        class="w-full h-auto block rounded-2xl border border-white/10"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center text-center text-sm text-[#6b6b6b] ph16 p-8 rounded-2xl border border-white/10 bg-[#0a0a0a]">Add wireframes → assets/chef-wireframes.png</div>
     </div>
   </section>
 
