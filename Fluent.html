@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fluent Conveyors · Asset Management System | Omotoyosi Adegbite</title>
-  <meta name="description" content="Case study: product design for Fluent Conveyors' self-service asset management platform." />
+  <title>Fluent Conveyors · B2B SaaS customer portal | Omotoyosi Adegbite</title>
+  <meta name="description" content="B2B SaaS case study: designing a multi-tenant self-serve customer portal for Fluent Conveyors — turning a manual, support-heavy aftermarket into recurring platform revenue. Asset management, quote-to-cash and preventive maintenance in one console." />
 
   <!-- Tailwind CSS (precompiled -- rebuild with: npm run build:css) -->
   <link rel="stylesheet" href="assets/tailwind.css" />
@@ -44,15 +44,17 @@
       <a href="https://fluentconveyors.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-white transition-colors">View live project →</a>
     </div>
 
-    <p class="text-sm text-[#8a8a8a]">Fluent Conveyors &nbsp;|&nbsp; Asset Management System</p>
+    <p class="text-sm text-[#8a8a8a]">Fluent Conveyors &nbsp;|&nbsp; B2B SaaS &nbsp;·&nbsp; Multi-tenant customer portal</p>
 
     <h1 class="mt-3 text-4xl sm:text-6xl font-semibold tracking-[-0.03em] leading-[1.05]">
-      Bringing the conveyor buying &amp; service journey online.
+      Turning a support-heavy aftermarket into a self-serve platform.
     </h1>
     <p class="max-w-4xl mt-6 text-lg text-[#c7c7cc] leading-relaxed">
-      A self-service customer platform for Fluent Conveyors, where facility operators manage their
-      equipment, order parts, request and sign quotes, pay invoices, track shipments, and stay ahead
-      of maintenance, all in one place.
+      Fluent sells heavy-duty conveyors, but earns for years afterwards on parts, service and
+      maintenance, a revenue stream that ran entirely on phone calls and PDFs. I designed the
+      multi-tenant SaaS portal that moves that whole aftermarket online: every facility gets its own
+      workspace to manage assets, request and e-sign quotes, pay invoices, track shipments and stay
+      ahead of maintenance, while Fluent's dealers stop being a human API.
     </p>
 
     <!-- Hero meta -->
@@ -62,20 +64,20 @@
         <p class="mt-1.5 font-medium text-white">Product Designer</p>
       </div>
       <div class="bg-base p-5">
+        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Product type</p>
+        <p class="mt-1.5 font-medium text-white text-sm leading-snug">B2B SaaS · multi-tenant customer portal</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Tenants &amp; roles</p>
+        <p class="mt-1.5 font-medium text-white text-sm leading-snug">Facility workspaces · operator, admin, dealer</p>
+      </div>
+      <div class="bg-base p-5">
         <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Scope</p>
-        <p class="mt-1.5 font-medium text-white">Customer Portal</p>
-      </div>
-      <div class="bg-base p-5">
-        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Surfaces</p>
-        <p class="mt-1.5 font-medium text-white">12 screens</p>
-      </div>
-      <div class="bg-base p-5">
-        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Platform</p>
-        <p class="mt-1.5 font-medium text-white">Responsive Web</p>
+        <p class="mt-1.5 font-medium text-white text-sm leading-snug">12 surfaces · responsive web</p>
       </div>
       <div class="bg-base p-5 col-span-2 md:col-span-4 lg:col-span-1">
-        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Focus</p>
-        <p class="mt-1.5 font-medium text-white text-sm leading-snug">Customer, Vendor, Sales, Dashboard, Payment Gateway, Email Templates, and Websites</p>
+        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Jobs the platform owns</p>
+        <p class="mt-1.5 font-medium text-white text-sm leading-snug">Asset management, quote-to-cash, payments, fulfilment, preventive maintenance, support</p>
       </div>
     </div>
   </section>
@@ -88,17 +90,65 @@
     </div>
   </section>
 
-  <!-- ============ 01 · PROCESS OVERVIEW ============ -->
+  <!-- ============ 01 · THE BUSINESS CASE ============ -->
   <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
     <div class="flex items-center gap-3 mb-5">
-      <span class="text-sm font-medium text-accent tracking-wide uppercase">01 The approach</span>
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">01 The business case</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
+      The aftermarket was the business. Manual process was the tax on it.
+    </h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      A conveyor sells once and is serviced for a decade. Parts, service and maintenance are the
+      durable revenue, and every dollar of it was moving through inboxes, phone calls and printed
+      PDFs. That isn't only an experience problem, it caps how much aftermarket a fixed headcount can
+      carry, and it hands the relationship to whoever answers the phone fastest.
+    </p>
+
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-6">
+        <p class="text-xs uppercase tracking-wide text-accent font-semibold">Cost to serve</p>
+        <p class="mt-3 font-medium text-white">Dealers were the interface</p>
+        <p class="mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">Every quote, status check and reorder consumed a salesperson's day. Support load scaled linearly with customers.</p>
+      </div>
+      <div class="bg-base p-6">
+        <p class="text-xs uppercase tracking-wide text-accent font-semibold">Revenue leakage</p>
+        <p class="mt-3 font-medium text-white">Slow quotes lose the order</p>
+        <p class="mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">A line down and a day of quote latency is how an OEM loses a parts order to a third-party supplier.</p>
+      </div>
+      <div class="bg-base p-6">
+        <p class="text-xs uppercase tracking-wide text-accent font-semibold">Retention</p>
+        <p class="mt-3 font-medium text-white">No account of record</p>
+        <p class="mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">With asset and service history living in customer spreadsheets, nothing anchored the customer to Fluent between purchases.</p>
+      </div>
+      <div class="bg-base p-6">
+        <p class="text-xs uppercase tracking-wide text-accent font-semibold">Expansion</p>
+        <p class="mt-3 font-medium text-white">Nothing to upsell into</p>
+        <p class="mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">Preventive maintenance and service contracts need a system of record to be sold, tracked and renewed.</p>
+      </div>
+    </div>
+
+    <div class="mt-6 rounded-2xl border border-accent/20 bg-accent/[0.04] p-6 sm:p-8">
+      <p class="text-xs uppercase tracking-wide text-accent font-semibold">The design brief, stated as a business goal</p>
+      <p class="max-w-4xl mt-3 text-lg text-white leading-relaxed">
+        Make the aftermarket self-serve: every routine transaction a customer completes without a
+        phone call is margin recovered, a faster order, and one more reason the next one comes to Fluent.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 02 · PROCESS OVERVIEW ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">02 The approach</span>
     </div>
     <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
       A user-centered design process, end to end.
     </h2>
     <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
       Rather than start from screens, the project moved through six deliberate phases, grounding every
-      design decision in how Fluent's operators and dealers actually work.
+      design decision in how Fluent's operators and dealers actually work, and in the business
+      outcome each phase had to move.
     </p>
 
     <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
@@ -143,12 +193,13 @@
           <span class="text-sm font-medium text-accent tracking-wide uppercase">The problem</span>
         </div>
         <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
-          Buying and servicing a conveyor lived in inboxes and phone calls.
+          Four manual loops, each with a cost attached.
         </h2>
         <p class="max-w-4xl mt-6 text-lg text-[#a1a1aa] leading-relaxed">
           Fluent engineers and manufactures heavy-duty conveyors for recycling and waste facilities,
-          equipment that can't afford downtime. But once a machine shipped, everything that came after
-          it was manual.
+          equipment that can't afford downtime. Once a machine shipped, everything after it ran on
+          people. Research traced the friction to four loops, and each one billed the business in a
+          different currency.
         </p>
       </div>
 
@@ -156,29 +207,33 @@
         <div class="flex gap-5 py-6">
           <span class="text-accent font-semibold text-sm mt-0.5">A</span>
           <div>
-            <p class="font-medium text-white">No single source of truth</p>
-            <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Operators tracked assets, parts, and service history in spreadsheets or not at all.</p>
+            <p class="font-medium text-white">No system of record</p>
+            <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Operators tracked assets, parts and service history in spreadsheets, or not at all.</p>
+            <p class="mt-2 text-sm text-[#8a8a8a]"><span class="text-accent font-medium">Business cost:</span> no account of record, so no basis for renewals, service contracts or retention.</p>
           </div>
         </div>
         <div class="flex gap-5 py-6">
           <span class="text-accent font-semibold text-sm mt-0.5">B</span>
           <div>
-            <p class="font-medium text-white">Quotes by email, signed by PDF</p>
-            <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Requesting parts, getting a quote, and signing it bounced between sales reps and printers.</p>
+            <p class="font-medium text-white">Quote-to-cash ran on email and PDFs</p>
+            <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Requesting parts, receiving a quote and signing it bounced between reps, printers and scanners.</p>
+            <p class="mt-2 text-sm text-[#8a8a8a]"><span class="text-accent font-medium">Business cost:</span> days of quote latency and orders lost to faster third-party suppliers.</p>
           </div>
         </div>
         <div class="flex gap-5 py-6">
           <span class="text-accent font-semibold text-sm mt-0.5">C</span>
           <div>
-            <p class="font-medium text-white">Reactive, not preventive maintenance</p>
-            <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Teams discovered a worn bearing only when a line went down costing throughput.</p>
+            <p class="font-medium text-white">Maintenance was reactive</p>
+            <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Teams discovered a worn bearing only when a line went down, costing throughput.</p>
+            <p class="mt-2 text-sm text-[#8a8a8a]"><span class="text-accent font-medium">Business cost:</span> unplanned downtime for the customer, and no predictable parts demand for Fluent.</p>
           </div>
         </div>
         <div class="flex gap-5 py-6">
           <span class="text-accent font-semibold text-sm mt-0.5">D</span>
           <div>
-            <p class="font-medium text-white">No visibility after ordering</p>
-            <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">"Where's my shipment?" meant another phone call to the dealer.</p>
+            <p class="font-medium text-white">Status requests absorbed the sales team</p>
+            <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">"Where's my shipment?" meant another phone call to the dealer, who forwarded a tracking number.</p>
+            <p class="mt-2 text-sm text-[#8a8a8a]"><span class="text-accent font-medium">Business cost:</span> cost-to-serve rising with every new account, selling time spent on support.</p>
           </div>
         </div>
       </div>
@@ -302,20 +357,44 @@
   <!-- ============ 02 · DEFINE ============ -->
   <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
     <div class="flex items-center gap-3 mb-5">
-      <span class="text-sm font-medium text-accent tracking-wide uppercase">02 Define</span>
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">03 Define</span>
     </div>
     <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
-      From what we heard to who we're building for.
+      In B2B, the person who uses it isn't the person who buys it.
     </h2>
     <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
-      Research converged into two primary users, a map of the journey they endure today, and a tight
-      set of goals the platform had to hit.
+      Three parties had to win for this platform to survive: the operator who lives in it daily, the
+      dealer whose time it reclaims, and the executive at Fluent funding it against a cost-to-serve
+      number. Research converged into two primary user personas, plus a clear read on what the buyer
+      needed to see.
     </p>
+
+    <!-- The buyer -->
+    <div class="mt-10 rounded-2xl border border-white/10 bg-white/[0.02] p-7">
+      <p class="text-xs uppercase tracking-wide text-accent font-semibold">The economic buyer</p>
+      <p class="mt-3 text-xl font-semibold text-white">Aftermarket &amp; customer-success leadership at Fluent</p>
+      <p class="max-w-4xl mt-3 text-[#a1a1aa] leading-relaxed">They don't use the portal. They approve it, and they judge it on whether it lowers the cost of serving an account while raising what that account is worth. These are the three numbers they read it against.</p>
+      <div class="mt-6 grid sm:grid-cols-3 gap-4">
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-5">
+          <p class="font-medium text-white text-sm">Cost to serve</p>
+          <p class="mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">Routine requests deflected from dealers to self-serve.</p>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-5">
+          <p class="font-medium text-white text-sm">Parts attach rate</p>
+          <p class="mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">Share of parts demand that comes back to the OEM, not a substitute supplier.</p>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] p-5">
+          <p class="font-medium text-white text-sm">Adoption</p>
+          <p class="mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">A portal nobody logs into changes no numbers. Activation was the real risk.</p>
+        </div>
+      </div>
+    </div>
 
     <!-- Personas -->
     <div class="mt-10 grid md:grid-cols-2 gap-5">
       <!-- Persona 1 -->
       <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-7">
+        <p class="text-xs uppercase tracking-wide text-accent font-semibold mb-5">Daily end user · customer tenant</p>
         <div class="flex items-center gap-4">
           <span class="relative size-12 rounded-xl overflow-hidden shrink-0 grid place-items-center text-base font-semibold text-white" style="background:#7a6a5c">DR<img src="assets/persona-1.jpg" alt="Doug Reyes" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></span>
           <span>
@@ -345,6 +424,7 @@
       </div>
       <!-- Persona 2 -->
       <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-7">
+        <p class="text-xs uppercase tracking-wide text-accent font-semibold mb-5">Internal user · Fluent side</p>
         <div class="flex items-center gap-4">
           <span class="relative size-12 rounded-xl overflow-hidden shrink-0 grid place-items-center text-base font-semibold text-white" style="background:#55606e">MT<img src="assets/persona-2.jpg" alt="Marcus Trank" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></span>
           <span>
@@ -424,10 +504,12 @@
       </div>
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
         <div>
-          <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">One portal, the entire lifecycle.</h3>
+          <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Four goals, each tied to a number.</h3>
           <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
             Reflecting Fluent's mission, simplifying engineering and connecting dealers to customers
             faster and better, the platform had to turn every post-sale touchpoint into self-service.
+            I wrote each design goal against the business metric it was meant to move, so scope
+            arguments later had something objective to resolve against.
           </p>
           <blockquote class="mt-8 rounded-2xl border border-white/10 bg-white/[0.02] p-7 border-l-2 border-l-fluentCyan">
             <p class="max-w-4xl text-lg text-white leading-relaxed">"Powering the future of conveyor engineering &amp; manufacturing, connecting our dealers to customers, faster and better."</p>
@@ -442,6 +524,7 @@
             <div>
               <p class="font-medium text-white">See every asset at a glance</p>
               <p class="max-w-4xl mt-1 text-[#a1a1aa] leading-relaxed">Health, parts, history and maintenance for each line in one view.</p>
+              <p class="mt-2 text-sm text-[#8a8a8a]"><span class="text-accent font-medium">Moves:</span> retention, the portal becomes the account of record.</p>
             </div>
           </div>
           <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex gap-4">
@@ -451,6 +534,7 @@
             <div>
               <p class="font-medium text-white">Quote → sign → order without leaving</p>
               <p class="max-w-4xl mt-1 text-[#a1a1aa] leading-relaxed">Build a cart, request a quote, sign and place the order in-app.</p>
+              <p class="mt-2 text-sm text-[#8a8a8a]"><span class="text-accent font-medium">Moves:</span> quote latency and parts attach rate.</p>
             </div>
           </div>
           <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex gap-4">
@@ -460,6 +544,7 @@
             <div>
               <p class="font-medium text-white">Pay and track in the same flow</p>
               <p class="max-w-4xl mt-1 text-[#a1a1aa] leading-relaxed">Invoice → payment → shipment tracking, fully connected.</p>
+              <p class="mt-2 text-sm text-[#8a8a8a]"><span class="text-accent font-medium">Moves:</span> cost to serve, "where is it?" stops being a phone call.</p>
             </div>
           </div>
           <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex gap-4">
@@ -469,6 +554,7 @@
             <div>
               <p class="font-medium text-white">Get ahead of downtime</p>
               <p class="max-w-4xl mt-1 text-[#a1a1aa] leading-relaxed">Surface due, upcoming and late maintenance before lines stop.</p>
+              <p class="mt-2 text-sm text-[#8a8a8a]"><span class="text-accent font-medium">Moves:</span> expansion, preventive maintenance is the upsell the portal makes sellable.</p>
             </div>
           </div>
         </div>
@@ -479,7 +565,7 @@
   <!-- ============ 03 · IDEATE ============ -->
   <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
     <div class="flex items-center gap-3 mb-5">
-      <span class="text-sm font-medium text-accent tracking-wide uppercase">03 Ideate</span>
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">04 Ideate</span>
     </div>
     <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
       Reframing pain points into design opportunities.
@@ -514,6 +600,18 @@
       <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
         <p class="text-xs font-semibold uppercase tracking-wide text-accent">HMW 06</p>
         <p class="mt-4 text-lg text-white leading-snug">How might we free the dealer from repetitive status requests?</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-accent">HMW 07</p>
+        <p class="mt-4 text-lg text-white leading-snug">How might we take a facility from <span class="text-accent">invite to first order</span> with no training session?</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-accent">HMW 08</p>
+        <p class="mt-4 text-lg text-white leading-snug">How might we let one customer run several sites without ever seeing another tenant's data?</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-accent">HMW 09</p>
+        <p class="mt-4 text-lg text-white leading-snug">How might we make the portal the first place an operator looks, instead of the phone?</p>
       </div>
     </div>
 
@@ -588,6 +686,41 @@
       </div>
     </div>
 
+    <!-- Tenancy & roles -->
+    <div class="mt-16">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="text-sm font-medium text-accent tracking-wide uppercase">Tenancy, roles &amp; permissions</span>
+      </div>
+      <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
+        The structural work a customer never sees, and immediately feels when it's wrong.
+      </h3>
+      <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+        A portal serving many facilities is a multi-tenant product before it is a set of screens. Two
+        customers must never see each other's assets, pricing or service history, one customer with
+        four sites must see all four, and a dealer must be able to act on behalf of an account without
+        becoming an unlogged back door. I designed that model explicitly rather than letting it emerge
+        from the screens.
+      </p>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-5">
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-accent">Tenant</p>
+          <p class="mt-3 font-medium text-white">The customer account</p>
+          <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Assets, quotes, invoices, pricing and history are scoped to the account. Multi-site customers get sites beneath one account rather than four disconnected logins.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-accent">Roles</p>
+          <p class="mt-3 font-medium text-white">Operator · account admin · dealer</p>
+          <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Operators raise carts and tickets; account admins approve spend and e-sign; dealers quote and support. The same screen, three different sets of primary actions.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-accent">Approval</p>
+          <p class="mt-3 font-medium text-white">Who is allowed to commit money</p>
+          <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">The person who finds the part usually can't authorise the purchase. Signing and payment sit behind the admin role, so self-serve never means uncontrolled spend.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Lo-fi wireframes -->
     <div class="mt-16">
       <div class="flex items-center gap-3 mb-5">
@@ -647,14 +780,15 @@
   <!-- ============ 04 · THE PLATFORM ============ -->
   <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
     <div class="flex items-center gap-3 mb-5">
-      <span class="text-sm font-medium text-accent tracking-wide uppercase">04 The platform</span>
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">05 The platform</span>
     </div>
     <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
-      One connected flow, anchored to the asset.
+      Quote-to-cash, anchored to the asset.
     </h2>
     <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
       The portal is organized around a single mental model: your assets are the home base, and every
-      action, parts, quotes, payment, service, flows from them.
+      action, parts, quotes, payment, service, flows from them. Following the sequence below, the
+      commercial loop that used to take a week of email closes inside one product.
     </p>
 
     <div class="mt-14">
@@ -792,7 +926,7 @@
   <!-- ============ 05 · DESIGN LANGUAGE ============ -->
   <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32">
     <div class="flex items-center gap-3 mb-5">
-      <span class="text-sm font-medium text-accent tracking-wide uppercase">05 Design language</span>
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">06 Design language</span>
     </div>
     <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
       Built on Fluent's brand: bold, durable, engineered.
@@ -844,11 +978,13 @@
       <span class="text-sm font-medium text-accent tracking-wide uppercase">07 Test</span>
     </div>
     <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
-      Putting the prototype in front of the people who'd use it.
+      Testing the path to first value, not the pixels.
     </h2>
     <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
-      We ran moderated usability sessions with operators and dealers on a clickable prototype, watching
-      them complete real tasks, then folding what we learned back into the design.
+      Adoption was the whole risk: a portal customers abandon changes nothing, no matter how it looks.
+      So the moderated sessions with operators and dealers ran against the activation path itself,
+      find a part, get a quote, sign it, pay, track it, on a clickable prototype. Every issue below is
+      one that would have sent a customer back to the phone.
     </p>
 
     <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
@@ -858,15 +994,15 @@
       </div>
       <div class="bg-base p-6">
         <p class="text-4xl font-semibold text-white">5</p>
-        <p class="mt-3 text-sm text-[#8a8a8a]">Core tasks tested end to end</p>
+        <p class="mt-3 text-sm text-[#8a8a8a]">Activation-path tasks, tested end to end</p>
       </div>
       <div class="bg-base p-6">
         <p class="text-4xl font-semibold text-white">88%</p>
         <p class="mt-3 text-sm text-[#8a8a8a]">Task completion across sessions</p>
       </div>
       <div class="bg-base p-6">
-        <p class="text-4xl font-semibold text-white">82</p>
-        <p class="mt-3 text-sm text-[#8a8a8a]">SUS usability score (placeholder)</p>
+        <p class="text-4xl font-semibold text-white">5</p>
+        <p class="mt-3 text-sm text-[#8a8a8a]">Issues resolved before engineering handoff</p>
       </div>
     </div>
 
@@ -917,25 +1053,45 @@
       <span class="text-sm font-medium text-accent tracking-wide uppercase">08 Outcome</span>
     </div>
     <h2 class="text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">
-      One connected experience, from spec to service.
+      A manual aftermarket, turned into a product.
     </h2>
     <p class="max-w-4xl mt-6 text-lg text-[#c7c7cc] leading-relaxed">
-      The platform collapses a scattered, manual post-sale process into a single self-service portal,
-      exactly the kind of technology Fluent set out to build for its dealers and customers.
+      The platform collapses a scattered, support-heavy post-sale process into a multi-tenant
+      self-serve portal, and gives Fluent something it never had: a system of record for the customer
+      relationship between purchases. What shipped is the design and specification below; post-launch
+      telemetry sits with Fluent, so I've kept this section to what I can stand behind.
     </p>
 
     <div class="mt-12 grid md:grid-cols-3 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
       <div class="bg-base p-8">
         <p class="text-5xl font-semibold text-accent">12</p>
-        <p class="mt-4 text-[#c7c7cc]">Connected surfaces, one mental model</p>
+        <p class="mt-4 text-[#c7c7cc]">Connected surfaces under one mental model and one design system</p>
       </div>
       <div class="bg-base p-8">
         <p class="text-5xl font-semibold text-accent">0 calls</p>
-        <p class="mt-4 text-[#c7c7cc]">Quote, sign, pay &amp; track without picking up the phone</p>
+        <p class="mt-4 text-[#c7c7cc]">Quote, sign, pay and track are all self-serve, the routine work dealers used to absorb</p>
       </div>
       <div class="bg-base p-8">
-        <p class="text-5xl font-semibold text-accent">1 portal</p>
-        <p class="mt-4 text-[#c7c7cc]">Asset → parts → quote → order → invoice → shipment</p>
+        <p class="text-5xl font-semibold text-accent">3 roles</p>
+        <p class="mt-4 text-[#c7c7cc]">Operator, account admin and dealer, scoped per tenant across every surface</p>
+      </div>
+    </div>
+
+    <div class="mt-6 grid md:grid-cols-3 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-xs uppercase tracking-wide text-accent font-semibold">What it should move</p>
+        <p class="mt-3 font-medium text-white">Cost to serve</p>
+        <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Every quote request, invoice payment and shipment check that lands in the portal is one that no longer lands on a dealer.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-xs uppercase tracking-wide text-accent font-semibold">What it should move</p>
+        <p class="mt-3 font-medium text-white">Parts attach rate</p>
+        <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Compatibility is stated per asset and the cart is a quote request, so the fastest path to the right part is the OEM's own.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-xs uppercase tracking-wide text-accent font-semibold">What it should move</p>
+        <p class="mt-3 font-medium text-white">Retention &amp; expansion</p>
+        <p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">Service history and a maintenance schedule living in Fluent's product is what makes a service contract renewable.</p>
       </div>
     </div>
 

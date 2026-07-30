@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Condueet · Simplifying open banking across Africa | Omotoyosi Adegbite</title>
-  <meta name="description" content="Case study: Condueet, an open-banking platform that lets businesses securely access financial data from banks across Africa through a single integration. A user-centered design process from discovery to iteration." />
+  <title>Condueet · B2B SaaS open-banking API platform | Omotoyosi Adegbite</title>
+  <meta name="description" content="B2B SaaS case study: Condueet, an API-first open-banking platform selling to African fintechs. Designing a self-serve activation funnel — signup, sandbox, first API call, production — for two buyers at once: the business champion and the developer who evaluates it." />
 
   <!-- Tailwind CSS (precompiled -- rebuild with: npm run build:css) -->
   <link rel="stylesheet" href="assets/tailwind.css" />
@@ -65,13 +65,18 @@
       <a href="https://condueet.netlify.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-white transition-colors">View live project →</a>
     </div>
 
-    <p class="text-sm text-[#8a8a8a]">Product Design &nbsp;·&nbsp; Fintech &nbsp;·&nbsp; Open Banking</p>
+    <p class="text-sm text-[#8a8a8a]">Condueet &nbsp;·&nbsp; B2B SaaS &nbsp;·&nbsp; API-first fintech infrastructure</p>
 
     <h1 class="mt-3 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.02]">
-      Simplifying open banking across Africa.
+      Selling infrastructure to two buyers at once.
     </h1>
     <p class="mt-6 max-w-4xl text-lg text-[#c7c7cc] leading-relaxed">
-      Condueet lets businesses securely access financial data from banks across the continent through a single integration. I designed the experiences that make complex, regulated infrastructure feel effortless, for business users and developers alike, using a user-centered process from discovery through iteration.
+      Condueet is a B2B SaaS platform that gives African fintechs access to every connected bank
+      through one integration, billed by usage and adopted bottom-up. That model has a specific design
+      problem: a developer decides whether it works in an afternoon, a business champion decides
+      whether it's worth paying for, and the consumer whose bank account is being linked can veto the
+      whole thing by not consenting. I designed the self-serve path that has to satisfy all three,
+      from first visit to production traffic.
     </p>
 
     <div class="mt-6 flex flex-wrap gap-2">
@@ -85,10 +90,10 @@
     <!-- meta row -->
     <div class="mt-10 grid grid-cols-2 md:grid-cols-5 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
       <div class="bg-base p-5"><p class="label">Role</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Product Designer</p></div>
-      <div class="bg-base p-5"><p class="label">Focus</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Onboarding · Data · Dev tools · Website</p></div>
+      <div class="bg-base p-5"><p class="label">ICP</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">African fintechs: lending, payments, budgeting</p></div>
+      <div class="bg-base p-5"><p class="label">Model</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Self-serve B2B SaaS · usage-based, scales with connected accounts</p></div>
+      <div class="bg-base p-5"><p class="label">Surfaces</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Business app · developer console · consent layer · website</p></div>
       <div class="bg-base p-5"><p class="label">Timeline</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">2024–25</p></div>
-      <div class="bg-base p-5"><p class="label">Platform</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Web · Mobile · Developer API</p></div>
-      <div class="bg-base p-5"><p class="label">Domain</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Open Banking · Africa</p></div>
     </div>
 
     <!-- hero image -->
@@ -100,22 +105,52 @@
   <!-- ============ OVERVIEW ============ -->
   <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
     <p><span class="eyebrow">The snapshot</span></p>
-    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">One integration. Every bank.</h2>
-    <p class="mt-5 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Building a fintech product in Africa meant wiring up dozens of banks, each with its own API, onboarding, and data shape. Condueet collapses that into a single, secure connection, and my job was to make that power approachable.</p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">One integration. Every bank. Sold without a sales team.</h2>
+    <p class="mt-5 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Building a fintech product in Africa meant wiring up dozens of banks, each with its own API, onboarding and data shape. Condueet collapses that into a single, secure connection. But infrastructure sold bottom-up doesn't get a demo, a pilot or an implementation team, the product has to sell itself to a developer in an afternoon. Design was the go-to-market.</p>
 
     <div class="mt-10 grid md:grid-cols-3 gap-5">
-      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">01 · Challenge</p><p class="mt-3 text-lg font-semibold">Fragmented bank rails</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Every institution had different APIs, verification, and data structures. Integration was slow, brittle, and hard to trust.</p></div>
-      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">02 · My role</p><p class="mt-3 text-lg font-semibold">End-to-end product design</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Owned onboarding, account connections, analytics, developer tooling, and API workflows, research through UI.</p></div>
-      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">03 · Outcome</p><p class="mt-3 text-lg font-semibold">Accessible infrastructure</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">A unified, security-first platform that business users and developers can adopt with confidence.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">01 · Challenge</p><p class="mt-3 text-lg font-semibold">Fragmented rails, self-serve adoption</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Every institution had different APIs, verification and data structures, and every prospect evaluated us alone, unassisted, against Plaid-grade expectations.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">02 · My role</p><p class="mt-3 text-lg font-semibold">End-to-end product design</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Owned the full acquisition-to-activation path: website, signup, bank connections, consent, insights, developer console and API workflows, research through UI.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">03 · Outcome</p><p class="mt-3 text-lg font-semibold">An activation funnel, not a feature set</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">A security-first platform where a developer reaches a working call in minutes and a business reaches a decision-grade insight on day one.</p></div>
     </div>
 
     <div class="mt-5 grid grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-4xl font-bold">1<span class="text-accent">×</span></p><p class="mt-2 text-sm text-[#a1a1aa]">Integration to reach every connected bank</p></div>
-      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-4xl font-bold text-accent">−58%</p><p class="mt-2 text-sm text-[#a1a1aa]">Time to first successful connection</p></div>
-      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-4xl font-bold">3<span class="text-accent">min</span></p><p class="mt-2 text-sm text-[#a1a1aa]">Median developer time-to-first-call</p></div>
-      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-4xl font-bold text-accent">+44%</p><p class="mt-2 text-sm text-[#a1a1aa]">Onboarding completion rate</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Coverage</p><p class="mt-3 text-4xl font-bold">1<span class="text-accent">×</span></p><p class="mt-2 text-sm text-[#a1a1aa]">Integration to reach every connected bank</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Activation</p><p class="mt-3 text-4xl font-bold text-accent">3 min</p><p class="mt-2 text-sm text-[#a1a1aa]">Median developer time-to-first-call, the metric that closes the deal</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Conversion</p><p class="mt-3 text-4xl font-bold text-accent">+44%</p><p class="mt-2 text-sm text-[#a1a1aa]">Onboarding completion, signup through connected account</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Friction</p><p class="mt-3 text-4xl font-bold text-accent">−58%</p><p class="mt-2 text-sm text-[#a1a1aa]">Time to a first successful bank connection</p></div>
     </div>
-    <p class="mt-4 text-xs text-[#6b6b6b]">Independent case study presenting real product work. Metrics are illustrative placeholders, swap in verified results.</p>
+    <p class="mt-4 text-xs text-[#6b6b6b]">Independent case study presenting real product work. The figures above and in <a href="#impact" class="underline decoration-dotted underline-offset-4 hover:text-white">Impact</a> are illustrative targets modelled on the design, not audited results.</p>
+  </section>
+
+  <!-- ============ THE ACTIVATION FUNNEL ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="eyebrow">The funnel</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Where a self-serve B2B product actually lives or dies.</h2>
+    <p class="mt-5 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">
+      With no sales-led motion, every step between landing on the site and sending production traffic
+      is a place the customer can quietly leave, and nobody will call to ask why. I mapped the funnel
+      first and designed against its two worst drop-offs rather than spreading effort evenly across
+      the product.
+    </p>
+
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-5 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="label">01 · Acquire</p><p class="mt-2 text-sm font-semibold">Landing → signup</p><p class="mt-1.5 text-xs text-[#8a8a8a] leading-relaxed">Two audiences split within the first scroll, each to their own proof.</p></div>
+      <div class="bg-base p-5"><p class="label">02 · Evaluate</p><p class="mt-2 text-sm font-semibold text-accent">Sandbox → first call ▾</p><p class="mt-1.5 text-xs text-[#8a8a8a] leading-relaxed">The developer's go/no-go. Slow here and the evaluation ends quietly.</p></div>
+      <div class="bg-base p-5"><p class="label">03 · Connect</p><p class="mt-2 text-sm font-semibold text-accent">Bank link → consent ▾</p><p class="mt-1.5 text-xs text-[#8a8a8a] leading-relaxed">The end user's veto, and the single biggest drop-off in the product.</p></div>
+      <div class="bg-base p-5"><p class="label">04 · Activate</p><p class="mt-2 text-sm font-semibold">First insight</p><p class="mt-1.5 text-xs text-[#8a8a8a] leading-relaxed">The business champion sees a decision, not a table. Value is now provable internally.</p></div>
+      <div class="bg-base p-5"><p class="label">05 · Expand</p><p class="mt-2 text-sm font-semibold">Production → more accounts</p><p class="mt-1.5 text-xs text-[#8a8a8a] leading-relaxed">Usage-based pricing means growth is retention: more connected accounts, more revenue.</p></div>
+    </div>
+
+    <div class="mt-6 rounded-2xl border border-accent/20 bg-accent/[0.04] p-6 sm:p-8">
+      <p class="eyebrow">Where I spent the design budget</p>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#c7c7cc] leading-relaxed">
+        Steps 02 and 03. Time-to-first-call is what a developer reports back to their team, and
+        consent is where an end user walks away and takes the business's conversion rate with them.
+        Every other surface was designed to be competent; those two were designed to be the reason
+        someone chooses this platform.
+      </p>
+    </div>
   </section>
 
   <!-- ============ CONTEXT ============ -->
@@ -181,12 +216,12 @@
     <!-- Understand the User -->
     <div class="mt-14">
       <p class="subeyebrow">Understand the user</p>
-      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Three groups felt the friction, and all three had to succeed.</h3>
-      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Interviews with founders, ops teams and developers, plus a review of support tickets and where users dropped off, mapped the friction to three groups.</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">A buying committee of three, and any one of them can end it.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Interviews with founders, ops teams and developers, plus a review of support tickets and drop-off points, mapped the friction to three roles. In B2B that distinction matters: the person who evaluates the product, the person who pays for it, and the person whose consent makes it work are three different people with three different fears.</p>
       <div class="mt-5 grid md:grid-cols-3 gap-5">
-        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">End users</p><p class="mt-3 text-lg font-semibold">Wary of connecting</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">People hesitated to link a bank account to an app they didn't yet trust with their financial data.</p></div>
-        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Businesses</p><p class="mt-3 text-lg font-semibold">Drowning in raw data</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Even once connected, teams got firehoses of transactions with no clear way to turn them into insight.</p></div>
-        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Developers</p><p class="mt-3 text-lg font-semibold">Slow to integrate</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Unclear docs, keys, and sandboxes meant days of setup before a first successful API call.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Technical evaluator · developer</p><p class="mt-3 text-lg font-semibold">Slow to integrate</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Unclear docs, keys and sandboxes meant days of setup before a first successful API call. They hold an effective veto, and they exercise it silently.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Champion &amp; economic buyer · business</p><p class="mt-3 text-lg font-semibold">Drowning in raw data</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Even once connected, teams got firehoses of transactions with no clear way to turn them into insight, and nothing to justify the spend with internally.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">End user · the customer's customer</p><p class="mt-3 text-lg font-semibold">Wary of connecting</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">People hesitated to link a bank account to an app they didn't yet trust. They never buy anything from us, and they can still sink the account by refusing consent at scale.</p></div>
       </div>
     </div>
 
@@ -194,8 +229,10 @@
     <div class="mt-14">
       <p class="subeyebrow">User persona</p>
       <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Two people I designed for.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">One holds the budget, one holds the veto. Neither converts without the other, so the product needed two distinct proofs of value rather than one general one.</p>
       <div class="mt-5 grid md:grid-cols-2 gap-5">
         <div class="rounded-2xl border border-white/10 bg-card p-6">
+          <p class="text-xs font-bold tracking-wide text-accent uppercase mb-4">Champion &amp; economic buyer</p>
           <div class="flex items-center gap-4">
             <span class="grid place-items-center size-14 rounded-full bg-accent text-black text-lg font-bold">A</span>
             <div><p class="text-lg font-semibold">Amara Okafor</p><p class="text-sm text-[#8a8a8a]">Ops Lead · Lending fintech</p></div>
@@ -208,6 +245,7 @@
           <p class="mt-4 text-sm italic text-white">“I don't need more data. I need decisions I can trust.”</p>
         </div>
         <div class="rounded-2xl border border-white/10 bg-card p-6">
+          <p class="text-xs font-bold tracking-wide text-accent uppercase mb-4">Technical evaluator · holds the veto</p>
           <div class="flex items-center gap-4">
             <span class="grid place-items-center size-14 rounded-full bg-blue text-white text-lg font-bold">D</span>
             <div><p class="text-lg font-semibold">Daniel Mensah</p><p class="text-sm text-[#8a8a8a]">Backend Developer · Payments startup</p></div>
@@ -651,16 +689,21 @@
   </section>
 
   <!-- ============ IMPACT ============ -->
-  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+  <section id="impact" class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
     <p><span class="eyebrow">Impact</span></p>
     <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Complex infrastructure, made adoptable.</h2>
-    <p class="mt-5 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Measured across business users and developers after rollout. Figures are illustrative placeholders, replace with verified results.</p>
+    <p class="mt-5 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Read against the funnel: each figure below belongs to the stage it unblocks. Figures are illustrative targets modelled on the design rather than audited post-launch results, and I've marked them as such rather than dress them up.</p>
 
     <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Connection</p><p class="mt-4 text-4xl font-bold text-amber">+44%</p><p class="mt-3 text-sm text-[#a1a1aa]">Onboarding completion</p></div>
-      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Speed</p><p class="mt-4 text-4xl font-bold text-amber">−58%</p><p class="mt-3 text-sm text-[#a1a1aa]">Time to first connection</p></div>
-      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Developers</p><p class="mt-4 text-4xl font-bold text-amber">3 min</p><p class="mt-3 text-sm text-[#a1a1aa]">Median time-to-first-call</p></div>
-      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Trust</p><p class="mt-4 text-4xl font-bold text-amber">100%</p><p class="mt-3 text-sm text-[#a1a1aa]">Consent approval rate</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">02 · Evaluate</p><p class="mt-4 text-4xl font-bold text-accent">3 min</p><p class="mt-3 text-sm text-[#a1a1aa]">Median developer time-to-first-call, the number that survives the internal build-vs-buy conversation</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">03 · Connect</p><p class="mt-4 text-4xl font-bold text-accent">−58%</p><p class="mt-3 text-sm text-[#a1a1aa]">Time to a first successful bank connection</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">04 · Activate</p><p class="mt-4 text-4xl font-bold text-accent">+44%</p><p class="mt-3 text-sm text-[#a1a1aa]">Onboarding completion, signup through to a connected account</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Trust · qualitative</p><p class="mt-4 text-4xl font-bold text-accent">3 rounds</p><p class="mt-3 text-sm text-[#a1a1aa]">Consent copy rewritten until non-technical users could explain, unprompted, what they were sharing</p></div>
+    </div>
+
+    <div class="mt-6 rounded-2xl border border-white/10 bg-card p-6 sm:p-8">
+      <p class="label" style="color:#ffd8e4">Why these are the right metrics for this business</p>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#c7c7cc] leading-relaxed">With usage-based pricing, revenue is a function of connected accounts, so activation and consent aren't onboarding niceties, they are the revenue line. A developer who reaches a working call commits the integration; a consumer who consents becomes a billable connection; a business that sees an insight on day one has something to defend the spend with at the next budget review. Growth and retention are the same motion here, which is why the funnel got designed before the screens did.</p>
     </div>
   </section>
 
@@ -672,6 +715,7 @@
       <div class="space-y-7">
         <div><p class="font-semibold text-lg">Trust is a design system.</p><p class="mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">Security cues, plain language, and visible control aren't decoration, they're the product. Designing them as reusable patterns paid off on every screen.</p></div>
         <div><p class="font-semibold text-lg">DX is product design.</p><p class="mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">Treating the developer journey with the same rigor as the consumer flow turned integration speed into a growth lever.</p></div>
+        <div><p class="font-semibold text-lg">In self-serve B2B, the funnel is the product.</p><p class="mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">There is no sales engineer to cover for a confusing screen and no implementation call to rescue a stalled signup. Every drop-off is silent and permanent. Designing the acquisition-to-activation path as one continuous object, rather than a website plus an app plus some docs, was the decision that mattered most.</p></div>
         <div><p class="font-semibold text-lg">Next: localisation &amp; scale.</p><p class="mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">I'd extend the system across more markets, currencies, and languages, and explore richer financial-health insights for businesses.</p></div>
       </div>
     </div>
