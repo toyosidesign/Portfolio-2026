@@ -10,10 +10,11 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment; newer pushes cancel in-progress runs.
+# Serialize deploys; do NOT cancel an in-flight deploy when a new push arrives
+# (cancelling mid-publish leaves the site on the previous build).
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -33,3 +34,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # GitHub's Pages publish has been slow; default 10-min timeout was
+          # firing before publish completed and marking the deploy failed.
+          timeout: 1800000
