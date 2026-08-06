@@ -787,19 +787,27 @@
 
     <div class="mt-14">
       <!-- Step 01 -->
-      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
-        <div>
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-start">
+        <div class="lg:sticky lg:top-24">
           <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">01 / Asset detail</p>
-          <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Everything about a line, in one place.</h3>
-          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">Drill into any conveyor to see its full bill of parts. From here an operator can add a part to the cart, open a help-desk ticket against the asset, or log a maintenance task, without losing the context of which machine they're on.</p>
+          <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">The whole fleet, down to a single part.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">My Assets lists every conveyor line with its health, status and next-service date, searchable and filterable by site. Drill into any asset for its details, uptime and maintenance status, plus a full parts &amp; components list, then add a part to the cart, raise a help-desk ticket, or open a quote, all scoped to that machine.</p>
           <ul class="mt-6 space-y-3 text-[#c7c7cc]">
-            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Searchable parts catalog per asset</li>
-            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>One tap to add to cart</li>
-            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Raise a ticket or task in context</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Fleet health, status &amp; service dates in one list</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Per-asset details, uptime &amp; maintenance status</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Browse the BOM, add parts to cart, or raise a ticket</li>
           </ul>
         </div>
-        <!-- Figma node 1:7189 - screen mockup. Replace with assets/fluent-asset-detail.png -->
-        <div class="relative overflow-hidden aspect-[620/530] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] grid place-items-center text-[#5a5a5a] text-sm shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="620" height="530" loading="lazy" decoding="async" src="assets/fluent-asset-detail.webp" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+        <div class="space-y-5">
+          <figure>
+            <div class="relative overflow-hidden aspect-[1400/806] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="806" loading="lazy" decoding="async" src="assets/fluent-asset-list.webp" alt="My Assets list — 14 conveyor lines with health, status and next-service date, searchable and filterable by site" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+            <figcaption class="mt-2.5 text-xs text-[#8a8a8a]">My Assets — the home base for every line</figcaption>
+          </figure>
+          <figure>
+            <div class="relative overflow-hidden aspect-[1400/905] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="905" loading="lazy" decoding="async" src="assets/fluent-asset-detail.webp" alt="Asset detail — Roller Chain Conveyor RCC-1200 with details panel, maintenance status and parts &amp; components" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+            <figcaption class="mt-2.5 text-xs text-[#8a8a8a]">Asset detail — drill into one machine</figcaption>
+          </figure>
+        </div>
       </div>
 
       <!-- Step 02 (image left) -->
