@@ -783,40 +783,58 @@
       commercial loop that used to take a week of email closes inside one product.
     </p>
 
-    <div class="mt-14 space-y-16">
-      <div class="rounded-2xl border border-white/10 bg-card/40 p-6 sm:p-8">
-        <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">01 / Assets</p>
-        <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">The whole fleet, down to a single part.</h3>
-        <p class="max-w-4xl mt-4 text-[#a1a1aa] leading-relaxed">My Assets lists every conveyor line with its health, status and next-service date, searchable by site. Drill into any asset for its details, maintenance status and full parts &amp; components list, then add to cart, raise a help-desk ticket, or open a quote.</p>
-        <div class="mt-7 grid md:grid-cols-2 gap-5 items-start">
-        <figure>
-          <div class="relative overflow-hidden aspect-[1400/803] rounded-xl border border-white/10 bg-[#eef1f6] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-asset-list.webp" alt="My Assets list, 14 conveyor lines with health, status and next-service date" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
-          <figcaption class="mt-3 text-xs text-[#8a8a8a]">My Assets, the home base for every line</figcaption>
-        </figure>
-        <figure>
-          <div class="relative overflow-hidden aspect-[1400/803] rounded-xl border border-white/10 bg-[#eef1f6] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-asset-detail.webp" alt="Asset detail, Roller Chain Conveyor RCC-1200 with details, maintenance status and parts" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
-          <figcaption class="mt-3 text-xs text-[#8a8a8a]">Asset detail, drill into one machine</figcaption>
-        </figure>
-        </div>
-      </div>
-
-      <div class="rounded-2xl border border-white/10 bg-card/40 p-6 sm:p-8">
-        <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">02 / Inventory</p>
-        <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Every part, and where it's stocked.</h3>
-        <p class="max-w-4xl mt-4 text-[#a1a1aa] leading-relaxed">The Inventory page lists every part with its global stock and status, in stock, low, or out. Open a part to see the locations that hold it, then manage stock at any location without leaving the flow.</p>
-        <div class="mt-7 grid md:grid-cols-2 gap-5 items-start">
-        <figure>
-          <div class="relative overflow-hidden aspect-[1400/803] rounded-xl border border-white/10 bg-[#eef1f6] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-inventory.webp" alt="Inventory list, 31 parts with location, asset, global stock and status" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
-          <figcaption class="mt-3 text-xs text-[#8a8a8a]">Inventory, every part and its stock</figcaption>
-        </figure>
-        <figure>
-          <div class="relative overflow-hidden aspect-[1400/803] rounded-xl border border-white/10 bg-[#eef1f6] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-inventory-stock.webp" alt="Manage stock at a location, parts on hand with stock levels and quick actions" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
-          <figcaption class="mt-3 text-xs text-[#8a8a8a]">Manage stock at a location</figcaption>
-        </figure>
-        </div>
-      </div>
-
+    <div class="mt-14">
       <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">01 / Assets</p>
+          <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Every line, at a glance.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">My Assets lists every conveyor line with its health, status and next-service date, searchable and filterable by site, so an operator sees what needs attention before anything breaks.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Health, status &amp; next service per asset</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Search and filter by site or status</li>
+          </ul>
+        </div>
+        <div class="relative overflow-hidden aspect-[1400/803] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-asset-list.webp" alt="My Assets list, 14 conveyor lines with health, status and next-service date" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center mt-10 lg:mt-14">
+        <div class="order-2 lg:order-1 relative overflow-hidden aspect-[1400/803] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-asset-detail.webp" alt="Asset detail, Roller Chain Conveyor RCC-1200 with details, maintenance status and parts" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
+        <div class="order-1 lg:order-2">
+          <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Everything about a machine, in one place.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">Drill into any asset for its details, uptime and maintenance status, plus a full parts &amp; components list, then add a part to the cart, raise a help-desk ticket, or open a quote, all scoped to that machine.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Searchable parts catalog per asset</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Add to cart, raise a ticket or task in context</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center border-t border-white/10 pt-16 mt-16">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">02 / Inventory</p>
+          <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Every part, and its stock.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">The Inventory page lists every part with its global stock and status, in stock, low, or out, searchable across the account.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Global stock and status per part</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Search and filter by status</li>
+          </ul>
+        </div>
+        <div class="relative overflow-hidden aspect-[1400/802] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="802" loading="lazy" decoding="async" src="assets/fluent-inventory.webp" alt="Inventory list, 31 parts with location, asset, global stock and status" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center mt-10 lg:mt-14">
+        <div class="order-2 lg:order-1 relative overflow-hidden aspect-[1400/802] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="802" loading="lazy" decoding="async" src="assets/fluent-inventory-stock.webp" alt="Manage stock at a location, parts on hand with stock levels and quick actions" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
+        <div class="order-1 lg:order-2">
+          <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Manage stock, location by location.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">Open a part to see the locations that hold it, then adjust stock at any location without leaving the flow.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Stock levels per location</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Manage stock in context</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center border-t border-white/10 pt-16 mt-16">
         <div>
           <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">03 / Cart → Quote</p>
           <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">A cart that becomes a quote.</h3>
@@ -826,80 +844,123 @@
             <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Request routes straight to Open Quotes</li>
           </ul>
         </div>
-        <div class="relative overflow-hidden aspect-[1400/815] rounded-2xl border border-white/10 bg-gradient-to-br from-ink to-[#0b0d12] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="815" loading="lazy" decoding="async" src="assets/fluent-cart-quote.webp" alt="Your Cart, 13 parts across 4 assets, with a Request a Quote panel" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()" /></div>
+        <div class="relative overflow-hidden aspect-[1400/815] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="815" loading="lazy" decoding="async" src="assets/fluent-cart-quote.webp" alt="Your Cart, 13 parts across 4 assets, with a Request a Quote panel" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
       </div>
 
-      <div class="rounded-2xl border border-white/10 bg-card/40 p-6 sm:p-8">
-        <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">04 / Open Quotes</p>
-        <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Every quote, from list to signature.</h3>
-        <p class="max-w-4xl mt-4 text-[#a1a1aa] leading-relaxed">The Open Quotes page lists every quotation with its status, value and valid-until date. Open any one for its full line-item breakdown, scoped to the asset, then download, print, or e-sign to accept.</p>
-        <div class="mt-7 grid md:grid-cols-2 gap-5 items-start">
-        <figure>
-          <div class="relative overflow-hidden aspect-[1400/687] rounded-xl border border-white/10 bg-[#eef1f6] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img width="1400" height="687" loading="lazy" decoding="async" src="assets/fluent-open-quotes.webp" alt="Open Quotes list, 15 quotations with status, value and validity" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
-          <figcaption class="mt-3 text-xs text-[#8a8a8a]">Open Quotes, the whole list</figcaption>
-        </figure>
-        <figure>
-          <div class="relative overflow-hidden aspect-[1400/687] rounded-xl border border-white/10 bg-[#eef1f6] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img width="1400" height="687" loading="lazy" decoding="async" src="assets/fluent-open-quote-detail.webp" alt="Open quote detail, QUO234556789 with line items, totals, sign and accept" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
-          <figcaption class="mt-3 text-xs text-[#8a8a8a]">One quote, ready to sign</figcaption>
-        </figure>
-        </div>
-      </div>
-
-      <div class="rounded-2xl border border-white/10 bg-card/40 p-6 sm:p-8">
-        <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">05 / Invoice → Pay</p>
-        <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Every invoice, from list to paid.</h3>
-        <p class="max-w-4xl mt-4 text-[#a1a1aa] leading-relaxed">The Invoices page lists every invoice across the account with its due date, payment method and status. Open any one for its full line-item breakdown, then pay by card or on purchase-order terms, download, or print, no phone call required.</p>
-        <div class="mt-7 grid md:grid-cols-2 gap-5 items-start">
-        <figure>
-          <div class="relative overflow-hidden aspect-[1400/803] rounded-xl border border-white/10 bg-[#eef1f6] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-invoices.webp" alt="Invoices list, 30 invoices with due date, payment method, status and amount" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
-          <figcaption class="mt-3 text-xs text-[#8a8a8a]">Invoices, every bill in one place</figcaption>
-        </figure>
-        <figure>
-          <div class="relative overflow-hidden aspect-[1400/803] rounded-xl border border-white/10 bg-[#eef1f6] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-invoice-detail.webp" alt="Invoice detail, INV/2025/01509 with line items, balance due and pay options" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
-          <figcaption class="mt-3 text-xs text-[#8a8a8a]">One invoice, ready to pay</figcaption>
-        </figure>
-        </div>
-      </div>
-
-      <div class="rounded-2xl border border-white/10 bg-card/40 p-6 sm:p-8">
-        <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">06 / Shipments</p>
-        <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Every shipment, tracked to the door.</h3>
-        <p class="max-w-4xl mt-4 text-[#a1a1aa] leading-relaxed">Pick a delivery address to see its shipments, each with carrier, ship date and live status. Open any one for a progress timeline from order to delivery, the items inside, and a full tracking history.</p>
-        <div class="mt-7 grid md:grid-cols-3 gap-5 items-start">
-        <figure>
-          <div class="relative overflow-hidden aspect-[1400/803] rounded-xl border border-white/10 bg-[#eef1f6] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-track-shipment.webp" alt="Track shipments, pick a delivery address to see its shipments" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
-          <figcaption class="mt-3 text-xs text-[#8a8a8a]">Pick an address to track</figcaption>
-        </figure>
-        <figure>
-          <div class="relative overflow-hidden aspect-[1400/803] rounded-xl border border-white/10 bg-[#eef1f6] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-shipments.webp" alt="Shipments list, 15 shipments with tracking number, carrier, ship date and status" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
-          <figcaption class="mt-3 text-xs text-[#8a8a8a]">Every shipment for that address</figcaption>
-        </figure>
-        <figure>
-          <div class="relative overflow-hidden aspect-[1400/803] rounded-xl border border-white/10 bg-[#eef1f6] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-shipment-detail.webp" alt="Shipment detail, 1Z9F82W40391 in transit with progress timeline, items and history" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
-          <figcaption class="mt-3 text-xs text-[#8a8a8a]">One shipment, live timeline</figcaption>
-        </figure>
-        </div>
-      </div>
-
-      <div class="rounded-2xl border border-white/10 bg-card/40 p-6 sm:p-8">
-        <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">07 / Maintenance</p>
-        <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Every work order, from list to done.</h3>
-        <p class="max-w-4xl mt-4 text-[#a1a1aa] leading-relaxed">The Maintenance page groups every work order by urgency, upcoming, due and late. Open any one for its task checklist, parts used, assigned technician and history, then complete it, request a quote, or raise a ticket, all logged back to the asset.</p>
-        <div class="mt-7 grid md:grid-cols-2 gap-5 items-start">
-        <figure>
-          <div class="relative overflow-hidden aspect-[1400/803] rounded-xl border border-white/10 bg-[#eef1f6] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-maintenance.webp" alt="Maintenance list, 30 work orders with asset, location, due date and status" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
-          <figcaption class="mt-3 text-xs text-[#8a8a8a]">Maintenance, every work order in one place</figcaption>
-        </figure>
-        <figure>
-          <div class="relative overflow-hidden aspect-[1400/803] rounded-xl border border-white/10 bg-[#eef1f6] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-maintenance-detail.webp" alt="Work order detail, WO-87961 with progress, task checklist, parts used and history" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
-          <figcaption class="mt-3 text-xs text-[#8a8a8a]">One work order, checklist to done</figcaption>
-        </figure>
-        </div>
-      </div>
-
-            <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
-        <div class="order-2 lg:order-1 relative overflow-hidden aspect-[1400/803] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-helpdesk.webp" alt="Help desk ticket T-10241, a support conversation with priority, assignee and related asset, part and work order" class="absolute inset-0 w-full h-full object-cover object-top" onerror="this.remove()" /></div>
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center border-t border-white/10 pt-16 mt-16">
+        <div class="order-2 lg:order-1 relative overflow-hidden aspect-[1400/623] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="623" loading="lazy" decoding="async" src="assets/fluent-open-quotes.webp" alt="Open Quotes list, 15 quotations with status, value and validity" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
         <div class="order-1 lg:order-2">
+          <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">04 / Open Quotes</p>
+          <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Every quote, in one list.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">The Open Quotes page lists every quotation with its status, value and valid-until date, so a customer sees what's new, in progress, pending sign-off, or cancelled at a glance.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Status, value &amp; validity per quote</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Search and filter by status or line</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center mt-10 lg:mt-14">
+        <div>
+          <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Read it, then sign it.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">Open any quote for its full line-item breakdown, scoped to the asset, with bill-to, ship-to and totals, then download, print, or e-sign and accept in one place.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Line items priced against the asset</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Download, print, or e-sign to accept</li>
+          </ul>
+        </div>
+        <div class="relative overflow-hidden aspect-[1400/752] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="752" loading="lazy" decoding="async" src="assets/fluent-open-quote-detail.webp" alt="Open quote detail, QUO234556789 with line items, totals, sign and accept" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center border-t border-white/10 pt-16 mt-16">
+        <div class="order-2 lg:order-1 relative overflow-hidden aspect-[1400/803] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-invoices.webp" alt="Invoices list, 30 invoices with due date, payment method, status and amount" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
+        <div class="order-1 lg:order-2">
+          <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">05 / Invoice → Pay</p>
+          <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Every invoice, in one place.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">The Invoices page lists every invoice across the account with its due date, payment method and status, searchable across assets.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Due date, method &amp; status per invoice</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Search and filter by status</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center mt-10 lg:mt-14">
+        <div>
+          <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Open it, then pay it.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">Open any invoice for its full line-item breakdown, then pay by card or on purchase-order terms, download, or print, no phone call required.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Pay by card or PO terms in-app</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Download or print the invoice</li>
+          </ul>
+        </div>
+        <div class="relative overflow-hidden aspect-[1400/803] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-invoice-detail.webp" alt="Invoice detail, INV/2025/01509 with line items, balance due and pay options" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center border-t border-white/10 pt-16 mt-16">
+        <div class="order-2 lg:order-1 relative overflow-hidden aspect-[1400/802] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="802" loading="lazy" decoding="async" src="assets/fluent-track-shipment.webp" alt="Track shipments, pick a delivery address to see its shipments" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
+        <div class="order-1 lg:order-2">
+          <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">06 / Shipments</p>
+          <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Pick an address to track.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">Track shipments starts from a delivery address, each showing how many shipments are on the way, so a multi-site customer jumps straight to the one they need.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Every delivery address in one list</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Shipment counts per address</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center mt-10 lg:mt-14">
+        <div>
+          <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Every shipment for that address.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">See each shipment with its carrier, ship date and live status, in transit, delivered, or delayed, so nobody has to phone a dealer for an update.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Carrier, ship date &amp; status per shipment</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Search and filter by status</li>
+          </ul>
+        </div>
+        <div class="relative overflow-hidden aspect-[1400/802] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="802" loading="lazy" decoding="async" src="assets/fluent-shipments.webp" alt="Shipments list, 15 shipments with tracking number, carrier, ship date and status" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center mt-10 lg:mt-14">
+        <div class="order-2 lg:order-1 relative overflow-hidden aspect-[1400/802] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="802" loading="lazy" decoding="async" src="assets/fluent-shipment-detail.webp" alt="Shipment detail, 1Z9F82W40391 in transit with progress timeline, items and history" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
+        <div class="order-1 lg:order-2">
+          <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Follow it to the door.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">Open any shipment for a progress timeline from order to delivery, the items inside, carrier and ETA, plus a full tracking history of every scan.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Order → processing → in transit → delivered</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Items, carrier, ETA and scan history</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center border-t border-white/10 pt-16 mt-16">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">07 / Maintenance</p>
+          <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Every work order, by urgency.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">The Maintenance page groups every work order by urgency, upcoming, due and late, so teams service equipment before it fails.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Late / due / upcoming, at a glance</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Search and filter by asset or status</li>
+          </ul>
+        </div>
+        <div class="relative overflow-hidden aspect-[1400/803] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-maintenance.webp" alt="Maintenance list, 30 work orders with asset, location, due date and status" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center mt-10 lg:mt-14">
+        <div class="order-2 lg:order-1 relative overflow-hidden aspect-[1400/803] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-maintenance-detail.webp" alt="Work order detail, WO-87961 with progress, task checklist, parts used and history" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
+        <div class="order-1 lg:order-2">
+          <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">From checklist to done.</h3>
+          <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">Open any work order for its task checklist, parts used, assigned technician and history, then complete it, request a quote, or raise a ticket, all logged back to the asset.</p>
+          <ul class="mt-6 space-y-3 text-[#c7c7cc]">
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Task checklist, parts and technician</li>
+            <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Complete a task → logs to asset history</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center border-t border-white/10 pt-16 mt-16">
+        <div>
           <p class="text-sm font-semibold uppercase tracking-wide text-[#8a8a8a]">08 / Help Desk</p>
           <h3 class="mt-3 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Every ticket, from raised to resolved.</h3>
           <p class="max-w-4xl mt-5 text-[#a1a1aa] leading-relaxed">Tickets can be raised from any asset and land on the Help Desk. Open one for the full conversation with support, its priority and assignee, and the related asset, part and work order, all in context.</p>
@@ -908,6 +969,7 @@
             <li class="flex gap-3"><span class="text-[#8a8a8a] mt-0.5">✓</span>Linked to the asset, part and work order</li>
           </ul>
         </div>
+        <div class="relative overflow-hidden aspect-[1400/803] rounded-2xl border border-white/10 bg-[#eef1f6] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"><img width="1400" height="803" loading="lazy" decoding="async" src="assets/fluent-helpdesk.webp" alt="Help desk ticket T-10241, a support conversation with priority, assignee and related items" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()" /></div>
       </div>
     </div>
   </section>
