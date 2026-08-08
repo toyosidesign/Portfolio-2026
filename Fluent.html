@@ -7,7 +7,7 @@
   <meta name="description" content="B2B SaaS case study: designing a multi-tenant self-serve customer portal for Fluent Conveyors, turning a manual, support-heavy aftermarket into recurring platform revenue. Asset management, quote-to-cash and preventive maintenance in one console." />
 
   <!-- Tailwind CSS (precompiled -- rebuild with: npm run build:css) -->
-  <link rel="stylesheet" href="assets/tailwind.css?v=13aa6594" />
+  <link rel="stylesheet" href="assets/tailwind.css?v=e5839805" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1251,5 +1251,25 @@
     </div>
   </footer>
 
+
+  <!-- Lightbox: click any screen to enlarge -->
+  <div id="lb" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-10 cursor-zoom-out">
+    <img id="lb-img" alt="" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl" />
+    <button id="lb-x" aria-label="Close" class="absolute top-4 right-6 text-white/60 hover:text-white text-4xl leading-none">&times;</button>
+  </div>
+  <script>
+  (function(){
+    var lb=document.getElementById('lb'), img=document.getElementById('lb-img');
+    function open(src,alt){ img.src=src; img.alt=alt||''; lb.classList.remove('hidden'); lb.classList.add('flex'); document.body.style.overflow='hidden'; }
+    function close(){ lb.classList.add('hidden'); lb.classList.remove('flex'); document.body.style.overflow=''; img.removeAttribute('src'); }
+    document.querySelectorAll('img[src^="assets/"]').forEach(function(el){
+      if(el.closest('header')||el.closest('footer')) return;
+      el.style.cursor='zoom-in';
+      el.addEventListener('click', function(){ open(el.currentSrc||el.src, el.alt); });
+    });
+    lb.addEventListener('click', close);
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+  })();
+  </script>
 </body>
 </html>
