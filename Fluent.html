@@ -7,7 +7,7 @@
   <meta name="description" content="B2B SaaS case study: designing a multi-tenant self-serve customer portal for Fluent Conveyors, turning a manual, support-heavy aftermarket into recurring platform revenue. Asset management, quote-to-cash and preventive maintenance in one console." />
 
   <!-- Tailwind CSS (precompiled -- rebuild with: npm run build:css) -->
-  <link rel="stylesheet" href="assets/tailwind.css?v=e5839805" />
+  <link rel="stylesheet" href="assets/tailwind.css?v=a5e452e4" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1257,16 +1257,23 @@
     <img id="lb-img" alt="" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl" />
     <button id="lb-x" aria-label="Close" class="absolute top-4 right-6 text-white/60 hover:text-white text-4xl leading-none">&times;</button>
   </div>
+  <div id="zoom-badge" style="position:fixed;display:none;z-index:90;width:34px;height:34px;place-items:center;border-radius:9px;background:rgba(12,14,20,.62);color:#fff;border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);pointer-events:none;box-shadow:0 4px 14px rgba(0,0,0,.35);">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+  </div>
   <script>
   (function(){
-    var lb=document.getElementById('lb'), img=document.getElementById('lb-img');
-    function open(src,alt){ img.src=src; img.alt=alt||''; lb.classList.remove('hidden'); lb.classList.add('flex'); document.body.style.overflow='hidden'; }
+    var lb=document.getElementById('lb'), img=document.getElementById('lb-img'), badge=document.getElementById('zoom-badge');
+    function open(src,alt){ img.src=src; img.alt=alt||''; lb.classList.remove('hidden'); lb.classList.add('flex'); badge.style.display='none'; document.body.style.overflow='hidden'; }
     function close(){ lb.classList.add('hidden'); lb.classList.remove('flex'); document.body.style.overflow=''; img.removeAttribute('src'); }
+    function place(el){ var r=el.getBoundingClientRect(); badge.style.top=(r.top+10)+'px'; badge.style.left=(r.right-44)+'px'; badge.style.display='grid'; }
     document.querySelectorAll('img[src^="assets/"]').forEach(function(el){
       if(el.closest('header')||el.closest('footer')) return;
       el.style.cursor='zoom-in';
+      el.addEventListener('mouseenter', function(){ place(el); });
+      el.addEventListener('mouseleave', function(){ badge.style.display='none'; });
       el.addEventListener('click', function(){ open(el.currentSrc||el.src, el.alt); });
     });
+    window.addEventListener('scroll', function(){ badge.style.display='none'; }, {passive:true});
     lb.addEventListener('click', close);
     document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
   })();
