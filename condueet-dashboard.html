@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Condueet dashboard · Role-based console for an API-first fintech | Omotoyosi Adegbite</title>
+  <meta name="description" content="B2B SaaS case study: the Condueet dashboard, a role-based console for three seats at once, a developer proving the API, a business lead keeping data flowing, and an owner watching cost and access. Organised by role, not by feature." />
+
+  <!-- Tailwind CSS (precompiled -- rebuild with: npm run build:css) -->
+  <link rel="stylesheet" href="assets/tailwind.css?v=ebc3493e" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    ::selection { background: #ffd8e4; color: #000; }
+    .eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ffd8e4; font-weight: 700; }
+    .label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffd8e4; font-weight: 700; }
+    .subeyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffd8e4; font-weight: 700; }
+    .shot { border-radius: 14px; box-shadow: 0 24px 60px rgba(0,0,0,.5); background:#fff; overflow:hidden; }
+    .pill { display:inline-flex; align-items:center; border-radius:9999px; background:#1b1917; border:1px solid rgba(255,255,255,.1); padding:5px 12px; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#ffd8e4; }
+    .chip { display:inline-flex; align-items:center; gap:7px; border-radius:9999px; background:#141210; border:1px solid rgba(255,255,255,.1); padding:6px 12px; font-size:13px; color:#d6d3d1; }
+    .chip::before { content:""; width:5px; height:5px; border-radius:9999px; background:#ffd8e4; }
+    .feat { display:flex; gap:.6rem; }
+    .feat::before { content:"→"; color:#ffd8e4; }
+    .slot { border:1px dashed rgba(255,255,255,.18); border-radius:16px; background:rgba(20,18,16,.4); display:grid; place-items:center; text-align:center; padding:2rem; color:#6b6b6b; font-size:14px; }
+    .slot .fn { font-family:'Caveat', cursive; color:#8a8a8a; font-size:20px; letter-spacing:0; }
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+      .reveal.in { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-base text-white font-sans antialiased">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="sticky top-0 z-50 pt-6 px-4 sm:px-6">
+    <div class="max-w-[1280px] mx-auto">
+      <nav class="flex items-center justify-between h-[54px] rounded-full border border-[#3d3e3f] bg-header/90 backdrop-blur-xl px-5 shadow-[0_4px_10px_rgba(0,0,0,0.35)]">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="grid place-items-center size-7 rounded-full bg-accent text-black text-xs font-bold">O</span>
+          <span class="text-base font-semibold tracking-tight text-white">Omotoyosi Adegbite</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm">
+          <li><a href="index.html#work" class="font-bold text-accent">Work</a></li>
+          <li><a href="index.html#about" class="text-[#c0c0c0] hover:text-white transition-colors">About</a></li>
+          <li><a href="index.html#contact" class="text-[#c0c0c0] hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 pt-14 sm:pt-20">
+    <div class="flex items-center justify-between mb-10">
+      <a href="Condueet.html" class="inline-flex items-center gap-1.5 text-sm text-[#8a8a8a] hover:text-white transition-colors">← Back to the Condueet overview</a>
+      <a href="https://condueet.netlify.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-white transition-colors">View live project →</a>
+    </div>
+
+    <p class="text-sm text-[#8a8a8a]">Condueet &nbsp;·&nbsp; B2B SaaS &nbsp;·&nbsp; API-first fintech infrastructure</p>
+
+    <h1 class="mt-3 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.02]">
+      Three seats at one dashboard, and every one of them is judging it.
+    </h1>
+    <p class="mt-6 max-w-4xl text-lg text-[#c7c7cc] leading-relaxed">
+      Condueet's dashboard is where the product stops being a promise and starts being a tool: a
+      developer proving the API works, a business lead keeping customer data flowing, an owner
+      watching cost and access. Three different jobs, three different definitions of "working." I
+      designed the console that answers to all three, organised by role rather than by feature.
+    </p>
+
+    <div class="mt-6 flex flex-wrap gap-2">
+      <span class="chip">Developer Console</span>
+      <span class="chip">Business Operations</span>
+      <span class="chip">Owner Hub</span>
+      <span class="chip">Wallet &amp; Billing</span>
+      <span class="chip">Consent &amp; States</span>
+    </div>
+
+    <!-- meta row -->
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-5 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="label">Role</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Product Designer</p></div>
+      <div class="bg-base p-5"><p class="label">ICP</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">African fintechs: lending, payments, budgeting</p></div>
+      <div class="bg-base p-5"><p class="label">Model</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Self-serve B2B SaaS · usage-based, scales with connected accounts</p></div>
+      <div class="bg-base p-5"><p class="label">Surfaces</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">Developer console · operations views · owner hub · wallet</p></div>
+      <div class="bg-base p-5"><p class="label">Timeline</p><p class="mt-2 text-sm text-[#c7c7cc] leading-relaxed">2024–25</p></div>
+    </div>
+
+    <!-- hero image -->
+    <img width="2400" height="2022" loading="eager" fetchpriority="high" decoding="async" src="assets/condueet-v2-hero.webp" alt="The Condueet console, the three role rails side by side." class="mt-8 w-full h-auto block mx-auto" />
+  </section>
+
+  <!-- ============ THE SNAPSHOT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="eyebrow">The snapshot</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">One console, three jobs, and no one to explain it.</h2>
+    <p class="mt-5 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">The same screens are read by three people with nothing in common except the account they share. A developer wants proof the integration works. A business lead wants to know which customer just broke and how to fix it. An owner wants to know who holds a key and what it costs. A dashboard built feature-by-feature serves all of them badly; I built one where the role decides the surface.</p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">01 · Challenge</p><p class="mt-3 text-lg font-semibold">One console, three jobs, no sales team to explain it</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Three roles evaluate the product unassisted, and each has a different, unforgiving definition of "working." One layout could not flatter all three.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">02 · My role</p><p class="mt-3 text-lg font-semibold">End-to-end design of the role-based dashboard</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">IA, flows, permission model, states and interactive prototype for the developer console, operations views, owner hub and wallet, research through UI.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">03 · Outcome</p><p class="mt-3 text-lg font-semibold">A console where the role decides the surface</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Switching role re-renders the navigation itself, and every screen is built to finish exactly one job, down to its failure states.</p></div>
+    </div>
+
+    <div class="mt-5 grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Developer</p><p class="mt-3 text-4xl font-bold text-accent">3 min</p><p class="mt-2 text-sm text-[#a1a1aa]">Median time-to-first-call, the number the developer reports back to the team</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Operations</p><p class="mt-3 text-4xl font-bold text-accent">1 click</p><p class="mt-2 text-sm text-[#a1a1aa]">From a flagged connection to the fix that clears it</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Owner</p><p class="mt-3 text-4xl font-bold text-accent">&lt; 1 min</p><p class="mt-2 text-sm text-[#a1a1aa]">From spotting a leaked key to a revoked one</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Every screen</p><p class="mt-3 text-4xl font-bold">3 <span class="text-accent">states</span></p><p class="mt-2 text-sm text-[#a1a1aa]">Resolves to done, empty, or an honest failure, never a dead end</p></div>
+    </div>
+  </section>
+
+  <!-- ============ THE THREE SEATS ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="eyebrow">The three seats</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Where a data product actually gets judged.</h2>
+    <p class="mt-5 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">
+      The dashboard is not one audience with one job; it is three people who each decide the product's
+      fate from a different chair. I designed for the chair, not the average, and I named the moment in
+      each seat that the whole console had to earn.
+    </p>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-6"><p class="label">01 · The developer</p><p class="mt-2 text-base font-semibold">Evaluates in an afternoon.</p><p class="mt-1.5 text-sm text-[#8a8a8a] leading-relaxed">Time-to-first-200 is the whole audition. Slow or unclear here and the trial quietly ends.</p></div>
+      <div class="bg-base p-6"><p class="label">02 · The business lead</p><p class="mt-2 text-base font-semibold">Lives here daily.</p><p class="mt-1.5 text-sm text-[#8a8a8a] leading-relaxed">Needs names, not counts, and the fix one click away, because a broken connection is a customer, not a number.</p></div>
+      <div class="bg-base p-6"><p class="label">03 · The owner</p><p class="mt-2 text-base font-semibold">Arrives on the worst day.</p><p class="mt-1.5 text-sm text-[#8a8a8a] leading-relaxed">A leaked key, an odd charge. What they need is speed and certainty, not a tour of the settings.</p></div>
+    </div>
+
+    <div class="mt-6 rounded-2xl border border-accent/20 bg-accent/[0.04] p-6 sm:p-8">
+      <p class="eyebrow">Where I spent the design budget</p>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#c7c7cc] leading-relaxed">
+        On the worst moments, the failed call, the broken connection, the leaked key, because a data
+        product is judged on its worst day, not its best. Every calm, happy-path screen was designed to
+        be competent; the failure states were designed to be the reason someone trusts the platform.
+      </p>
+    </div>
+
+    <div class="mt-8 rounded-2xl overflow-hidden border border-white/10">
+      <img width="2400" height="1350" loading="lazy" decoding="async" src="assets/condueet-v2-roles.webp" alt="The three seats visualised: the developer (prove it works), the business lead (keep it flowing) and the owner (hold the risk), under one shell where the role decides the surface." class="w-full h-auto block" />
+    </div>
+  </section>
+
+  <!-- ============ PROCESS OVERVIEW ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="eyebrow">The approach</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">A user-centered design process.</h2>
+    <p class="mt-5 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Five phases, run pragmatically, so every screen traces back to a real user need and a measurable goal. The sections below walk through each phase and the work it produced.</p>
+    <div class="mt-8 grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-sm font-bold text-accent">01 · Discover</p><p class="mt-2 text-xs text-[#8a8a8a] leading-relaxed">Strategy · Understand the roles · Jobs audit · Affinity mapping · HMW</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-sm font-bold text-accent">02 · Specify</p><p class="mt-2 text-xs text-[#8a8a8a] leading-relaxed">User journeys · User flows · Information architecture · Permission model</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-sm font-bold text-accent">03 · Design</p><p class="mt-2 text-xs text-[#8a8a8a] leading-relaxed">Wireframes · Design system · Screens · States</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-sm font-bold text-accent">04 · Evaluate</p><p class="mt-2 text-xs text-[#8a8a8a] leading-relaxed">Interactive prototype · Flow testing</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-sm font-bold text-accent">05 · Iterate</p><p class="mt-2 text-xs text-[#8a8a8a] leading-relaxed">What testing sent back</p></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ============ PHASE 01 · DISCOVER ============ -->
+  <!-- ============================================================ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="flex items-center gap-5 border-b border-white/10 pb-6">
+      <span class="text-5xl sm:text-6xl font-bold text-[#3a3632] tabular-nums">01</span>
+      <div><p class="eyebrow">Phase 01</p><h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.02em]">Discover</h2></div>
+    </div>
+    <p class="mt-6 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Understand the three seats and the single question that separates a useful screen from a busy one before proposing any layout.</p>
+
+    <div class="mt-12">
+      <p class="subeyebrow">Strategy</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">A buying committee of three, and any one of them can end it.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">The dashboard isn't adopted by an organisation; it's adopted by three people in sequence. The developer clears the technical bar, the business lead decides it's liveable day to day, and the owner signs off on the risk and the bill. A screen that only pleases one of them still loses the account.</p>
+    </div>
+
+    <div class="mt-12">
+      <p class="subeyebrow">Jobs audit</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Three seats, audited against one question: whose job does this finish?</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">I listed every existing screen and asked one thing of it, which seat does this finish a job for. Screens that answered "all of them, a little" were the problem: they belonged to no one and finished nothing. That question became the filter for everything that followed.</p>
+      <div class="mt-5 grid md:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">Prove it works</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">The developer's job: keys, a quickstart, and logs that explain a failure instead of hiding it.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">Keep it flowing</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">The business lead's job: see which customer broke, by name, and reach the fix without leaving the row.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">Hold the risk</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">The owner's job: know who holds access and what it costs, and act on both from one place.</p></div>
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <p class="subeyebrow">Affinity mapping</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Clustering the research into themes.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Interview notes and support tickets clustered into a handful of themes that cut across roles: "I can't tell what broke," "I don't know what this will cost," and "I don't trust an empty screen." Each theme was a shared failure, felt differently in each seat.</p>
+    </div>
+
+    <div class="mt-12">
+      <p class="subeyebrow">How-might-we</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Turning themes into design questions.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Each theme became a question the design had to answer: how might we make a failure explain itself; how might we put cost next to the action that drives it; how might we make an empty state feel intentional rather than broken. The answers are the screens in Design.</p>
+      <div class="mt-8 rounded-2xl overflow-hidden border border-white/10">
+        <img width="2400" height="1350" loading="lazy" decoding="async" src="assets/condueet-v2-research-synthesis.webp" alt="Themes to design questions: three research themes, I can't tell what broke, I don't know what this will cost, and I don't trust an empty screen, each mapped to a how-might-we question." class="w-full h-auto block" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ============ PHASE 02 · SPECIFY ============ -->
+  <!-- ============================================================ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="flex items-center gap-5 border-b border-white/10 pb-6">
+      <span class="text-5xl sm:text-6xl font-bold text-[#3a3632] tabular-nums">02</span>
+      <div><p class="eyebrow">Phase 02</p><h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.02em]">Specify</h2></div>
+    </div>
+    <p class="mt-6 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Turn three jobs into one structure, an information architecture and a permission model that make the role, not the feature list, the organising idea.</p>
+
+    <div class="mt-12">
+      <p class="subeyebrow">The defining decision</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">The role decides the surface, not permissions alone.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Most consoles show everyone the same navigation and grey out what you can't touch. That makes the owner's console as noisy as the developer's. Here, switching role changes the navigation itself: the developer sees keys and logs, the business lead sees customers and connections, the owner sees access and cost. Permissions still guard the edges, but the surface is chosen for the seat first.</p>
+    </div>
+
+    <div class="mt-12">
+      <p class="subeyebrow">Information architecture</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Three rails, one shell.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">One shell holds everything, a persistent header, the role switcher, and a single content area. Inside it, three rails, one per seat, swap in and out. Wallet and Settings live at the bottom of every rail, always in the same place, so the two things every role eventually needs are never hunted for.</p>
+      <div class="mt-8 rounded-2xl overflow-hidden border border-white/10">
+        <img width="2400" height="1350" loading="lazy" decoding="async" src="assets/condueet-v2-shell.webp" alt="The shared shell: a persistent header with the role switcher (Developer, Business, Owner), a sidebar rail that swaps per role, and Wallet & Settings pinned at the bottom." class="w-full h-auto block" />
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <p class="subeyebrow">User flows</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Three ways everything connects, and nothing else.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Navigation is deliberately small: the rail for the top-level move, a row drill-down for detail, and contextual cross-links for the moments a job jumps a seat, a business lead who needs the owner to revoke a key, say. Three patterns, applied everywhere, so the console never has to be re-learned.</p>
+      <div class="mt-8 rounded-2xl overflow-hidden border border-white/10">
+        <img width="2400" height="1350" loading="lazy" decoding="async" src="assets/condueet-v2-flowmaps.webp" alt="The three flow maps, one rail per seat: Developer (Quickstart, Link Flow, Workbench, Logs, API, API Reference, Webhooks), Business (Overview, Customers, Reports, Activation), Owner (Team, API Keys, API Reference, Webhooks, Billing, Audit Log). Wallet and Settings are pinned on every rail; API Reference and Webhooks are shared across seats." class="w-full h-auto block" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ============ PHASE 03 · DESIGN ============ -->
+  <!-- ============================================================ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="flex items-center gap-5 border-b border-white/10 pb-6">
+      <span class="text-5xl sm:text-6xl font-bold text-[#3a3632] tabular-nums">03</span>
+      <div><p class="eyebrow">Phase 03</p><h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.02em]">Design</h2></div>
+    </div>
+    <p class="mt-6 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">From structure to a shared, high-fidelity system, and then the screens that finish each seat's job.</p>
+
+    <div class="mt-12">
+      <p class="subeyebrow">Wireframes</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Structure before style.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Mid-fidelity wireframes locked the hierarchy in each rail before any visual design, keys and status first in the console, names and health first in operations, access and cost first in the owner hub, so the most important thing in each seat was never buried.</p>
+    </div>
+
+    <div class="mt-14">
+      <p class="subeyebrow">The cut</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">One job per screen, or the screen was cut.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Each surface below is shown with the seat it serves, the job it finishes, and the failure it refuses to hide. If a screen couldn't name the single job it completed, it didn't ship.</p>
+
+      <div class="mt-10 space-y-16">
+
+        <!-- Experience 01 · Developer Console (image right, two shots) -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div>
+            <span class="pill">The developer</span>
+            <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">The Developer Console</h4>
+            <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">The console opens on "Make your first call": three sandbox steps, keys already issued, link a test customer through the consent screen, then pull the account with copy-ready cURL, Node or Python. Sandbox is free and unmetered, so the whole audition costs nothing but a few minutes.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]">
+              <li class="feat">Sandbox keys issued up front, publishable and secret</li>
+              <li class="feat">Three steps to a working call: keys, link, pull</li>
+              <li class="feat">Logs, webhooks and "go live" right there when it works</li>
+            </ul>
+            <div class="mt-5 rounded-xl border border-accent/20 bg-accent/[0.04] p-4"><p class="text-xs font-bold tracking-wide text-accent uppercase">Design decision · from the jobs audit</p><p class="mt-1.5 text-sm text-[#c7c7cc] leading-relaxed">The thing that proves the product works can never be buried, so the quickstart leads the console, every request comes pre-filled with the linked account, and a failed pull links straight to the log line that explains it.</p></div>
+          </div>
+          <div class="grid gap-4 lg:order-last">
+            <div class="rounded-2xl overflow-hidden border border-white/10"><img width="3360" height="1926" loading="lazy" decoding="async" src="assets/condueet-v2-dev-quickstart.webp" alt="Developer Console, Quickstart: the 'Make your first call' screen with sandbox keys issued, link a test customer, and a copy-ready cURL request, alongside a 'what this costs' panel." class="w-full h-auto block" /></div>
+            <div class="rounded-2xl overflow-hidden border border-white/10"><img width="3360" height="1926" loading="lazy" decoding="async" src="assets/condueet-v2-dev-logs.webp" alt="Developer Console, Logs: a live request list with a 504 gateway timeout selected, showing 'GT Bank timed out, not your code', the request lifecycle, and an error payload marked not charged." class="w-full h-auto block" /></div>
+          </div>
+        </div>
+
+        <!-- Experience 02 · Business Operations (image left, two shots) -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div class="grid gap-4">
+            <div class="rounded-2xl overflow-hidden border border-white/10"><img width="3360" height="1926" loading="lazy" decoding="async" src="assets/condueet-v2-biz-overview.webp" alt="Business Operations overview: a 'Good evening, Grace' dashboard with a Data Health panel (fresh, stale, broken, consent expiring) and a Needs You list, where a broken connection offers a one-click Send re-link." class="w-full h-auto block" /></div>
+          </div>
+          <div>
+            <span class="pill">The business lead</span>
+            <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Business Operations</h4>
+            <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">The overview opens on the numbers that matter, connected customers, fresh data, spend this month and what needs attention, then a Data Health strip splits every connection into fresh, stale, broken or consent-expiring. "Needs you" turns each problem into a one-line job with its fix attached.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]">
+              <li class="feat">Data Health: fresh, stale, broken and consent-expiring, at a glance</li>
+              <li class="feat">"Guy Hawkins' connection is broken" → Send re-link, from the card</li>
+              <li class="feat">Stale reads as an expiring consent to renew, not a bank outage</li>
+            </ul>
+            <div class="mt-5 rounded-xl border border-accent/20 bg-accent/[0.04] p-4"><p class="text-xs font-bold tracking-wide text-accent uppercase">Design decision · from theme "I can't tell what broke"</p><p class="mt-1.5 text-sm text-[#c7c7cc] leading-relaxed">The business lead lives here daily, so the overview names each break by customer and attaches its fix, a re-link, a finish-verification, a review, so a problem arrives as a task, never a mystery.</p></div>
+          </div>
+        </div>
+
+        <!-- Experience 03 · Owner Hub (image right, two shots) -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div>
+            <span class="pill">The owner</span>
+            <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">The Owner Hub</h4>
+            <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Access and money in one place. Team makes the roles explicit, Owner, Admin, Developer, Analyst, and states plainly who can see customer data and who can move money; only an owner can change them. API keys, billing and an audit log sit alongside, so the worst day, a leaked key, is a short, certain path.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]">
+              <li class="feat">Roles that spell out who sees data and who moves money</li>
+              <li class="feat">API keys with rotate and revoke, billing, and an audit log</li>
+              <li class="feat">Only an owner transfers ownership or rotates a live key</li>
+            </ul>
+            <div class="mt-5 rounded-xl border border-accent/20 bg-accent/[0.04] p-4"><p class="text-xs font-bold tracking-wide text-accent uppercase">Design decision · from the owner's worst day</p><p class="mt-1.5 text-sm text-[#c7c7cc] leading-relaxed">The owner arrives in a hurry, so each role is written in plain "what they can do" language, and rotating or revoking a live key is one unmistakable action next to the key it kills.</p></div>
+          </div>
+          <div class="grid gap-4 lg:order-last">
+            <div class="rounded-2xl overflow-hidden border border-white/10"><img width="3360" height="1926" loading="lazy" decoding="async" src="assets/condueet-v2-owner-team.webp" alt="Owner Hub, Team: a member list with explicit Owner, Business, Developer and Pending roles, and a 'what each role can do' panel spelling out who sees data and who moves money." class="w-full h-auto block" /></div>
+            <div class="rounded-2xl overflow-hidden border border-white/10"><img width="3360" height="1926" loading="lazy" decoding="async" src="assets/condueet-v2-owner-keys.webp" alt="Owner Hub, API keys: sandbox keys with copy, rotate and revoke actions, and a locked live-keys banner showing 2 of 3 go-live checks passed." class="w-full h-auto block" /></div>
+          </div>
+        </div>
+
+        <!-- Experience 04 · Wallet & Billing (image left, single) -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div class="rounded-2xl overflow-hidden border border-white/10"><img width="3360" height="1926" loading="lazy" decoding="async" src="assets/condueet-v2-wallet.webp" alt="Wallet & Billing: a wallet balance with days of runway, total expense and income, a spend-by-product breakdown, and a transaction history where each charge reconciles line by line, including a failed charge that was never billed." class="w-full h-auto block" /></div>
+          <div>
+            <span class="pill">Shared · every role</span>
+            <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Wallet &amp; Billing</h4>
+            <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Numbers that reconcile and runway you can plan on. Live calls draw from the wallet only as they succeed, failed calls are never charged, and every charge ties back to the connected account and call type behind it.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]">
+              <li class="feat">You pay for results, failed calls are never charged</li>
+              <li class="feat">Runway in days, not a raw balance to do maths on</li>
+              <li class="feat">Top-up and limits before the service ever stops</li>
+            </ul>
+            <div class="mt-5 rounded-xl border border-accent/20 bg-accent/[0.04] p-4"><p class="text-xs font-bold tracking-wide text-accent uppercase">Design decision · from theme "I don't know what this will cost"</p><p class="mt-1.5 text-sm text-[#c7c7cc] leading-relaxed">Usage pricing breeds bill-shock, so the wallet reconciles line by line and states runway in days, turning a scary variable into a number you can plan around.</p></div>
+          </div>
+        </div>
+
+        <!-- Experience 05 · States & Honest Failures (image right, two shots) -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div>
+            <span class="pill">Across the console</span>
+            <h4 class="mt-4 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">States &amp; Honest Failures</h4>
+            <p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">The interface tells the truth about what the API returned. A 403 says what permission is missing and who can grant it; an empty state says why it's empty and what to do; loading is a shape, not a spinner over a blank page.</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#c7c7cc]">
+              <li class="feat">Errors that name the cause and the next action</li>
+              <li class="feat">Empty states that read as intentional, not broken</li>
+              <li class="feat">Loading skeletons that hold the layout steady</li>
+            </ul>
+            <div class="mt-5 rounded-xl border border-accent/20 bg-accent/[0.04] p-4"><p class="text-xs font-bold tracking-wide text-accent uppercase">Design decision · from theme "I don't trust an empty screen"</p><p class="mt-1.5 text-sm text-[#c7c7cc] leading-relaxed">A data product is judged on its worst day, so failure states were designed first, every one resolves to a cause and a next step rather than a dead end.</p></div>
+          </div>
+          <div class="grid gap-4 lg:order-last">
+            <div class="rounded-2xl overflow-hidden border border-white/10"><img width="3360" height="1926" loading="lazy" decoding="async" src="assets/condueet-v2-states-403.webp" alt="A 403 in the Logs view: a 'This customer's consent expired' panel that explains consent lasts 180 days and points to the re-consent flow, with a request lifecycle and an error payload showing consent_expired, not retryable, not charged." class="w-full h-auto block" /></div>
+            <div class="rounded-2xl overflow-hidden border border-white/10"><img width="3360" height="1930" loading="lazy" decoding="async" src="assets/condueet-v2-states-empty-loading.webp" alt="The Logs view in two honest states side by side: a designed empty state that reads 'No requests yet' with a Go to Quickstart action, and a loading skeleton that holds the same table layout instead of showing a spinner over a blank page." class="w-full h-auto block" /></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ============ PHASE 04 · EVALUATE ============ -->
+  <!-- ============================================================ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="flex items-center gap-5 border-b border-white/10 pb-6">
+      <span class="text-5xl sm:text-6xl font-bold text-[#3a3632] tabular-nums">04</span>
+      <div><p class="eyebrow">Phase 04</p><h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.02em]">Evaluate</h2></div>
+    </div>
+    <p class="mt-6 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Put the console in front of people in each seat and pressure-test it against the jobs set in discovery.</p>
+
+    <div class="mt-12">
+      <p class="subeyebrow">Prototype</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Interactive, end to end.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">I test in working prototypes, not linked mockups: real navigation, real role switching, and real failure states, so the console is judged the way a user would actually meet it.</p>
+      <div class="mt-8 rounded-2xl overflow-hidden border border-white/10">
+        <div style="padding:57.20% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1217061990?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479%2Fembed" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Condueet role-based dashboard, prototype demo" loading="lazy"></iframe></div>
+      </div>
+    </div>
+
+    <div class="mt-14">
+      <p class="subeyebrow">Flow testing</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Testing the three moments that matter.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">One make-or-break moment per seat, tested until it held: the first 200, the broken-connection fix, and the leaked-key response.</p>
+      <div class="mt-5 grid md:grid-cols-3 gap-5">
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">The first 200</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Could a developer reach a working call without leaving the console? Keys, environment and quickstart were re-ordered until they could.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">The broken-connection fix</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Could a business lead find the failed customer and clear it in one path? The overview and detail were tightened around that single move.</p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-lg font-semibold">The leaked-key response</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Could an owner revoke access under time pressure without second-guessing? The revoke action and its confirmation were made unmissable and reversible-safe.</p></div>
+      </div>
+    </div>
+
+    <div class="mt-14">
+      <p class="subeyebrow">Conclusion</p>
+      <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">The flows held up, and told me what to fix.</h3>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#a1a1aa] leading-relaxed">Role-first navigation validated cleanly, people found their seat and stayed in it, and testing pinpointed the specific frictions to resolve next: the role switcher's discoverability, the wording on a 403, and the density of the operations overview.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ============ PHASE 05 · ITERATE ============ -->
+  <!-- ============================================================ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="flex items-center gap-5 border-b border-white/10 pb-6">
+      <span class="text-5xl sm:text-6xl font-bold text-[#3a3632] tabular-nums">05</span>
+      <div><p class="eyebrow">Phase 05</p><h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.02em]">Iterate</h2></div>
+    </div>
+    <p class="mt-6 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Close the loop, make tweaks that fix real usability issues rather than adding surface. Each pass targeted one finding from testing.</p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Fix 01</p><p class="mt-3 text-lg font-semibold">Role switcher, made obvious</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">A few users missed that the whole surface changes with the role, so a second switcher was added to the header, naming the active seat rather than just iconising it, so the control is there wherever the eye lands.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Fix 02</p><p class="mt-3 text-lg font-semibold">A 403 that says who can help</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">"Forbidden" told operations nothing, so the error now names the missing permission and points to the owner who can grant it.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-xs font-bold tracking-wide text-accent uppercase">Fix 03</p><p class="mt-3 text-lg font-semibold">Operations overview, calmer</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">The overview read as dense under load, so healthy connections collapsed by default and only what needs attention stays expanded.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT ============ -->
+  <section id="impact" class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="eyebrow">Impact</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Complex infrastructure, made operable.</h2>
+    <p class="mt-5 max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">Read against the three seats: each figure below belongs to the job it unblocks. Figures are illustrative targets modelled on the design rather than audited post-launch results, and I've marked them as such rather than dress them up.</p>
+
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">The developer</p><p class="mt-4 text-4xl font-bold text-accent">3 min</p><p class="mt-3 text-sm text-[#a1a1aa]">Median time-to-first-call, the number that survives the internal build-vs-buy conversation</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">The business lead</p><p class="mt-4 text-4xl font-bold text-accent">1 click</p><p class="mt-3 text-sm text-[#a1a1aa]">From a flagged connection to the fix that clears it, without leaving the row</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">The owner</p><p class="mt-4 text-4xl font-bold text-accent">&lt; 1 min</p><p class="mt-3 text-sm text-[#a1a1aa]">From a leaked key spotted to a revoked one, on the worst day</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="label">Honest failures</p><p class="mt-4 text-4xl font-bold text-accent">100%</p><p class="mt-3 text-sm text-[#a1a1aa]">Of failure states resolve to a named cause and a next action, never a dead end</p></div>
+    </div>
+
+    <div class="mt-6 rounded-2xl border border-white/10 bg-card p-6 sm:p-8">
+      <p class="label" style="color:#ffd8e4">Why these are the right metrics for this dashboard</p>
+      <p class="mt-3 max-w-4xl text-[15px] text-[#c7c7cc] leading-relaxed">The dashboard is where three separate decisions get made, and each metric maps to one of them. A developer who reaches a working call commits the integration; a business lead who can clear a break in one click keeps the account healthy enough to renew; an owner who can revoke access in under a minute keeps trusting the platform on its worst day. Serve all three seats and the console stops being a place people tolerate and becomes the reason they stay.</p>
+    </div>
+  </section>
+
+  <!-- ============ REFLECTION ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="eyebrow">Reflection</span></p>
+    <div class="mt-8 grid lg:grid-cols-2 gap-10 lg:gap-16">
+      <h2 class="text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">What I'd carry forward.</h2>
+      <div class="space-y-7">
+        <div><p class="font-semibold text-lg">Design for the seat, not the average.</p><p class="mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">The role-first surface beat every clever shared layout. Choosing the navigation for who's looking, rather than showing everyone everything, was the decision the whole console rested on.</p></div>
+        <div><p class="font-semibold text-lg">Failure states are the product.</p><p class="mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">Designing the 403, the broken connection and the empty screen first, not last, is what earned trust. The happy path is table stakes; the worst day is the brand.</p></div>
+        <div><p class="font-semibold text-lg">Put cost next to the action.</p><p class="mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">In a usage-priced product, showing spend beside the thing that drives it turned a scary variable into a controllable one, and made the owner an ally rather than a brake.</p></div>
+        <div><p class="font-semibold text-lg">Next: cross-seat handoffs.</p><p class="mt-1.5 text-[15px] text-[#a1a1aa] leading-relaxed">I'd deepen the moments a job jumps a seat, a business lead escalating a revoke to an owner, so a request travels between rails without leaving the console.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TAKEAWAY ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="rounded-2xl border border-accent/20 bg-accent/[0.04] p-8 sm:p-12">
+      <p class="eyebrow">What this project taught me</p>
+      <h2 class="mt-4 text-3xl sm:text-4xl font-bold tracking-[-0.02em] leading-[1.1] max-w-4xl">In data products, the worst moment <span class="text-accent">is the brand.</span></h2>
+      <p class="mt-5 max-w-4xl text-[15px] text-[#c7c7cc] leading-relaxed">The dashboard taught me that a console with three audiences isn't won on the polished overview; it's won on the failed call, the broken connection and the leaked key. Design the worst day first, choose the surface for the seat that's looking, and the same three screens that could have felt like a compromise become the reason each of them trusts the product.</p>
+    </div>
+  </section>
+
+  <!-- ============ NEXT PROJECT ============ -->
+  <section class="max-w-[1280px] mx-auto px-6 mt-24">
+    <a href="aria.html" class="group block rounded-2xl border border-white/10 bg-card hover:bg-white/[0.04] transition-colors p-6 sm:p-8">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Next project</p>
+      <div class="mt-3 flex items-center justify-between gap-4">
+        <p class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Aria · AI Student Assistant</p>
+        <span class="text-2xl text-[#8a8a8a] group-hover:text-white transition-colors shrink-0">→</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="relative mt-24 sm:mt-32 overflow-hidden border-t border-white/10">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(120% 100% at 50% -10%, #1b1618 0%, #130f0e 42%, #0b0a0a 100%);"></div>
+    <div class="absolute -z-10 top-[-160px] left-1/2 -translate-x-1/2 size-[560px] rounded-full bg-accent/10 blur-[150px]"></div>
+
+    <div class="max-w-[1280px] mx-auto px-6 py-24 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-accent">Thanks for reading</p>
+      <h2 class="mt-6 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05] max-w-[18ch] mx-auto">Let's Design Products That Move People Forward.</h2>
+      <p class="mt-6 max-w-xl mx-auto text-lg text-[#c7c7cc] leading-relaxed">I'm a product designer who likes hard, technical problems. If that's useful to your team, let's talk.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:toyosi.design@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-white/90 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          toyosi.design@gmail.com
+        </a>
+        <a href="https://condueet.netlify.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/5 transition">View live project ↗</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-[1280px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-[#8a8a8a]">© 2026 Omotoyosi Adegbite.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+
+  <!-- Lightbox: click any screen to enlarge -->
+  <div id="lb" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-10 cursor-zoom-out">
+    <img id="lb-img" alt="" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl" />
+    <button id="lb-x" aria-label="Close" class="absolute top-4 right-6 text-white/60 hover:text-white text-4xl leading-none">&times;</button>
+  </div>
+  <div id="zoom-badge" style="position:fixed;display:none;z-index:90;width:34px;height:34px;place-items:center;border-radius:9px;background:rgba(12,14,20,.62);color:#fff;border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);pointer-events:none;box-shadow:0 4px 14px rgba(0,0,0,.35);">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+  </div>
+  <script>
+  (function(){
+    var lb=document.getElementById('lb'), img=document.getElementById('lb-img'), badge=document.getElementById('zoom-badge');
+    function open(src,alt){ img.src=src; img.alt=alt||''; lb.classList.remove('hidden'); lb.classList.add('flex'); badge.style.display='none'; document.body.style.overflow='hidden'; }
+    function close(){ lb.classList.add('hidden'); lb.classList.remove('flex'); document.body.style.overflow=''; img.removeAttribute('src'); }
+    function place(el){ var r=el.getBoundingClientRect(); badge.style.top=(r.top+10)+'px'; badge.style.left=(r.right-44)+'px'; badge.style.display='grid'; }
+    document.querySelectorAll('img[src^="assets/"]').forEach(function(el){
+      if(el.closest('header')||el.closest('footer')) return;
+      el.style.cursor='zoom-in';
+      el.addEventListener('mouseenter', function(){ place(el); });
+      el.addEventListener('mouseleave', function(){ badge.style.display='none'; });
+      el.addEventListener('click', function(){ open(el.currentSrc||el.src, el.alt); });
+    });
+    window.addEventListener('scroll', function(){ badge.style.display='none'; }, {passive:true});
+    lb.addEventListener('click', close);
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+  })();
+  </script>
+</body>
+</html>

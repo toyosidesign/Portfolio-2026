@@ -3,3 +3,5 @@ node_modules/
 .DS_Store
 
 Shortlet.html
+site-deploy/
+site-deploy.zip
