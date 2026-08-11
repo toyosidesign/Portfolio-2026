@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aria · How much should I do? | Omotoyosi Adegbite</title>
+  <meta name="description" content="Case study: designing Aria's autonomy, a personal assistant you can hand as much or as little of your work to, across a role-aware planner with Free and Pro tiers. A full design-thinking walkthrough from research to usability testing." />
+
+  <!-- Tailwind CSS (precompiled -- rebuild with: npm run build:css) -->
+  <link rel="stylesheet" href="assets/tailwind.css?v=ebc3493e" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Widen the shared body-text measure to fill the 1520px layout */
+    .max-w-4xl{max-width:72rem;}
+    ::selection { background: #ffd8e4; color: #000; }
+    .eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ffd8e4; font-weight: 700; }
+    .subeyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffd8e4; font-weight: 700; }
+    .chip { display: inline-block; background: #1b1815; border: 1px solid rgba(255,255,255,.08); border-radius: 999px; padding: 5px 11px; color: #d9d6d0; font-size: 13px; line-height: 1.2; white-space: nowrap; }
+    .chip.on { background: rgba(255,216,228,.07); border-color: rgba(255,216,228,.22); color: #ffd8e4; }
+    .arw { color: #6f6b64; font-size: 13px; }
+    .role { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: #ffd8e4; background: rgba(255,216,228,.08); border: 1px solid rgba(255,216,228,.18); border-radius: 999px; padding: 3px 9px; }
+    .feat { position: relative; padding-left: 20px; }
+    .feat::before { content: ""; position: absolute; left: 0; top: 9px; width: 7px; height: 7px; border-radius: 999px; background: #ffd8e4; }
+    /* Dashed placeholder for artefacts exported later */
+    .slot { display: grid; place-items: center; text-align: center; border: 1.5px dashed rgba(255,255,255,.18); border-radius: 16px; background: repeating-linear-gradient(45deg, rgba(255,255,255,.015), rgba(255,255,255,.015) 10px, transparent 10px, transparent 20px); color: #6f6b64; padding: 24px; }
+    .slot .fn { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: #8a8a8a; }
+    /* ---- Style-guide components (self-contained, purge-safe) ---- */
+    .sg-card { border: 1px solid rgba(255,255,255,.10); background: #141210; border-radius: 16px; padding: 24px; }
+    .sg-lbl { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #ffd8e4; font-weight: 700; }
+    .sg-mini { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #8a8a8a; font-weight: 700; margin-top: 24px; }
+    .sw { height: 64px; border-radius: 12px; border: 1px solid rgba(255,255,255,.10); }
+    .sw-n { font-size: 12px; color: #c7c7cc; margin-top: 8px; }
+    .sw-h { font-size: 11px; color: #8a8a8a; font-family: ui-monospace, monospace; text-transform: uppercase; }
+    .ty-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; border-bottom: 1px solid rgba(255,255,255,.06); padding: 10px 0; }
+    .ty-row:last-child { border-bottom: 0; }
+    .ty-meta { font-size: 12px; color: #8a8a8a; font-family: ui-monospace, monospace; white-space: nowrap; }
+    .ico { width: 46px; height: 46px; border-radius: 11px; border: 1px solid rgba(255,255,255,.10); background: #1b1815; display: grid; place-items: center; color: #e7e5e2; }
+    .ico svg { width: 22px; height: 22px; }
+    .ico-lbl { font-size: 11px; color: #8a8a8a; margin-top: 6px; text-align: center; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; border-radius: 10px; font-weight: 600; font-size: 14px; padding: 10px 16px; border: 1px solid transparent; line-height: 1; }
+    .btn svg { width: 16px; height: 16px; }
+    .btn-primary { background: #ffd8e4; color: #1e1016; }
+    .btn-secondary { background: transparent; color: #f5f4f2; border-color: rgba(255,255,255,.22); }
+    .btn-ghost { background: transparent; color: #ffd8e4; }
+    .btn-danger { background: #B42318; color: #fff; }
+    .btn-disabled { background: #241f1f; color: #6f6b64; border-color: rgba(255,255,255,.06); }
+    .btn-sm { padding: 7px 12px; font-size: 13px; }
+    .btn-lg { padding: 13px 20px; font-size: 15px; }
+    /* real button component: rounded-2xl = 20px, heights sm36 md48 lg56 */
+    .pbtn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 20px; border-radius: 20px; font-weight: 600; font-size: 14px; border: 1px solid transparent; line-height: 1; }
+    .pbtn.sm { height: 36px; padding: 0 14px; font-size: 13px; border-radius: 20px; }
+    .pbtn.lg { height: 56px; padding: 0 24px; font-size: 15px; }
+    .pbtn.dis { opacity: .4; }
+    .theme-cell { border-radius: 14px; padding: 16px; text-align: center; }
+    .theme-cell p { margin-top: 10px; font-size: 11px; font-family: ui-monospace, monospace; }
+    .fld-lbl { font-size: 12px; color: #a1a1aa; margin-bottom: 6px; display: block; }
+    .input { width: 100%; background: #1b1815; border: 1px solid rgba(255,255,255,.12); border-radius: 10px; padding: 11px 14px; color: #f5f4f2; font-size: 14px; box-sizing: border-box; }
+    .input.ph { color: #6f6b64; }
+    .input.focus { border-color: #ffd8e4; box-shadow: 0 0 0 3px rgba(255,216,228,.18); }
+    .input.error { border-color: #F97066; box-shadow: 0 0 0 3px rgba(249,112,102,.16); }
+    .hint { font-size: 12px; margin-top: 6px; }
+    .sel { display: flex; align-items: center; justify-content: space-between; }
+    .sel svg { width: 16px; height: 16px; color: #8a8a8a; }
+    .menu { background: #141210; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 6px; box-shadow: 0 12px 30px rgba(0,0,0,.45); }
+    .menu-i { display: flex; align-items: center; justify-content: space-between; padding: 9px 12px; border-radius: 8px; font-size: 14px; color: #c7c7cc; }
+    .menu-i.sel-on { background: rgba(255,216,228,.10); color: #ffd8e4; }
+    .menu-i.hov { background: rgba(255,255,255,.05); }
+    .menu-i svg { width: 15px; height: 15px; }
+    .sw-t { width: 52px; height: 30px; border-radius: 999px; background: #2a2724; border: 1px solid rgba(255,255,255,.10); position: relative; flex: none; }
+    .sw-t.on { background: #ffd8e4; border-color: #ffd8e4; }
+    .sw-t i { position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 999px; background: #f5f4f2; }
+    .sw-t.on i { left: 27px; background: #1e1016; }
+    .cbx { width: 22px; height: 22px; border-radius: 6px; border: 1px solid rgba(255,255,255,.25); display: inline-grid; place-items: center; color: #1e1016; }
+    .cbx.on { background: #ffd8e4; border-color: #ffd8e4; }
+    .cbx svg { width: 14px; height: 14px; }
+    .rdo { width: 22px; height: 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,.25); display: inline-grid; place-items: center; }
+    .rdo.on { border-color: #ffd8e4; }
+    .rdo.on::after { content: ""; width: 10px; height: 10px; border-radius: 999px; background: #ffd8e4; }
+    .tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; border: 1px solid; }
+    .tag .dot { width: 7px; height: 7px; border-radius: 999px; }
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+      .reveal.in { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-base text-white font-sans antialiased">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="sticky top-0 z-50 pt-6 px-4 sm:px-6">
+    <div class="max-w-[1520px] mx-auto">
+      <nav class="flex items-center justify-between h-[54px] rounded-full border border-[#3d3e3f] bg-header/90 backdrop-blur-xl px-5 shadow-[0_4px_10px_rgba(0,0,0,0.35)]">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="grid place-items-center size-7 rounded-full bg-accent text-black text-xs font-bold">O</span>
+          <span class="text-base font-semibold tracking-tight text-white">Omotoyosi Adegbite</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm">
+          <li><a href="index.html#work" class="font-bold text-accent">Work</a></li>
+          <li><a href="index.html#about" class="text-[#c0c0c0] hover:text-white transition-colors">About</a></li>
+          <li><a href="index.html#contact" class="text-[#c0c0c0] hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 pt-14 sm:pt-20">
+    <div class="flex items-center justify-between mb-10">
+      <a href="index.html#work" class="inline-flex items-center gap-1.5 text-sm text-[#8a8a8a] hover:text-white transition-colors">← Back to all work</a>
+      <span class="text-sm text-[#8a8a8a]">Second Aria use case</span>
+    </div>
+
+    <p class="text-sm text-[#8a8a8a]">Aria &nbsp;·&nbsp; Autonomy &amp; Task Automation</p>
+
+    <div class="mt-8 flex justify-center">
+      <img width="1500" height="2250" fetchpriority="high" decoding="async" src="assets/aria2-hero.webp" alt="A hand holding a phone that shows the Aria app opening: the sparkle logo, the wordmark 'Aria', and 'Getting your day ready' beneath the date." class="w-full max-w-[540px] h-auto rounded-3xl border border-white/10" />
+    </div>
+  </section>
+
+  <!-- ============ 01 · ABOUT THE PROJECT ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-16 sm:mt-24 reveal">
+    <p><span class="text-accent font-bold mr-2">01</span><span class="eyebrow">About the project</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">A planner that meets you where your trust is.</h2>
+    <div class="mt-6 space-y-4 text-lg text-[#a1a1aa] leading-relaxed max-w-4xl">
+      <p>Aria is an AI personal assistant for planning and doing everyday work: assignments, projects, messages, reminders. This second study picks up where the first left off and asks a harder question, not <span class="text-white">can</span> an assistant help, but <span class="text-white">how much</span> should it do before help becomes intrusion.</p>
+      <p>The answer is a tier the user chooses at onboarding, Free or Pro, and a set of guardrails that make handing more over feel safe. The work spans three audiences, two tiers, and twenty-five concrete moments where a person hands work to Aria or takes it back.</p>
+      <p>To pressure-test those moments for real, I took the design past Figma and built a working app, one <span class="text-white">React Native</span> codebase in <span class="text-white">TypeScript</span> running on iOS and Android, with a Supabase back end and <span class="text-white">coded with Claude Code</span>, so the autonomy could be judged the way a user would actually meet it rather than clicked through as a mockup.</p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-3 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="eyebrow">My role</p><p class="mt-2 font-medium text-white text-sm">Solo Product Designer</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Focus</p><p class="mt-2 font-medium text-white text-sm">Autonomy, trust &amp; task automation</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Scope</p><p class="mt-2 font-medium text-white text-sm">25 user stories · 5 journeys</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Platform</p><p class="mt-2 font-medium text-white text-sm">iOS &amp; Android · React Native (Expo) · Supabase</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Language</p><p class="mt-2 font-medium text-white text-sm">TypeScript · SQL</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Built with</p><p class="mt-2 font-medium text-white text-sm">Claude Code</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · THE CHALLENGE ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">02</span><span class="eyebrow">The challenge</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">An assistant is only useful if you dare to let it act.</h2>
+    <div class="mt-6 space-y-4 text-lg text-[#a1a1aa] leading-relaxed max-w-4xl">
+      <p>Most productivity tools stop at reminding you. The moment an app offers to <span class="text-white">act</span>, send the email, schedule the message, redo the plan, people freeze: What if it sends the wrong thing? What if I can't undo it? What if it buries something I wrote?</p>
+      <p>So the challenge wasn't building automation. It was designing automation people would actually switch on: legible about what it will do, reversible at every step, and honest when it can't keep a promise, while still adapting to a student, an employee, and a founder who each want a different amount of it.</p>
+    </div>
+
+    <div class="mt-8 grid sm:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Trust</p><p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Give people enough visibility and control to let Aria act on their behalf.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Range</p><p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Serve three roles and two appetites for help from one coherent product.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Reversibility</p><p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Make every automated action holdable, cancellable, and undoable, end to end.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · PROBLEM STATEMENT ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">03</span><span class="eyebrow">Problem statement</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">The problem isn't planning. It's how much to hand over.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">People want less on their plate, but they draw the line in different places, and the same person moves that line day to day. Aria needed a controllable amount of autonomy and the safeguards that make raising it feel safe.</p>
+
+    <div class="mt-10 rounded-2xl border border-accent/20 bg-accent/[0.04] p-6 sm:p-8">
+      <p class="eyebrow">How might we</p>
+      <p class="mt-3 text-xl sm:text-2xl font-semibold tracking-[-0.01em] leading-snug">Let each person hand Aria as much of their work as they trust, and take it back the instant they want to, without ever losing the thread of their plan?</p>
+    </div>
+  </section>
+
+  <!-- ============ 04 · SOLUTION ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">04</span><span class="eyebrow">Solution</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Autonomy is a dial, not a switch.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">One onboarding question sets the whole relationship, and every safeguard exists so turning the dial up never means giving up control.</p>
+
+    <div class="mt-10 mx-auto rounded-2xl border border-white/10 bg-card p-6 sm:p-10" style="max-width:760px">
+      <div class="grid gap-5">
+        <div class="rounded-2xl border border-white/10 bg-base p-6">
+          <div class="flex items-center justify-between"><p class="text-lg font-semibold">Free</p><span class="role">You do it</span></div>
+          <p class="mt-3 text-[15px] text-[#c7c7cc] leading-relaxed">&ldquo;I plan your work, you do it.&rdquo; Aria captures, breaks down and schedules, then hands the doing back to you. It drafts and guides, but never sends.</p>
+        </div>
+        <div class="flex items-center justify-center gap-3">
+          <span class="text-xs text-[#8a8a8a]">plan</span>
+          <div class="h-2 rounded-full bg-gradient-to-r from-white/15 via-accent/40 to-accent" style="width:200px"></div>
+          <span class="text-xs text-accent">act</span>
+        </div>
+        <div class="rounded-2xl border border-accent/25 bg-accent/[0.05] p-6">
+          <div class="flex items-center justify-between"><p class="text-lg font-semibold">Pro</p><span class="role">Aria does it</span></div>
+          <p class="mt-3 text-[15px] text-[#c7c7cc] leading-relaxed">&ldquo;I do the work, you check it.&rdquo; Aria prepares, schedules and can send, after you approve the day once. A ten-minute hold sits before anything runs, so a mistake is always reversible.</p>
+        </div>
+      </div>
+      <div class="mt-6 grid sm:grid-cols-3 gap-3 text-[13px]">
+        <div class="rounded-xl border border-white/10 bg-base p-4"><span class="text-cHigh font-semibold">Hold</span><span class="text-[#a1a1aa]"> · ten minutes before anything sends</span></div>
+        <div class="rounded-xl border border-white/10 bg-base p-4"><span class="text-cHigh font-semibold">Undo</span><span class="text-[#a1a1aa]"> · every action swipes back</span></div>
+        <div class="rounded-xl border border-white/10 bg-base p-4"><span class="text-cHigh font-semibold">Honesty</span><span class="text-[#a1a1aa]"> · it says when a plan no longer fits</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 · DESIGN PROCESS ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">05</span><span class="eyebrow">Design process</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">One design-thinking pass, end to end.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">I ran the five stages of design thinking against a single spine: three audiences, two tiers, and the moments where a person hands work to Aria, or takes it back.</p>
+
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-5 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="text-accent font-bold text-sm">01</p><p class="mt-2 font-semibold">Empathize</p><p class="mt-1 text-xs text-[#8a8a8a] leading-relaxed">Research, persona, empathy map</p></div>
+      <div class="bg-base p-5"><p class="text-accent font-bold text-sm">02</p><p class="mt-2 font-semibold">Define</p><p class="mt-1 text-xs text-[#8a8a8a] leading-relaxed">Problem, flows, IA</p></div>
+      <div class="bg-base p-5"><p class="text-accent font-bold text-sm">03</p><p class="mt-2 font-semibold">Ideate</p><p class="mt-1 text-xs text-[#8a8a8a] leading-relaxed">Storyboard, sketching</p></div>
+      <div class="bg-base p-5"><p class="text-accent font-bold text-sm">04</p><p class="mt-2 font-semibold">Prototype</p><p class="mt-1 text-xs text-[#8a8a8a] leading-relaxed">Wireframes, style guide, UI</p></div>
+      <div class="bg-base p-5"><p class="text-accent font-bold text-sm">05</p><p class="mt-2 font-semibold">Test</p><p class="mt-1 text-xs text-[#8a8a8a] leading-relaxed">Prototype &amp; usability testing</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · USER RESEARCH ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">06</span><span class="eyebrow">User research</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">I went looking for where trust breaks.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Primary interviews across the three audiences, paired with secondary reading on AI trust and automation, all aimed at one question: what would it take for you to let software act for you?</p>
+
+    <div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="eyebrow">Participants</p><p class="mt-2 text-xl font-semibold">8 people</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Segments</p><p class="mt-2 text-xl font-semibold">Study · Work · Own</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Method</p><p class="mt-2 text-xl font-semibold">Semi-structured</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Plus</p><p class="mt-2 text-xl font-semibold">Desk research</p></div>
+    </div>
+
+    <!-- Interview guide -->
+    <p class="mt-12 subeyebrow">Interview guide · a sample</p>
+    <h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Questions built around stories, not opinions.</h3>
+    <p class="max-w-4xl mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Each one asks for recent, real behaviour, and never names a pain, a feature, or Aria, so the answers point at what actually happens rather than what people think they'd want.</p>
+
+    <div class="mt-6 grid md:grid-cols-2 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-xs font-bold text-accent">Q01</p><p class="mt-2 text-[15px] text-[#c7c7cc] leading-relaxed">Walk me through how you planned your last busy week. What did you use?</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-xs font-bold text-accent">Q02</p><p class="mt-2 text-[15px] text-[#c7c7cc] leading-relaxed">Describe the last time you added something to a to-do list or app. What was that like?</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-xs font-bold text-accent">Q03</p><p class="mt-2 text-[15px] text-[#c7c7cc] leading-relaxed">Tell me about a recent deadline. Walk me through the days leading up to it.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-xs font-bold text-accent">Q04</p><p class="mt-2 text-[15px] text-[#c7c7cc] leading-relaxed">Describe a time a plan you'd made stopped matching reality. What did you do?</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-xs font-bold text-accent">Q05</p><p class="mt-2 text-[15px] text-[#c7c7cc] leading-relaxed">Tell me about a time you used an AI tool for something real. What happened?</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-xs font-bold text-accent">Q06</p><p class="mt-2 text-[15px] text-[#c7c7cc] leading-relaxed">When an AI tool suggests something, what do you do with the suggestion?</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-xs font-bold text-accent">Q07</p><p class="mt-2 text-[15px] text-[#c7c7cc] leading-relaxed">Tell me about a time you handed a task to someone, or something, else. How did that go?</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><p class="text-xs font-bold text-accent">Q08</p><p class="mt-2 text-[15px] text-[#c7c7cc] leading-relaxed">Describe a time you wanted to undo or stop something after you'd started it.</p></div>
+    </div>
+
+    <p class="mt-8 subeyebrow">Role-specific probes</p>
+    <div class="mt-4 grid sm:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><span class="role">Studying</span><p class="mt-3 text-[15px] text-[#c7c7cc] leading-relaxed">Tell me about the last assignment brief you were given. What did you do with it first?</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><span class="role">Employed</span><p class="mt-3 text-[15px] text-[#c7c7cc] leading-relaxed">Which parts of a recent week felt like admin around the real work? Walk me through one.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><span class="role">Running my own thing</span><p class="mt-3 text-[15px] text-[#c7c7cc] leading-relaxed">Think of the last project you kicked off. How did you decide it was ready to start?</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 07 · PRIMARY RESEARCH RESULT ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">07</span><span class="eyebrow">Primary research result</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Four things every participant said, in their own way.</h2>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent font-bold">01</p><p class="mt-3 font-semibold">Don't make me fill in a form</p><p class="mt-2 text-[14px] text-[#a1a1aa] leading-relaxed">Capturing a task felt like paperwork. People wanted to talk, or use a form, and get the same result.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent font-bold">02</p><p class="mt-3 font-semibold">Warn me with runway</p><p class="mt-2 text-[14px] text-[#a1a1aa] leading-relaxed">The panic is days before, not on the day. They wanted to be planned early and re-planned when behind.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent font-bold">03</p><p class="mt-3 font-semibold">Prove it before I trust it</p><p class="mt-2 text-[14px] text-[#a1a1aa] leading-relaxed">Nobody would hand over real work until they'd watched the app run on a realistic day first.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent font-bold">04</p><p class="mt-3 font-semibold">Always let me undo</p><p class="mt-2 text-[14px] text-[#a1a1aa] leading-relaxed">If it acts, they needed a hold, a cancel and a way back, or they wouldn't let it act at all.</p></div>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-3 gap-4">
+      <blockquote class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent text-3xl leading-none">&ldquo;</p><p class="mt-2 text-[15px] leading-relaxed">I don't forget it's due. I forget to start it early enough to do it well.</p><footer class="mt-4 text-sm text-[#8a8a8a]">Final-year student</footer></blockquote>
+      <blockquote class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent text-3xl leading-none">&ldquo;</p><p class="mt-2 text-[15px] leading-relaxed">I'd let it send things, if I could see exactly what and stop it in time.</p><footer class="mt-4 text-sm text-[#8a8a8a]">Operations, SaaS</footer></blockquote>
+      <blockquote class="rounded-2xl border border-white/10 bg-card p-6"><p class="text-accent text-3xl leading-none">&ldquo;</p><p class="mt-2 text-[15px] leading-relaxed">Just don't touch the bit I already wrote. Prep the rest, fine.</p><footer class="mt-4 text-sm text-[#8a8a8a]">Founder, solo</footer></blockquote>
+    </div>
+  </section>
+
+  <!-- ============ 08 · SECONDARY RESEARCH RESULT ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">08</span><span class="eyebrow">Secondary research result</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">The literature said the same thing louder.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Desk research across AI-trust studies, automation UX patterns and competitor teardowns pointed at reversibility and transparency as the price of admission for acting on a user's behalf.</p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Trust calibration</p><p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">People over-trust or under-trust automation when they can't see its confidence or its reasoning. Legibility beats accuracy alone.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Undo &gt; confirm</p><p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Reversible actions with a grace period reduce anxiety more than extra confirmation dialogs, which users learn to click through.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Competitor gap</p><p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Assistant apps either only remind, or act opaquely. Few let the user set how far the app may go, and fewer make stopping it easy.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 09 · USER PERSONA ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">09</span><span class="eyebrow">User persona</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Amara wants help she can hand back.</h2>
+
+    <div class="mt-10 rounded-2xl border border-white/10 bg-card p-6 sm:p-8 grid lg:grid-cols-[260px_1fr] gap-8">
+      <div>
+        <div class="size-16 rounded-2xl bg-gradient-to-br from-accent/30 to-accent/5 border border-white/10 grid place-items-center text-2xl font-bold text-accent">A</div>
+        <p class="mt-4 text-2xl font-bold">Amara</p>
+        <p class="text-sm text-[#8a8a8a]">21 · she/her</p>
+        <p class="mt-4 text-xs font-semibold text-[#8a8a8a] uppercase tracking-wide">Life right now</p>
+        <p class="text-sm">Final-year student who also freelances. Assignments, client work, and a social calendar, all at once.</p>
+        <p class="mt-3 text-xs font-semibold text-[#8a8a8a] uppercase tracking-wide">Tier she'd pick</p>
+        <p class="text-sm">Starts on Free, upgrades to Pro the week two deadlines collide.</p>
+      </div>
+      <div>
+        <p class="text-xl sm:text-2xl font-semibold italic text-white leading-snug">&ldquo;Do the boring parts, but let me stop you if you get it wrong.&rdquo;</p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-6">
+          <div>
+            <p class="text-sm font-semibold text-cLow">Frustrations</p>
+            <ul class="mt-3 space-y-2 text-[15px] text-[#c7c7cc]">
+              <li class="flex gap-2"><span class="text-cLow">−</span>Starts big tasks too late to do them well</li>
+              <li class="flex gap-2"><span class="text-cLow">−</span>Won't trust AI that acts without a visible undo</li>
+              <li class="flex gap-2"><span class="text-cLow">−</span>Retypes the same contacts and messages constantly</li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-cHigh">Goals</p>
+            <ul class="mt-3 space-y-2 text-[15px] text-[#c7c7cc]">
+              <li class="flex gap-2"><span class="text-cHigh">+</span>Be planned early, and re-planned when she slips</li>
+              <li class="flex gap-2"><span class="text-cHigh">+</span>Approve the day once and trust it to run</li>
+              <li class="flex gap-2"><span class="text-cHigh">+</span>Keep full control of anything sent on her behalf</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-8 subeyebrow">One product, three seats</p>
+    <div class="mt-4 grid sm:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><span class="role">Studying</span><p class="mt-3 text-[14px] text-[#a1a1aa] leading-relaxed">Briefs, deadlines, marks. Wants work planned from what she already has.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><span class="role">Employed</span><p class="mt-3 text-[14px] text-[#a1a1aa] leading-relaxed">Admin between the real work. Wants to approve a day once.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-5"><span class="role">Running my own thing</span><p class="mt-3 text-[14px] text-[#a1a1aa] leading-relaxed">Scope before schedule, with milestones that force progress.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 10 · EMPATHY MAP ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">10</span><span class="eyebrow">Empathy map</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Inside the moment she decides to trust it.</h2>
+
+    <div class="mt-10 grid sm:grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-6 sm:p-8">
+        <p class="subeyebrow">Says</p>
+        <ul class="mt-3 space-y-2 text-[15px] text-[#c7c7cc]">
+          <li class="feat">&ldquo;Just remind me, I'll handle it.&rdquo;</li>
+          <li class="feat">&ldquo;Not now, push it to tomorrow.&rdquo;</li>
+          <li class="feat">&ldquo;Save this so I can send it later.&rdquo;</li>
+        </ul>
+      </div>
+      <div class="bg-base p-6 sm:p-8">
+        <p class="subeyebrow">Thinks</p>
+        <ul class="mt-3 space-y-2 text-[15px] text-[#c7c7cc]">
+          <li class="feat">&ldquo;I forget to start, not that it's due.&rdquo;</li>
+          <li class="feat">&ldquo;Is it actually going to send that?&rdquo;</li>
+          <li class="feat">&ldquo;Can I take it back if it's wrong?&rdquo;</li>
+        </ul>
+      </div>
+      <div class="bg-base p-6 sm:p-8">
+        <p class="subeyebrow">Does</p>
+        <ul class="mt-3 space-y-2 text-[15px] text-[#c7c7cc]">
+          <li class="feat">Uploads a brief instead of typing a task</li>
+          <li class="feat">Drags a card across to finish it</li>
+          <li class="feat">Unticks a couple of items in the morning review</li>
+        </ul>
+      </div>
+      <div class="bg-base p-6 sm:p-8">
+        <p class="subeyebrow">Feels</p>
+        <ul class="mt-3 space-y-2 text-[15px] text-[#c7c7cc]">
+          <li class="feat">Behind before the week even starts</li>
+          <li class="feat">Wary the first time Aria offers to send</li>
+          <li class="feat">Relief when work is already prepared for her</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11 · SOLUTION PRESENTED · THE 25 STEPS ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">11</span><span class="eyebrow">Solution presented</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Five journeys. Twenty-five moments. Each with a path and a definition of done.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">The product is the sum of these steps. Every user story below carries the exact path a user walks and the precise point at which it is finished.</p>
+
+    <!-- Journey A · Getting started -->
+    <div class="mt-12">
+      <div class="flex items-baseline justify-between gap-4"><h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Getting started</h3><span class="text-sm text-[#8a8a8a] shrink-0">Steps 01–05</span></div>
+      <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed max-w-4xl">Account, role, tier and the switches that matter, set before anything real is asked of you.</p>
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">01</span><p class="text-[15px] leading-relaxed"><span class="role">New user</span> <span class="text-[#c7c7cc]">I want to sign up so my work is mine and follows me.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip">Welcome</span><span class="arw">→</span><span class="chip">Sign up</span><span class="arw">→</span><span class="chip">Email &amp; password</span><span class="arw">→</span><span class="chip">Supabase creates the account</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> signed in, empty planner, onboarding begins.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">02</span><p class="text-[15px] leading-relaxed"><span class="role">New user</span> <span class="text-[#c7c7cc]">I want Aria to know what kind of work I do, so it talks to me correctly.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Which fits you?</span><span class="arw">→</span><span class="chip">Studying</span><span class="chip">Employed</span><span class="chip">Running my own thing</span><span class="arw">→</span><span class="chip">Year &amp; subject / area / what you run</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> the profile carries a role, and every prompt from then on addresses you as that, not as a student.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">03</span><p class="text-[15px] leading-relaxed"><span class="role">New user</span> <span class="text-[#c7c7cc]">I want to choose how much Aria does for me.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">How much of it should I do?</span><span class="arw">→</span><span class="chip">Free · I plan, you do</span><span class="chip">Pro · I do, you check</span><span class="arw">→</span><span class="chip">Limit stated on the card</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> the tier is set, and on Pro the entitlement is written server-side.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">04</span><p class="text-[15px] leading-relaxed"><span class="role">New user</span> <span class="text-[#c7c7cc]">I want the switches that matter set before I start.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Essentials</span><span class="arw">→</span><span class="chip">Let Aria help</span><span class="chip">Notifications (asks the OS)</span><span class="chip">Appearance</span><span class="chip">Sample tasks</span><span class="chip">Pro · send at the scheduled time</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> each switch has written to settings as it was tapped, and the app opens.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6 md:col-span-2"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">05</span><p class="text-[15px] leading-relaxed"><span class="role">New user</span> <span class="text-[#c7c7cc]">I want to see the app working before I trust it with anything.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip">Show me around with sample tasks</span><span class="arw">or</span><span class="chip">See how Aria works · empty Today</span><span class="arw">→</span><span class="chip">Date jumps to a day where something waits</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> samples exist and the date has jumped to a day where something is waiting. Turning it off removes them and restores the real date.</span></p></div>
+      </div>
+    </div>
+
+    <!-- Journey B · Capturing work -->
+    <div class="mt-14">
+      <div class="flex items-baseline justify-between gap-4"><h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Capturing work</h3><span class="text-sm text-[#8a8a8a] shrink-0">Steps 06–11</span></div>
+      <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed max-w-4xl">Getting a task in, by conversation or by form, and getting the output back out. The result is always the same shape.</p>
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6 md:col-span-2"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">06</span><p class="text-[15px] leading-relaxed"><span class="role">Student</span> <span class="text-[#c7c7cc]">I want to set up a birthday without filling in a form.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Aria tab · Birthday</span><span class="arw">→</span><span class="chip">Who</span><span class="arw">→</span><span class="chip">Date</span><span class="arw">→</span><span class="chip">Time</span><span class="arw">→</span><span class="chip">Repeat?</span><span class="arw">→</span><span class="chip">Priority</span><span class="arw">→</span><span class="chip">How should Aria handle it? · Text / Email / Call / Picture / Card / Just remind me</span><span class="arw">→</span><span class="chip">Contact</span><span class="arw">→</span><span class="chip">Which card</span><span class="arw">→</span><span class="chip">What it says · Aria drafts &amp; re-tones</span><span class="arw">→</span><span class="chip">Preview</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> you tap Save and it is on the Tasks page with the method, the message and the repeat attached.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">07</span><p class="text-[15px] leading-relaxed"><span class="role">Student</span> <span class="text-[#c7c7cc]">I want an assignment planned from the brief I already have.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Assignment</span><span class="arw">→</span><span class="chip">Upload the brief</span><span class="arw">→</span><span class="chip">Aria reads it</span><span class="arw">→</span><span class="chip">Extraction card + confidence per field</span><span class="arw">→</span><span class="chip">Fill gaps · Ask tutor / Upload handbook / I know this</span><span class="arw">→</span><span class="chip">Commitments</span><span class="arw">→</span><span class="chip">Plan preview</span><span class="arw">→</span><span class="chip">Accept</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> the task exists with dated steps, step one pinned, and the submission buffer reserved as its own row.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">08</span><p class="text-[15px] leading-relaxed"><span class="role">Own work</span> <span class="text-[#c7c7cc]">I want a project defined before it is scheduled.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Project</span><span class="arw">→</span><span class="chip">What does done look like?</span><span class="arw">→</span><span class="chip">&ldquo;I can't say yet&rdquo; becomes task one</span><span class="arw">→</span><span class="chip">Reflect-back card + confidence</span><span class="arw">→</span><span class="chip">Scope · in &amp; deliberately out</span><span class="arw">→</span><span class="chip">Milestones · each needs a forcing function</span><span class="arw">→</span><span class="chip">Plan</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> accepted, with the next action pinned and any milestone that nothing forces flagged.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">09</span><p class="text-[15px] leading-relaxed"><span class="role">Prefers a form</span> <span class="text-[#c7c7cc]">I want to create a task without talking to Aria.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">New task</span><span class="arw">→</span><span class="chip">Category tile</span><span class="arw">→</span><span class="chip">Title, date, time, priority, repeat</span><span class="arw">→</span><span class="chip">How Aria should handle it</span><span class="arw">→</span><span class="chip">Contact</span><span class="arw">→</span><span class="chip">Message</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> saved, identical in every respect to one built in chat.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">10</span><p class="text-[15px] leading-relaxed"><span class="role">Stuck</span> <span class="text-[#c7c7cc]">I want direction without being handed the answer.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Guide</span><span class="arw">·</span><span class="chip">plan preview / pinned step / definition gate / after a step rolls over twice</span><span class="arw">→</span><span class="chip">One narrowing question</span><span class="arw">→</span><span class="chip">3–4 directions · what it needs, what it costs, which criterion earns marks</span><span class="arw">→</span><span class="chip">Take one</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> the choice is written onto the task and the plan updates around it.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">11</span><p class="text-[15px] leading-relaxed"><span class="role">User</span> <span class="text-[#c7c7cc]">I want the work Aria produced out of the app.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip">Ask &ldquo;save this&rdquo;</span><span class="arw">or</span><span class="chip">Card after a plan is built</span><span class="arw">→</span><span class="chip">Note</span><span class="chip">Document</span><span class="chip">Email</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> it is in your Notes, in Files, or in a mail draft, with the same text the task holds.</span></p></div>
+      </div>
+    </div>
+
+    <!-- Journey C · Getting through the day -->
+    <div class="mt-14">
+      <div class="flex items-baseline justify-between gap-4"><h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Getting through the day</h3><span class="text-sm text-[#8a8a8a] shrink-0">Steps 12–16</span></div>
+      <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed max-w-4xl">The daily loop: read what today needs, finish or defer in one gesture, and let Aria do the task with you.</p>
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">12</span><p class="text-[15px] leading-relaxed"><span class="role">User</span> <span class="text-[#c7c7cc]">I want to see what today needs and what Aria can take off it.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Open Today</span><span class="arw">→</span><span class="chip">Tasks, each with Aria's offer</span><span class="arw">→</span><span class="chip">Coming up</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> nothing more is needed. This is the read-only state.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">13</span><p class="text-[15px] leading-relaxed"><span class="role">User</span> <span class="text-[#c7c7cc]">I want to finish a task in one gesture.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip">Drag the card across</span><span class="arw">→</span><span class="chip">Completes on release</span><span class="arw">·</span><span class="chip">Swipe back undoes</span><span class="arw">·</span><span class="chip">Repeating spawns next occurrence</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> it completes on release, no second tap.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">14</span><p class="text-[15px] leading-relaxed"><span class="role">User</span> <span class="text-[#c7c7cc]">I want to push something I cannot do today.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">&ldquo;Not now&rdquo; on an offer</span><span class="arw">→</span><span class="chip">Moves to tomorrow</span><span class="arw">→</span><span class="chip">Banner offers a proper day &amp; time</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> the task carries the new date, or you have picked one deliberately.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">15</span><p class="text-[15px] leading-relaxed"><span class="role">User</span> <span class="text-[#c7c7cc]">I want Aria to do the task with me on the day.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Tap the offer</span><span class="arw">→</span><span class="chip">Aria drafts</span><span class="arw">→</span><span class="chip">Read / rewrite tone / edit</span><span class="arw">→</span><span class="chip">Approve</span><span class="arw">→</span><span class="chip">Opens Mail / Messages / WhatsApp filled in, or sends the email itself</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> sent, and the task is checked off as handled by Aria.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6 md:col-span-2"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">16</span><p class="text-[15px] leading-relaxed"><span class="role">Student</span> <span class="text-[#c7c7cc]">I want to work through an assignment rather than stare at it.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Open the task</span><span class="arw">→</span><span class="chip">Step by step through the breakdown</span><span class="arw">→</span><span class="chip">Research help on any single step</span><span class="arw">→</span><span class="chip">Drafted sections saved to the task</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> steps are ticked and the sections are on the task, ready to assemble.</span></p></div>
+      </div>
+    </div>
+
+    <!-- Journey D · Pro -->
+    <div class="mt-14">
+      <div class="flex items-baseline justify-between gap-4"><h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Pro · Aria acts for you</h3><span class="text-sm text-[#8a8a8a] shrink-0">Steps 17–21</span></div>
+      <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed max-w-4xl">The top of the dial: approve once, let Aria prepare, send and self-correct, with a hold and a cancel on everything it does.</p>
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-accent/25 bg-accent/[0.04] p-5 sm:p-6 md:col-span-2"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/15 text-accent font-bold text-sm">17</span><p class="text-[15px] leading-relaxed"><span class="role">Pro user</span> <span class="text-[#c7c7cc]">I want to approve my day once and get on with my life.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Morning prompt at your hour</span><span class="arw">→</span><span class="chip">Review opens</span><span class="arw">→</span><span class="chip">I'll send these</span><span class="chip">Ready for your tap</span><span class="chip">Yours today</span><span class="chip">Blocked · the one thing it needs</span><span class="arw">→</span><span class="chip">Untick anything</span><span class="arw">→</span><span class="chip">Approve</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> the sendable items are scheduled, and each is held ten minutes before it runs.</span></p></div>
+        <div class="rounded-2xl border border-accent/25 bg-accent/[0.04] p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/15 text-accent font-bold text-sm">18</span><p class="text-[15px] leading-relaxed"><span class="role">Pro user</span> <span class="text-[#c7c7cc]">I want the drafting done before I open the task.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip">Nothing to do</span><span class="arw">→</span><span class="chip">Aria finds anything due in 3 days with no message or breakdown</span><span class="arw">→</span><span class="chip">Prepares it when the app becomes active</span><span class="arw">→</span><span class="chip">Tells you what it did</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> the task already has its draft or its steps when you open it, and nothing you wrote yourself was overwritten.</span></p></div>
+        <div class="rounded-2xl border border-accent/25 bg-accent/[0.04] p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/15 text-accent font-bold text-sm">19</span><p class="text-[15px] leading-relaxed"><span class="role">Pro user</span> <span class="text-[#c7c7cc]">I want my plan to stay true when I fall behind.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip">Nothing to do</span><span class="arw">→</span><span class="chip">Past steps spread across the days that are left</span><span class="arw">→</span><span class="chip">Buffer intact</span><span class="arw">→</span><span class="chip">Aria says how many moved</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> no step is dated in the past, and if it no longer fits before the deadline, Aria says so rather than pretending.</span></p></div>
+        <div class="rounded-2xl border border-accent/25 bg-accent/[0.04] p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/15 text-accent font-bold text-sm">20</span><p class="text-[15px] leading-relaxed"><span class="role">Pro user</span> <span class="text-[#c7c7cc]">I want to stop something I approved by mistake.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Automations list</span><span class="arw">or</span><span class="chip">The notification</span><span class="arw">→</span><span class="chip">Cancel, within the ten-minute hold</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> cancelled locally and on the server, so the cron cannot still send it.</span></p></div>
+        <div class="rounded-2xl border border-accent/25 bg-accent/[0.04] p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/15 text-accent font-bold text-sm">21</span><p class="text-[15px] leading-relaxed"><span class="role">Pro user</span> <span class="text-[#c7c7cc]">I want to know it happened.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip">Scheduler sends</span><span class="arw">→</span><span class="chip">App reports back on Today</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> the automation reads sent, and the task is checked off.</span></p></div>
+      </div>
+    </div>
+
+    <!-- Journey E · Everything else -->
+    <div class="mt-14">
+      <div class="flex items-baseline justify-between gap-4"><h3 class="text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Everything else</h3><span class="text-sm text-[#8a8a8a] shrink-0">Steps 22–25</span></div>
+      <p class="mt-2 text-[15px] text-[#a1a1aa] leading-relaxed max-w-4xl">Seeing the shape of a week, reaching people without retyping them, testing on any day, and owning your data.</p>
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">22</span><p class="text-[15px] leading-relaxed"><span class="role">User</span> <span class="text-[#c7c7cc]">I want to see the shape of my week.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Calendar</span><span class="arw">→</span><span class="chip">Month / week / day</span><span class="arw">→</span><span class="chip">Agenda underneath</span><span class="arw">→</span><span class="chip">Rebalance a packed day</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> you can see the load. Rebalance moves work off a packed day.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">23</span><p class="text-[15px] leading-relaxed"><span class="role">User</span> <span class="text-[#c7c7cc]">I want to reach the people I message without retyping them.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Choose from your contacts</span><span class="arw">→</span><span class="chip">Filled fields disappear, leaving the person</span><span class="arw">→</span><span class="chip">Only a genuinely missing detail is asked for</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> the task carries the name, and whichever of number or address the method needs.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">24</span><p class="text-[15px] leading-relaxed"><span class="role">User</span> <span class="text-[#c7c7cc]">I want the app to look the way I want and to test it on any day.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Settings</span><span class="arw">→</span><span class="chip">Appearance</span><span class="arw">or</span><span class="chip">Simulated date control</span><span class="arw">→</span><span class="chip">Jump to a day with something waiting</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> the theme is remembered per device, and the banner says which day you are on.</span></p></div>
+        <div class="rounded-2xl border border-white/10 bg-card p-5 sm:p-6"><div class="flex items-start gap-4"><span class="shrink-0 grid place-items-center size-9 rounded-full bg-accent/10 text-accent font-bold text-sm">25</span><p class="text-[15px] leading-relaxed"><span class="role">User</span> <span class="text-[#c7c7cc]">I want my data to be mine.</span></p></div><div class="mt-4 flex flex-wrap items-center gap-2"><span class="chip on">Settings</span><span class="arw">→</span><span class="chip">Reset demo data</span><span class="chip">Start fresh</span><span class="chip">Sign out</span><span class="arw">→</span><span class="chip">A new account on this device clears the last person's data</span></div><p class="mt-3 flex gap-2 text-[13px] text-[#c7c7cc]"><span class="text-cHigh">✓</span><span><span class="font-semibold text-cHigh">Done when</span> what remains is only what belongs to whoever is signed in.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12 · STORYBOARD ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">12</span><span class="eyebrow">Storyboard</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">One day, one deadline, one hand-off.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Amara's assignment week, framed as the six beats the product has to earn.</p>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card overflow-hidden"><img width="1000" height="680" loading="lazy" decoding="async" src="assets/aria2-story-1.webp" alt="Storyboard: a brief document uploaded into the Aria app." class="w-full h-auto block border-b border-white/10" /><div class="p-6"><p class="text-accent font-bold text-sm">Scene 01</p><p class="mt-2 font-semibold">The brief lands</p><p class="mt-2 text-[14px] text-[#a1a1aa] leading-relaxed">Amara gets an assignment brief. Instead of a blank task, she uploads the PDF to Aria.</p></div></div>
+      <div class="rounded-2xl border border-white/10 bg-card overflow-hidden"><img width="1000" height="680" loading="lazy" decoding="async" src="assets/aria2-story-2.webp" alt="Storyboard: an extraction card reads fields back with green, amber and red confidence dots." class="w-full h-auto block border-b border-white/10" /><div class="p-6"><p class="text-accent font-bold text-sm">Scene 02</p><p class="mt-2 font-semibold">Aria reads it back</p><p class="mt-2 text-[14px] text-[#a1a1aa] leading-relaxed">Deliverable, deadline and weighting come back with confidence labels. She fills the one gap.</p></div></div>
+      <div class="rounded-2xl border border-white/10 bg-card overflow-hidden"><img width="1000" height="680" loading="lazy" decoding="async" src="assets/aria2-story-3.webp" alt="Storyboard: a timeline of dated steps with the first step pinned and a submission buffer before the deadline." class="w-full h-auto block border-b border-white/10" /><div class="p-6"><p class="text-accent font-bold text-sm">Scene 03</p><p class="mt-2 font-semibold">A plan with runway</p><p class="mt-2 text-[14px] text-[#a1a1aa] leading-relaxed">Dated steps, step one pinned, a submission buffer reserved. She accepts.</p></div></div>
+      <div class="rounded-2xl border border-white/10 bg-card overflow-hidden"><img width="1000" height="680" loading="lazy" decoding="async" src="assets/aria2-story-4.webp" alt="Storyboard: a rain cloud over overdue blocks that are being spread across the days that are left, labelled moved 3." class="w-full h-auto block border-b border-white/10" /><div class="p-6"><p class="text-accent font-bold text-sm">Scene 04</p><p class="mt-2 font-semibold">A bad week hits</p><p class="mt-2 text-[14px] text-[#a1a1aa] leading-relaxed">She falls two days behind. Aria spreads the past steps across what's left and says how many moved.</p></div></div>
+      <div class="rounded-2xl border border-white/10 bg-card overflow-hidden"><img width="1000" height="680" loading="lazy" decoding="async" src="assets/aria2-story-5.webp" alt="Storyboard: the Pro morning review with three grouped lists and an Approve button." class="w-full h-auto block border-b border-white/10" /><div class="p-6"><p class="text-accent font-bold text-sm">Scene 05</p><p class="mt-2 font-semibold">Approve the day</p><p class="mt-2 text-[14px] text-[#a1a1aa] leading-relaxed">On Pro, the morning review lists what Aria will send. She unticks one, approves the rest.</p></div></div>
+      <div class="rounded-2xl border border-white/10 bg-card overflow-hidden"><img width="1000" height="680" loading="lazy" decoding="async" src="assets/aria2-story-6.webp" alt="Storyboard: the Today screen showing items sent and checked off, with a ten-minute hold clock." class="w-full h-auto block border-b border-white/10" /><div class="p-6"><p class="text-accent font-bold text-sm">Scene 06</p><p class="mt-2 font-semibold">It reports back</p><p class="mt-2 text-[14px] text-[#a1a1aa] leading-relaxed">Items send after the ten-minute hold. Today shows them as sent, tasks checked off.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ============ 13 · USER FLOW · ASSIGNMENT TASK ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">13</span><span class="eyebrow">User flow · Assignment task</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">From a brief to a dated plan, with a gate for every gap.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">The flagship flow. Aria never plans on guesswork: any field it can't read with confidence becomes a gate the user resolves before a plan renders.</p>
+
+    <div class="mt-10 rounded-2xl overflow-hidden border border-white/10 bg-card">
+      <div class="overflow-x-auto"><img width="2400" height="1340" loading="lazy" decoding="async" src="assets/aria2-userflow.webp" alt="Assignment task flowchart: Assignment → Upload the brief → Aria reads it → an Extraction card with per-field confidence (Deliverable and Deadline high, Weighting and Criteria medium, Format rules low). A decision, all fields confident? On No it routes to a Resolve gaps group (Ask tutor, Upload handbook, I know this) and back to the card; on Yes it flows to Commitments → Plan preview → Accept? which produces a task with dated steps, step one pinned and a buffer reserved. A Stuck branch from Plan preview opens Guide, offering 3-4 directions." class="min-w-[900px] w-full h-auto block" /></div>
+    </div>
+    <div class="mt-4 rounded-xl border border-accent/20 bg-accent/[0.04] p-4"><p class="text-[13px] text-[#c7c7cc]"><span class="text-accent font-semibold">Escape hatch:</span> stuck at any step &rarr; Guide offers 3&ndash;4 directions, each with what it needs, what it costs, and which criterion earns marks.</p></div>
+  </section>
+
+  <!-- ============ 14 · INFORMATION ARCHITECTURE ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">14</span><span class="eyebrow">Information architecture</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Five tabs, one create action, everything a tap away.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Navigation stays small so the app never has to be re-learned. Onboarding sits outside the shell; Wallet-style essentials live in Settings.</p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Today</p><ul class="mt-3 space-y-1.5 text-[14px] text-[#c7c7cc]"><li class="feat">Tasks for the day + Aria's offer</li><li class="feat">Coming up</li><li class="feat">Sent / handled reporting</li></ul></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Tasks</p><ul class="mt-3 space-y-1.5 text-[14px] text-[#c7c7cc]"><li class="feat">Birthday · Assignment · Project</li><li class="feat">Method, message, repeat</li><li class="feat">Steps &amp; drafted sections</li></ul></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Calendar</p><ul class="mt-3 space-y-1.5 text-[14px] text-[#c7c7cc]"><li class="feat">Month / week / day</li><li class="feat">Agenda underneath</li><li class="feat">Rebalance a packed day</li></ul></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Aria · create</p><ul class="mt-3 space-y-1.5 text-[14px] text-[#c7c7cc]"><li class="feat">Guided capture (chat)</li><li class="feat">New task (form)</li><li class="feat">Guide when stuck</li></ul></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Automations · Pro</p><ul class="mt-3 space-y-1.5 text-[14px] text-[#c7c7cc]"><li class="feat">Morning review</li><li class="feat">Scheduled sends + ten-minute hold</li><li class="feat">Cancel</li></ul></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Settings</p><ul class="mt-3 space-y-1.5 text-[14px] text-[#c7c7cc]"><li class="feat">Appearance · Notifications</li><li class="feat">Simulated date</li><li class="feat">Reset / Start fresh / Sign out</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ============ 15 · SKETCHING ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">15</span><span class="eyebrow">Sketching</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Cheap, fast, and thrown away on purpose.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Low-fidelity passes on the risky screens first: the onboarding tier choice, the extraction card, and the morning review.</p>
+    <div class="mt-10 rounded-2xl overflow-hidden border border-white/10"><img width="2400" height="1600" loading="lazy" decoding="async" src="assets/aria2-sketches.webp" alt="Three low-fidelity mobile sketches on paper: an onboarding tier-choice screen (Free vs Pro, Pro selected), the Today home screen with task cards carrying Aria's offer and a bottom tab bar, and a new-task creation screen with category tiles, form fields and handling chips." class="w-full h-auto block" /></div>
+  </section>
+
+  <!-- ============ 16 · WIREFRAMING ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">16</span><span class="eyebrow">Wireframing</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">Mid-fidelity, to lock hierarchy before pixels.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Greyscale wireframes fixed what leads each screen, the offer on Today, the confidence on the extraction card, the three lists in the review, before any visual design.</p>
+    <div class="mt-10 rounded-2xl overflow-hidden border border-white/10"><img width="2400" height="1600" loading="lazy" decoding="async" src="assets/aria2-wireframes.webp" alt="Three mid-fidelity greyscale mobile wireframes: an onboarding tier-choice screen (Free vs Pro, Pro selected via a filled radio) with a Continue button; the Today home screen with task rows, checkboxes, Aria offer pills, a Coming up section and a bottom tab bar; and a new-task creation screen with category tiles, Title and date/time fields, handling chips and a Save button." class="w-full h-auto block" /></div>
+  </section>
+
+  <!-- ============ 17 · STYLE GUIDE ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">17</span><span class="eyebrow">Style guide</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">A calm base so the signals can speak.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">A quiet dark surface, one warm accent, and a fixed confidence palette that means the same thing everywhere: green certain, amber check it, red don't trust it yet.</p>
+
+    <div class="mt-10" style="display:flex;flex-direction:column;gap:16px">
+
+      <!-- Colour palette -->
+      <div class="sg-card">
+        <p class="sg-lbl">Colour palette</p>
+
+        <p class="sg-mini">Surfaces &amp; text</p>
+        <div class="mt-3" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:16px">
+          <div><div class="sw" style="background:#0b0a0a"></div><p class="sw-n">Base</p><p class="sw-h">#0B0A0A</p></div>
+          <div><div class="sw" style="background:#141210"></div><p class="sw-n">Card</p><p class="sw-h">#141210</p></div>
+          <div><div class="sw" style="background:#1b1815"></div><p class="sw-n">Elevated</p><p class="sw-h">#1B1815</p></div>
+          <div><div class="sw" style="background:#0b0a0a;border-color:rgba(255,255,255,.22)"></div><p class="sw-n">Border</p><p class="sw-h">White 10%</p></div>
+          <div><div class="sw" style="background:#ffd8e4"></div><p class="sw-n">Accent</p><p class="sw-h">#FFD8E4</p></div>
+          <div><div class="sw" style="background:#241b1f;border-color:rgba(255,216,228,.3)"></div><p class="sw-n">Accent wash</p><p class="sw-h">Tint 8%</p></div>
+          <div><div class="sw" style="background:#f5f4f2"></div><p class="sw-n">Text</p><p class="sw-h">#F5F4F2</p></div>
+          <div><div class="sw" style="background:#a1a1aa"></div><p class="sw-n">Secondary</p><p class="sw-h">#A1A1AA</p></div>
+          <div><div class="sw" style="background:#6f6b64"></div><p class="sw-n">Muted</p><p class="sw-h">#6F6B64</p></div>
+        </div>
+
+        <p class="sg-mini">Semantic <span style="color:#6f6b64;font-weight:400;text-transform:none;letter-spacing:0">· light / dark</span></p>
+        <div class="mt-3" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px">
+          <div><div class="sw" style="display:flex;overflow:hidden"><div style="flex:1;background:#027A48"></div><div style="flex:1;background:#32D583"></div></div><p class="sw-n">Success</p><p class="sw-h">#027A48 · #32D583</p></div>
+          <div><div class="sw" style="display:flex;overflow:hidden"><div style="flex:1;background:#B54708"></div><div style="flex:1;background:#FDB022"></div></div><p class="sw-n">Warning</p><p class="sw-h">#B54708 · #FDB022</p></div>
+          <div><div class="sw" style="display:flex;overflow:hidden"><div style="flex:1;background:#B42318"></div><div style="flex:1;background:#F97066"></div></div><p class="sw-n">Danger</p><p class="sw-h">#B42318 · #F97066</p></div>
+        </div>
+
+        <p class="sg-mini">Priority <span style="color:#6f6b64;font-weight:400;text-transform:none;letter-spacing:0">· light / dark</span></p>
+        <div class="mt-3" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px">
+          <div><div class="sw" style="display:flex;overflow:hidden"><div style="flex:1;background:#98A2B3"></div><div style="flex:1;background:#667085"></div></div><p class="sw-n">Priority · low</p><p class="sw-h">#98A2B3 · #667085 <span style="text-transform:none">(alt #7A7A7A)</span></p></div>
+          <div><div class="sw" style="display:flex;overflow:hidden"><div style="flex:1;background:#F79009"></div><div style="flex:1;background:#FDB022"></div></div><p class="sw-n">Priority · medium</p><p class="sw-h">#F79009 · #FDB022</p></div>
+          <div><div class="sw" style="display:flex;overflow:hidden"><div style="flex:1;background:#F04438"></div><div style="flex:1;background:#F97066"></div></div><p class="sw-n">Priority · high</p><p class="sw-h">#F04438 · #F97066</p></div>
+        </div>
+      </div>
+
+      <!-- Typography -->
+      <div class="sg-card">
+        <p class="sg-lbl">Typography · Inter</p>
+        <div class="mt-3">
+          <div class="ty-row"><span class="text-4xl font-bold tracking-[-0.03em]">Display</span><span class="ty-meta">Bold · 40 / -3%</span></div>
+          <div class="ty-row"><span class="text-2xl font-bold tracking-[-0.02em]">Heading</span><span class="ty-meta">Bold · 24 / -2%</span></div>
+          <div class="ty-row"><span class="text-lg font-semibold">Subhead</span><span class="ty-meta">Semibold · 18</span></div>
+          <div class="ty-row"><span class="text-[15px] text-[#c7c7cc]">Body — the workhorse for task and plan copy.</span><span class="ty-meta">Regular · 15</span></div>
+          <div class="ty-row"><span class="text-[13px] text-[#a1a1aa]">Small · secondary details and captions</span><span class="ty-meta">Regular · 13</span></div>
+          <div class="ty-row"><span class="eyebrow">Eyebrow label</span><span class="ty-meta">Bold · 12 / 0.14em</span></div>
+          <div class="ty-row"><span class="text-[13px] font-mono text-[#8a8a8a]">Mono · keys · ids · code</span><span class="ty-meta">Mono · 13</span></div>
+        </div>
+      </div>
+
+      <!-- Icons -->
+      <div class="sg-card">
+        <p class="sg-lbl">Icons · 24px stroke</p>
+        <div class="mt-5" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(82px,1fr));gap:14px">
+          <div style="display:flex;flex-direction:column;align-items:center"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div><p class="ico-lbl">Today</p></div>
+          <div style="display:flex;flex-direction:column;align-items:center"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg></div><p class="ico-lbl">Tasks</p></div>
+          <div style="display:flex;flex-direction:column;align-items:center"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M16 2v4"/></svg></div><p class="ico-lbl">Calendar</p></div>
+          <div style="display:flex;flex-direction:column;align-items:center"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></div><p class="ico-lbl">Create</p></div>
+          <div style="display:flex;flex-direction:column;align-items:center"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7"/><path d="M4 10V3"/><path d="M12 21v-9"/><path d="M12 8V3"/><path d="M20 21v-5"/><path d="M20 12V3"/><path d="M1 14h6"/><path d="M9 8h6"/><path d="M17 16h6"/></svg></div><p class="ico-lbl">Settings</p></div>
+          <div style="display:flex;flex-direction:column;align-items:center"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><p class="ico-lbl">Notify</p></div>
+          <div style="display:flex;flex-direction:column;align-items:center"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></div><p class="ico-lbl">Search</p></div>
+          <div style="display:flex;flex-direction:column;align-items:center"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><p class="ico-lbl">Hold</p></div>
+          <div style="display:flex;flex-direction:column;align-items:center"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 8l5-5 5 5"/><path d="M12 3v12"/></svg></div><p class="ico-lbl">Upload</p></div>
+          <div style="display:flex;flex-direction:column;align-items:center"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3.5 13a9 9 0 1 0 2-4.5L3 13"/></svg></div><p class="ico-lbl">Undo</p></div>
+          <div style="display:flex;flex-direction:column;align-items:center"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></div><p class="ico-lbl">Send</p></div>
+          <div style="display:flex;flex-direction:column;align-items:center"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><p class="ico-lbl">Done</p></div>
+        </div>
+      </div>
+
+      <!-- Logo -->
+      <div class="sg-card">
+        <p class="sg-lbl">Logo</p>
+        <div class="mt-5" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px">
+          <div class="theme-cell" style="background:#0f0e0d;border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;justify-content:center">
+            <img width="128" height="128" src="assets/aria-logo-rounded-128.png" alt="Aria app icon" style="width:88px;height:88px;display:block;margin:0 auto" />
+            <p style="color:#8a8a8a">App icon</p>
+          </div>
+          <div class="theme-cell" style="background:#12161e;border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;justify-content:center">
+            <img width="512" height="512" src="assets/aria-mark-navy-512.png" alt="Aria mark, light" style="width:74px;height:74px;display:block;margin:0 auto;filter:brightness(0) invert(1)" />
+            <p style="color:#7f889a">Mark · on dark</p>
+          </div>
+          <div class="theme-cell" style="background:#ffffff;border:1px solid #e4e7ec;display:flex;flex-direction:column;justify-content:center">
+            <img width="512" height="512" src="assets/aria-mark-navy-512.png" alt="Aria mark, navy" style="width:74px;height:74px;display:block;margin:0 auto" />
+            <p style="color:#667085">Mark · on light</p>
+          </div>
+          <div class="theme-cell" style="background:#12161e;border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;justify-content:center">
+            <div style="display:flex;align-items:center;justify-content:center;gap:12px">
+              <img width="512" height="512" src="assets/aria-mark-navy-512.png" alt="" style="width:42px;height:42px;filter:brightness(0) invert(1)" />
+              <span style="font-size:34px;font-weight:700;letter-spacing:-.02em;color:#fff">Aria</span>
+            </div>
+            <p style="color:#7f889a">Horizontal lockup</p>
+          </div>
+        </div>
+        <p style="margin-top:14px;font-size:12px;color:#a1a1aa;line-height:1.6">Clearspace: keep at least the height of the small spark clear on every side. Minimum size: 24px for the mark, 20px for the app icon. The mark is one colour, navy on light surfaces, white on dark, never recoloured or outlined.</p>
+      </div>
+
+      <!-- Row of component cards -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:16px">
+
+        <!-- Buttons -->
+        <div class="sg-card" style="grid-column:1/-1">
+          <p class="sg-lbl">Buttons</p>
+
+          <p class="sg-mini">Variants · resolved on the White theme</p>
+          <div class="mt-3" style="background:#FFFFFF;border:1px solid #E4E7EC;border-radius:16px;padding:18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+            <span class="pbtn" style="background:#333D56;color:#FFFFFF">Approve</span>
+            <span class="pbtn" style="background:#FFFFFF;color:#1C1C1C;border-color:#D0D5DD">Not now</span>
+            <span class="pbtn" style="background:transparent;color:#333D56">Guide</span>
+            <span class="pbtn" style="background:#B42318;color:#FFFFFF">Delete</span>
+            <span class="pbtn dis" style="background:#333D56;color:#FFFFFF">Disabled</span>
+          </div>
+          <div class="mt-3" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;font-size:12px;color:#a1a1aa">
+            <span><b style="color:#c7c7cc">primary</b> — fill accent · label accentInk · no border</span>
+            <span><b style="color:#c7c7cc">secondary</b> — fill surface · label ink · border</span>
+            <span><b style="color:#c7c7cc">ghost</b> — transparent · label accent · no border</span>
+            <span><b style="color:#c7c7cc">danger</b> — fill danger · label accentInk · no border</span>
+          </div>
+
+          <p class="sg-mini">Primary · resolved per theme</p>
+          <div class="mt-3" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px">
+            <div class="theme-cell" style="background:#FFFFFF;border:1px solid #E4E7EC"><span class="pbtn" style="background:#333D56;color:#FFFFFF">Approve</span><p style="color:#667085">White · #333D56 / #FFF</p></div>
+            <div class="theme-cell" style="background:#F3EEE3;border:1px solid #E7DFCF"><span class="pbtn" style="background:#333D56;color:#FFFFFF">Approve</span><p style="color:#8a7f6a">Linen · #333D56 / #FFF</p></div>
+            <div class="theme-cell" style="background:#1C1C1C;border:1px solid #333333"><span class="pbtn" style="background:#D1D1D1;color:#1C1C1C">Approve</span><p style="color:#9a9a9a">Charcoal · #D1D1D1 / #1C1C1C</p></div>
+            <div class="theme-cell" style="background:#12161E;border:1px solid #29303c"><span class="pbtn" style="background:#BAC3D6;color:#12161E">Approve</span><p style="color:#7f889a">Midnight · #BAC3D6 / #12161E</p></div>
+          </div>
+
+          <p class="sg-mini">Sizes · rounded-2xl (20px)</p>
+          <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+            <span class="pbtn sm" style="background:#333D56;color:#FFFFFF">Small · 36</span>
+            <span class="pbtn" style="background:#333D56;color:#FFFFFF">Medium · 48</span>
+            <span class="pbtn lg" style="background:#333D56;color:#FFFFFF">Large · 56</span>
+          </div>
+          <p style="margin-top:14px;font-size:12px;color:#a1a1aa;line-height:1.6">Danger fill is <b style="color:#c7c7cc">#B42318</b> on light themes, <b style="color:#c7c7cc">#F97066</b> on dark. Disabled drops to <b style="color:#c7c7cc">40% opacity</b>. Press feedback is opacity, not colour: <b style="color:#c7c7cc">80%</b> on filled, <b style="color:#c7c7cc">70%</b> on secondary, <b style="color:#c7c7cc">60%</b> on ghost.</p>
+        </div>
+
+        <!-- Input fields -->
+        <div class="sg-card">
+          <p class="sg-lbl">Input fields</p>
+          <div class="mt-5" style="display:flex;flex-direction:column;gap:16px">
+            <div><label class="fld-lbl">Title</label><div class="input ph">Add a title…</div></div>
+            <div><label class="fld-lbl">Message</label><div class="input focus">Happy birthday, Tunde!</div><p class="hint" style="color:#a1a1aa">Focused · Aria re-tones this before it sends.</p></div>
+            <div><label class="fld-lbl">Recipient</label><div class="input error">not-an-email</div><p class="hint" style="color:#F97066">Enter a valid email address.</p></div>
+          </div>
+        </div>
+
+        <!-- Dropdown -->
+        <div class="sg-card">
+          <p class="sg-lbl">Dropdown · select</p>
+          <div class="mt-5" style="display:flex;flex-direction:column;gap:16px">
+            <div><label class="fld-lbl">How Aria handles it</label><div class="input sel"><span>Email</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div></div>
+            <div>
+              <label class="fld-lbl">Open menu</label>
+              <div class="menu">
+                <div class="menu-i">Text</div>
+                <div class="menu-i hov">Email</div>
+                <div class="menu-i sel-on"><span>Call</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <div class="menu-i">Just remind me</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toggles & selection -->
+        <div class="sg-card">
+          <p class="sg-lbl">Toggles &amp; selection</p>
+          <div class="mt-5" style="display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;flex-wrap:wrap;gap:22px;align-items:center">
+              <span style="display:flex;align-items:center;gap:8px" class="text-sm text-[#c7c7cc]"><span class="sw-t on"><i></i></span> On</span>
+              <span style="display:flex;align-items:center;gap:8px" class="text-sm text-[#c7c7cc]"><span class="sw-t"><i></i></span> Off</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:22px;align-items:center">
+              <span style="display:flex;align-items:center;gap:8px" class="text-sm text-[#c7c7cc]"><span class="cbx on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Checked</span>
+              <span style="display:flex;align-items:center;gap:8px" class="text-sm text-[#c7c7cc]"><span class="cbx"></span> Unchecked</span>
+              <span style="display:flex;align-items:center;gap:8px" class="text-sm text-[#c7c7cc]"><span class="rdo on"></span> Selected</span>
+              <span style="display:flex;align-items:center;gap:8px" class="text-sm text-[#c7c7cc]"><span class="rdo"></span> Radio</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><span class="chip">Path chip</span><span class="chip on">Active chip</span><span class="role">Role tag</span></div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+              <span class="tag" style="color:#32D583;border-color:rgba(50,213,131,.4);background:rgba(50,213,131,.12)"><span class="dot" style="background:#32D583"></span>Success</span>
+              <span class="tag" style="color:#FDB022;border-color:rgba(253,176,34,.4);background:rgba(253,176,34,.12)"><span class="dot" style="background:#FDB022"></span>Warning</span>
+              <span class="tag" style="color:#F97066;border-color:rgba(249,112,102,.4);background:rgba(249,112,102,.12)"><span class="dot" style="background:#F97066"></span>Danger</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+              <span class="tag" style="color:#98A2B3;border-color:rgba(102,112,133,.5);background:rgba(102,112,133,.15)"><span class="dot" style="background:#667085"></span>Priority low</span>
+              <span class="tag" style="color:#FDB022;border-color:rgba(253,176,34,.4);background:rgba(253,176,34,.12)"><span class="dot" style="background:#FDB022"></span>Priority medium</span>
+              <span class="tag" style="color:#F97066;border-color:rgba(249,112,102,.4);background:rgba(249,112,102,.12)"><span class="dot" style="background:#F97066"></span>Priority high</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 18 · UI ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">18</span><span class="eyebrow">UI</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">The screens where trust is won.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Final UI for four moments that matter most: choosing how much Aria does in onboarding, capturing a task, the task list where Aria offers to help, and working an assignment step by step.</p>
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <figure>
+        <div class="rounded-2xl overflow-hidden border border-white/10"><img width="1170" height="2532" loading="lazy" decoding="async" src="assets/aria2-ui-onboarding.webp" alt="Onboarding tier choice: 'How much of it should I do?' with a Free card ('I plan your work, you do it') and a Pro card ('I do the work, you check it'), and a Continue button." class="w-full h-auto block" /></div>
+        <figcaption class="mt-2 text-xs text-[#8a8a8a]">Onboarding · tier choice</figcaption>
+      </figure>
+      <figure>
+        <div class="rounded-2xl overflow-hidden border border-white/10"><img width="1170" height="2532" loading="lazy" decoding="async" src="assets/aria2-ui-assignment.webp" alt="Capturing a task: the New task form with a date strip, time and repeat toggles, a Low/Medium/High priority selector, a 'How should Aria handle it?' row (Step by step, Outline, Draft it, Just remind me, Email, Text), notes and a Save task button." class="w-full h-auto block" /></div>
+        <figcaption class="mt-2 text-xs text-[#8a8a8a]">Capture · new task</figcaption>
+      </figure>
+      <figure>
+        <div class="rounded-2xl overflow-hidden border border-white/10"><img width="1170" height="2532" loading="lazy" decoding="async" src="assets/aria2-ui-today.webp" alt="The task list: Upcoming, Late and Done tabs with tasks carrying priority tags and, where Aria has one, an 'Aria can help' offer and the next step shown inline." class="w-full h-auto block" /></div>
+        <figcaption class="mt-2 text-xs text-[#8a8a8a]">Task list · Aria's offers</figcaption>
+      </figure>
+      <figure>
+        <div class="rounded-2xl overflow-hidden border border-white/10"><img width="1170" height="2532" loading="lazy" decoding="async" src="assets/aria2-ui-review.webp" alt="Working an assignment step by step: a task detail for 'History essay: the Cold War' with notes, a Next up step, a Guide button, and a checklist where each item can request research help." class="w-full h-auto block" /></div>
+        <figcaption class="mt-2 text-xs text-[#8a8a8a]">Assignment · step by step</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 19 · TESTING · PROTOTYPING ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">19</span><span class="eyebrow">Testing phase · Prototyping</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">A working prototype, not a linked mockup.</h2>
+    <div class="mt-6 space-y-4 text-lg text-[#a1a1aa] leading-relaxed max-w-4xl">
+      <p>Autonomy is hard to judge from a clickable mockup, a fake "send" never risks anything. So I took the design past Figma and built it for real. Using <span class="text-white">Claude Code</span>, I turned the screens into a working React Native app in TypeScript on a Supabase back end, with real navigation, real data, and real hold-and-cancel, so every autonomy moment could be met the way a user actually would.</p>
+      <p>Designing and coding in the same loop meant decisions were tested against a running build, not imagined: if a guardrail felt unsafe on screen, I could change it in code the same afternoon and feel the difference immediately.</p>
+      <p>The build is one codebase of roughly <span class="text-white">30,000 lines of strict TypeScript across 140 files</span>, the screens, the pure-logic modules, the store, the server routes and six check suites, plus a Deno Edge Function on Supabase so Aria can send while the app is closed. There's no Swift or Kotlin: React Native compiles the same code to iOS and Android, and native capabilities, contacts, notifications, the camera roll, are reached through Expo.</p>
+    </div>
+
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Design → code</p><p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Screens became a real React Native app in TypeScript, built with Claude Code, so navigation, empty states and failures behaved, not just looked, right.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">A real back end</p><p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Supabase (Postgres + row-level security) for auth and data: sign-up creates the account, the Pro entitlement is written server-side, and a new sign-in clears the last person's tasks.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">The automation loop</p><p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">A Deno Edge Function on pg_cron runs the sends: each is held ten minutes before it fires, and cancel kills the job locally and on the server so the cron can't still send.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Built to be tested</p><p class="mt-3 text-[15px] text-[#a1a1aa] leading-relaxed">Sample tasks and a simulated-date control let a tester jump to a day where something is waiting and reach any autonomy moment on demand.</p></div>
+    </div>
+
+    <div class="mt-10 rounded-2xl overflow-hidden border border-white/10">
+      <div style="padding:75.95% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1217442123?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Aria Demo" loading="lazy"></iframe></div>
+    </div>
+    <p class="mt-3 text-sm text-[#8a8a8a]">Prototype demo, the autonomy loop end to end: onboarding &rarr; capture &rarr; review &rarr; send.</p>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+  </section>
+
+  <!-- ============ 20 · USABILITY TESTING ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <p><span class="text-accent font-bold mr-2">20</span><span class="eyebrow">Usability testing</span></p>
+    <h2 class="mt-3 text-3xl sm:text-5xl font-bold tracking-[-0.03em] leading-[1.05]">It held up, and told me what to fix.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Moderated sessions across the three roles, each walking a real task end to end. The autonomy model landed; the friction was in wording and discoverability, exactly where I could act.</p>
+
+    <div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="eyebrow">Participants</p><p class="mt-2 text-xl font-semibold">6</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Tasks each</p><p class="mt-2 text-xl font-semibold">5</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Method</p><p class="mt-2 text-xl font-semibold">Moderated</p></div>
+      <div class="bg-base p-5"><p class="eyebrow">Roles</p><p class="mt-2 text-xl font-semibold">Study · Work · Own</p></div>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Finding 01</p><p class="mt-3 font-semibold">The hold wasn't obvious enough</p><p class="mt-2 text-[14px] text-[#a1a1aa] leading-relaxed">Users approved, then panicked. <span class="text-white">Fix:</span> a visible ten-minute countdown with Cancel on the notification and the automations list.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Finding 02</p><p class="mt-3 font-semibold">&ldquo;Free vs Pro&rdquo; read as pricing, not behaviour</p><p class="mt-2 text-[14px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Fix:</span> each card leads with what Aria does, &ldquo;you do it&rdquo; vs &ldquo;you check it&rdquo;, and states the limit in plain words.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-card p-6"><p class="subeyebrow">Finding 03</p><p class="mt-3 font-semibold">Low-confidence fields were skimmed</p><p class="mt-2 text-[14px] text-[#a1a1aa] leading-relaxed"><span class="text-white">Fix:</span> the plan won't render until every low-confidence gate is resolved, turning a warning into a required step.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ REFLECTION / TAKEAWAY ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 reveal">
+    <div class="rounded-2xl border border-accent/20 bg-accent/[0.04] p-8 sm:p-10">
+      <p class="eyebrow">What this study taught me</p>
+      <p class="mt-4 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-snug">Designing autonomy is designing the exits.</p>
+      <p class="max-w-4xl mt-5 text-[15px] text-[#c7c7cc] leading-relaxed">People don't hand work to an assistant because it's clever. They hand it over because they know they can take it back, the hold, the undo, the cancel, and the honest &ldquo;this no longer fits&rdquo; did more for trust than any amount of automation. Get the exits right and the dial can go as high as the person is ready for. Get them wrong and even the smartest help stays switched off.</p>
+    </div>
+  </section>
+
+  <!-- ============ NEXT PROJECT ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-24">
+    <a href="condueet-dashboard.html" class="group block rounded-2xl border border-white/10 bg-card hover:bg-white/[0.04] transition-colors p-6 sm:p-8">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Next project</p>
+      <div class="mt-3 flex items-center justify-between gap-4">
+        <p class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Condueet · Role-Based Dashboard</p>
+        <span class="text-2xl text-[#8a8a8a] group-hover:text-white transition-colors shrink-0">→</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="relative mt-24 sm:mt-32 overflow-hidden border-t border-white/10">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(120% 100% at 50% -10%, #1b1618 0%, #130f0e 42%, #0b0a0a 100%);"></div>
+    <div class="absolute -z-10 top-[-160px] left-1/2 -translate-x-1/2 size-[560px] rounded-full bg-accent/10 blur-[150px]"></div>
+
+    <div class="max-w-[1520px] mx-auto px-6 py-24 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-accent">Thanks for reading</p>
+      <h2 class="mt-6 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05] mx-auto">Let's Design Products That Move People Forward.</h2>
+      <p class="mt-6 max-w-xl mx-auto text-lg text-[#c7c7cc] leading-relaxed">I'm a product designer who likes hard, technical problems. If that's useful to your team, let's talk.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:toyosi.design@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-white/90 transition"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> toyosi.design@gmail.com</a>
+        <a href="https://calendly.com/toyosi-design" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/5 transition">Book a 30-min intro ↗</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-[1520px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-[#8a8a8a]">© 2026 Omotoyosi Adegbite.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- scroll reveal -->
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.08 });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
+
+</body>
+</html>
