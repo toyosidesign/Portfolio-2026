@@ -211,7 +211,7 @@
     ];
 
     document.getElementById('project-grid').innerHTML = projects.map(p => `
-      <a href="${p.url || '#'}" ${p.url && p.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''} class="group rounded-xl border border-white/5 bg-card overflow-hidden hover:border-white/15 transition-colors">
+      <a href="${p.url || '#'}" ${p.url && p.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''} class="group rounded-xl border border-white/10 overflow-hidden hover:border-white/25 transition-all" style="background:#1c1813;box-shadow:0 10px 30px -12px rgba(0,0,0,.7)">
         <div class="card-glow px-6 pt-6 pb-8 flex flex-col gap-24">
           <div class="flex items-center justify-between">
             <span class="inline-flex items-center gap-1.5 rounded-full bg-black/70 px-2 py-1">
@@ -253,7 +253,7 @@
     ];
 
     document.getElementById('approach-grid').innerHTML = approach.map(([title, desc]) => `
-      <div class="rounded-2xl border border-white/5 bg-panel p-6">
+      <div class="rounded-2xl border border-white/10 p-6" style="background:#1a1611">
         <span class="grid place-items-center size-10 rounded-xl bg-accent text-panel text-base mb-6">✦</span>
         <h3 class="text-lg font-semibold mb-2">${title}</h3>
         <p class="text-[15px] text-[#c7c7cc] leading-relaxed">${desc}</p>
