@@ -319,13 +319,33 @@
     .closing p{font-family:var(--serif);font-weight:500;font-size:clamp(26px,4vw,44px);line-height:1.24;letter-spacing:-.01em;max-width:52rem;margin:0 auto;color:var(--ink)}
     .explore a{color:var(--gold);font-size:14px;letter-spacing:.02em;border-bottom:1px solid var(--gold);padding-bottom:3px}
 
+    /* next project card */
+    .npcard{display:block;border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:28px 32px;transition:background .2s}
+    .npcard:hover{background:#1a1712}
+    .npl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+    .nprow{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px}
+    .npt{font-family:var(--serif);font-size:clamp(24px,3.2vw,34px);font-weight:500;letter-spacing:-.01em}
+    .nparw{font-size:26px;color:var(--muted);flex:none;transition:color .2s}
+    .npcard:hover .nparw{color:var(--ink)}
     /* footer */
-    footer{border-top:1px solid var(--line);padding:56px 0 64px}
-    .next{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:30px 0;border-bottom:1px solid var(--line);margin-bottom:40px}
-    .next .nl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
-    .next .nt{font-family:var(--serif);font-size:clamp(24px,3.4vw,36px);font-weight:500}
-    .foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:13px}
-    .foot a:hover{color:var(--ink)}
+    footer{position:relative;border-top:1px solid var(--line);overflow:hidden;margin-top:clamp(90px,12vw,160px)}
+    .fbg{position:absolute;inset:0;z-index:-1;background:radial-gradient(120% 100% at 50% -10%, #1f1a14 0%, #171310 44%, var(--ivory) 100%)}
+    .fcta{text-align:center;padding:clamp(64px,9vw,110px) 0 clamp(48px,7vw,84px)}
+    .feyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+    .fhead{font-family:var(--serif);font-weight:500;font-size:clamp(34px,6vw,64px);line-height:1.05;letter-spacing:-.02em;margin:22px auto 0;max-width:20ch}
+    .fsub{font-size:clamp(16px,1.6vw,19px);color:var(--ink-soft);line-height:1.6;max-width:42ch;margin:22px auto 0}
+    .fbtns{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin-top:36px}
+    .fbtn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:14px 22px;font-size:14px;font-weight:600}
+    .fbtn.solid{background:var(--ink);color:var(--ivory)}
+    .fbtn.solid:hover{background:#fff}
+    .fbtn.ghost{border:1px solid var(--line);color:var(--ink);font-weight:500}
+    .fbtn.ghost:hover{background:rgba(255,255,255,.05)}
+    .fbar{border-top:1px solid var(--line)}
+    .fbarrow{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:22px 0}
+    .fbarrow p{color:var(--muted);font-size:13px}
+    .fsoc{display:flex;align-items:center;gap:12px}
+    .fsoc a{display:grid;place-items:center;width:36px;height:36px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--ink-soft);transition:background .2s,color .2s}
+    .fsoc a:hover{background:rgba(255,255,255,.16);color:var(--ink)}
 
     .mt-s{margin-top:20px}.mt-m{margin-top:40px}.mt-l{margin-top:64px}
     @media(max-width:1000px){
@@ -1019,19 +1039,38 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
+  <!-- NEXT PROJECT -->
+  <section>
     <div class="wrap">
-      <a class="next" href="index.html#work">
-        <span>
-          <span class="nl">Next</span>
-          <span class="nt" style="display:block;margin-top:8px">Back to all work</span>
+      <a class="npcard" href="Fluent.html">
+        <span class="npl">Next project</span>
+        <span class="nprow">
+          <span class="npt">Fluent Conveyors &middot; Self-Serve Customer Portal</span>
+          <span class="nparw">&rarr;</span>
         </span>
-        <span style="font-size:28px;color:var(--muted)">&rarr;</span>
       </a>
-      <div class="foot">
-        <span>Omotoyosi Adegbite &nbsp;·&nbsp; Product Designer</span>
-        <span><a href="mailto:toyosi.design@gmail.com">toyosi.design@gmail.com</a></span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="fbg"></div>
+    <div class="wrap fcta">
+      <p class="feyebrow">Thanks for reading</p>
+      <h2 class="fhead">Let&rsquo;s Design Products That Move People Forward.</h2>
+      <p class="fsub">I&rsquo;m a product designer who likes hard, technical problems. If that&rsquo;s useful to your team, let&rsquo;s talk.</p>
+      <div class="fbtns">
+        <a class="fbtn solid" href="mailto:toyosi.design@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> toyosi.design@gmail.com</a>
+        <a class="fbtn ghost" href="https://calendly.com/toyosi-design" target="_blank" rel="noopener">Book a 30-min intro &#8599;</a>
+      </div>
+    </div>
+    <div class="fbar">
+      <div class="wrap fbarrow">
+        <p>&copy; 2026 Omotoyosi Adegbite.</p>
+        <div class="fsoc">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
       </div>
     </div>
   </footer>
