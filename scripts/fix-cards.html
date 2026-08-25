@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8" />
+<script>document.documentElement.className='f'+((location.search.match(/fix=(\d)/)||[])[1]||'1');</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ivory:#0B0A0A;--paper:#100e0b;--panel:#14110d;--inset:#0d0b09;
+    --ink:#F4F0E8;--soft:#B5AD9F;--mut:#8B8276;--faint:#6f675c;
+    --line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.06);
+    --gold:#C6A15B;--green:#7BA05B;--warn:#B87A64;
+    --serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1600px;height:560px;background:var(--ivory);color:var(--ink);font-family:var(--sans);overflow:hidden}
+  .mono{font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase}
+  .stage{display:grid;grid-template-columns:1fr 1fr;height:560px}
+  .col{padding:44px 48px;display:flex;flex-direction:column;justify-content:center;position:relative}
+  .col.b{border-right:1px solid var(--line);background:linear-gradient(180deg,rgba(184,122,100,.05),transparent 40%)}
+  .lbl{position:absolute;top:30px;left:48px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-family:var(--mono);display:flex;align-items:center;gap:9px}
+  .lbl.before{color:var(--warn)}.lbl.after{color:var(--gold)}
+  .lbl .pin{width:7px;height:7px;border-radius:50%;background:currentColor}
+  .cap{margin-top:26px;font-size:14px;line-height:1.55;color:var(--mut);max-width:520px}
+  .cap b{color:var(--soft);font-weight:500}
+  /* generic card */
+  .card{border:1px solid var(--line);background:var(--panel);padding:26px 28px;max-width:560px}
+  .card .ch{font-size:11px;color:var(--gold);margin-bottom:20px}
+  /* fix visibility */
+  .fix{display:none}
+  html.f1 .fix1,html.f2 .fix2,html.f3 .fix3{display:block}
+
+  /* ---- FIX 1: release control ---- */
+  .status{font-family:var(--serif);font-size:34px;font-weight:600;line-height:1.05;margin-bottom:8px}
+  .btn-solid{margin-top:22px;display:block;text-align:center;background:var(--gold);color:#1a140c;font-weight:600;font-size:14px;padding:16px;border-radius:6px;letter-spacing:.02em}
+  .note{margin-top:16px;font-size:13px;line-height:1.55;color:var(--mut)}
+  .note.warn{color:var(--warn)}
+  .track{display:flex;align-items:center;gap:0;margin-top:8px}
+  .track .node{display:flex;flex-direction:column;align-items:center;gap:9px}
+  .track .seg{flex:1;height:1.5px;background:var(--line);margin:0 6px;margin-bottom:24px}
+  .track .seg.on{background:var(--gold)}
+  .track .dot{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:14px;color:var(--mut)}
+  .track .dot.done{border-color:var(--green);color:var(--green)}
+  .track .dot.live{border-color:var(--gold);color:var(--gold);background:rgba(198,161,91,.10)}
+  .track .tl{font-size:11px;color:var(--mut);letter-spacing:.05em;text-transform:uppercase;font-family:var(--mono)}
+  .track .tl.a{color:var(--soft)}
+
+  /* ---- FIX 2: verified timing ---- */
+  .titrow{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+  .tit{font-family:var(--serif);font-size:40px;font-weight:600;line-height:.98}
+  .tit .v{display:block;font-style:italic;color:var(--soft);font-size:32px}
+  .pill{flex:none;margin-top:8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-family:var(--mono);border-radius:999px;padding:8px 15px;border:1px solid}
+  .pill.gold{color:var(--gold);border-color:var(--gold)}
+  .pill.neutral{color:var(--mut);border-color:var(--line)}
+  .steps{display:flex;align-items:center;gap:0;margin-top:30px}
+  .steps .s{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--mono);border:1px solid var(--line);color:var(--mut);padding:9px 16px}
+  .steps .s.gold{border-color:var(--gold);color:var(--gold);background:rgba(198,161,91,.08)}
+  .steps .arw{color:var(--faint);margin:0 12px}
+
+  /* ---- FIX 3: price hierarchy ---- */
+  .bigprice{font-family:var(--serif);font-size:72px;font-weight:600;line-height:.9}
+  .buried{margin-top:22px;padding-top:18px;border-top:1px solid var(--line2);font-size:13px;color:var(--faint);display:flex;align-items:center;gap:8px}
+  .proof{border:1px solid var(--line)}
+  .proof .ph{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--line);font-size:11px;color:var(--gold);font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase}
+  .proof .pr{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line2);font-size:13px;color:var(--soft)}
+  .proof .pr:last-child{border-bottom:0}
+  .proof .pr .n{font-family:var(--mono);color:var(--gold);font-size:11px}
+  .proof .pr .c{margin-left:auto;font-family:var(--mono);color:var(--green);font-size:11px}
+  .pricebeside{display:flex;align-items:baseline;gap:16px;margin-top:20px}
+  .pricebeside .p{font-family:var(--serif);font-size:38px;font-weight:600}
+  .pricebeside .m{font-size:12px;color:var(--mut);font-family:var(--mono);letter-spacing:.02em}
+</style></head>
+<body>
+  <div class="stage">
+    <!-- BEFORE -->
+    <div class="col b">
+      <span class="lbl before"><span class="pin"></span>Before</span>
+
+      <div class="fix fix1">
+        <div class="card">
+          <div class="ch mono">Escrow · Lot 0412</div>
+          <div class="status">Awaiting your<br>confirmation</div>
+          <a class="btn-solid">Confirm receipt to release funds</a>
+          <p class="note warn">The buyer's tap releases the money. A held tap stalls the seller and becomes leverage.</p>
+        </div>
+      </div>
+
+      <div class="fix fix2">
+        <div class="card">
+          <div class="titrow">
+            <div class="tit">Birkin 25<span class="v">Togo, gold</span></div>
+            <span class="pill gold">&#10003; Verified</span>
+          </div>
+          <p class="note warn" style="margin-top:24px">Shown at listing, on the seller's claim, before anyone examined the piece. It read as marketing.</p>
+        </div>
+      </div>
+
+      <div class="fix fix3">
+        <div class="card">
+          <div class="bigprice">&#36;16,900</div>
+          <div class="buried mono">Provenance <span style="color:var(--faint)">&#9662; below the fold</span></div>
+          <p class="note warn" style="margin-top:20px">Price led the listing. The piece read as a product, and the fear of fakes came straight back.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- AFTER -->
+    <div class="col a">
+      <span class="lbl after"><span class="pin"></span>After</span>
+
+      <div class="fix fix1">
+        <div class="card">
+          <div class="ch mono">Escrow · Lot 0412</div>
+          <div class="track">
+            <div class="node"><span class="dot done">&#10003;</span><span class="tl">Delivered</span></div>
+            <span class="seg on"></span>
+            <div class="node"><span class="dot done">&#10003;</span><span class="tl">Examined</span></div>
+            <span class="seg on"></span>
+            <div class="node"><span class="dot live">&#9679;</span><span class="tl a">Released</span></div>
+          </div>
+          <p class="note" style="margin-top:22px;color:var(--soft)">Released on the examiner's verdict. Neither party controls the other's money.</p>
+        </div>
+      </div>
+
+      <div class="fix fix2">
+        <div class="card">
+          <div class="titrow">
+            <div class="tit">Birkin 25<span class="v">Togo, gold</span></div>
+            <span class="pill neutral">Awaiting authentication</span>
+          </div>
+          <div class="steps">
+            <span class="s">Listed</span><span class="arw">&#8594;</span>
+            <span class="s">Examined</span><span class="arw">&#8594;</span>
+            <span class="s gold">&#10003; Verified</span>
+          </div>
+          <p class="note" style="margin-top:20px;color:var(--soft)">Gold appears only after the expert stage, and that is the only place it shows.</p>
+        </div>
+      </div>
+
+      <div class="fix fix3">
+        <div class="card">
+          <div class="proof">
+            <div class="ph"><span>Four records, all agreeing</span><span style="color:var(--mut)">PRV-8841-K25</span></div>
+            <div class="pr"><span class="n">01</span>Chip payload decoded, checksum passed<span class="c">&#10003; vault</span></div>
+            <div class="pr"><span class="n">02</span>Blind stamp matches chip year<span class="c">&#10003; plate 03</span></div>
+            <div class="pr"><span class="n">03</span>Hand saddle stitch at 60&times;<span class="c">&#10003; A. Ogunlesi</span></div>
+          </div>
+          <div class="pricebeside"><span class="p">&#36;16,900</span><span class="m">Comparable 15.2k to 18.4k</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body></html>

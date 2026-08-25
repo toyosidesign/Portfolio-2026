@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8" />
+<script>document.documentElement.className = location.search.indexOf('before')>-1 ? 'before' : 'after';</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--ivory:#0B0A0A;--paper:#141210;--panel:#17140f;--ink:#F4F0E8;--soft:#B5AD9F;--mut:#8B8276;--line:rgba(255,255,255,.10);--gold:#C6A15B;
+    --serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--warn:#B06A5B;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1400px;height:1000px;background:var(--ivory);color:var(--ink);font-family:var(--sans);overflow:hidden}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px;padding:0 40px;border-bottom:1px solid var(--line)}
+  .nav .brand{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:.14em}
+  .nav .links{display:flex;gap:26px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+  .nav .r{font-size:12px;color:var(--mut)}
+  .crumb{display:flex;justify-content:space-between;padding:16px 40px;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+  .crumb .g{color:var(--gold)}
+  .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;height:calc(1000px - 66px - 49px)}
+  .shot{background:#0f0d0b;border-right:1px solid var(--line);display:grid;place-items:center;position:relative}
+  .bag{width:280px;height:250px;border:2px solid #33302a;border-radius:8px 8px 40px 40px;position:relative}
+  .bag::before{content:"";position:absolute;top:-70px;left:50%;transform:translateX(-50%);width:150px;height:120px;border:2px solid #33302a;border-bottom:0;border-radius:100px 100px 0 0}
+  .bag::after{content:"";position:absolute;top:70px;left:50%;transform:translateX(-50%);width:44px;height:60px;border:2px solid #33302a;border-radius:5px}
+  .badge{position:absolute;top:26px;left:26px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);border:1px solid var(--line);padding:6px 10px;border-radius:3px}
+  .meta{padding:40px 44px;display:flex;flex-direction:column}
+  .lot{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+  .title{font-family:var(--serif);font-size:52px;font-weight:600;line-height:.98;margin-top:14px}
+  .titlerow{display:flex;align-items:flex-start;gap:16px;justify-content:space-between}
+  .chip{flex:none;margin-top:14px;display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:6px 13px;border:1px solid}
+  .chip.v{color:var(--gold);border-color:var(--gold)}
+  .chip.n{color:var(--mut);border-color:var(--line)}
+  .price{font-family:var(--serif);font-size:52px;font-weight:600}
+  .prov{border-top:1px solid var(--line);margin-top:26px;padding-top:20px}
+  .prov .pl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .pr{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
+  .pr .k{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+  .pr .v{font-size:14px;color:var(--soft);line-height:1.5}
+  .buy{margin-top:22px;display:inline-block;border-radius:8px;padding:15px 28px;font-size:14px;font-weight:600;text-align:center}
+  .buy.solid{background:var(--gold);color:#1a140c}
+  .buy.ghost{border:1px solid var(--line);color:var(--soft)}
+  .marketrow{display:flex;align-items:baseline;gap:16px;margin-top:6px}
+  .market{font-size:12px;color:var(--mut)}
+
+  /* ------- BEFORE: price leads, verified premature, buy loud ------- */
+  html.after .b-only{display:none}
+  html.before .a-only{display:none}
+  html.before .badge{border-color:var(--gold);color:var(--gold)}
+</style></head>
+<body>
+  <div class="nav">
+    <span class="brand">DOSSIER</span>
+    <span class="links"><span>Bags</span><span>Shoes</span><span>Accessories</span><span>Watches</span><span style="color:var(--ink)">The Vault</span></span>
+    <span class="r">Search &nbsp; · &nbsp; Account</span>
+  </div>
+  <div class="crumb"><span>Bags / Herm&egrave;s / Lot 0412</span><span>Consigned · Lagos, NG &nbsp; <span class="g">Chip serial PRV-8841-K25</span></span></div>
+  <div class="wrap">
+    <div class="shot">
+      <span class="badge b-only">Chip verified · shown up front</span>
+      <span class="badge a-only">14 images · 3 macro</span>
+      <div class="bag"></div>
+    </div>
+    <div class="meta">
+      <!-- BEFORE: price first, verified badge premature, buy loud -->
+      <div class="b-only">
+        <p class="lot">Lot 0412 · One of one</p>
+        <div class="titlerow">
+          <p class="title">Birkin 25<br>Togo, Gold</p>
+          <span class="chip v">&#10003; Verified</span>
+        </div>
+        <p class="price" style="margin-top:26px">&#8358;24,900,000</p>
+        <a class="buy solid">Buy now</a>
+        <div class="prov" style="opacity:.6">
+          <p class="pl" style="color:var(--mut)">Provenance</p>
+          <p class="pr" style="grid-template-columns:1fr;border:0;padding:6px 0"><span class="v">Details a scroll away, below the fold.</span></p>
+        </div>
+      </div>
+      <!-- AFTER: provenance leads, awaiting-auth honest, price beside market -->
+      <div class="a-only">
+        <p class="lot">Lot 0412 · One of one</p>
+        <div class="titlerow">
+          <p class="title">Birkin 25<br>Togo, Gold</p>
+          <span class="chip n">Awaiting authentication</span>
+        </div>
+        <div class="prov" style="margin-top:22px">
+          <p class="pl">The record</p>
+          <div class="pr"><span class="k">Date stamp</span><span class="v">Blind stamp &ldquo;D&rdquo; · 2019 production</span></div>
+          <div class="pr"><span class="k">Ownership</span><span class="v">Single owner · purchased Herm&egrave;s Paris · receipt on file</span></div>
+          <div class="pr"><span class="k">Examination</span><span class="v">Booked with 2 independent experts</span></div>
+        </div>
+        <div class="marketrow">
+          <span class="price" style="font-size:44px">&#8358;24,900,000</span>
+          <span class="market">Market range &#8358;22.5M &ndash; 26M</span>
+        </div>
+        <a class="buy ghost" style="margin-top:18px">Make an offer · funds held in escrow</a>
+      </div>
+    </div>
+  </div>
+</body></html>

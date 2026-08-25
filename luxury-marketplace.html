@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dossier · Luxury resale marketplace | Omotoyosi Adegbite</title>
+  <meta name="description" content="Dossier, a B2B and B2C ecommerce marketplace for luxury resale where collectors and professional resellers trade high-value bags, shoes and accessories. A user-centered study of trust: proving the piece authentic, the seller real, and the money safe." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --ivory:#0B0A0A;      /* page, matches the portfolio base */
+      --paper:#141210;      /* raised surfaces, matches card */
+      --ink:#F4F0E8;        /* warm off-white */
+      --ink-soft:#B5AD9F;   /* secondary text */
+      --muted:#8B8276;      /* labels / tertiary */
+      --line:rgba(255,255,255,.10);  /* hairlines */
+      --gold:#C6A15B;       /* verified, used sparingly */
+      --gold-soft:rgba(198,161,91,.12);
+      --serif:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      --sans:'Inter', system-ui, -apple-system, sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-text-size-adjust:100%}
+    body{background:var(--ivory);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    ::selection{background:var(--gold);color:#fff}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+
+    .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+    .serif{font-family:var(--serif)}
+    .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
+    .lead{font-size:clamp(18px,2vw,21px);color:var(--ink-soft);line-height:1.7;max-width:56rem}
+    .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+    .rule{height:1px;background:var(--line);border:0}
+    section{padding:clamp(40px,4.5vw,64px) 0}
+    h2.disp{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.6vw,54px);line-height:1.08;letter-spacing:-.01em;max-width:18ch}
+    p.body{font-size:17px;color:var(--ink-soft);line-height:1.75;max-width:60rem}
+    .muted{color:var(--muted)}
+
+    /* top bar */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,10,10,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    header .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+    header a.back{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-soft)}
+    header a.back:hover{color:var(--ink)}
+    header .tag{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+    /* hero */
+    .hero{padding-top:clamp(56px,8vw,104px);padding-bottom:clamp(40px,5vw,64px)}
+    .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,6.4vw,84px);line-height:1.04;letter-spacing:-.015em;max-width:24ch;margin:22px 0 28px}
+
+    /* plate = photography / screen placeholder */
+    .plate{background:var(--paper);border:1px solid var(--line);border-radius:2px;display:grid;place-items:center;text-align:center;color:var(--muted);position:relative;overflow:hidden}
+    .plate .pl{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+    .plate .cap{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink-soft);margin-top:6px}
+    .plate::after{content:"";position:absolute;inset:14px;border:1px solid var(--line);pointer-events:none}
+
+    /* snapshot */
+    .snap{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+    .snap>div{padding:28px 28px;border-right:1px solid var(--line)}
+    .snap>div:first-child{padding-left:0}
+    .snap>div:last-child{border-right:0;padding-right:0}
+    .snap .n{font-family:var(--serif);font-size:15px;color:var(--gold)}
+    .snap .k{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+    .snap .v{font-size:15px;color:var(--ink);margin-top:8px;line-height:1.5;max-width:30ch}
+
+    /* labelled block */
+    .block{margin-top:48px}
+    .lbl{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+
+    /* columns / cards */
+    .cols2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:var(--paper);border:1px solid var(--line);border-radius:2px;padding:32px}
+    .card h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.15}
+    .card p{font-size:15px;color:var(--ink-soft);margin-top:12px;line-height:1.7}
+    .persona .give{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+    .persona .give b{color:var(--ink-soft);font-weight:600}
+    .list{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:12px}
+    .list li{font-size:16px;color:var(--ink-soft);padding-left:20px;position:relative;line-height:1.6}
+    .list li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;background:var(--gold);border-radius:50%}
+
+    /* numbered findings */
+    .numlist{list-style:none;margin-top:6px;border-top:1px solid var(--line)}
+    .numlist li{display:grid;grid-template-columns:46px 1fr;gap:20px;padding:19px 0;border-bottom:1px solid var(--line);align-items:baseline}
+    .numlist .i{font-family:var(--serif);color:var(--gold);font-size:22px}
+    .numlist .t{font-size:17px;color:var(--ink);line-height:1.5;max-width:56rem}
+
+    /* definition list (principles) */
+    .deflist{list-style:none;margin-top:6px}
+    .deflist li{padding:20px 0;border-bottom:1px solid var(--line)}
+    .deflist li:first-child{border-top:1px solid var(--line)}
+    .deflist .dt{font-size:16px;font-weight:600;color:var(--ink)}
+    .deflist .dd{font-size:15px;color:var(--ink-soft);margin-top:7px;line-height:1.65;max-width:60rem}
+
+    /* fixes */
+    .fixes{list-style:none;margin-top:6px;border-top:1px solid var(--line)}
+    .fixes li{padding:24px 0;border-bottom:1px solid var(--line)}
+    .fixes .find{font-size:17px;color:var(--ink);line-height:1.55;max-width:60rem}
+    .fixes .fx{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:16px}
+    .fixes .fd{font-size:15px;color:var(--ink-soft);margin-top:6px;line-height:1.65;max-width:60rem}
+
+    /* trust system strip */
+    .trustbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .pill{font-size:12px;letter-spacing:.04em;color:var(--ink);border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 15px}
+
+    /* dossier */
+    .dossier{display:grid;grid-template-columns:0.9fr 1.1fr;gap:0;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--paper)}
+    .dossier .shot{min-height:520px;background:var(--ivory);border-right:1px solid var(--line);position:relative}
+    .dossier .meta{padding:38px}
+    .dossier .top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+    .dossier .title{font-family:var(--serif);font-size:30px;font-weight:500;line-height:1.1}
+    .dossier .sub{font-size:13px;color:var(--muted);margin-top:6px;letter-spacing:.02em}
+    .verified{display:inline-flex;align-items:center;gap:7px;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:6px 12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;white-space:nowrap}
+    .verified svg{width:13px;height:13px}
+    .fields{margin-top:26px;border-top:1px solid var(--line)}
+    .field{display:grid;grid-template-columns:132px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}
+    .field .fl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+    .field .fv{font-size:14px;color:var(--ink-soft);line-height:1.6}
+    .price{display:flex;align-items:baseline;gap:14px;margin-top:26px}
+    .price .amt{font-family:var(--serif);font-size:34px;font-weight:500;color:var(--ink)}
+    .price .prov{font-size:13px;color:var(--muted)}
+    /* the listing renders as the ivory product surface, even on the dark page */
+    .dossier{color:var(--ink);--ivory:#F5F1E8;--paper:#FBF9F3;--ink:#17130E;--ink-soft:#4C443B;--muted:#8C8175;--line:#E4DCCB;--gold:#A9833F}
+    .dossier .title{color:var(--ink)}
+
+    /* trust flow */
+    .flow{margin-top:8px;border-left:1px solid var(--line);padding-left:0}
+    .stage{display:grid;grid-template-columns:56px 1fr;gap:22px;padding:22px 0;border-bottom:1px solid var(--line)}
+    .stage:last-child{border-bottom:0}
+    .stage .idx{font-family:var(--serif);font-size:20px;color:var(--muted);text-align:right;padding-right:22px;border-right:1px solid var(--line)}
+    .stage.key .idx{color:var(--gold)}
+    .stage h4{font-size:16px;font-weight:600;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+    .stage h4 .v{color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--gold);border-radius:999px;padding:2px 8px}
+    .stage p{font-size:14px;color:var(--ink-soft);margin-top:6px;line-height:1.6}
+    .stage .next{font-size:12.5px;color:var(--muted);margin-top:8px}
+    .stage .next b{color:var(--ink-soft);font-weight:600}
+
+    /* escrow tracker illustration */
+    .etrack-wrap{overflow-x:auto;margin-top:26px}
+    .etrack{position:relative;min-width:820px}
+    .etrack .rail{position:absolute;left:7.14%;right:7.14%;top:29px;height:2px;background:var(--line)}
+    .etrack .railheld{position:absolute;left:35.7%;right:21.43%;top:29px;height:2px;background:var(--gold)}
+    .etrack .nodes{position:relative;display:grid;grid-template-columns:repeat(7,1fr)}
+    .enode{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 6px}
+    .edot{width:58px;height:58px;border-radius:50%;border:1px solid var(--line);background:var(--paper);display:grid;place-items:center;color:var(--ink-soft)}
+    .edot svg{width:24px;height:24px}
+    .enode.key .edot{border-color:var(--gold);color:var(--gold);box-shadow:0 0 0 5px var(--gold-soft)}
+    .ename{font-size:13px;font-weight:600;color:var(--ink);margin-top:14px;line-height:1.2}
+    .edesc{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.4;max-width:16ch}
+    .eheld{margin-top:20px;display:grid;grid-template-columns:repeat(7,1fr)}
+    .eheld .lbl2{grid-column:3 / 7;border-top:1px solid var(--gold);padding-top:9px;text-align:center;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+
+    .callout{margin-top:28px;border:1px solid var(--line);background:var(--paper);border-radius:2px;padding:26px 30px}
+    .callout .l{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
+    .callout p{font-size:15px;color:var(--ink-soft);margin-top:10px;line-height:1.7;max-width:60rem}
+
+    /* design language strip */
+    .dl{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start}
+    .sw{display:flex;gap:14px;flex-wrap:wrap}
+    .swatch{flex:1;min-width:120px;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+    .swatch .chip{height:96px}
+    .swatch .meta{padding:12px 14px;background:var(--paper)}
+    .swatch .nm{font-size:13px;color:var(--ink)}
+    .swatch .hx{font-size:11px;color:var(--muted);font-family:var(--sans);letter-spacing:.03em;margin-top:2px}
+    .type .row{border:1px solid var(--line);background:var(--paper);border-radius:2px;padding:22px 24px}
+    .type .row+.row{margin-top:14px}
+    .type .rl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+    /* ---- UX artifacts ---- */
+    .prole{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:6px}
+    .pquote{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--ink);line-height:1.35;margin-top:16px}
+
+    .cardsort{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:6px}
+    .csg{border:1px solid var(--line);border-radius:2px;background:var(--paper);padding:16px}
+    .csg h4{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600}
+    .csg .cc{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+    .csg .cc span{font-size:13px;color:var(--ink);background:var(--ivory);border:1px solid var(--line);border-radius:4px;padding:8px 10px;line-height:1.2}
+
+    .hmw{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.4vw,40px);line-height:1.2;letter-spacing:-.01em;max-width:48rem;color:var(--ink)}
+    .hmw em{font-style:normal;color:var(--gold)}
+    .hmwsub{list-style:none;margin-top:26px}
+    .hmwsub li{padding:15px 0;border-bottom:1px solid var(--line);font-size:16px;color:var(--ink-soft);max-width:60rem}
+    .hmwsub li:first-child{border-top:1px solid var(--line)}
+
+    .jmap-wrap{overflow-x:auto;margin-top:6px;border:1px solid var(--line);border-radius:2px}
+    .jmap{min-width:940px;display:grid;grid-template-columns:128px repeat(7,1fr)}
+    .jmap>div{padding:14px 15px;border-right:1px solid var(--line);border-top:1px solid var(--line)}
+    .jmap>div:nth-child(8n){border-right:0}
+    .jmap .rl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--paper)}
+    .jmap .st{font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.1;background:var(--paper)}
+    .jmap .cell{font-size:12.5px;color:var(--ink-soft);line-height:1.45}
+    .jmap .emo{font-size:12px;color:var(--muted)}
+    .jmap .mtr{display:inline-flex;gap:3px;margin-top:8px}
+    .jmap .mtr i{width:7px;height:7px;border-radius:50%;border:1px solid var(--gold)}
+    .jmap .mtr i.on{background:var(--gold)}
+    .jmap .top0{border-top:0}
+
+    .uflow-lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:600;margin:26px 0 12px}
+    .uflow{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+    .uflow .node{font-size:13px;color:var(--ink);border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:9px 15px;white-space:nowrap}
+    .uflow .node.start{border-color:var(--gold);color:var(--gold)}
+    .uflow .node.gate{border-color:var(--gold);color:var(--gold);font-style:italic}
+    .uflow .arw{color:var(--muted);font-size:13px}
+
+    /* branching flowcharts */
+    .flow-scroll{overflow-x:auto;margin-top:14px}
+    .flowsvg{display:block;width:100%;min-width:920px;height:auto}
+    .flowsvg .box{fill:var(--paper);stroke:var(--line);stroke-width:1.5}
+    .flowsvg .box.gate,.flowsvg .box.start,.flowsvg .box.term{stroke:var(--gold)}
+    .flowsvg .dia{fill:var(--paper);stroke:var(--line);stroke-width:1.5}
+    .flowsvg .dia.gate{stroke:var(--gold)}
+    .flowsvg .t{fill:var(--ink);font-family:var(--sans);font-size:13px;font-weight:600}
+    .flowsvg .t.sm{font-size:11.5px;font-weight:500;fill:var(--ink-soft)}
+    .flowsvg .t.g{fill:var(--gold)}
+    .flowsvg .con{stroke:var(--muted);stroke-width:1.5;fill:none}
+    .flowsvg .con.g{stroke:var(--gold)}
+    .flowsvg .yn{fill:var(--muted);font-family:var(--sans);font-size:10.5px;letter-spacing:.09em}
+    .flowsvg .amk{fill:var(--muted)}
+    .flowsvg .amk.g{fill:var(--gold)}
+    .flowsvg .box.dash{stroke-dasharray:5 4}
+    .flowsvg .t2{fill:var(--ink-soft);font-family:var(--sans);font-size:10px;font-weight:500}
+    .uends{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+    .uend{border:1px dashed var(--line);border-radius:4px;padding:14px 16px}
+    .uend .et{font-size:14px;font-weight:600;color:var(--ink)}
+    .uend .ed{font-size:12.5px;color:var(--ink-soft);margin-top:6px;line-height:1.5}
+    .ufoot{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+    .ufoot .fl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600}
+    .ufoot p{font-size:13px;color:var(--ink-soft);margin-top:9px;line-height:1.55}
+
+    /* ---- research artifacts board ---- */
+    .rboard{margin-top:22px;border:1px solid var(--line);border-radius:3px;background:rgba(255,255,255,.02);padding:clamp(20px,3vw,32px);display:grid;grid-template-columns:1.12fr 1fr;gap:20px;align-items:start}
+    .rcol{display:flex;flex-direction:column;gap:20px}
+    .rforum{background:#17140f;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+    .rforum .fh{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 15px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+    .rforum .fh .ft{font-size:12px;font-weight:600;color:var(--ink)}
+    .rforum .fh .fu{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .rmsg{display:flex;gap:10px;padding:12px 15px;border-bottom:1px solid var(--line)}
+    .rmsg:last-child{border-bottom:0}
+    .rav{width:26px;height:26px;border-radius:50%;flex:none;background:var(--gold-soft);border:1px solid rgba(198,161,91,.4)}
+    .rmb .ru{font-size:11px;color:var(--gold);font-weight:600}
+    .rmb .rt{font-size:13px;color:var(--ink-soft);margin-top:3px;line-height:1.45}
+    .raudit{background:#17140f;border:1px solid var(--line);border-radius:5px;padding:15px 17px}
+    .raudit .at{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px}
+    .ratab{width:100%;border-collapse:collapse}
+    .ratab th{font-weight:500;color:var(--muted);text-align:center;padding:4px 4px;font-size:9.5px;letter-spacing:.02em;text-transform:uppercase}
+    .ratab th:first-child{text-align:left}
+    .ratab td{padding:7px 4px;border-top:1px solid var(--line);text-align:center;color:var(--ink-soft);font-size:12px}
+    .ratab td:first-child{text-align:left;color:var(--ink)}
+    .ratab .y{color:var(--gold)}.ratab .n{color:var(--muted)}
+    .raudit .an{font-size:11.5px;color:var(--gold);margin-top:12px;line-height:1.5}
+    .rclip{background:#F1ECE1;color:#241f18;border-radius:3px;padding:20px 22px;box-shadow:0 10px 26px -14px rgba(0,0,0,.65);transform:rotate(-1.2deg)}
+    .rclip .cl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9a7d3f;font-weight:700}
+    .rclip .cq{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.35;display:block;margin-top:8px;color:#241f18}
+    .rclip .cc{font-size:11px;color:#8a7f6a;margin-top:12px}
+    .rsticky{display:flex;flex-wrap:wrap;gap:14px}
+    .rnote{background:#E7D9B6;color:#2a2413;border-radius:2px;padding:15px 16px;font-size:13px;font-weight:600;line-height:1.4;box-shadow:0 8px 20px -14px rgba(0,0,0,.6);flex:1 1 calc(50% - 7px)}
+    .rnote .pin{width:8px;height:8px;border-radius:50%;background:var(--gold);display:block;margin-bottom:9px}
+    .rnote:nth-child(1){transform:rotate(-2deg)}.rnote:nth-child(2){transform:rotate(1.6deg)}.rnote:nth-child(3){transform:rotate(-1deg);flex-basis:100%}
+
+    /* ---- light document sheets: IA + task flows ---- */
+    .sheet{--ground:#F6F2EA;--surface:#FCFAF5;--shade:#ECE6DA;--dink:#17130E;--dink2:#4C443B;--dmut:#8C8175;--dln:#E1D8C7;--dacc:#A9833F;
+      background:var(--ground);color:var(--dink);border:1px solid rgba(255,255,255,.10);border-radius:3px;padding:clamp(24px,3.4vw,44px);margin-top:16px;overflow-x:auto}
+    .sheet .shead{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+    .sheet .slab{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dacc);font-weight:600}
+    .sheet .smeta{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dmut);text-align:right;line-height:1.8}
+    .sheet .stitle{font-family:var(--serif);font-size:clamp(26px,3.4vw,40px);font-weight:500;color:var(--dink);line-height:1.04;margin-top:8px;max-width:22ch}
+    .sheet .sintro{font-size:14px;color:var(--dink2);line-height:1.6;max-width:36ch}
+    .sheet .sdiv{border-top:1px solid var(--dln);margin:22px 0}
+    .sheet .slabel{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dacc);font-weight:600;margin:26px 0 14px}
+    .sheet .snote{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dmut);text-align:center;margin:8px 0}
+    .sheet .bx{background:var(--surface);border:1px solid var(--dln);border-radius:2px;padding:15px 17px}
+    .sheet .bx.shade{background:var(--shade)}
+    .sheet .bx.gate{border-color:var(--dacc)}
+    .sheet .bx.dash{border-style:dashed;border-color:var(--dacc);background:var(--ground)}
+    .sheet .bx .rl{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--dacc);font-weight:600}
+    .sheet .bx .rl .m{color:var(--dmut)}
+    .sheet .bx .nm{font-family:var(--serif);font-size:21px;font-weight:500;color:var(--dink);margin-top:5px;line-height:1.08}
+    .sheet .bx .sb{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--dmut);margin-top:9px;line-height:1.55}
+    .sheet .bx .dsc{font-size:12.5px;color:var(--dink2);margin-top:8px;line-height:1.45}
+    .sheet .zone{display:grid;grid-template-columns:172px 1fr;gap:22px;padding:24px 0;border-top:1px solid var(--dln)}
+    .sheet .zh .zl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dacc);font-weight:600}
+    .sheet .zh .zt{font-family:var(--serif);font-size:26px;font-weight:500;margin-top:5px;color:var(--dink)}
+    .sheet .zh .zp{font-size:13px;color:var(--dmut);margin-top:10px;line-height:1.5}
+    .sheet .zgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;align-content:start}
+    .sheet .tflow{display:flex;flex-wrap:wrap;gap:13px;align-items:stretch}
+    .sheet .tflow .bx{flex:1 1 220px;max-width:280px;min-width:200px}
+    .sheet .tflow .ar{align-self:center;color:var(--dmut);font-size:15px}
+    .sheet .ends{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+    .sheet .ends .bx{border-style:dashed}
+    .sheet .ends .nm{font-size:18px}
+    .sheet .sfoot{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:30px;padding-top:24px;border-top:1px solid var(--dln)}
+    .sheet .sfoot .fl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dacc);font-weight:600}
+    .sheet .sfoot p{font-size:13.5px;color:var(--dink2);margin-top:10px;line-height:1.55}
+    .sheet .legend{display:flex;gap:20px;flex-wrap:wrap}
+    .sheet .legend span{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--dink2)}
+    .sheet .legend i{width:26px;height:16px;border:1px solid var(--dln);border-radius:2px}
+    .sheet .legend i.shade{background:var(--shade)}
+    .sheet .legend i.dash{border-style:dashed;border-color:var(--dacc)}
+
+    .wires{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+    .wf{background:#ECEAE4;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+    .wf .wbar{height:28px;background:#E0DDD5;border-bottom:1px solid #D6D2C8;display:flex;align-items:center;gap:5px;padding:0 11px}
+    .wf .wbar i{width:7px;height:7px;border-radius:50%;background:#C6C1B6}
+    .wf .wbd{padding:16px;display:flex;flex-direction:column;gap:10px;min-height:236px}
+    .wf .wl{height:9px;border-radius:2px;background:#D6D2C9}
+    .wf .wl.s{width:38%}.wf .wl.m{width:62%}.wf .wl.l{width:86%}
+    .wf .wbox{background:#D8D4CB;border-radius:2px;flex:1;min-height:70px}
+    .wf .wrow{display:flex;gap:8px}
+    .wf .wrow>div{flex:1;background:#D8D4CB;border-radius:2px;height:56px}
+    .wf .wgold{height:9px;width:32%;border-radius:2px;background:#CDB07A}
+    .wf .wcap{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#A49E90;text-align:center;padding:0 0 12px}
+
+    /* closing */
+    .closing{text-align:center;padding:clamp(80px,11vw,150px) 0}
+    .closing p{font-family:var(--serif);font-weight:500;font-size:clamp(26px,4vw,44px);line-height:1.24;letter-spacing:-.01em;max-width:52rem;margin:0 auto;color:var(--ink)}
+    .explore a{color:var(--gold);font-size:14px;letter-spacing:.02em;border-bottom:1px solid var(--gold);padding-bottom:3px}
+
+    /* footer */
+    footer{border-top:1px solid var(--line);padding:56px 0 64px}
+    .next{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:30px 0;border-bottom:1px solid var(--line);margin-bottom:40px}
+    .next .nl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+    .next .nt{font-family:var(--serif);font-size:clamp(24px,3.4vw,36px);font-weight:500}
+    .foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+    .foot a:hover{color:var(--ink)}
+
+    .mt-s{margin-top:20px}.mt-m{margin-top:40px}.mt-l{margin-top:64px}
+    @media(max-width:1000px){
+      .snap{grid-template-columns:repeat(2,1fr)}
+      .snap>div:nth-child(2n){border-right:0}
+      .cols3,.cols2,.dl{grid-template-columns:1fr}
+      .cardsort{grid-template-columns:repeat(2,1fr)}
+      .wires{grid-template-columns:1fr}
+      .sheet .zone{grid-template-columns:1fr}
+      .sheet .zgrid,.sheet .ends{grid-template-columns:repeat(2,1fr)}
+      .sheet .sfoot{grid-template-columns:1fr}
+      .uends{grid-template-columns:repeat(2,1fr)}
+      .ufoot{grid-template-columns:1fr}
+      .rboard{grid-template-columns:1fr}
+    }
+    @media(max-width:820px){
+      .snap{grid-template-columns:1fr}
+      .snap>div{border-right:0;border-bottom:1px solid var(--line);padding-right:0}
+      .dossier{grid-template-columns:1fr}
+      .dossier .shot{min-height:340px;border-right:0;border-bottom:1px solid var(--line)}
+    }
+
+    /* ---- video facade (image poster, loads player on click) ---- */
+    .ytwrap{border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:16px;position:relative;aspect-ratio:16/9}
+    .ytf{position:absolute;inset:0;width:100%;height:100%;border:0;cursor:pointer;display:grid;place-items:center;color:inherit;background:var(--paper)}
+    .ytf .ytf-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:0}
+    .ytf::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(11,10,10,.22), rgba(11,10,10,.5));z-index:1}
+    .ytf::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.14);pointer-events:none;z-index:2}
+    .ytf .pbtn{position:relative;z-index:2;width:78px;height:78px;border-radius:50%;border:1px solid var(--gold);background:rgba(20,18,16,.5);display:grid;place-items:center;color:var(--gold);transition:transform .2s ease, background .2s ease, color .2s ease}
+    .ytf:hover .pbtn{transform:scale(1.06);background:var(--gold);color:#1a140c}
+    .ytf .pbtn svg{width:26px;height:26px;margin-left:4px}
+    .ytf .plbl{position:absolute;z-index:2;bottom:20px;left:0;right:0;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+    .ytf:focus-visible{outline:2px solid var(--gold);outline-offset:-5px}
+    .ytf-plain{background:radial-gradient(130% 130% at 50% 0%, rgba(198,161,91,.10), transparent 62%), var(--paper)}
+    .ytf-plain::before{display:none}
+    .ytwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .demovid{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;display:block}
+
+    /* ---- before / after (what testing changed) ---- */
+    .ba{margin-top:22px;display:flex;flex-direction:column;gap:22px}
+    .bafix{border:1px solid var(--line);border-radius:4px;background:rgba(255,255,255,.015);padding:24px}
+    .bahd{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+    .bahd .ban{font-family:var(--serif);font-size:20px;color:var(--gold)}
+    .bahd .bat{font-size:16px;font-weight:600;color:var(--ink)}
+    .bapair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .balbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;display:block;margin-bottom:8px}
+    .balbl.before{color:var(--muted)}
+    .balbl.after{color:var(--gold)}
+    .baframe{border:1px solid var(--line);border-radius:3px;background:var(--paper);padding:18px;min-height:132px;display:flex;flex-direction:column;justify-content:center}
+    .baframe.before{border-style:dashed}
+    .bacap{font-size:13.5px;color:var(--ink-soft);margin-top:16px;line-height:1.55;max-width:64rem}
+    .ba-lead{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .ba-title{font-family:var(--serif);font-size:20px;color:var(--ink)}
+    .ba-price{font-family:var(--serif);font-size:26px;color:var(--ink)}
+    .ba-note{font-size:10.5px;color:var(--muted);margin-top:10px}
+    .ba-line{font-size:13px;color:var(--ink-soft)}
+    .ba-btn{align-self:flex-start;border-radius:6px;padding:9px 16px;font-size:12px;font-weight:600}
+    .ba-btn.warn{background:rgba(176,106,91,.14);border:1px solid rgba(176,106,91,.55);color:#d3a08d}
+    .ba-chip{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.06em;border-radius:999px;padding:4px 11px;border:1px solid}
+    .ba-chip.v{color:var(--gold);border-color:var(--gold)}
+    .ba-chip.n{color:var(--muted);border-color:var(--line)}
+    .ba-status{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink)}
+    @media(max-width:820px){.bapair{grid-template-columns:1fr}}
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <header>
+    <div class="wrap bar">
+      <a class="back" href="index.html#work">&larr;&nbsp; Back to all work</a>
+      <span class="tag">B2B &amp; B2C ecommerce</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Luxury Marketplace &nbsp;·&nbsp; B2B &amp; B2C &nbsp;·&nbsp; Web UI/UX</p>
+      <h1>Where a Birkin changes hands without a leap of faith</h1>
+      <p class="lead">Dossier is a luxury resale marketplace on the web, serving individual collectors and professional resellers, B2C and B2B, who buy, sell, and trade high-value bags, shoes, and accessories. Nobody clicks &ldquo;add to cart&rdquo; on a &#8358;25 million handbag, and in this market the fear has one name: fakes. The design problem is trust at every step, proving the piece is authentic, the seller is real, and the money is safe, without making the experience feel like an interrogation.</p>
+    </div>
+  </section>
+
+  <!-- HERO PLATE -->
+  <div class="wrap">
+    <img width="2012" height="1695" fetchpriority="high" decoding="async" src="assets/dossier-hero.webp" alt="The Dossier marketplace homepage on a desktop display: the hero line 'A Birkin changes hands here without a leap of faith', a note that every piece is read before listing and the money sits in escrow until examiners clear it, and a how-it-works row answering is it real, is the seller real, is my money safe." style="width:100%;height:auto;display:block;margin-top:6px" />
+  </div>
+
+  <!-- SNAPSHOT -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">The snapshot</p>
+      <div class="snap mt-m">
+        <div><p class="n">01</p><p class="k">Challenge</p><p class="v">Make a high-value purchase feel as considered as the object itself.</p></div>
+        <div><p class="n">02</p><p class="k">My role</p><p class="v">Product definition, UX/UI, end to end.</p></div>
+        <div><p class="n">03</p><p class="k">Approach</p><p class="v">User-centered design, research through iteration.</p></div>
+        <div><p class="n">04</p><p class="k">Outcome</p><p class="v">A design language, in light and dark surfaces, and a set of flows built around authentication, provenance, and calm.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A USER-CENTERED PROCESS -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Approach</p>
+      <h2 class="disp mt-s">A user-centered process</h2>
+      <p class="body mt-m">Every decision in Dossier traces to something a person does, fears, or needs. The work put empathy before assumptions, choosing to sit with the fear of fakes before proposing a cure. It valued real feedback over guesswork, testing each flow against persona scripts rather than taste. It treated refinement as continuous rather than a final polish, and it held accessibility as a floor the design stands on, not a feature added at the end.</p>
+    </div>
+  </section>
+
+  <!-- 1 · RESEARCH -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">01 · Research</p>
+      <h2 class="disp mt-s">Understanding the people</h2>
+
+      <div class="rboard mt-l">
+        <div class="rcol">
+          <div class="rforum">
+            <div class="fh"><span class="ft">The Purse Forum</span><span class="fu">Authenticate this</span></div>
+            <div class="rmsg"><span class="rav"></span><div class="rmb"><p class="ru">baglover_92</p><p class="rt">Please help, is this Birkin real? The seller has no receipt and the price feels too good.</p></div></div>
+            <div class="rmsg"><span class="rav"></span><div class="rmb"><p class="ru">authenticate_pro</p><p class="rt">Blind stamp font is wrong and the stitch angle is off. Walk away.</p></div></div>
+            <div class="rmsg"><span class="rav"></span><div class="rmb"><p class="ru">burned_once</p><p class="rt">Lost &pound;4,000 to a super fake last year. I will not buy pre-owned again without proof.</p></div></div>
+          </div>
+          <div class="raudit">
+            <p class="at">Competitive audit · trust features</p>
+            <table class="ratab">
+              <thead><tr><th>Platform</th><th>In-hand auth</th><th>Escrow</th><th>Public seller record</th></tr></thead>
+              <tbody>
+                <tr><td>Vestiaire</td><td class="y">&check;</td><td class="n">&times;</td><td class="n">&times;</td></tr>
+                <tr><td>The RealReal</td><td class="y">&check;</td><td class="n">&times;</td><td class="n">&times;</td></tr>
+                <tr><td>Fashionphile</td><td class="y">&check;</td><td class="n">&times;</td><td class="n">&times;</td></tr>
+                <tr><td>Rebag</td><td class="y">&check;</td><td class="n">&times;</td><td class="n">&times;</td></tr>
+              </tbody>
+            </table>
+            <p class="an">No one pairs in-hand authentication with visible escrow and a public seller record. That gap is the opening.</p>
+          </div>
+        </div>
+        <div class="rcol">
+          <div class="rclip">
+            <p class="cl">Horror story · resale forum</p>
+            <span class="cq">&ldquo;I wired &euro;12,000 for a pristine Kelly. What arrived was a convincing counterfeit, and the platform sided with the seller.&rdquo;</span>
+            <p class="cc">Collected from buyer community threads, 2024</p>
+          </div>
+          <div class="rsticky">
+            <div class="rnote"><span class="pin"></span>A badge with no name behind it reads as marketing.</div>
+            <div class="rnote"><span class="pin"></span>The moment money moves is peak fear, for both sides.</div>
+            <div class="rnote"><span class="pin"></span>Sellers with a clean past have no way to prove it.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="lbl">What I did</p>
+        <p class="body">With no live user base to interview, I used the honest equivalents: market research on the resale category, weeks reading buyer and seller community forums, a study of the resale horror stories people share, a competitive audit of the existing luxury resale platforms, and synthetic persona sessions run against early flows.</p>
+      </div>
+
+      <div class="block">
+        <p class="lbl">Personas</p>
+        <div class="cols3 mt-s">
+          <div class="card persona">
+            <h3>The burned buyer</h3>
+            <p class="prole">B2C · high-value collector</p>
+            <p class="pquote">&ldquo;I have been fooled once. I will not spend this kind of money on a maybe.&rdquo;</p>
+            <p>Has paid 5 figures before and been handed a fake, or watched it happen to someone close. Wants certainty far more than a bargain.</p>
+            <p class="give"><b>Gives up when</b> proof starts to feel like marketing.</p>
+          </div>
+          <div class="card persona">
+            <h3>The individual seller</h3>
+            <p class="prole">B2C · one grail piece</p>
+            <p class="pquote">&ldquo;It is real, it is mine, and I can prove none of it.&rdquo;</p>
+            <p>Has one grail piece to move and a clean history, but no instrument to prove either. Wants a fair price without feeling accused.</p>
+            <p class="give"><b>Gives up when</b> listing feels like a customs interrogation.</p>
+          </div>
+          <div class="card persona">
+            <h3>The trade reseller</h3>
+            <p class="prole">B2B · 30 pieces a month</p>
+            <p class="pquote">&ldquo;Give me proof I can move fast, or I sell somewhere else.&rdquo;</p>
+            <p>Moves 30 pieces a month and lives on margin and speed. Wants the same proof standard to be the fast path, not the friction.</p>
+            <p class="give"><b>Gives up when</b> the console fights their volume.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="lbl">Card sorting</p>
+        <p class="body" style="margin-bottom:22px">An open card sort of 22 features shaped the screen groupings. Participants grouped proof with the piece, not with the account, so authentication and history live on the listing itself.</p>
+        <div class="cardsort">
+          <div class="csg"><h4>The piece</h4><div class="cc"><span>Photography</span><span>Condition report</span><span>Materials</span><span>Date stamp</span><span>Measurements</span></div></div>
+          <div class="csg"><h4>Proof &amp; trust</h4><div class="cc"><span>Authentication</span><span>Ownership history</span><span>Seller record</span><span>Escrow state</span></div></div>
+          <div class="csg"><h4>Money &amp; delivery</h4><div class="cc"><span>Price</span><span>Make an offer</span><span>Shipping</span><span>Returns</span></div></div>
+          <div class="csg"><h4>Selling</h4><div class="cc"><span>List an item</span><span>My inventory</span><span>Offers</span><span>Payouts</span></div></div>
+          <div class="csg"><h4>Me</h4><div class="cc"><span>Saved</span><span>Watching</span><span>Account</span><span>Settings</span></div></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="lbl">What the research found</p>
+        <ol class="numlist">
+          <li><span class="i">01</span><span class="t">Buyers do not fear high prices, they fear fakes at high prices.</span></li>
+          <li><span class="i">02</span><span class="t">Sellers with clean histories have no instrument to prove them.</span></li>
+          <li><span class="i">03</span><span class="t">Both sides distrust the single moment the money moves.</span></li>
+          <li><span class="i">04</span><span class="t">A badge that says verified, with nothing behind it, reads as marketing, not proof.</span></li>
+          <li><span class="i">05</span><span class="t">Speed and certainty are treated as opposites, when resellers need both at once.</span></li>
+        </ol>
+      </div>
+
+      <div class="block">
+        <p class="lbl">Empathy first, in practice</p>
+        <p class="body">The insight that reframed the project was quiet: neither party actually wants to be trusted. The buyer does not want to extend faith, and the seller does not want to ask for it. What both want is to stop needing trust at all, to replace a leap of faith with a chain of evidence. From then on, every screen moved away from persuasion and toward proof.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · DEFINE -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">02 · Define</p>
+      <h2 class="disp mt-s">Naming the problem</h2>
+
+      <div class="block" style="margin-top:8px">
+        <p class="lbl">The problem statement</p>
+        <p class="serif" style="font-size:clamp(24px,3.2vw,34px);font-weight:500;line-height:1.25;max-width:54rem;color:var(--ink)">A buyer paying 5 figures for a pre-owned piece has no instrument for certainty except the seller&rsquo;s word, and the seller has no way to offer more than it.</p>
+      </div>
+
+      <div class="block">
+        <p class="lbl">How might we</p>
+        <p class="hmw">How might we replace a leap of faith with a <em>chain of evidence</em>, at every step of a high-value sale?</p>
+        <ul class="hmwsub">
+          <li>How might we let a seller prove a clean history without it reading as a sales pitch?</li>
+          <li>How might we make the moment money moves feel safe to both sides at once?</li>
+          <li>How might we give a reseller speed and a collector patience from one system?</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <p class="lbl">User journey map · the buyer</p>
+        <p class="body" style="margin-bottom:22px">Certainty runs lowest exactly where the stakes run highest, the offer and the moment money moves. The design spends its strongest reassurance there.</p>
+        <div class="jmap-wrap">
+          <div class="jmap">
+            <div class="rl top0">Stage</div>
+            <div class="st top0">Discover</div>
+            <div class="st top0">Consider</div>
+            <div class="st top0">Offer</div>
+            <div class="st top0">Fund escrow</div>
+            <div class="st top0">Authentication</div>
+            <div class="st top0">Receive</div>
+            <div class="st top0">Live with it</div>
+
+            <div class="rl">Doing</div>
+            <div class="cell">Browses by house, era, rarity</div>
+            <div class="cell">Opens the dossier, reads the proof</div>
+            <div class="cell">Makes an offer at or below asking</div>
+            <div class="cell">Funds escrow; money is held safe</div>
+            <div class="cell">Waits while experts examine</div>
+            <div class="cell">Unboxes the verified piece</div>
+            <div class="cell">Owns it, may relist later</div>
+
+            <div class="rl">Feeling</div>
+            <div class="cell"><span class="emo">Curious</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></div>
+            <div class="cell"><span class="emo">Cautious</span><span class="mtr"><i class="on"></i><i></i><i></i></span></div>
+            <div class="cell"><span class="emo">Exposed</span><span class="mtr"><i class="on"></i><i></i><i></i></span></div>
+            <div class="cell"><span class="emo">Nervous</span><span class="mtr"><i class="on"></i><i></i><i></i></span></div>
+            <div class="cell"><span class="emo">Reassured</span><span class="mtr"><i class="on"></i><i class="on"></i><i></i></span></div>
+            <div class="cell"><span class="emo">Relieved</span><span class="mtr"><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+            <div class="cell"><span class="emo">Confident</span><span class="mtr"><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+
+            <div class="rl">Opportunity</div>
+            <div class="cell">Lead the grid with proof cues</div>
+            <div class="cell">Price beside provenance, not alone</div>
+            <div class="cell">State exactly what an offer commits</div>
+            <div class="cell">Make escrow visible and reversible</div>
+            <div class="cell">Show the checklist as it happens</div>
+            <div class="cell">Carry the record onto the piece</div>
+            <div class="cell">One tap to relist, history intact</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="lbl">The design principles</p>
+        <ul class="deflist">
+          <li><p class="dt">Evidence over assertion</p><p class="dd">Nothing claims to be true without showing why, so every status links to what backs it.</p></li>
+          <li><p class="dt">The examiner decides</p><p class="dd">Authenticity is settled by an independent expert, never by either party&rsquo;s confidence, which removed self-verification from the flow entirely.</p></li>
+          <li><p class="dt">Ask only what the step needs</p><p class="dd">Each screen requests the one detail it cannot proceed without, so proof never turns into an interrogation.</p></li>
+          <li><p class="dt">Name the consequence</p><p class="dd">Every action states what it will do before it is taken, including the option to walk away.</p></li>
+          <li><p class="dt">The record outlives the sale</p><p class="dd">Ownership and outcomes persist on the piece and on the seller, so history compounds instead of resetting with each listing.</p></li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <p class="lbl">Success criteria</p>
+        <ul class="list" style="max-width:60rem">
+          <li>A first-time buyer can explain why a piece is trustworthy without reading help text.</li>
+          <li>A seller can list a piece and see exactly what proof is required before price is set.</li>
+          <li>At the moment money moves, both sides can name what happens next and how to stop it.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · DESIGN -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">03 · Design</p>
+      <h2 class="disp mt-s">Building the solution</h2>
+
+      <div class="block">
+        <p class="lbl">From structure to screens</p>
+        <p class="body">The build went flows first, then wireframes, then high fidelity. Three structural decisions carried the product. The listing became a dossier, a file an expert prepared, which answers the fear of fakes with evidence instead of a badge. The transaction became a staged, visible escrow tracker, which answers the fear of the moment money moves by making every stage legible. The seller gained a public record that carries outcomes, which answers the unprovable history by letting a clean past accumulate in the open.</p>
+        <p class="kicker mt-m" style="color:var(--muted)">One trust system, on every listing</p>
+        <div class="trustbar"><span class="pill">Authentication status</span><span class="pill">Ownership history</span><span class="pill">Escrow state</span></div>
+      </div>
+      <!-- information architecture -->
+      <div class="block">
+        <p class="lbl">Information architecture</p>
+        <p class="body">27 screens across 3 access zones. The account you hold decides which zone opens; proof lives on the listing, and the seller record is written by the system, not the seller.</p>
+        <div class="flow-scroll">
+<svg class="flowsvg" style="min-width:2060px" viewBox="0 0 2060 980" role="img" aria-label="Information architecture tree: 27 screens across 3 access zones">
+<defs><marker id="m" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path class="amk" d="M0 0 L6 3 L0 6 Z"/></marker><marker id="mg" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path class="amk g" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
+<rect class="box start" x="718.0" y="60" width="220" height="64" rx="9"/><text class="t" x="828.0" y="80" text-anchor="middle" dominant-baseline="central">Zone 1 · Public</text><text class="t2" x="828.0" y="98" text-anchor="middle" dominant-baseline="central">No account</text>
+<path class="con" d="M828.0 124 V168"/>
+<path class="con" d="M100.0 168 H1556.0"/>
+<path class="con" d="M100.0 168 V200" marker-end="url(#m)"/>
+<rect class="box" x="16.0" y="200" width="168" height="60" rx="9"/><text class="t" x="100.0" y="230.0" text-anchor="middle" dominant-baseline="central">Home</text>
+<path class="con" d="M282.0 168 V200" marker-end="url(#m)"/>
+<rect class="box" x="198.0" y="200" width="168" height="60" rx="9"/><text class="t" x="282.0" y="220" text-anchor="middle" dominant-baseline="central">Catalogue</text><text class="t2" x="282.0" y="238" text-anchor="middle" dominant-baseline="central">Bags · Shoes · Watches</text>
+<path class="con" d="M464.0 168 V200" marker-end="url(#m)"/>
+<rect class="box" x="380.0" y="200" width="168" height="60" rx="9"/><text class="t" x="464.0" y="220" text-anchor="middle" dominant-baseline="central">The piece</text><text class="t2" x="464.0" y="238" text-anchor="middle" dominant-baseline="central">Plates · Condition ·</text><text class="t2" x="464.0" y="251" text-anchor="middle" dominant-baseline="central">Price</text>
+<path class="con" d="M646.0 168 V200" marker-end="url(#m)"/>
+<rect class="box" x="562.0" y="200" width="168" height="60" rx="9"/><text class="t" x="646.0" y="220" text-anchor="middle" dominant-baseline="central">The dossier</text><text class="t2" x="646.0" y="238" text-anchor="middle" dominant-baseline="central">Six plates, sealed</text>
+<path class="con" d="M828.0 168 V200" marker-end="url(#m)"/>
+<rect class="box" x="744.0" y="200" width="168" height="60" rx="9"/><text class="t" x="828.0" y="220" text-anchor="middle" dominant-baseline="central">Seller record</text><text class="t2" x="828.0" y="238" text-anchor="middle" dominant-baseline="central">Sales · Disputes ·</text><text class="t2" x="828.0" y="251" text-anchor="middle" dominant-baseline="central">Failures</text>
+<path class="con" d="M1010.0 168 V200" marker-end="url(#m)"/>
+<rect class="box" x="926.0" y="200" width="168" height="60" rx="9"/><text class="t" x="1010.0" y="230.0" text-anchor="middle" dominant-baseline="central">Help</text>
+<path class="con" d="M1192.0 168 V200" marker-end="url(#m)"/>
+<rect class="box" x="1108.0" y="200" width="168" height="60" rx="9"/><text class="t" x="1192.0" y="230.0" text-anchor="middle" dominant-baseline="central">Contact</text>
+<path class="con" d="M1374.0 168 V200" marker-end="url(#m)"/>
+<rect class="box gate" x="1290.0" y="200" width="168" height="60" rx="9"/><text class="t" x="1374.0" y="230.0" text-anchor="middle" dominant-baseline="central">Sign in</text>
+<path class="con" d="M1556.0 168 V200" marker-end="url(#m)"/>
+<rect class="box gate" x="1472.0" y="200" width="168" height="60" rx="9"/><text class="t" x="1556.0" y="230.0" text-anchor="middle" dominant-baseline="central">Create account</text>
+<rect class="box gate" x="536.0" y="370" width="220" height="64" rx="9"/><text class="t" x="646.0" y="390" text-anchor="middle" dominant-baseline="central">Zone 2 · Buyer</text><text class="t2" x="646.0" y="408" text-anchor="middle" dominant-baseline="central">Offers, escrow</text>
+<path class="con" d="M646.0 434 V478"/>
+<path class="con" d="M100.0 478 H1192.0"/>
+<path class="con" d="M100.0 478 V510" marker-end="url(#m)"/>
+<rect class="box" x="16.0" y="510" width="168" height="60" rx="9"/><text class="t" x="100.0" y="530" text-anchor="middle" dominant-baseline="central">Offer flow</text><text class="t2" x="100.0" y="548" text-anchor="middle" dominant-baseline="central">Price · Duration · Hold</text>
+<path class="con" d="M282.0 478 V510" marker-end="url(#m)"/>
+<rect class="box" x="198.0" y="510" width="168" height="60" rx="9"/><text class="t" x="282.0" y="530" text-anchor="middle" dominant-baseline="central">Fund escrow</text><text class="t2" x="282.0" y="548" text-anchor="middle" dominant-baseline="central">24h from acceptance</text>
+<path class="con" d="M464.0 478 V510" marker-end="url(#m)"/>
+<rect class="box" x="380.0" y="510" width="168" height="60" rx="9"/><text class="t" x="464.0" y="540.0" text-anchor="middle" dominant-baseline="central">Cart</text>
+<path class="con" d="M646.0 478 V510" marker-end="url(#m)"/>
+<rect class="box" x="562.0" y="510" width="168" height="60" rx="9"/><text class="t" x="646.0" y="530" text-anchor="middle" dominant-baseline="central">The checkpoint</text><text class="t2" x="646.0" y="548" text-anchor="middle" dominant-baseline="central">Money · Item · Pass</text>
+<path class="con" d="M828.0 478 V510" marker-end="url(#m)"/>
+<rect class="box" x="744.0" y="510" width="168" height="60" rx="9"/><text class="t" x="828.0" y="530" text-anchor="middle" dominant-baseline="central">The reading</text><text class="t2" x="828.0" y="548" text-anchor="middle" dominant-baseline="central">Plate by plate</text>
+<path class="con" d="M1010.0 478 V510" marker-end="url(#m)"/>
+<rect class="box" x="926.0" y="510" width="168" height="60" rx="9"/><text class="t" x="1010.0" y="530" text-anchor="middle" dominant-baseline="central">My deals</text><text class="t2" x="1010.0" y="548" text-anchor="middle" dominant-baseline="central">Out · Accepted ·</text><text class="t2" x="1010.0" y="561" text-anchor="middle" dominant-baseline="central">Resolved</text>
+<path class="con" d="M1192.0 478 V510" marker-end="url(#m)"/>
+<rect class="box" x="1108.0" y="510" width="168" height="60" rx="9"/><text class="t" x="1192.0" y="530" text-anchor="middle" dominant-baseline="central">Settings</text><text class="t2" x="1192.0" y="548" text-anchor="middle" dominant-baseline="central">Cards · City · Storage</text>
+<rect class="box gate" x="263.0" y="680" width="220" height="64" rx="9"/><text class="t" x="373.0" y="700" text-anchor="middle" dominant-baseline="central">Zone 3 · Seller</text><text class="t2" x="373.0" y="718" text-anchor="middle" dominant-baseline="central">Individual or trade</text>
+<path class="con" d="M373.0 744 V788"/>
+<path class="con" d="M100.0 788 H646.0"/>
+<path class="con" d="M100.0 788 V820" marker-end="url(#m)"/>
+<rect class="box" x="16.0" y="820" width="168" height="60" rx="9"/><text class="t" x="100.0" y="840" text-anchor="middle" dominant-baseline="central">Inventory &amp; desk</text><text class="t2" x="100.0" y="858" text-anchor="middle" dominant-baseline="central">Offers · Vault · Payouts</text>
+<path class="con" d="M282.0 788 V820" marker-end="url(#m)"/>
+<rect class="box" x="198.0" y="820" width="168" height="60" rx="9"/><text class="t" x="282.0" y="840" text-anchor="middle" dominant-baseline="central">Sell &amp; intake</text><text class="t2" x="282.0" y="858" text-anchor="middle" dominant-baseline="central">Describe · Book · Ship</text>
+<path class="con" d="M464.0 788 V820" marker-end="url(#m)"/>
+<rect class="box" x="380.0" y="820" width="168" height="60" rx="9"/><text class="t" x="464.0" y="840" text-anchor="middle" dominant-baseline="central">Settings</text><text class="t2" x="464.0" y="858" text-anchor="middle" dominant-baseline="central">Payout · Tier upgrade</text>
+<path class="con" d="M646.0 788 V820" marker-end="url(#m)"/>
+<rect class="box dash" x="562.0" y="820" width="168" height="60" rx="9"/><text class="t" x="646.0" y="840" text-anchor="middle" dominant-baseline="central">Public record</text><text class="t2" x="646.0" y="858" text-anchor="middle" dominant-baseline="central">System-written</text>
+</svg>
+        </div>
+        <div class="ufoot" style="grid-template-columns:1.6fr 1fr">
+          <div><p class="fl">Persistent chrome, every page</p><p>Logo home · zone-aware tabs · help menu · notification bell (30 days, one per deal state change) · cart · theme toggle · account menu. Footer: authentication standard, escrow partner, consign, cookie preferences.</p></div>
+          <div><p class="fl">Reading the chart</p><div style="display:flex;gap:22px;flex-wrap:wrap;margin-top:12px"><span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-soft)"><i style="width:26px;height:16px;border:1px solid var(--line);border-radius:3px;display:inline-block"></i> Screen</span><span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-soft)"><i style="width:26px;height:16px;border:1px solid var(--gold);border-radius:3px;display:inline-block"></i> Gate</span><span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-soft)"><i style="width:26px;height:16px;border:1px dashed var(--gold);border-radius:3px;display:inline-block"></i> System-written</span></div></div>
+        </div>
+      </div>
+
+      <!-- task flow · buyer -->
+      <div class="block">
+        <p class="lbl">Task flow · buying a piece</p>
+        <p class="body">A buyer never ships, never inspects, and never pays a fee. What they commit to is an amount and a wait: the money sits with the escrow partner until the examiners clear the piece. Every ending is on the chart.</p>
+        <div class="flow-scroll">
+<svg class="flowsvg" style="min-width:1860px" viewBox="0 0 1860 340" role="img" aria-label="Buyer task flow chart with every branch">
+<defs><marker id="m" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path class="amk" d="M0 0 L6 3 L0 6 Z"/></marker><marker id="mg" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path class="amk g" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
+<rect class="box start" x="16" y="34.0" width="190" height="72" rx="9"/><text class="t" x="111.0" y="54.0" text-anchor="middle" dominant-baseline="central">Find a lot</text><text class="t2" x="111.0" y="72.0" text-anchor="middle" dominant-baseline="central">Catalogue, filtered by</text><text class="t2" x="111.0" y="85.0" text-anchor="middle" dominant-baseline="central">category and seller record</text>
+<rect class="box" x="230" y="34.0" width="190" height="72" rx="9"/><text class="t" x="325.0" y="54.0" text-anchor="middle" dominant-baseline="central">Read the dossier</text><text class="t2" x="325.0" y="72.0" text-anchor="middle" dominant-baseline="central">Six plates, sealed before the</text><text class="t2" x="325.0" y="85.0" text-anchor="middle" dominant-baseline="central">lot went live</text>
+<rect class="box" x="444" y="34.0" width="190" height="72" rx="9"/><text class="t" x="539.0" y="54.0" text-anchor="middle" dominant-baseline="central">Make an offer</text><text class="t2" x="539.0" y="72.0" text-anchor="middle" dominant-baseline="central">Price, and how long it</text><text class="t2" x="539.0" y="85.0" text-anchor="middle" dominant-baseline="central">stands: 24h, 3 or 7 days</text>
+<rect class="box" x="658" y="34.0" width="190" height="72" rx="9"/><text class="t" x="753.0" y="54.0" text-anchor="middle" dominant-baseline="central">Card hold placed</text><text class="t2" x="753.0" y="72.0" text-anchor="middle" dominant-baseline="central">A hold, never a charge. It</text><text class="t2" x="753.0" y="85.0" text-anchor="middle" dominant-baseline="central">makes the offer credible</text>
+<polygon class="dia" points="938,24 1004,70 938,116 872,70"/><text class="t" x="938" y="63" text-anchor="middle" dominant-baseline="central">Seller</text><text class="t" x="938" y="79" text-anchor="middle" dominant-baseline="central">answers?</text>
+<rect class="box" x="1028" y="34.0" width="190" height="72" rx="9"/><text class="t" x="1123.0" y="54.0" text-anchor="middle" dominant-baseline="central">Fund escrow</text><text class="t2" x="1123.0" y="72.0" text-anchor="middle" dominant-baseline="central">24 hours to transfer. Card</text><text class="t2" x="1123.0" y="85.0" text-anchor="middle" dominant-baseline="central">settles under $5,000</text>
+<rect class="box" x="1242" y="34.0" width="190" height="72" rx="9"/><text class="t" x="1337.0" y="54.0" text-anchor="middle" dominant-baseline="central">Watch the checkpoint</text><text class="t2" x="1337.0" y="72.0" text-anchor="middle" dominant-baseline="central">Money held, piece already in</text><text class="t2" x="1337.0" y="85.0" text-anchor="middle" dominant-baseline="central">vault custody</text>
+<polygon class="dia gate" points="1522,24 1588,70 1522,116 1456,70"/><text class="t g" x="1522" y="63" text-anchor="middle" dominant-baseline="central">Pre-release</text><text class="t g" x="1522" y="79" text-anchor="middle" dominant-baseline="central">check?</text>
+<rect class="box term" x="1612" y="34.0" width="190" height="72" rx="9"/><text class="t" x="1707.0" y="54.0" text-anchor="middle" dominant-baseline="central">Shipped to you</text><text class="t2" x="1707.0" y="72.0" text-anchor="middle" dominant-baseline="central">Money releases to the seller</text><text class="t2" x="1707.0" y="85.0" text-anchor="middle" dominant-baseline="central">the same moment</text>
+<path class="con" d="M206 70 H230" marker-end="url(#m)"/>
+<path class="con" d="M420 70 H444" marker-end="url(#m)"/>
+<path class="con" d="M634 70 H658" marker-end="url(#m)"/>
+<path class="con" d="M848 70 H872" marker-end="url(#m)"/>
+<path class="con" d="M1004 70 H1028" marker-end="url(#m)"/>
+<path class="con" d="M1218 70 H1242" marker-end="url(#m)"/>
+<path class="con" d="M1432 70 H1456" marker-end="url(#m)"/>
+<path class="con g" d="M1588 70 H1612" marker-end="url(#mg)"/>
+<text class="yn" x="1020" y="61" text-anchor="middle">YES</text>
+<text class="yn" x="1604" y="61" text-anchor="middle">PASS</text>
+<path class="con" d="M938 116 V165"/>
+<text class="yn" x="946" y="134" text-anchor="start">OTHER</text>
+<path class="con" d="M611.0 165 H1265.0"/>
+<path class="con" d="M611.0 165 V200" marker-end="url(#m)"/>
+<rect class="box dash" x="511.0" y="200" width="200" height="86" rx="9"/><text class="t" x="611.0" y="220" text-anchor="middle" dominant-baseline="central">Countered</text><text class="t2" x="611.0" y="238" text-anchor="middle" dominant-baseline="central">48 hours to answer. The hold</text><text class="t2" x="611.0" y="251" text-anchor="middle" dominant-baseline="central">carries over. Accept, counter</text><text class="t2" x="611.0" y="264" text-anchor="middle" dominant-baseline="central">back, or walk</text>
+<path class="con" d="M829.0 165 V200" marker-end="url(#m)"/>
+<rect class="box dash" x="729.0" y="200" width="200" height="86" rx="9"/><text class="t" x="829.0" y="220" text-anchor="middle" dominant-baseline="central">Declined</text><text class="t2" x="829.0" y="238" text-anchor="middle" dominant-baseline="central">Nothing charged, hold released</text><text class="t2" x="829.0" y="251" text-anchor="middle" dominant-baseline="central">the same day</text>
+<path class="con" d="M1047.0 165 V200" marker-end="url(#m)"/>
+<rect class="box dash" x="947.0" y="200" width="200" height="86" rx="9"/><text class="t" x="1047.0" y="220" text-anchor="middle" dominant-baseline="central">Expired</text><text class="t2" x="1047.0" y="238" text-anchor="middle" dominant-baseline="central">Unanswered past the window you</text><text class="t2" x="1047.0" y="251" text-anchor="middle" dominant-baseline="central">set. It lapses on its own</text>
+<path class="con" d="M1265.0 165 V200" marker-end="url(#m)"/>
+<rect class="box dash" x="1165.0" y="200" width="200" height="86" rx="9"/><text class="t" x="1265.0" y="220" text-anchor="middle" dominant-baseline="central">Lapsed, unfunded</text><text class="t2" x="1265.0" y="238" text-anchor="middle" dominant-baseline="central">Accepted, but the money did</text><text class="t2" x="1265.0" y="251" text-anchor="middle" dominant-baseline="central">not arrive inside 24 hours</text>
+<text class="yn" x="507.0" y="157" text-anchor="start">offer ends → My deals</text>
+<path class="con" d="M1522 116 V200" marker-end="url(#m)"/>
+<text class="yn" x="1530" y="134" text-anchor="start">FAIL</text>
+<rect class="box dash" x="1422.0" y="200" width="200" height="86" rx="9"/><text class="t" x="1522.0" y="220" text-anchor="middle" dominant-baseline="central">Refunded in full</text><text class="t2" x="1522.0" y="238" text-anchor="middle" dominant-baseline="central">Refund starts itself. Seller</text><text class="t2" x="1522.0" y="251" text-anchor="middle" dominant-baseline="central">carries the return</text>
+</svg>
+        </div>
+        <div class="ufoot">
+          <div><p class="fl">What the buyer is told</p><p>Price and escrow total, nothing else. The 8% commission and the $150 reading are the seller&rsquo;s side of the ledger and never appear here.</p></div>
+          <div><p class="fl">Walking away</p><p>Free any time before acceptance. After acceptance, up until release, the hold is returned and nothing is charged.</p></div>
+          <div><p class="fl">Notification</p><p>One email and one bell entry per state change, kept 30 days. If Dossier emails, a deal moved.</p></div>
+        </div>
+      </div>
+
+      <!-- task flow · seller -->
+      <div class="block">
+        <p class="lbl">Task flow · selling a piece</p>
+        <p class="body">A seller ships once, at intake, and never again. Everything after that happens inside the vault, and every outcome is written to a record the seller cannot edit. Every ending is on the chart.</p>
+        <div class="flow-scroll">
+<svg class="flowsvg" style="min-width:2020px" viewBox="0 0 2020 340" role="img" aria-label="Seller task flow chart with every branch">
+<defs><marker id="m" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path class="amk" d="M0 0 L6 3 L0 6 Z"/></marker><marker id="mg" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path class="amk g" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
+<rect class="box gate" x="16" y="34.0" width="190" height="72" rx="9"/><text class="t" x="111.0" y="54.0" text-anchor="middle" dominant-baseline="central">Open a seller account</text><text class="t2" x="111.0" y="72.0" text-anchor="middle" dominant-baseline="central">Individual: ID, 3 live lots.</text><text class="t2" x="111.0" y="85.0" text-anchor="middle" dominant-baseline="central">Trade: registration, no limit</text>
+<rect class="box" x="230" y="34.0" width="190" height="72" rx="9"/><text class="t" x="325.0" y="54.0" text-anchor="middle" dominant-baseline="central">Describe the piece</text><text class="t2" x="325.0" y="72.0" text-anchor="middle" dominant-baseline="central">Model, year, papers, asking</text><text class="t2" x="325.0" y="85.0" text-anchor="middle" dominant-baseline="central">price, condition as you see</text><text class="t2" x="325.0" y="98.0" text-anchor="middle" dominant-baseline="central">it</text>
+<rect class="box" x="444" y="34.0" width="190" height="72" rx="9"/><text class="t" x="539.0" y="54.0" text-anchor="middle" dominant-baseline="central">Ship once, to intake</text><text class="t2" x="539.0" y="72.0" text-anchor="middle" dominant-baseline="central">Book a slot. The piece enters</text><text class="t2" x="539.0" y="85.0" text-anchor="middle" dominant-baseline="central">vault custody and stays</text>
+<polygon class="dia gate" points="724,24 790,70 724,116 658,70"/><text class="t g" x="724" y="63" text-anchor="middle" dominant-baseline="central">The</text><text class="t g" x="724" y="79" text-anchor="middle" dominant-baseline="central">reading?</text>
+<rect class="box" x="814" y="34.0" width="190" height="72" rx="9"/><text class="t" x="909.0" y="54.0" text-anchor="middle" dominant-baseline="central">Dossier published</text><text class="t2" x="909.0" y="72.0" text-anchor="middle" dominant-baseline="central">All six plates, including the</text><text class="t2" x="909.0" y="85.0" text-anchor="middle" dominant-baseline="central">ones that count against it</text>
+<polygon class="dia" points="1094,24 1160,70 1094,116 1028,70"/><text class="t" x="1094" y="63" text-anchor="middle" dominant-baseline="central">Offer</text><text class="t" x="1094" y="79" text-anchor="middle" dominant-baseline="central">arrives?</text>
+<rect class="box" x="1184" y="34.0" width="190" height="72" rx="9"/><text class="t" x="1279.0" y="54.0" text-anchor="middle" dominant-baseline="central">Buyer funds escrow</text><text class="t2" x="1279.0" y="72.0" text-anchor="middle" dominant-baseline="central">24 hours. You ship nothing,</text><text class="t2" x="1279.0" y="85.0" text-anchor="middle" dominant-baseline="central">it is already here</text>
+<polygon class="dia gate" points="1464,24 1530,70 1464,116 1398,70"/><text class="t g" x="1464" y="63" text-anchor="middle" dominant-baseline="central">Pre-release</text><text class="t g" x="1464" y="79" text-anchor="middle" dominant-baseline="central">check?</text>
+<rect class="box term" x="1554" y="34.0" width="190" height="72" rx="9"/><text class="t" x="1649.0" y="54.0" text-anchor="middle" dominant-baseline="central">Released to you</text><text class="t2" x="1649.0" y="72.0" text-anchor="middle" dominant-baseline="central">Sale price less 8% commission</text><text class="t2" x="1649.0" y="85.0" text-anchor="middle" dominant-baseline="central">and the $150 reading</text>
+<rect class="box dash" x="1768" y="34.0" width="190" height="72" rx="9"/><text class="t" x="1863.0" y="54.0" text-anchor="middle" dominant-baseline="central">Record updated</text><text class="t2" x="1863.0" y="72.0" text-anchor="middle" dominant-baseline="central">214 sales, 0 disputes, 1</text><text class="t2" x="1863.0" y="85.0" text-anchor="middle" dominant-baseline="central">unwind, 2 failed readings</text>
+<path class="con" d="M206 70 H230" marker-end="url(#m)"/>
+<path class="con" d="M420 70 H444" marker-end="url(#m)"/>
+<path class="con" d="M634 70 H658" marker-end="url(#m)"/>
+<path class="con" d="M790 70 H814" marker-end="url(#m)"/>
+<path class="con" d="M1004 70 H1028" marker-end="url(#m)"/>
+<path class="con" d="M1160 70 H1184" marker-end="url(#m)"/>
+<path class="con" d="M1374 70 H1398" marker-end="url(#m)"/>
+<path class="con g" d="M1530 70 H1554" marker-end="url(#mg)"/>
+<path class="con" d="M1744 70 H1768" marker-end="url(#m)"/>
+<text class="yn" x="806" y="61" text-anchor="middle">PASS</text>
+<text class="yn" x="1176" y="61" text-anchor="middle">ACCEPT</text>
+<text class="yn" x="1546" y="61" text-anchor="middle">PASS</text>
+<path class="con" d="M724 116 V200" marker-end="url(#m)"/>
+<text class="yn" x="732" y="134" text-anchor="start">FAIL</text>
+<rect class="box dash" x="624.0" y="200" width="200" height="86" rx="9"/><text class="t" x="724.0" y="220" text-anchor="middle" dominant-baseline="central">Failed at intake</text><text class="t2" x="724.0" y="238" text-anchor="middle" dominant-baseline="central">Never lists. Returned at your</text><text class="t2" x="724.0" y="251" text-anchor="middle" dominant-baseline="central">cost, published to your record</text><text class="t2" x="724.0" y="264" text-anchor="middle" dominant-baseline="central">anyway</text>
+<path class="con" d="M1094 116 V165"/>
+<text class="yn" x="1102" y="134" text-anchor="start">OTHER</text>
+<path class="con" d="M985.0 165 H1203.0"/>
+<path class="con" d="M985.0 165 V200" marker-end="url(#m)"/>
+<rect class="box dash" x="885.0" y="200" width="200" height="86" rx="9"/><text class="t" x="985.0" y="220" text-anchor="middle" dominant-baseline="central">Countered or declined</text><text class="t2" x="985.0" y="238" text-anchor="middle" dominant-baseline="central">The lot stays live and keeps</text><text class="t2" x="985.0" y="251" text-anchor="middle" dominant-baseline="central">taking offers</text>
+<path class="con" d="M1203.0 165 V200" marker-end="url(#m)"/>
+<rect class="box dash" x="1103.0" y="200" width="200" height="86" rx="9"/><text class="t" x="1203.0" y="220" text-anchor="middle" dominant-baseline="central">Expired or unfunded</text><text class="t2" x="1203.0" y="238" text-anchor="middle" dominant-baseline="central">Nothing owed either way. The</text><text class="t2" x="1203.0" y="251" text-anchor="middle" dominant-baseline="central">lot returns to live</text>
+<path class="con" d="M1464 116 V200" marker-end="url(#m)"/>
+<text class="yn" x="1472" y="134" text-anchor="start">FAIL</text>
+<rect class="box dash" x="1364.0" y="200" width="200" height="86" rx="9"/><text class="t" x="1464.0" y="220" text-anchor="middle" dominant-baseline="central">Failed pre-release</text><text class="t2" x="1464.0" y="238" text-anchor="middle" dominant-baseline="central">Buyer refunded in full, piece</text><text class="t2" x="1464.0" y="251" text-anchor="middle" dominant-baseline="central">returns to you, outcome</text><text class="t2" x="1464.0" y="264" text-anchor="middle" dominant-baseline="central">recorded</text>
+</svg>
+        </div>
+        <div class="ufoot">
+          <div><p class="fl">Tier changes limits, not rules</p><p>Individual and trade see the same screens and the same record. Trade unlocks bulk intake, desk tools and no cap on live lots. Upgrade in Settings.</p></div>
+          <div><p class="fl">Custody, in one line</p><p>Piece into the vault at stage 1, money into escrow at stage 2, pre-release check at stage 3, then out to the buyer and released to you.</p></div>
+          <div><p class="fl">What you cannot do</p><p>Edit a plate, hide a failed reading, or take payment outside escrow. The record is written by the system.</p></div>
+        </div>
+      </div>
+
+      <!-- lo-fi wireframes -->
+      <div class="block">
+        <p class="lbl">Lo-fi design</p>
+        <p class="body">Greyscale wireframes locked the hierarchy before any polish: proof above price on the listing, the escrow state always in view, the seller console built for volume.</p>
+        <div class="wires">
+          <div class="wf">
+            <div class="wbar"><i></i><i></i><i></i></div>
+            <div class="wbd">
+              <div class="wl s"></div>
+              <div class="wrow"><div></div><div></div><div></div></div>
+              <div class="wrow"><div></div><div></div><div></div></div>
+            </div>
+            <p class="wcap">Browse</p>
+          </div>
+          <div class="wf">
+            <div class="wbar"><i></i><i></i><i></i></div>
+            <div class="wbd">
+              <div class="wbox"></div>
+              <div class="wgold"></div>
+              <div class="wl l"></div><div class="wl m"></div><div class="wl s"></div>
+            </div>
+            <p class="wcap">Listing · dossier</p>
+          </div>
+          <div class="wf">
+            <div class="wbar"><i></i><i></i><i></i></div>
+            <div class="wbd">
+              <div class="wl s"></div>
+              <div class="wl l"></div><div class="wl l"></div><div class="wl m"></div>
+              <div class="wgold"></div>
+            </div>
+            <p class="wcap">Escrow tracker</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- dossier listing -->
+      <p class="lbl" style="margin-top:64px">The listing, as a dossier</p>
+      <p class="body" style="margin-bottom:14px">The final screen. The piece is presented like a file an expert prepared: price beside its market range, a chip reading you can replay yourself, and the whole audit a scroll away. Proof leads, the buy button waits.</p>
+      <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:6px">
+        <img width="2400" height="1595" loading="lazy" decoding="async" src="assets/dossier-listing.webp" alt="The Dossier listing screen for a Hermès Birkin 25 in Togo with gold hardware: chip verified, the market range shown beside the price, and a panel to read the chip yourself." style="width:100%;height:auto;display:block" />
+      </div>
+
+      <p class="lbl" style="margin-top:48px">The macro read · chip, stitch, hardware</p>
+      <p class="body" style="margin-bottom:14px">Every claim carries a photograph behind it, written in the examiner&rsquo;s own words: the chip payload decoded, the saddle stitch read at 60&times;, and the hardware weight matched to the blind stamp.</p>
+      <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:6px">
+        <img width="2400" height="1032" loading="lazy" decoding="async" src="assets/dossier-macro.webp" alt="The authentication detail, 'What we looked at': three findings in the examiner's words, the chip decoded, the saddle stitch at 60x, and the weight matched to the blind stamp." style="width:100%;height:auto;display:block" />
+      </div>
+
+      <!-- escrow tracker -->
+      <p class="lbl" style="margin-top:64px">The escrow stage tracker</p>
+      <p class="body">The money and the piece both pass through the marketplace, never party to party. Funds sit in escrow, owned by neither side, from the moment they are paid until an independent examiner verifies the piece. A pass releases the money to the seller and the piece to the buyer; a fail refunds the buyer.</p>
+      <div class="etrack-wrap">
+        <div class="etrack">
+          <div class="rail"></div>
+          <div class="railheld"></div>
+          <div class="nodes">
+            <div class="enode">
+              <span class="edot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 11 3.8A2 2 0 0 0 9.6 3H4a1 1 0 0 0-1 1v5.6A2 2 0 0 0 3.6 11l9.6 9.6a2 2 0 0 0 2.8 0l4.6-4.6a2 2 0 0 0 0-2.6z"/><circle cx="7" cy="7" r="1.1"/></svg></span>
+              <p class="ename">Offer</p><p class="edesc">Terms explicit before anything commits</p>
+            </div>
+            <div class="enode">
+              <span class="edot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <p class="ename">Acceptance</p><p class="edesc">Seller accepts, the piece is held</p>
+            </div>
+            <div class="enode">
+              <span class="edot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+              <p class="ename">Fund escrow</p><p class="edesc">Money paid in, owned by neither</p>
+            </div>
+            <div class="enode">
+              <span class="edot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>
+              <p class="ename">To authentication</p><p class="edesc">Shipped to the marketplace</p>
+            </div>
+            <div class="enode key">
+              <span class="edot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+              <p class="ename">Verified</p><p class="edesc">Independent expert examines</p>
+            </div>
+            <div class="enode">
+              <span class="edot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.5-2"/></svg></span>
+              <p class="ename">Released</p><p class="edesc">Piece ships to the buyer</p>
+            </div>
+            <div class="enode">
+              <span class="edot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M20 6v6c0 1.66-3.58 3-8 3s-8-1.34-8-3V6"/><path d="M20 12v6c0 1.66-3.58 3-8 3s-8-1.34-8-3v-6"/></svg></span>
+              <p class="ename">Settled</p><p class="edesc">Funds release to the seller</p>
+            </div>
+          </div>
+          <div class="eheld"><span class="lbl2">Held safe, released only on a pass</span></div>
+        </div>
+      </div>
+      <div class="callout">
+        <p class="l">When a piece fails authentication</p>
+        <p>Failure states are written plainly. A piece that fails triggers a clear path, return and refund, not a dispute maze, and the seller&rsquo;s record carries the outcome.</p>
+      </div>
+
+      <!-- buyer demo (self-hosted, no third-party UI) -->
+      <p class="lbl" style="margin-top:64px">Buyer demo</p>
+      <div class="ytwrap">
+        <video class="demovid" controls playsinline preload="metadata" poster="assets/dossier-listing.webp">
+          <source src="assets/buyer-demo.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- reseller demo (self-hosted, no third-party UI) -->
+      <p class="lbl" style="margin-top:48px">Reseller demo</p>
+      <div class="ytwrap">
+        <video class="demovid" controls playsinline preload="metadata" poster="assets/dossier-seller-console.webp">
+          <source src="assets/reseller-demo.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- visual language -->
+      <div class="block" style="margin-top:64px">
+        <p class="lbl">The visual language</p>
+        <p class="body">The aesthetic follows the object. Generous whitespace, near-black and warm ivory, and a single gold accent held back for verification, so the one color that signals proof is never diluted by decoration. Serif headlines carry the voice while a quiet grotesque carries the details, where legibility matters more than character. The interface stays calm because the stakes are high, and restrained because trust whispers.</p>
+        <div class="dl mt-l">
+          <div class="sw">
+            <div class="swatch"><div class="chip" style="background:#17130E"></div><div class="meta"><p class="nm">Near-black</p><p class="hx">#17130E · ink</p></div></div>
+            <div class="swatch"><div class="chip" style="background:#F5F1E8"></div><div class="meta"><p class="nm">Warm ivory</p><p class="hx">#F5F1E8 · ground</p></div></div>
+            <div class="swatch"><div class="chip" style="background:#A9833F"></div><div class="meta"><p class="nm">Gold</p><p class="hx">#A9833F · verified only</p></div></div>
+          </div>
+          <div class="type">
+            <div class="row"><p class="rl">Headline · serif</p><p class="serif" style="font-size:34px;font-weight:500;line-height:1.1;margin-top:8px">Provenance, in full</p></div>
+            <div class="row"><p class="rl">Detail · grotesque</p><p style="font-size:15px;color:var(--ink-soft);margin-top:8px">The quiet grotesque carries serials, materials, condition notes and the authentication trail, where legibility matters more than voice.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- light and dark -->
+      <div class="block">
+        <p class="lbl">Light and dark, one system</p>
+        <p class="body">The same screen holds in two surfaces. Dark is the gallery, where the piece is lit against near-black and the interface recedes. Light is the ivory document, where the record reads like paper. Tokens carry the whole palette, so a single switch moves the ground, the type, and the lines together, while the gold stays reserved for verification and the hierarchy never changes. Both surfaces clear AA contrast.</p>
+        <div class="mt-l" style="display:flex;flex-direction:column;gap:24px">
+          <div>
+            <span class="balbl" style="color:var(--muted)">Dark · the gallery</span>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:8px"><img width="3360" height="1928" loading="lazy" decoding="async" src="assets/dossier-theme-dark.webp" alt="The listing on the near-black surface: the bag lit against dark, gold reserved for the four agreeing records, price beside its comparable range." style="width:100%;height:auto;display:block" /></div>
+          </div>
+          <div>
+            <span class="balbl" style="color:var(--muted)">Light · the document</span>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:8px"><img width="3360" height="1928" loading="lazy" decoding="async" src="assets/dossier-theme-light.webp" alt="The identical listing on the warm ivory surface: dark ink on paper, the same layout and gold accent, with a dark Make an offer button carrying the primary action." style="width:100%;height:auto;display:block" /></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- accessibility -->
+      <div class="block">
+        <p class="lbl">Accessibility as a floor</p>
+        <p class="body">Accessibility was a floor the layout had to clear, not a feature bolted to the end. Text meets AA contrast in both the dark experience and the ivory product surface, labels sit outside fields and never collapse into placeholders, and color is never the only signal, verification always pairs the gold with a word and a check. Every control is keyboard reachable and every state is announced. One real defect surfaced in review: the first pass set field labels at low opacity for elegance, which failed contrast, and they were restored to full weight.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · TEST -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">04 · Test</p>
+      <h2 class="disp mt-s">Real reactions, real fixes</h2>
+
+      <div class="ba mt-l">
+        <div>
+          <span class="balbl before">Before</span>
+          <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:8px"><img width="3360" height="2000" loading="lazy" decoding="async" src="assets/dossier-listing-before.webp" alt="The listing, before: a gold Verified badge sits on the seller's claim before any examination, the price leads at large size, a loud Buy now button, and provenance pushed below the fold." style="width:100%;height:auto;display:block" /></div>
+        </div>
+        <div>
+          <span class="balbl after">After</span>
+          <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:8px"><img width="3360" height="2000" loading="lazy" decoding="async" src="assets/dossier-listing-after.webp" alt="The listing, after: the four agreeing records lead as earned proof, the price sits beside its comparable-sales range, a Make an offer button pairs with Add to cart, and a line explains that escrow holds the money until examiners clear release." style="width:100%;height:auto;display:block" /></div>
+        </div>
+        <p class="bacap">The same listing, two fixes at once: the gold verified mark now waits for the examiner rather than sitting on the seller&rsquo;s claim, and the record leads with price beside its market range, so the evidence is read before the cost.</p>
+      </div>
+
+      <div class="block">
+        <p class="lbl">How I tested</p>
+        <p class="body">Testing used the methods available before launch: walkthroughs driven by persona scripts, synthetic user sessions against the prototype, hallway tests of the core flows, and a heuristic review of every state.</p>
+      </div>
+
+      <div class="block">
+        <p class="lbl">What broke, and what changed</p>
+        <ul class="fixes">
+          <li>
+            <p class="find">The confirm-receipt button handed one party a weapon. A buyer could withhold confirmation to stall release and pressure the seller.</p>
+            <p class="fx">The fix</p>
+            <p class="fd">Release now triggers on the examiner&rsquo;s verdict, not the buyer&rsquo;s tap. Neither party controls the other&rsquo;s money.</p>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:20px"><img width="3200" height="1120" loading="lazy" decoding="async" src="assets/dossier-fix-release.webp" alt="Before: a solid Confirm receipt to release funds button the buyer controls. After: a three-node escrow tracker, delivered and examined cleared, released on the examiner's verdict with no buyer button." style="width:100%;height:auto;display:block" /></div>
+          </li>
+          <li>
+            <p class="find">The verified badge appeared on the seller&rsquo;s claim, before any examination. It read as marketing, the exact thing buyers distrust.</p>
+            <p class="fx">The fix</p>
+            <p class="fd">Verified now appears only after the expert stage, and that is the only place the gold is allowed to show.</p>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:20px"><img width="3200" height="1120" loading="lazy" decoding="async" src="assets/dossier-fix-verified.webp" alt="Before: a gold Verified pill on the listing title before any examination. After: a neutral Awaiting authentication pill, with a Listed, Examined, Verified step row where only the final Verified step lights gold." style="width:100%;height:auto;display:block" /></div>
+          </li>
+          <li>
+            <p class="find">The listing led with price. It framed the piece as a product, and the fear of fakes came straight back.</p>
+            <p class="fx">The fix</p>
+            <p class="fd">Price moved to sit beside provenance, never alone, so the evidence is read before the cost.</p>
+            <div style="border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:20px"><img width="3200" height="1120" loading="lazy" decoding="async" src="assets/dossier-fix-price.webp" alt="Before: a large price leading with provenance collapsed below the fold. After: a Four records, all agreeing panel leading, with the price sitting smaller beside its comparable-sales range." style="width:100%;height:auto;display:block" /></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <p class="lbl">Continuous improvement</p>
+        <p class="body">Iteration was continuous rather than a final polish. After launch, the flow would be measured where it can fail, offer completion, drop-off at funding, and time to first offer, then refined against those numbers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <div class="wrap">
+    <div class="closing">
+      <hr class="rule" style="max-width:80px;margin:0 auto 40px" />
+      <p>The product proves that certainty can be designed, not promised. The process proved that the fastest way to earn trust is to make it unnecessary. In luxury, restraint is the brand, and the interface earns trust the way a good dealer does, by showing its work and never raising its voice.</p>
+      <p class="explore" style="margin-top:34px"><a href="https://dossierdemo.netlify.app/" target="_blank" rel="noopener">Explore Demo Site</a></p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <a class="next" href="index.html#work">
+        <span>
+          <span class="nl">Next</span>
+          <span class="nt" style="display:block;margin-top:8px">Back to all work</span>
+        </span>
+        <span style="font-size:28px;color:var(--muted)">&rarr;</span>
+      </a>
+      <div class="foot">
+        <span>Omotoyosi Adegbite &nbsp;·&nbsp; Product Designer</span>
+        <span><a href="mailto:toyosi.design@gmail.com">toyosi.design@gmail.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

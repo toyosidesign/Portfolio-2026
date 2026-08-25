@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8" />
+<script>
+  var q=location.search;
+  document.documentElement.classList.add(q.indexOf('before')>-1?'before':'after');
+  if(q.indexOf('light')>-1)document.documentElement.classList.add('light');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ivory:#0B0A0A;--paper:#0d0b0a;--panel:#14110d;--inset:#100e0b;
+    --ink:#F4F0E8;--soft:#B5AD9F;--mut:#8B8276;--faint:#6f675c;
+    --line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.06);
+    --gold:#C6A15B;--green:#7BA05B;--stroke:#8f8676;
+    --serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1680px;height:1000px;background:var(--ivory);color:var(--ink);font-family:var(--sans);overflow:hidden}
+  .mono{font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase}
+  /* top bar */
+  .top{display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 40px;border-bottom:1px solid var(--line);font-size:15px;color:var(--mut)}
+  .top .crumb span{color:var(--soft)}
+  .top .crumb .sl{color:var(--faint);margin:0 10px}
+  .top .st{display:flex;align-items:center;gap:9px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px rgba(123,160,91,.6)}
+  /* split */
+  .split{display:grid;grid-template-columns:957px 1fr;height:calc(1000px - 52px)}
+  /* left */
+  .left{position:relative;padding:34px 40px;overflow:hidden}
+  .plate{position:absolute;top:34px;left:40px;font-size:14px;color:var(--soft);border:1px solid var(--line);padding:7px 12px}
+  .tools{position:absolute;top:30px;left:50%;transform:translateX(-64px);display:flex;gap:8px}
+  .tools button{font-family:var(--sans);font-size:15px;color:var(--ink);background:#1c1813;border:1px solid var(--line);border-radius:6px;padding:7px 15px}
+  /* chip panel */
+  .chip{position:absolute;top:64px;right:40px;width:262px;border:1px solid var(--line);background:rgba(10,9,8,.7);backdrop-filter:blur(2px)}
+  .chip .ch{font-size:14px;color:var(--soft);padding:14px 16px;border-bottom:1px solid var(--line)}
+  .chip .cb{padding:16px}
+  .wave{height:112px;background:var(--inset);border:1px solid var(--line2);display:grid;place-items:center;margin-bottom:16px}
+  .chip .kv{font-size:15px;color:var(--soft);line-height:2.05;font-family:var(--mono);letter-spacing:.02em}
+  .chip .kv b{color:var(--ink);font-weight:500}
+  .chip .div{height:1px;background:var(--line);margin:12px 0}
+  .chip .ok{font-size:14px;color:var(--gold);line-height:1.5}
+  /* bag */
+  .bagwrap{position:absolute;left:0;right:0;top:150px;bottom:150px;display:grid;place-items:center;pointer-events:none}
+  .shadow{position:absolute;bottom:150px;left:50%;transform:translateX(-50%);width:420px;height:34px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(0,0,0,.55),transparent 70%)}
+  /* left bottom controls */
+  .lbot{position:absolute;left:40px;right:40px;bottom:150px;display:flex;align-items:center;justify-content:space-between}
+  .tabs{display:flex;gap:10px}
+  .tab{font-size:14px;color:var(--mut);border:1px solid var(--line2);padding:11px 16px}
+  .tab.on{color:var(--ink);border-color:var(--line);background:#151109}
+  .reread{font-size:15px;color:var(--gold);border:1px solid var(--gold);padding:12px 22px}
+  /* thumbstrip */
+  .strip{position:absolute;left:0;right:0;bottom:0;height:132px;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
+  .th{border-right:1px solid var(--line2);display:grid;place-items:center;background:#0a0908}
+  .th:last-child{border-right:0}
+  .th.on{background:#100d0a}
+  /* right */
+  .right{border-left:1px solid var(--line);padding:38px 44px;display:flex;flex-direction:column;background:#0a0908}
+  .consign{font-size:15px;color:var(--gold)}
+  .stats{font-size:15px;color:var(--gold);opacity:.85;margin-top:8px}
+  .h1{font-family:var(--serif);font-size:58px;font-weight:600;line-height:.94;margin-top:20px}
+  .h1 .var{display:block;font-style:italic;font-weight:500;color:var(--soft);font-size:52px;margin-top:2px}
+  .lede{font-size:20px;line-height:1.6;color:var(--soft);margin-top:20px;max-width:500px}
+  .rule{height:1px;background:var(--line);margin:26px 0}
+  .pricerow{display:flex;align-items:flex-end;justify-content:space-between}
+  .price{font-family:var(--serif);font-size:52px;font-weight:600;line-height:1}
+  .comp{text-align:right}
+  .comp .k{font-size:13px;color:var(--mut)}
+  .comp .v{font-family:var(--mono);font-size:18px;color:var(--soft);margin-top:6px;letter-spacing:.02em}
+  /* records card */
+  .rec{border:1px solid var(--line);margin-top:26px}
+  .rec .rh{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--line)}
+  .rec .rh .lft{display:flex;align-items:center;gap:11px;font-size:15px;color:var(--gold)}
+  .target{width:15px;height:15px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center}
+  .target i{width:5px;height:5px;border-radius:50%;background:var(--gold)}
+  .rec .rh .id{font-family:var(--mono);font-size:15px;color:var(--mut);letter-spacing:.02em}
+  .rr{display:flex;align-items:center;gap:16px;padding:13px 18px;border-bottom:1px solid var(--line2)}
+  .rr .n{font-family:var(--mono);font-size:15px;color:var(--gold);width:22px}
+  .rr .d{flex:1;font-size:18px;color:var(--soft)}
+  .rr .c{font-family:var(--mono);font-size:15px;color:var(--green);letter-spacing:.02em}
+  .rec .readmore{display:block;padding:15px 18px;font-size:14px;color:var(--gold)}
+  /* buttons */
+  .cta{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+  .cta a{text-align:center;padding:17px;font-size:15px;font-weight:600}
+  .cta .offer{background:#EDE7DB;color:#1a140c}
+  .cta .cart{border:1px solid var(--line);color:var(--ink)}
+  .escrow{font-size:16px;line-height:1.6;color:var(--mut);margin-top:18px}
+
+  /* ---- before / after states of the same UI ---- */
+  html.before .a-only{display:none}
+  html.after .b-only{display:none}
+  .btitrow{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+  .vpill{flex:none;margin-top:22px;font-size:15px;letter-spacing:.08em;text-transform:uppercase;font-family:var(--mono);color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:9px 16px}
+  .bprice{font-family:var(--serif);font-size:80px;font-weight:600;line-height:.9;margin-top:26px}
+  .buynow{margin-top:24px;display:block;text-align:center;background:var(--gold);color:#1a140c;font-weight:600;font-size:18px;padding:18px;letter-spacing:.02em}
+  .buried{margin-top:26px;padding-top:20px;border-top:1px solid var(--line2);font-size:16px;color:var(--faint);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase}
+  .bnote{font-size:17px;line-height:1.6;color:var(--mut);margin-top:20px}
+
+  /* ---- light (ivory) product surface, same system ---- */
+  html.light{--ivory:#F4EFE4;--paper:#F4EFE4;--panel:#FBF8F1;--inset:#ECE5D7;
+    --ink:#1A140C;--soft:#5B5346;--mut:#6E665A;--faint:#9A9184;
+    --line:rgba(20,16,10,.14);--line2:rgba(20,16,10,.08);
+    --gold:#A9833F;--green:#5E7A43;--stroke:#B7AC96;}
+  html.light .tools button{background:#ECE5D7;color:var(--ink)}
+  html.light .tab.on{background:#ECE5D7}
+  html.light .th{background:#EFE9DC}
+  html.light .th.on{background:#E7DFCF}
+  html.light .right{background:#FBF8F1}
+  html.light .chip{background:rgba(255,255,255,.72)}
+  html.light .cta .offer{background:#1A140C;color:#F4EFE4}
+  html.light .shadow{background:radial-gradient(ellipse at center,rgba(20,16,10,.16),transparent 70%)}
+</style></head>
+<body>
+  <div class="top">
+    <div class="crumb mono">Lot 0412 <span class="sl">/</span> <span>Birkin 25</span> <span class="sl">/</span> <span>Togo</span> <span class="sl">/</span> <span>Gold</span></div>
+    <div class="st mono"><span class="dot"></span>Chip live in vault · New York</div>
+  </div>
+
+  <div class="split">
+    <!-- LEFT -->
+    <div class="left">
+      <span class="plate mono">Plate 01 / 14</span>
+      <div class="tools"><button>Replace</button><button>Edit</button></div>
+
+      <div class="bagwrap">
+        <svg width="470" height="430" viewBox="0 0 470 430" fill="none" stroke="var(--stroke)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+          <!-- handles -->
+          <path d="M150 210 C150 120 200 82 235 82 C270 82 320 120 320 210" />
+          <!-- flap top -->
+          <path d="M118 208 L235 176 L352 208" />
+          <!-- body -->
+          <path d="M96 208 L120 400 L350 400 L374 208 Z" />
+          <!-- lock plate + clochette -->
+          <rect x="212" y="238" width="46" height="52" rx="6" />
+          <path d="M235 238 L235 214" />
+          <path d="M258 262 L300 262 L296 316" />
+          <path d="M212 262 L170 262 L174 316" />
+        </svg>
+      </div>
+      <div class="shadow"></div>
+
+      <!-- chip panel -->
+      <div class="chip">
+        <div class="ch mono">Chip / NFC read</div>
+        <div class="cb">
+          <div class="wave">
+            <svg width="150" height="56" viewBox="0 0 150 56" fill="none" stroke="var(--stroke)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+              <polyline points="8,18 24,8 40,26 56,8 72,26 88,8 104,26 120,8 142,18" />
+              <polyline points="8,40 24,32 40,48 56,32 72,48 88,32 104,48 120,32 142,40" opacity=".55" />
+            </svg>
+          </div>
+          <div class="kv">Payload <b>HRM·25·TG·2021·X</b><br>Checksum <b>pass</b> · 1st attempt</div>
+          <div class="div"></div>
+          <div class="ok mono">Consistent with atelier record</div>
+        </div>
+      </div>
+
+      <!-- bottom controls -->
+      <div class="lbot">
+        <div class="tabs">
+          <span class="tab on mono">01 Chip</span>
+          <span class="tab mono">02 Stitch</span>
+          <span class="tab mono">03 Hardware</span>
+        </div>
+        <span class="reread mono">Re-read chip</span>
+      </div>
+
+      <!-- thumbnail strip -->
+      <div class="strip">
+        <div class="th on"><svg width="52" height="46" viewBox="0 0 52 46" fill="none" stroke="var(--stroke)" stroke-width="2"><path d="M14 20 C14 10 20 6 26 6 C32 6 38 10 38 20"/><path d="M9 20 L13 40 L39 40 L43 20 Z"/><rect x="22" y="24" width="8" height="9" rx="2"/></svg></div>
+        <div class="th"><svg width="52" height="46" viewBox="0 0 52 46" fill="none" stroke="var(--stroke)" stroke-width="2"><rect x="10" y="12" width="32" height="22" rx="3"/><circle cx="19" cy="20" r="2.4"/><circle cx="33" cy="20" r="2.4"/><circle cx="19" cy="28" r="2.4"/><circle cx="33" cy="28" r="2.4"/></svg></div>
+        <div class="th"><svg width="52" height="46" viewBox="0 0 52 46" fill="none" stroke="var(--stroke)" stroke-width="2"><rect x="9" y="11" width="34" height="24" rx="3"/><circle cx="23" cy="23" r="7"/><path d="M31 31 L38 37"/></svg></div>
+        <div class="th"><svg width="52" height="46" viewBox="0 0 52 46" fill="none" stroke="var(--stroke)" stroke-width="2"><rect x="11" y="12" width="30" height="22" rx="2"/><path d="M11 20 L41 20"/></svg></div>
+        <div class="th"><svg width="52" height="46" viewBox="0 0 52 46" fill="none" stroke="var(--stroke)" stroke-width="2"><path d="M14 16 L26 10 L42 16 L42 34 L30 40 L14 34 Z"/><path d="M14 16 L30 22 L42 16"/><path d="M30 22 L30 40"/></svg></div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+      <!-- BEFORE: verified claimed up front, price leads, buy loud, provenance buried -->
+      <div class="b-only">
+        <div class="consign mono">Consigned by Maison Ad&eacute;</div>
+        <div class="stats mono">214 Sales · Trusted seller · Ships today</div>
+        <div class="btitrow">
+          <h1 class="h1">Birkin 25<span class="var">Togo, gold</span></h1>
+          <span class="vpill">&#10003; Verified</span>
+        </div>
+        <div class="bprice">&#36;16,900</div>
+        <a class="buynow mono">Buy now</a>
+        <div class="buried">Provenance &#9662; 11 pages, below the fold</div>
+        <p class="bnote">Money moves to the seller when you confirm receipt. Tap when your piece arrives.</p>
+      </div>
+
+      <!-- AFTER: proof leads, verified earned, price beside range, escrow explained -->
+      <div class="a-only">
+      <div class="consign mono">Consigned by Maison Ad&eacute;</div>
+      <div class="stats mono">214 Sales · 0 Disputes · 1 Unwind · Read the record</div>
+      <h1 class="h1">Birkin 25<span class="var">Togo, gold</span></h1>
+      <p class="lede">New York, 2021. A dozen outings, then a shelf. What follows is not a promise from us: it is what the bag itself told our instruments, on the record.</p>
+      <div class="rule"></div>
+      <div class="pricerow">
+        <div class="price">&#36;16,900</div>
+        <div class="comp"><div class="k mono">Comparable sales</div><div class="v">15.2k to 18.4k</div></div>
+      </div>
+
+      <div class="rec">
+        <div class="rh">
+          <div class="lft mono"><span class="target"><i></i></span>Four records, all agreeing</div>
+          <span class="id">PRV-8841-K25</span>
+        </div>
+        <div class="rr"><span class="n">01</span><span class="d">Chip payload decoded, checksum passed</span><span class="c">&#10003; vault</span></div>
+        <div class="rr"><span class="n">02</span><span class="d">Blind stamp photographed, year matches chip</span><span class="c">&#10003; plate 03</span></div>
+        <div class="rr"><span class="n">03</span><span class="d">Stitch geometry at 60&times;: hand saddle stitch</span><span class="c">&#10003; A. Ogunlesi</span></div>
+        <div class="rr"><span class="n">04</span><span class="d">Seller identity and bank name verified</span><span class="c">&#10003; 2022</span></div>
+        <a class="readmore mono">Read the 11-page dossier</a>
+      </div>
+
+      <div class="cta">
+        <a class="offer mono">Make an offer</a>
+        <a class="cart mono">Add to cart</a>
+      </div>
+      <p class="escrow">Escrow holds the money. The piece has been in our custody since intake and never returns to the seller. Your money only reaches them once our examiners clear it for release.</p>
+      </div>
+    </div>
+  </div>
+</body></html>
