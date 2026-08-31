@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartLearning · Cybersecurity &amp; Data Science LMS | Omotoyosi Adegbite</title>
+  <meta name="description" content="EdTech case study: designing SmartLearning, a learning management system that takes people from a skills assessment to a cybersecurity or data science career, with live mentorship, certification and job placement. Four role surfaces: learner, trainer, enterprise admin and platform admin." />
+
+  <!-- Tailwind CSS (precompiled -- rebuild with: npm run build:css) -->
+  <link rel="stylesheet" href="assets/tailwind.css?v=a5e452e4" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Widen the shared body-text measure to fill the 1520px layout */
+    .max-w-4xl{max-width:72rem;}
+    /* Match the Dossier page width (1136px content) */
+    .max-w-\[1520px\]{max-width:1184px}
+    ::selection { background: #ffd8e4; color: #000; }
+
+    /* Image placeholder slots (swap each for an exported image when ready) */
+    .ph{position:relative;aspect-ratio:16/10;border:1px dashed rgba(255,255,255,.16);border-radius:16px;background:rgba(255,255,255,.02);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:20px}
+    .ph .ic{font-size:20px;line-height:1;color:rgba(255,255,255,.28)}
+    .ph .lb{font-size:13px;font-weight:500;color:rgba(255,255,255,.62);letter-spacing:.01em}
+    .ph .sub{font-size:11px;color:rgba(255,255,255,.32)}
+    .ph.tall{aspect-ratio:4/5}
+    .ph.wide{aspect-ratio:2/1}
+    .ph.vid{aspect-ratio:16/9}
+    .ph.vid .ic{color:#ffd8e4;font-size:26px}
+    .phcap{margin-top:12px;font-size:13px;color:#8a8a8a;line-height:1.5}
+    /* colour-guide swatches */
+    .sw{border-radius:14px;border:1px solid rgba(255,255,255,.1);padding:18px;min-height:110px;display:flex;flex-direction:column;justify-content:space-between}
+    .sw .n{font-size:13px;font-weight:600}
+    .sw .h{font-size:12px;font-family:ui-monospace,monospace;opacity:.75}
+
+    /* flow trees */
+    .sf{margin-top:22px}
+    .sf:first-child{margin-top:4px}
+    .sf .sfh{font-size:14px;font-weight:600;color:#fff}
+    .sf .sfh .sfn{color:#ffd8e4;font-weight:700;margin-right:8px}
+    .sf .sfd{font-size:13px;color:#8a8a8a;margin-top:2px;line-height:1.5}
+    .flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-top:12px}
+    .node{display:inline-flex;align-items:center;border-radius:8px;padding:6px 11px;font-size:12.5px;line-height:1.2;border:1px solid rgba(255,255,255,.12);color:#c7c7cc;background:rgba(255,255,255,.02);white-space:nowrap}
+    .node.dest{border-color:rgba(255,216,228,.45);color:#fff;font-weight:600;background:rgba(255,216,228,.06)}
+    .node.state{border-style:dashed;border-color:rgba(123,160,91,.45);color:#a7c79a;background:rgba(123,160,91,.05)}
+    .arw{color:#6f675c;font-size:13px;padding:0 1px}
+    .fork{margin-top:10px;margin-left:12px;padding:2px 0 2px 18px;border-left:1px solid rgba(255,255,255,.14)}
+    .fork .fl{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#8a8a8a;font-weight:600}
+    .fork .flow{margin-top:8px}
+    .fork p{font-size:13px;color:#a1a1aa;line-height:1.55;margin-top:6px;max-width:60rem}
+    .sbgroups{font-size:13px;color:#a1a1aa;line-height:1.6;margin-top:4px}
+    .sbgroups b{color:#c7c7cc;font-weight:600}
+  </style>
+</head>
+
+<body class="bg-base text-white font-sans antialiased">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="sticky top-0 z-50 pt-6 px-4 sm:px-6">
+    <div class="max-w-[1520px] mx-auto">
+      <nav class="flex items-center justify-between h-[54px] rounded-full border border-[#3d3e3f] bg-header/90 backdrop-blur-xl px-5 shadow-[0_4px_10px_rgba(0,0,0,0.35)]">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="grid place-items-center size-7 rounded-full bg-accent text-black text-xs font-bold">O</span>
+          <span class="text-base font-semibold tracking-tight text-white">Omotoyosi Adegbite</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm">
+          <li><a href="index.html#work" class="font-bold text-accent">Work</a></li>
+          <li><a href="index.html#about" class="text-[#c0c0c0] hover:text-white transition-colors">About</a></li>
+          <li><a href="index.html#contact" class="text-[#c0c0c0] hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 pt-14 sm:pt-20">
+    <div class="flex items-center justify-between mb-10">
+      <a href="index.html#work" class="inline-flex items-center gap-1.5 text-sm text-[#8a8a8a] hover:text-white transition-colors">&larr; Back to all work</a>
+      <a href="https://www.smartlearninguk.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-white transition-colors">View live project &rarr;</a>
+    </div>
+
+    <p class="text-sm text-[#8a8a8a]">SmartLearning &nbsp;|&nbsp; EdTech &nbsp;·&nbsp; Learning management system for cybersecurity &amp; data science</p>
+
+    <h1 class="mt-3 text-4xl sm:text-6xl font-semibold tracking-[-0.03em] leading-[1.05]">
+      From a skills assessment to a cybersecurity career, in one platform.
+    </h1>
+    <p class="max-w-4xl mt-6 text-lg text-[#c7c7cc] leading-relaxed">
+      SmartLearning trains people for careers in cybersecurity and data science, with live mentorship,
+      industry certifications and career support at the end. This case study covers the platform I
+      designed end to end: the learner journey from a personality and skills assessment through to a
+      credential, the trainer tools that deliver it, and the admin and enterprise consoles that run it.
+    </p>
+
+    <!-- Hero meta -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5">
+        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">My role</p>
+        <p class="mt-1.5 font-medium text-white">Product Designer</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Product type</p>
+        <p class="mt-1.5 font-medium text-white text-sm leading-snug">EdTech · learning management system</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Roles designed for</p>
+        <p class="mt-1.5 font-medium text-white text-sm leading-snug">Learner, trainer, enterprise admin, platform admin</p>
+      </div>
+      <div class="bg-base p-5">
+        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Scope</p>
+        <p class="mt-1.5 font-medium text-white text-sm leading-snug">4 role surfaces · responsive web</p>
+      </div>
+      <div class="bg-base p-5 col-span-2 md:col-span-4 lg:col-span-1">
+        <p class="text-xs uppercase tracking-wide text-[#8a8a8a]">Jobs the platform owns</p>
+        <p class="mt-1.5 font-medium text-white text-sm leading-snug">Assessment, learning paths, live sessions, payment, certification, career support, enterprise reporting</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HERO COVER IMAGE ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-12">
+    <img width="2012" height="1695" loading="eager" fetchpriority="high" decoding="async" src="assets/smartlearning-hero.webp" alt="SmartLearning learner dashboard shown on a desktop display" class="w-full h-auto block mx-auto" style="max-width:1136px" onerror="this.remove()" />
+  </section>
+
+  <!-- ============ ABOUT THE PROJECT ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">About the project</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
+      Online learning that ends in a job, not just a certificate.
+    </h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      SmartLearning uses a cohort and mentorship model: learners take a pre-course assessment, follow a
+      personalised path through cybersecurity or data science, work with live mentors, and finish with a
+      recognised certification and career support. The platform serves two markets at once, individuals
+      building a new career and organisations upskilling whole teams, so the same product has to hold a
+      learner, a trainer, an enterprise admin and the platform team.
+    </p>
+
+    <!-- Role / Timeline / Team / Tools -->
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-6">
+        <p class="text-xs uppercase tracking-wide text-accent font-semibold">Role</p>
+        <p class="mt-2 font-medium text-white text-sm leading-snug">Lead Product Designer, end to end</p>
+      </div>
+      <div class="bg-base p-6">
+        <p class="text-xs uppercase tracking-wide text-accent font-semibold">Timeline</p>
+        <p class="mt-2 font-medium text-white text-sm leading-snug">2023 · 16 weeks</p>
+      </div>
+      <div class="bg-base p-6">
+        <p class="text-xs uppercase tracking-wide text-accent font-semibold">Team</p>
+        <p class="mt-2 font-medium text-white text-sm leading-snug">Designer, PM, 3 engineers, mentor SMEs</p>
+      </div>
+      <div class="bg-base p-6">
+        <p class="text-xs uppercase tracking-wide text-accent font-semibold">Tools</p>
+        <p class="mt-2 font-medium text-white text-sm leading-snug">Figma, FigJam, Maze, Notion</p>
+      </div>
+    </div>
+
+    <!-- Background -->
+    <div class="mt-6 rounded-2xl border border-accent/20 bg-accent/[0.04] p-6 sm:p-8">
+      <p class="text-xs uppercase tracking-wide text-accent font-semibold">Background</p>
+      <p class="max-w-4xl mt-3 text-lg text-white leading-relaxed">
+        The security and data skills gap is real and growing, yet most online courses stop at the video.
+        SmartLearning was built to close the loop between learning and employment: assess where a person
+        is, guide them along a path with human mentorship, certify what they can actually do, and support
+        the move into work. An online platform was the right vehicle because that loop has to run at
+        scale, across individuals and enterprise teams, in one place.
+      </p>
+    </div>
+
+    <!-- My role & responsibilities -->
+    <div class="mt-10 grid lg:grid-cols-3 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-accent font-semibold">Product design &amp; strategy</p>
+        <p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Owned the end-to-end design and product direction across all four roles, from problem framing to hi-fi and handoff.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-accent font-semibold">Research</p>
+        <p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Ran interviews, competitive analysis and usability tests with learners, trainers and enterprise leads.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <p class="text-accent font-semibold">Design system</p>
+        <p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Built the UI kit, iconography and templates so the platform stayed consistent across surfaces.</p>
+      </div>
+    </div>
+
+    <!-- Grounded outcome stats -->
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-6"><p class="text-4xl font-semibold text-white">15k+</p><p class="mt-3 font-medium text-white text-sm">Applications</p><p class="mt-1 text-sm text-[#8a8a8a]">Learners onto the platform</p></div>
+      <div class="bg-base p-6"><p class="text-4xl font-semibold text-white">10k+</p><p class="mt-3 font-medium text-white text-sm">Graduates</p><p class="mt-1 text-sm text-[#8a8a8a]">Completed a certification path</p></div>
+      <div class="bg-base p-6"><p class="text-4xl font-semibold text-white">8.2k+</p><p class="mt-3 font-medium text-white text-sm">Placements</p><p class="mt-1 text-sm text-[#8a8a8a]">Into roles after training</p></div>
+      <div class="bg-base p-6"><p class="text-4xl font-semibold text-white">45k+</p><p class="mt-3 font-medium text-white text-sm">Programs</p><p class="mt-1 text-sm text-[#8a8a8a]">Training programs delivered</p></div>
+    </div>
+  </section>
+
+  <!-- ============ DESIGN PROCESS ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">Design process</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
+      Design Thinking, six phases end to end.
+    </h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      The work followed a Design Thinking framework, moving from understanding the learner to a tested,
+      built product, and grounding every screen in what a real person was trying to do.
+    </p>
+
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="text-accent text-sm font-semibold">01</p><p class="mt-2 font-medium text-white">Empathize</p><p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">Interviews with learners, trainers &amp; enterprise leads</p></div>
+      <div class="bg-base p-5"><p class="text-accent text-sm font-semibold">02</p><p class="mt-2 font-medium text-white">Define</p><p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">Personas, problem statement &amp; journey map</p></div>
+      <div class="bg-base p-5"><p class="text-accent text-sm font-semibold">03</p><p class="mt-2 font-medium text-white">Ideate</p><p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">User flows by role &amp; the MVP</p></div>
+      <div class="bg-base p-5"><p class="text-accent text-sm font-semibold">04</p><p class="mt-2 font-medium text-white">Design</p><p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">Wireframes to a hi-fi visual system</p></div>
+      <div class="bg-base p-5"><p class="text-accent text-sm font-semibold">05</p><p class="mt-2 font-medium text-white">Prototype</p><p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">Hi-fi mockups &amp; role demos</p></div>
+      <div class="bg-base p-5"><p class="text-accent text-sm font-semibold">06</p><p class="mt-2 font-medium text-white">Test</p><p class="mt-1.5 text-sm text-[#8a8a8a] leading-snug">UI states, usability &amp; dev handoff</p></div>
+    </div>
+  </section>
+
+  <!-- ============ IDEATE · USER FLOWS BY ROLE ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">Ideate · user flows by role</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">
+      Four roles, four paths through the product.
+    </h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      Every route a signed-in user can take through the platform, written screen by screen against the
+      build. Four roles share one shell, a top bar, grouped sidebar and screen header, and differ only in
+      the screens the sidebar exposes. Each role's routes are mapped as a full flowchart below.
+    </p>
+
+    <!-- role summary -->
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+      <div class="bg-base p-5"><p class="text-xs uppercase tracking-wide text-accent font-semibold">Learner</p><p class="mt-2 font-medium text-white text-sm">14 screens</p><p class="mt-1 text-sm text-[#8a8a8a] leading-snug">Buy, study, be assessed, get certified</p></div>
+      <div class="bg-base p-5"><p class="text-xs uppercase tracking-wide text-accent font-semibold">Trainer</p><p class="mt-2 font-medium text-white text-sm">10 screens</p><p class="mt-1 text-sm text-[#8a8a8a] leading-snug">Teach, grade, get paid</p></div>
+      <div class="bg-base p-5"><p class="text-xs uppercase tracking-wide text-accent font-semibold">Enterprise</p><p class="mt-2 font-medium text-white text-sm">11 screens</p><p class="mt-1 text-sm text-[#8a8a8a] leading-snug">Seats, teams, reporting</p></div>
+      <div class="bg-base p-5"><p class="text-xs uppercase tracking-wide text-accent font-semibold">Admin</p><p class="mt-2 font-medium text-white text-sm">20 screens</p><p class="mt-1 text-sm text-[#8a8a8a] leading-snug">Catalogue, people, money, system</p></div>
+    </div>
+
+    <!-- legend -->
+    <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+      <p class="text-xs uppercase tracking-wide text-accent font-semibold mb-4">How to read the flows</p>
+      <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-[#c7c7cc]">
+        <span class="inline-flex items-center gap-2"><span style="width:22px;height:16px;border-radius:4px;background:#16130f;border:1.5px solid #F4F0E8;display:inline-block"></span> Start</span>
+        <span class="inline-flex items-center gap-2"><span style="width:15px;height:15px;background:#ffd8e4;transform:rotate(45deg);display:inline-block;border-radius:3px;margin:0 2px"></span> Decision</span>
+        <span class="inline-flex items-center gap-2"><span style="width:22px;height:16px;border-radius:4px;background:#241d17;border:1px solid rgba(255,216,228,.55);display:inline-block"></span> Hub screen</span>
+        <span class="inline-flex items-center gap-2"><span style="width:22px;height:16px;border-radius:4px;background:#14110d;border:1.5px solid rgba(255,216,228,.5);display:inline-block"></span> Sidebar destination</span>
+        <span class="inline-flex items-center gap-2"><span style="width:22px;height:16px;border-radius:4px;background:#1b1813;border:1px solid rgba(255,255,255,.14);display:inline-block"></span> In-flow screen</span>
+        <span class="inline-flex items-center gap-2"><span style="width:22px;height:16px;border-radius:4px;background:#2a2119;border:1px solid rgba(255,255,255,.2);display:inline-block"></span> Auth action</span>
+      </div>
+      <p class="mt-4 text-sm text-[#8a8a8a] leading-relaxed">All four roles share one shell and the same entry path: the role picker at sign-in decides which sidebar loads, and the session is remembered so a returning user lands back where they left. Each diagram is a full flowchart of that role's routes. Click any diagram to enlarge.</p>
+    </div>
+
+    <!-- flowchart diagrams -->
+    <div class="mt-8 flex flex-col gap-8">
+      <figure><div><img width="4680" height="3120" loading="lazy" decoding="async" src="assets/smartlearning-flow-learner.webp" alt="Learner user flow, from opening the app and logging in, through the pre-training assessment, browsing and buying a course, studying with mentor support, and earning a credential." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-4 text-base font-semibold text-white">1 &middot; Learner, buy, study, be assessed, get certified.</figcaption></figure>
+      <figure><div><img width="4760" height="3040" loading="lazy" decoding="async" src="assets/smartlearning-flow-trainer.webp" alt="Trainer user flow, from the action list into grading a submission, running a live session, maintaining course content, and getting paid." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-4 text-base font-semibold text-white">2 &middot; Trainer, teach, grade, get paid.</figcaption></figure>
+      <figure><div><img width="4760" height="2840" loading="lazy" decoding="async" src="assets/smartlearning-flow-enterprise.webp" alt="Enterprise admin user flow, from reviewing the account and setting up a team, to buying seats and enrolling people, and reporting and account admin." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-4 text-base font-semibold text-white">3 &middot; Enterprise, seats, teams, reporting.</figcaption></figure>
+      <figure><div><img width="5280" height="3440" loading="lazy" decoding="async" src="assets/smartlearning-flow-admin.webp" alt="Platform admin user flow across five areas, monitoring and reporting, people, catalogue, operations and system." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-4 text-base font-semibold text-white">4 &middot; Admin, catalogue, people, money, system.</figcaption></figure>
+    </div>
+
+    <!-- where the roles meet -->
+    <div class="mt-8">
+      <div class="flex items-center gap-3 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">Where the roles meet</span></div>
+      <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Five handoffs cross role boundaries.</h3>
+      <p class="max-w-4xl mt-4 text-lg text-[#a1a1aa] leading-relaxed">These are the flows worth testing end to end, where one role's action becomes another role's next step.</p>
+      <div class="mt-8 overflow-x-auto rounded-2xl border border-white/10">
+        <table class="w-full min-w-[640px] border-collapse text-sm">
+          <thead><tr class="bg-white/[0.03]">
+            <th class="text-left font-medium text-[#8a8a8a] p-4">Handoff</th>
+            <th class="text-left font-medium text-white p-4 border-l border-white/10">From</th>
+            <th class="text-left font-medium text-white p-4 border-l border-white/10">To</th>
+          </tr></thead>
+          <tbody>
+            <tr class="border-t border-white/10"><td class="p-4 text-[#c7c7cc]">Submission marked or returned</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Trainer 2.2</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Learner 1.4</td></tr>
+            <tr class="border-t border-white/10"><td class="p-4 text-[#c7c7cc]">Lesson published after review</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Trainer 2.4 / Admin 4.4</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Learner 1.3</td></tr>
+            <tr class="border-t border-white/10"><td class="p-4 text-[#c7c7cc]">Seat assigned to an employee</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Enterprise 3.3</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Learner 1.2</td></tr>
+            <tr class="border-t border-white/10"><td class="p-4 text-[#c7c7cc]">Trainer application approved</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Admin 4.2</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Trainer 2.1</td></tr>
+            <tr class="border-t border-white/10"><td class="p-4 text-[#c7c7cc]">Payout released</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Admin 4.4</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Trainer 2.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 · EMPATHIZE ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">Stage 01 · Empathize</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Understanding the people.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      I interviewed 12 career-switchers and early-career professionals to learn where existing platforms
+      fall short, alongside 4 trainers who deliver courses and 3 enterprise learning leads who manage
+      teams. The interviews were synthesised into an affinity map that surfaced the frustrations below.
+    </p>
+
+    <div class="mt-10 grid grid-cols-2 gap-5 items-start">
+      <figure><div class="aspect-[16/10] overflow-hidden rounded-xl border border-white/10"><img width="1312" height="534" loading="lazy" decoding="async" src="assets/smartlearning-interview-photo.webp" alt="A user research session: several people around a table in a workshop space, with a wall of sticky notes behind them." class="w-full h-full object-cover" onerror="this.remove()" /></div><figcaption class="mt-3 text-sm text-[#8a8a8a]">One-to-one interviews with learners, trainers and enterprise leads.</figcaption></figure>
+      <figure><div class="aspect-[16/10] overflow-hidden"><img width="3200" height="2000" loading="lazy" decoding="async" src="assets/smartlearning-affinity-map.webp" alt="An affinity map: interview notes grouped into themes, enablement and support, UX and usability, feature requests, accessibility, and bugs and fixes." class="w-full h-full object-cover" onerror="this.remove()" /></div><figcaption class="mt-3 text-sm text-[#8a8a8a]">Notes clustered into themes on an affinity board.</figcaption></figure>
+    </div>
+
+    <!-- Top frustrations -->
+    <div class="mt-16 grid lg:grid-cols-2 gap-12 lg:gap-16">
+      <div>
+        <div class="flex items-center gap-3 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">Top frustrations uncovered</span></div>
+        <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">The gap was never content. It was a path.</h3>
+        <p class="max-w-4xl mt-6 text-lg text-[#a1a1aa] leading-relaxed">Learners were not short of videos to watch. They were short of direction, feedback, and a credential that meant something to an employer.</p>
+      </div>
+      <div class="divide-y divide-white/10 border-t border-white/10">
+        <div class="flex gap-5 py-6"><span class="text-accent font-semibold text-sm mt-0.5">A</span><div><p class="font-medium text-white">Courses that lead nowhere</p><p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">"Plenty of video, but no path from here to an actual job."</p></div></div>
+        <div class="flex gap-5 py-6"><span class="text-accent font-semibold text-sm mt-0.5">B</span><div><p class="font-medium text-white">No feedback loop</p><p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">"I finish a module and never know whether I actually understood it."</p></div></div>
+        <div class="flex gap-5 py-6"><span class="text-accent font-semibold text-sm mt-0.5">C</span><div><p class="font-medium text-white">One size fits nobody</p><p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">"The same course whether you are a beginner or already working in the field."</p></div></div>
+        <div class="flex gap-5 py-6"><span class="text-accent font-semibold text-sm mt-0.5">D</span><div><p class="font-medium text-white">Certificates employers ignore</p><p class="max-w-4xl mt-1.5 text-[#a1a1aa] leading-relaxed">"A badge that means nothing when it lands on a CV."</p></div></div>
+      </div>
+    </div>
+
+    <!-- Trainers & enterprise -->
+    <div class="mt-16">
+      <div class="flex items-center gap-3 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">Understanding trainers &amp; enterprise users</span></div>
+      <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">The people who deliver and manage it.</h3>
+      <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Beyond learners, I sat with the people who run the training day to day. Two roles, two very different jobs for the platform to do.</p>
+
+      <figure class="mt-8">
+        <div class="rounded-2xl overflow-hidden border border-white/10 shadow-[0_28px_80px_-20px_rgba(0,0,0,0.7)]"><img width="2055" height="1200" loading="lazy" decoding="async" src="assets/smartlearning-workshop.webp" alt="A design workshop: hand-drawn wireframe sketches and sticky notes on a wall, mapping screens and feedback." class="w-full h-auto block" onerror="this.remove()" /></div>
+        <figcaption class="mt-3 text-sm text-[#8a8a8a]">Workshop sessions with trainers and enterprise leads, sketching screens and flows together.</figcaption>
+      </figure>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-5">
+        <div class="relative overflow-hidden rounded-2xl border border-white/10 p-7" style="background:linear-gradient(150deg,rgba(255,255,255,.06),transparent 55%)">
+          <div class="pointer-events-none absolute -right-10 -top-10 rounded-full" style="width:180px;height:180px;background:rgba(255,216,228,.10);filter:blur(44px)"></div>
+          <div class="relative flex items-center gap-3">
+            <span class="grid place-items-center size-11 rounded-xl text-accent" style="background:rgba(255,216,228,.14)"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-4 5 4"/></svg></span>
+            <p class="text-lg font-semibold text-white">Trainers</p>
+          </div>
+          <p class="relative mt-4 text-[#a1a1aa] leading-relaxed">Deliver courses and mentor cohorts. They need the platform to get out of the way so they can teach and give feedback fast.</p>
+          <div class="relative mt-5 flex flex-wrap gap-2">
+            <span class="inline-flex rounded-full border border-white/12 bg-white/[0.04] px-3 py-1 text-xs text-[#c7c7cc]">Content tools</span>
+            <span class="inline-flex rounded-full border border-white/12 bg-white/[0.04] px-3 py-1 text-xs text-[#c7c7cc]">Progress tracking</span>
+            <span class="inline-flex rounded-full border border-white/12 bg-white/[0.04] px-3 py-1 text-xs text-[#c7c7cc]">Live scheduling</span>
+            <span class="inline-flex rounded-full border border-white/12 bg-white/[0.04] px-3 py-1 text-xs text-[#c7c7cc]">Fast grading</span>
+          </div>
+        </div>
+        <div class="relative overflow-hidden rounded-2xl border border-white/10 p-7" style="background:linear-gradient(150deg,rgba(255,255,255,.06),transparent 55%)">
+          <div class="pointer-events-none absolute -right-10 -top-10 rounded-full" style="width:180px;height:180px;background:rgba(255,216,228,.10);filter:blur(44px)"></div>
+          <div class="relative flex items-center gap-3">
+            <span class="grid place-items-center size-11 rounded-xl text-accent" style="background:rgba(255,216,228,.14)"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <p class="text-lg font-semibold text-white">Enterprise admins</p>
+          </div>
+          <p class="relative mt-4 text-[#a1a1aa] leading-relaxed">Manage whole teams and answer for the spend. They need a clear view of who is progressing, and simple control over seats and access.</p>
+          <div class="relative mt-5 flex flex-wrap gap-2">
+            <span class="inline-flex rounded-full border border-white/12 bg-white/[0.04] px-3 py-1 text-xs text-[#c7c7cc]">Bulk enrollment</span>
+            <span class="inline-flex rounded-full border border-white/12 bg-white/[0.04] px-3 py-1 text-xs text-[#c7c7cc]">Team reporting</span>
+            <span class="inline-flex rounded-full border border-white/12 bg-white/[0.04] px-3 py-1 text-xs text-[#c7c7cc]">Seats &amp; billing</span>
+            <span class="inline-flex rounded-full border border-white/12 bg-white/[0.04] px-3 py-1 text-xs text-[#c7c7cc]">Permissions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Competitor analysis -->
+    <div class="mt-16">
+      <div class="flex items-center gap-3 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">Competitor analysis</span></div>
+      <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Where the market is strong, and where it leaves a gap.</h3>
+      <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">Three kinds of competitor own a piece of the journey. None of them close the loop from a first lesson to a job.</p>
+
+      <!-- competitor cards -->
+      <div class="mt-8 grid md:grid-cols-3 gap-5">
+        <div class="relative overflow-hidden rounded-2xl border border-white/10 p-6 transition-colors" style="background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 60%)">
+          <div class="flex items-center gap-3">
+            <span class="grid place-items-center size-11 rounded-xl text-white font-bold text-lg" style="background:#2b6fe0">C</span>
+            <div><p class="font-semibold text-white leading-tight">Coursera</p><span class="text-[11px] uppercase tracking-wider text-[#8a8a8a]">Direct</span></div>
+          </div>
+          <div class="mt-5 space-y-3">
+            <div class="flex gap-2.5"><svg class="mt-0.5 shrink-0" style="color:#34d399" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><p class="text-sm text-[#c7c7cc] leading-relaxed"><span class="text-white font-medium">Strength.</span> Breadth of catalog and university brands.</p></div>
+            <div class="flex gap-2.5"><svg class="mt-0.5 shrink-0" style="color:#f87171" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg><p class="text-sm text-[#c7c7cc] leading-relaxed"><span class="text-white font-medium">Gap.</span> Little live mentorship, no placement at the end.</p></div>
+          </div>
+        </div>
+        <div class="relative overflow-hidden rounded-2xl border border-white/10 p-6 transition-colors" style="background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 60%)">
+          <div class="flex items-center gap-3">
+            <span class="grid place-items-center size-11 rounded-xl text-white font-bold text-lg" style="background:#9a3ff0">U</span>
+            <div><p class="font-semibold text-white leading-tight">Udemy</p><span class="text-[11px] uppercase tracking-wider text-[#8a8a8a]">Indirect</span></div>
+          </div>
+          <div class="mt-5 space-y-3">
+            <div class="flex gap-2.5"><svg class="mt-0.5 shrink-0" style="color:#34d399" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><p class="text-sm text-[#c7c7cc] leading-relaxed"><span class="text-white font-medium">Strength.</span> Low price and a huge volume of content.</p></div>
+            <div class="flex gap-2.5"><svg class="mt-0.5 shrink-0" style="color:#f87171" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg><p class="text-sm text-[#c7c7cc] leading-relaxed"><span class="text-white font-medium">Gap.</span> No structured path, feedback or accountability.</p></div>
+          </div>
+        </div>
+        <div class="relative overflow-hidden rounded-2xl border border-white/10 p-6 transition-colors" style="background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 60%)">
+          <div class="flex items-center gap-3">
+            <span class="grid place-items-center size-11 rounded-xl text-white font-bold text-lg" style="background:#ef7a4a">B</span>
+            <div><p class="font-semibold text-white leading-tight">Bootcamps</p><span class="text-[11px] uppercase tracking-wider text-[#8a8a8a]">Direct</span></div>
+          </div>
+          <div class="mt-5 space-y-3">
+            <div class="flex gap-2.5"><svg class="mt-0.5 shrink-0" style="color:#34d399" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><p class="text-sm text-[#c7c7cc] leading-relaxed"><span class="text-white font-medium">Strength.</span> Cohorts and real career support.</p></div>
+            <div class="flex gap-2.5"><svg class="mt-0.5 shrink-0" style="color:#f87171" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg><p class="text-sm text-[#c7c7cc] leading-relaxed"><span class="text-white font-medium">Gap.</span> High cost and rigid schedules, hard to scale.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- comparison matrix -->
+      <div class="mt-6 overflow-x-auto rounded-2xl border border-white/10">
+        <table class="w-full min-w-[860px] border-collapse text-sm">
+          <thead><tr class="bg-white/[0.03]">
+            <th class="text-left font-medium text-[#8a8a8a] p-4 w-44">Compared on</th>
+            <th class="font-medium text-white p-4 border-l border-white/10 text-center">Structured path</th>
+            <th class="font-medium text-white p-4 border-l border-white/10 text-center">Live mentorship</th>
+            <th class="font-medium text-white p-4 border-l border-white/10 text-center">Certification</th>
+            <th class="font-medium text-white p-4 border-l border-white/10 text-center">Career support</th>
+            <th class="font-medium text-white p-4 border-l border-white/10 text-center">Flexible schedule</th>
+            <th class="font-medium text-white p-4 border-l border-white/10 text-center">Low cost</th>
+          </tr></thead>
+          <tbody>
+            <tr class="border-t border-white/10" style="background:rgba(255,216,228,.06)">
+              <td class="p-4 font-semibold text-white">SmartLearning</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#fbbf24;font-size:16px">&#9680;</td>
+            </tr>
+            <tr class="border-t border-white/10">
+              <td class="p-4 font-medium text-[#c7c7cc]">Coursera</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#6f675c;font-size:16px">&#10007;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#6f675c;font-size:16px">&#10007;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#fbbf24;font-size:16px">&#9680;</td>
+            </tr>
+            <tr class="border-t border-white/10">
+              <td class="p-4 font-medium text-[#c7c7cc]">Udemy</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#6f675c;font-size:16px">&#10007;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#6f675c;font-size:16px">&#10007;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#fbbf24;font-size:16px">&#9680;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#6f675c;font-size:16px">&#10007;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+            </tr>
+            <tr class="border-t border-white/10">
+              <td class="p-4 font-medium text-[#c7c7cc]">Bootcamps</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#34d399;font-size:16px">&#10003;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#6f675c;font-size:16px">&#10007;</td>
+              <td class="p-4 border-l border-white/10 text-center" style="color:#6f675c;font-size:16px">&#10007;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-[#8a8a8a]">
+        <span class="inline-flex items-center gap-1.5"><span class="text-sm" style="color:#34d399">&#10003;</span> Strong</span>
+        <span class="inline-flex items-center gap-1.5"><span class="text-sm" style="color:#fbbf24">&#9680;</span> Partial</span>
+        <span class="inline-flex items-center gap-1.5"><span class="text-sm" style="color:#6f675c">&#10007;</span> Missing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · DEFINE ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">Stage 02 · Define</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Defining the project.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      Research informed one persona per role, a single problem statement, and the focus areas the product
+      had to deliver against.
+    </p>
+
+    <!-- Personas -->
+    <div class="mt-10 grid md:grid-cols-2 gap-5">
+      <!-- Learner -->
+      <div class="group relative overflow-hidden rounded-2xl border border-white/10 p-7 transition-colors" style="background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 60%)">
+        <span class="absolute inset-x-0 top-0 h-1" style="background:linear-gradient(90deg,#2b6fe0,transparent)"></span>
+        <div class="pointer-events-none absolute -right-12 -top-12 rounded-full" style="width:180px;height:180px;filter:blur(44px);background:rgba(43,111,224,.14)"></div>
+        <div class="relative flex items-start justify-between gap-3">
+          <div class="flex items-center gap-4"><span class="size-14 rounded-2xl shrink-0 grid place-items-center text-lg font-bold text-white" style="background:#2b6fe0">AB</span><div><p class="text-xl font-semibold text-white leading-tight">Amara B.</p><p class="text-sm text-[#8a8a8a]">26 · Career-switcher into cybersecurity</p></div></div>
+          <span class="shrink-0 rounded-full border px-3 py-1 text-[11px] uppercase tracking-wider" style="color:#7fa8ec;border-color:rgba(43,111,224,.45)">Learner</span>
+        </div>
+        <p class="relative mt-5 pl-4 border-l-2 italic text-[#c7c7cc] leading-relaxed" style="border-color:rgba(43,111,224,.55)">"I don't need more videos. I need to know I'm on the right path."</p>
+        <div class="relative mt-6 space-y-4">
+          <div class="flex gap-3"><svg class="mt-0.5 shrink-0" style="color:#7fa8ec" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><div><p class="text-[11px] uppercase tracking-wider text-[#8a8a8a]">Goals</p><p class="text-sm text-[#c7c7cc] mt-1 leading-relaxed">A clear path, real feedback, a credential employers trust.</p></div></div>
+          <div class="flex gap-3"><svg class="mt-0.5 shrink-0" style="color:#fda4af" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><div><p class="text-[11px] uppercase tracking-wider text-[#8a8a8a]">Challenges</p><p class="text-sm text-[#c7c7cc] mt-1 leading-relaxed">Limited time, unsure where to start, no one to ask.</p></div></div>
+        </div>
+        <p class="relative mt-5 pt-4 border-t border-white/10 text-sm text-[#8a8a8a]"><span class="text-[#c7c7cc]">Background.</span> Left a support role to move into security, learning around a job.</p>
+      </div>
+      <!-- Trainer -->
+      <div class="group relative overflow-hidden rounded-2xl border border-white/10 p-7 transition-colors" style="background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 60%)">
+        <span class="absolute inset-x-0 top-0 h-1" style="background:linear-gradient(90deg,#2f9d6b,transparent)"></span>
+        <div class="pointer-events-none absolute -right-12 -top-12 rounded-full" style="width:180px;height:180px;filter:blur(44px);background:rgba(47,157,107,.14)"></div>
+        <div class="relative flex items-start justify-between gap-3">
+          <div class="flex items-center gap-4"><span class="size-14 rounded-2xl shrink-0 grid place-items-center text-lg font-bold text-white" style="background:#2f9d6b">DO</span><div><p class="text-xl font-semibold text-white leading-tight">David O.</p><p class="text-sm text-[#8a8a8a]">38 · Security mentor &amp; instructor</p></div></div>
+          <span class="shrink-0 rounded-full border px-3 py-1 text-[11px] uppercase tracking-wider" style="color:#6cc59a;border-color:rgba(47,157,107,.45)">Trainer</span>
+        </div>
+        <p class="relative mt-5 pl-4 border-l-2 italic text-[#c7c7cc] leading-relaxed" style="border-color:rgba(47,157,107,.55)">"Let me teach and give feedback. Don't make me fight the tools."</p>
+        <div class="relative mt-6 space-y-4">
+          <div class="flex gap-3"><svg class="mt-0.5 shrink-0" style="color:#6cc59a" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><div><p class="text-[11px] uppercase tracking-wider text-[#8a8a8a]">Goals</p><p class="text-sm text-[#c7c7cc] mt-1 leading-relaxed">Deliver sessions, track progress and grade without friction.</p></div></div>
+          <div class="flex gap-3"><svg class="mt-0.5 shrink-0" style="color:#fda4af" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><div><p class="text-[11px] uppercase tracking-wider text-[#8a8a8a]">Challenges</p><p class="text-sm text-[#c7c7cc] mt-1 leading-relaxed">Scattered tools for content, scheduling and feedback.</p></div></div>
+        </div>
+        <p class="relative mt-5 pt-4 border-t border-white/10 text-sm text-[#8a8a8a]"><span class="text-[#c7c7cc]">Background.</span> Practising professional who mentors cohorts part time.</p>
+      </div>
+      <!-- Enterprise admin -->
+      <div class="group relative overflow-hidden rounded-2xl border border-white/10 p-7 transition-colors" style="background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 60%)">
+        <span class="absolute inset-x-0 top-0 h-1" style="background:linear-gradient(90deg,#8a5cc6,transparent)"></span>
+        <div class="pointer-events-none absolute -right-12 -top-12 rounded-full" style="width:180px;height:180px;filter:blur(44px);background:rgba(138,92,198,.14)"></div>
+        <div class="relative flex items-start justify-between gap-3">
+          <div class="flex items-center gap-4"><span class="size-14 rounded-2xl shrink-0 grid place-items-center text-lg font-bold text-white" style="background:#8a5cc6">PN</span><div><p class="text-xl font-semibold text-white leading-tight">Priya N.</p><p class="text-sm text-[#8a8a8a]">41 · L&amp;D lead, mid-size firm</p></div></div>
+          <span class="shrink-0 rounded-full border px-3 py-1 text-[11px] uppercase tracking-wider" style="color:#b79ae0;border-color:rgba(138,92,198,.45)">Enterprise</span>
+        </div>
+        <p class="relative mt-5 pl-4 border-l-2 italic text-[#c7c7cc] leading-relaxed" style="border-color:rgba(138,92,198,.55)">"I'm paying for outcomes. Show me who is actually progressing."</p>
+        <div class="relative mt-6 space-y-4">
+          <div class="flex gap-3"><svg class="mt-0.5 shrink-0" style="color:#b79ae0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><div><p class="text-[11px] uppercase tracking-wider text-[#8a8a8a]">Goals</p><p class="text-sm text-[#c7c7cc] mt-1 leading-relaxed">Bulk enrollment, team reporting, simple billing and seats.</p></div></div>
+          <div class="flex gap-3"><svg class="mt-0.5 shrink-0" style="color:#fda4af" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><div><p class="text-[11px] uppercase tracking-wider text-[#8a8a8a]">Challenges</p><p class="text-sm text-[#c7c7cc] mt-1 leading-relaxed">No single view of team progress or spend.</p></div></div>
+        </div>
+        <p class="relative mt-5 pt-4 border-t border-white/10 text-sm text-[#8a8a8a]"><span class="text-[#c7c7cc]">Background.</span> Buys seats to upskill a security team and prove ROI.</p>
+      </div>
+      <!-- Platform admin -->
+      <div class="group relative overflow-hidden rounded-2xl border border-white/10 p-7 transition-colors" style="background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 60%)">
+        <span class="absolute inset-x-0 top-0 h-1" style="background:linear-gradient(90deg,#cf8a3a,transparent)"></span>
+        <div class="pointer-events-none absolute -right-12 -top-12 rounded-full" style="width:180px;height:180px;filter:blur(44px);background:rgba(207,138,58,.14)"></div>
+        <div class="relative flex items-start justify-between gap-3">
+          <div class="flex items-center gap-4"><span class="size-14 rounded-2xl shrink-0 grid place-items-center text-lg font-bold text-white" style="background:#cf8a3a">KT</span><div><p class="text-xl font-semibold text-white leading-tight">Kemi T.</p><p class="text-sm text-[#8a8a8a]">33 · Platform operations</p></div></div>
+          <span class="shrink-0 rounded-full border px-3 py-1 text-[11px] uppercase tracking-wider" style="color:#e0b072;border-color:rgba(207,138,58,.45)">Platform</span>
+        </div>
+        <p class="relative mt-5 pl-4 border-l-2 italic text-[#c7c7cc] leading-relaxed" style="border-color:rgba(207,138,58,.55)">"When something breaks, I need to find it and fix it fast."</p>
+        <div class="relative mt-6 space-y-4">
+          <div class="flex gap-3"><svg class="mt-0.5 shrink-0" style="color:#e0b072" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><div><p class="text-[11px] uppercase tracking-wider text-[#8a8a8a]">Goals</p><p class="text-sm text-[#c7c7cc] mt-1 leading-relaxed">Manage courses, roles and permissions with confidence.</p></div></div>
+          <div class="flex gap-3"><svg class="mt-0.5 shrink-0" style="color:#fda4af" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><div><p class="text-[11px] uppercase tracking-wider text-[#8a8a8a]">Challenges</p><p class="text-sm text-[#c7c7cc] mt-1 leading-relaxed">Reporting and access spread across disconnected tools.</p></div></div>
+        </div>
+        <p class="relative mt-5 pt-4 border-t border-white/10 text-sm text-[#8a8a8a]"><span class="text-[#c7c7cc]">Background.</span> Runs the platform: users, roles, courses and oversight.</p>
+      </div>
+    </div>
+
+    <!-- Problem statement -->
+    <div class="mt-10 rounded-2xl border border-accent/20 bg-accent/[0.04] p-6 sm:p-8">
+      <p class="text-xs uppercase tracking-wide text-accent font-semibold">Problem statement</p>
+      <p class="max-w-4xl mt-3 text-lg text-white leading-relaxed">
+        People who want a cybersecurity or data career have no shortage of courses, but no guided path,
+        no feedback, and no credential employers trust. They need a platform that assesses where they
+        are, mentors them along the way, and proves what they can do at the end.
+      </p>
+    </div>
+
+    <!-- Focus areas -->
+    <div class="mt-10">
+      <div class="flex items-center gap-3 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">Product vision · focus areas</span></div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+        <div class="bg-base p-6"><p class="font-medium text-white">Skill development</p><p class="mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">Real, assessed skills, not passive video.</p></div>
+        <div class="bg-base p-6"><p class="font-medium text-white">Guided pathways</p><p class="mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">A path matched to the learner's level and goal.</p></div>
+        <div class="bg-base p-6"><p class="font-medium text-white">Live mentorship</p><p class="mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">Human feedback and 1-2-1 support built in.</p></div>
+        <div class="bg-base p-6"><p class="font-medium text-white">Credential validation</p><p class="mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">Certification and career support that lands on a CV.</p></div>
+      </div>
+    </div>
+
+    <!-- User stories -->
+    <div class="mt-16">
+      <div class="flex items-center gap-3 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">User stories</span></div>
+      <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Requirements, written as who, what and why.</h3>
+      <p class="max-w-4xl mt-4 text-lg text-[#a1a1aa] leading-relaxed">Every feature traces back to a person. <span style="color:#8fb4e8">As a</span> hero, <span style="color:#8fb4e8">I want to</span> reach a goal, <span style="color:#8fb4e8">so that</span> a conflict is resolved.</p>
+
+      <!-- column headers -->
+      <div class="grid grid-cols-3 gap-x-8 px-7 mt-8 mb-3">
+        <p class="text-center text-sm font-semibold uppercase tracking-[0.16em]" style="color:#6cc59a">Who</p>
+        <p class="text-center text-sm font-semibold uppercase tracking-[0.16em]" style="color:#6cc59a">What</p>
+        <p class="text-center text-sm font-semibold uppercase tracking-[0.16em]" style="color:#6cc59a">Why</p>
+      </div>
+
+      <div class="space-y-4 md:mt-0 mt-8">
+        <!-- story 1 -->
+        <div class="rounded-2xl border border-white/10 p-6 sm:p-7 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 70%)">
+          <div class="grid md:grid-cols-3 gap-x-8 gap-y-6">
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">As a</p><p class="mt-2 pb-2 text-white font-medium" style="border-bottom:1px solid rgba(255,255,255,.16)">Learner</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#f6d9b4;color:#3a2a18">role</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">I want to</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">take a structured course in cyber security</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#cbbef2;color:#241b3a">goal</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">so that</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">I can switch my career from project management into IT</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#a9d9c9;color:#123027">benefit</span></div></div>
+          </div>
+        </div>
+        <!-- story 2 -->
+        <div class="rounded-2xl border border-white/10 p-6 sm:p-7 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 70%)">
+          <div class="grid md:grid-cols-3 gap-x-8 gap-y-6">
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">As a</p><p class="mt-2 pb-2 text-white font-medium" style="border-bottom:1px solid rgba(255,255,255,.16)">Learner</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#f6d9b4;color:#3a2a18">role</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">I want to</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">get course recommendations matched to my assessment</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#cbbef2;color:#241b3a">goal</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">so that</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">I can become a certified data analyst</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#a9d9c9;color:#123027">benefit</span></div></div>
+          </div>
+        </div>
+        <!-- story 3 -->
+        <div class="rounded-2xl border border-white/10 p-6 sm:p-7 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 70%)">
+          <div class="grid md:grid-cols-3 gap-x-8 gap-y-6">
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">As a</p><p class="mt-2 pb-2 text-white font-medium" style="border-bottom:1px solid rgba(255,255,255,.16)">Learner</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#f6d9b4;color:#3a2a18">role</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">I want to</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">pay in flexible installments</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#cbbef2;color:#241b3a">goal</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">so that</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">I can spread the cost across two or three payments</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#a9d9c9;color:#123027">benefit</span></div></div>
+          </div>
+        </div>
+        <!-- story 4 -->
+        <div class="rounded-2xl border border-white/10 p-6 sm:p-7 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 70%)">
+          <div class="grid md:grid-cols-3 gap-x-8 gap-y-6">
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">As a</p><p class="mt-2 pb-2 text-white font-medium" style="border-bottom:1px solid rgba(255,255,255,.16)">Trainer</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#f6d9b4;color:#3a2a18">role</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">I want to</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">grade submissions and run live sessions in one place</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#cbbef2;color:#241b3a">goal</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">so that</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">I can spend my time teaching, not fighting the tools</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#a9d9c9;color:#123027">benefit</span></div></div>
+          </div>
+        </div>
+        <!-- story 5 -->
+        <div class="rounded-2xl border border-white/10 p-6 sm:p-7 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 70%)">
+          <div class="grid md:grid-cols-3 gap-x-8 gap-y-6">
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">As an</p><p class="mt-2 pb-2 text-white font-medium" style="border-bottom:1px solid rgba(255,255,255,.16)">Enterprise admin</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#f6d9b4;color:#3a2a18">role</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">I want to</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">see one view of my team's progress and spend</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#cbbef2;color:#241b3a">goal</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">so that</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">I can prove the training is working</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#a9d9c9;color:#123027">benefit</span></div></div>
+          </div>
+        </div>
+        <!-- story 6 -->
+        <div class="rounded-2xl border border-white/10 p-6 sm:p-7 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 70%)">
+          <div class="grid md:grid-cols-3 gap-x-8 gap-y-6">
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">As an</p><p class="mt-2 pb-2 text-white font-medium" style="border-bottom:1px solid rgba(255,255,255,.16)">Enterprise admin</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#f6d9b4;color:#3a2a18">role</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">I want to</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">assign courses and seats to my team in bulk</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#cbbef2;color:#241b3a">goal</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">so that</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">I can onboard a whole cohort in minutes, not days</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#a9d9c9;color:#123027">benefit</span></div></div>
+          </div>
+        </div>
+        <!-- story 7 -->
+        <div class="rounded-2xl border border-white/10 p-6 sm:p-7 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 70%)">
+          <div class="grid md:grid-cols-3 gap-x-8 gap-y-6">
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">As a</p><p class="mt-2 pb-2 text-white font-medium" style="border-bottom:1px solid rgba(255,255,255,.16)">Platform admin</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#f6d9b4;color:#3a2a18">role</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">I want to</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">review trainer content before it goes live</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#cbbef2;color:#241b3a">goal</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">so that</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">I can be sure only vetted material reaches learners</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#a9d9c9;color:#123027">benefit</span></div></div>
+          </div>
+        </div>
+        <!-- story 8 -->
+        <div class="rounded-2xl border border-white/10 p-6 sm:p-7 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 70%)">
+          <div class="grid md:grid-cols-3 gap-x-8 gap-y-6">
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">As a</p><p class="mt-2 pb-2 text-white font-medium" style="border-bottom:1px solid rgba(255,255,255,.16)">Trainer</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#f6d9b4;color:#3a2a18">role</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">I want to</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">get paid on time for the cohorts I run</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#cbbef2;color:#241b3a">goal</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">so that</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">I can keep teaching without chasing invoices</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#a9d9c9;color:#123027">benefit</span></div></div>
+          </div>
+        </div>
+        <!-- story 9 -->
+        <div class="rounded-2xl border border-white/10 p-6 sm:p-7 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 70%)">
+          <div class="grid md:grid-cols-3 gap-x-8 gap-y-6">
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">As a</p><p class="mt-2 pb-2 text-white font-medium" style="border-bottom:1px solid rgba(255,255,255,.16)">Trainer</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#f6d9b4;color:#3a2a18">role</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">I want to</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">see exactly where learners drop off in my course</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#cbbef2;color:#241b3a">goal</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">so that</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">I can fix the lessons that are losing them</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#a9d9c9;color:#123027">benefit</span></div></div>
+          </div>
+        </div>
+        <!-- story 10 -->
+        <div class="rounded-2xl border border-white/10 p-6 sm:p-7 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 70%)">
+          <div class="grid md:grid-cols-3 gap-x-8 gap-y-6">
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">As an</p><p class="mt-2 pb-2 text-white font-medium" style="border-bottom:1px solid rgba(255,255,255,.16)">Enterprise admin</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#f6d9b4;color:#3a2a18">role</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">I want to</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">invite my whole team by email or CSV</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#cbbef2;color:#241b3a">goal</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">so that</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">everyone gets access without manual setup</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#a9d9c9;color:#123027">benefit</span></div></div>
+          </div>
+        </div>
+        <!-- story 11 -->
+        <div class="rounded-2xl border border-white/10 p-6 sm:p-7 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 70%)">
+          <div class="grid md:grid-cols-3 gap-x-8 gap-y-6">
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">As a</p><p class="mt-2 pb-2 text-white font-medium" style="border-bottom:1px solid rgba(255,255,255,.16)">Platform admin</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#f6d9b4;color:#3a2a18">role</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">I want to</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">manage roles and permissions from one place</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#cbbef2;color:#241b3a">goal</span></div></div>
+            <div><p class="text-[11px] uppercase tracking-[0.16em] font-semibold" style="color:#8fb4e8">so that</p><p class="mt-2 pb-2 text-white font-medium leading-snug" style="border-bottom:1px solid rgba(255,255,255,.16)">the right people always have the right access</p><div class="mt-3"><span class="inline-flex rounded-md px-2.5 py-1 text-[11px] font-semibold" style="background:#a9d9c9;color:#123027">benefit</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Journey map -->
+    <div class="mt-16">
+      <div class="flex items-center gap-3 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">User journey map · the learner</span></div>
+      <div class="mt-2 overflow-x-auto rounded-2xl border border-white/10">
+        <table class="w-full min-w-[860px] border-collapse text-sm">
+          <thead><tr class="bg-white/[0.03]">
+            <th class="text-left font-medium text-[#8a8a8a] p-4 w-32">Stage</th>
+            <th class="text-left font-medium text-white p-4 border-l border-white/10">Log in / Discover</th>
+            <th class="text-left font-medium text-white p-4 border-l border-white/10">Assess &amp; enroll</th>
+            <th class="text-left font-medium text-white p-4 border-l border-white/10">Take course</th>
+            <th class="text-left font-medium text-white p-4 border-l border-white/10">Certify</th>
+          </tr></thead>
+          <tbody>
+            <tr class="border-t border-white/10 align-top"><td class="p-4 font-medium text-[#8a8a8a]">Actions</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Sign up, browse categories.</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Take the assessment, pick a path, pay.</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Watch, practise, join live sessions.</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Complete, certify, get career support.</td></tr>
+            <tr class="border-t border-white/10 align-top"><td class="p-4 font-medium text-[#8a8a8a]">Emotions</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Curious, a little unsure.<span class="mt-3 inline-block rounded-md bg-amber-500/10 text-amber-300 text-xs px-2 py-0.5">Tentative</span></td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Reassured by a clear path.<span class="mt-3 inline-block rounded-md bg-emerald-500/10 text-emerald-300 text-xs px-2 py-0.5">Confident</span></td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Supported by mentors.<span class="mt-3 inline-block rounded-md bg-emerald-500/10 text-emerald-300 text-xs px-2 py-0.5">Engaged</span></td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Proud, ready for work.<span class="mt-3 inline-block rounded-md bg-emerald-500/10 text-emerald-300 text-xs px-2 py-0.5">Accomplished</span></td></tr>
+            <tr class="border-t border-white/10 align-top"><td class="p-4 font-medium text-[#8a8a8a]">Opportunities</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Make categories and outcomes obvious.</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Use the assessment to personalise.</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Surface feedback and next steps.</td><td class="p-4 border-l border-white/10 text-[#c7c7cc]">Connect the credential to jobs.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- MVP -->
+    <div class="mt-16">
+      <div class="flex items-center gap-3 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">Defining the MVP</span></div>
+      <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">The smallest product that closes the loop.</h3>
+      <p class="max-w-4xl mt-4 text-lg text-[#a1a1aa] leading-relaxed">Six features, the minimum that carries a learner from sign-up all the way to a credential.</p>
+
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="group relative overflow-hidden rounded-2xl border border-white/10 p-6 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 65%)">
+          <div class="pointer-events-none absolute -right-8 -top-8 rounded-full" style="width:120px;height:120px;background:rgba(255,216,228,.09);filter:blur(38px)"></div>
+          <div class="relative flex items-center justify-between">
+            <span class="grid place-items-center size-12 rounded-xl text-accent" style="background:rgba(255,216,228,.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg></span>
+            <span class="font-bold text-3xl leading-none" style="color:rgba(255,255,255,.10)">01</span>
+          </div>
+          <p class="relative mt-5 font-semibold text-white">Onboarding</p>
+          <p class="relative mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">Sign-up and login, plus the personality and skills assessment.</p>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl border border-white/10 p-6 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 65%)">
+          <div class="pointer-events-none absolute -right-8 -top-8 rounded-full" style="width:120px;height:120px;background:rgba(255,216,228,.09);filter:blur(38px)"></div>
+          <div class="relative flex items-center justify-between">
+            <span class="grid place-items-center size-12 rounded-xl text-accent" style="background:rgba(255,216,228,.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+            <span class="font-bold text-3xl leading-none" style="color:rgba(255,255,255,.10)">02</span>
+          </div>
+          <p class="relative mt-5 font-semibold text-white">Assessment</p>
+          <p class="relative mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">Match the learner to the right path from their result.</p>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl border border-white/10 p-6 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 65%)">
+          <div class="pointer-events-none absolute -right-8 -top-8 rounded-full" style="width:120px;height:120px;background:rgba(255,216,228,.09);filter:blur(38px)"></div>
+          <div class="relative flex items-center justify-between">
+            <span class="grid place-items-center size-12 rounded-xl text-accent" style="background:rgba(255,216,228,.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88"/></svg></span>
+            <span class="font-bold text-3xl leading-none" style="color:rgba(255,255,255,.10)">03</span>
+          </div>
+          <p class="relative mt-5 font-semibold text-white">Course discovery</p>
+          <p class="relative mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">Recommended courses, the full catalog, and bundles.</p>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl border border-white/10 p-6 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 65%)">
+          <div class="pointer-events-none absolute -right-8 -top-8 rounded-full" style="width:120px;height:120px;background:rgba(255,216,228,.09);filter:blur(38px)"></div>
+          <div class="relative flex items-center justify-between">
+            <span class="grid place-items-center size-12 rounded-xl text-accent" style="background:rgba(255,216,228,.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg></span>
+            <span class="font-bold text-3xl leading-none" style="color:rgba(255,255,255,.10)">04</span>
+          </div>
+          <p class="relative mt-5 font-semibold text-white">Payment</p>
+          <p class="relative mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">One-time, installment, and bundle pricing.</p>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl border border-white/10 p-6 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 65%)">
+          <div class="pointer-events-none absolute -right-8 -top-8 rounded-full" style="width:120px;height:120px;background:rgba(255,216,228,.09);filter:blur(38px)"></div>
+          <div class="relative flex items-center justify-between">
+            <span class="grid place-items-center size-12 rounded-xl text-accent" style="background:rgba(255,216,228,.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+            <span class="font-bold text-3xl leading-none" style="color:rgba(255,255,255,.10)">05</span>
+          </div>
+          <p class="relative mt-5 font-semibold text-white">Mentorship</p>
+          <p class="relative mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">Contacting mentors and joining live sessions.</p>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl border border-white/10 p-6 transition-colors hover:border-white/20" style="background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 65%)">
+          <div class="pointer-events-none absolute -right-8 -top-8 rounded-full" style="width:120px;height:120px;background:rgba(255,216,228,.09);filter:blur(38px)"></div>
+          <div class="relative flex items-center justify-between">
+            <span class="grid place-items-center size-12 rounded-xl text-accent" style="background:rgba(255,216,228,.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/><circle cx="12" cy="8" r="6"/></svg></span>
+            <span class="font-bold text-3xl leading-none" style="color:rgba(255,255,255,.10)">06</span>
+          </div>
+          <p class="relative mt-5 font-semibold text-white">Certification</p>
+          <p class="relative mt-1.5 text-sm text-[#a1a1aa] leading-relaxed">Certificate issuance, sharing, and career support.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 mt-12 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">Ideation</span></div>
+      <figure>
+        <div class="rounded-2xl overflow-hidden border border-white/10" style="box-shadow:0 28px 80px -20px rgba(0,0,0,.7)"><img width="2055" height="1200" loading="lazy" decoding="async" src="assets/smartlearning-ideation.webp" alt="An ideation wall covered in sticky notes: personas, problems and pains, and grouped ideas." class="w-full h-auto block" onerror="this.remove()" /></div>
+        <figcaption class="mt-3 text-sm text-[#8a8a8a]">Ideation: mapping personas, problems and ideas on the wall.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 04 · DESIGN ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">Stage 04 · Design</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Designing the assets.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      Wireframes moved from structure to a hi-fi visual system: a colour guide, typography scale and an
+      icon set that hold the four surfaces together.
+    </p>
+
+    <div class="flex items-center gap-3 mt-10 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">Wireframes</span></div>
+    <div class="flex flex-col gap-5">
+      <figure><div class="rounded-xl overflow-hidden border border-white/10"><img width="1644" height="1424" loading="lazy" decoding="async" src="assets/smartlearning-wireframe-1a.webp" alt="Low-fidelity wireframe of the learner overview: sidebar, header and dashboard blocks." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-3 text-sm text-[#8a8a8a]">Wireframe 1a: learner overview.</figcaption></figure>
+      <figure><div class="rounded-xl overflow-hidden border border-white/10"><img width="1644" height="1150" loading="lazy" decoding="async" src="assets/smartlearning-wireframe-1b.webp" alt="Low-fidelity wireframe of the course catalog: filters, list and course cards." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-3 text-sm text-[#8a8a8a]">Wireframe 1b: course catalog.</figcaption></figure>
+    </div>
+
+
+    <!-- Colour guide -->
+    <div class="mt-16">
+      <div class="flex items-center gap-3 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">Colour guide</span></div>
+      <p class="text-sm text-[#8a8a8a] mb-4">Placeholder palette, to be finalised from the brand.</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="sw" style="background:#1E5EFF;color:#fff"><span class="n">Main</span><span class="h">#1E5EFF</span></div>
+        <div class="sw" style="background:#12C48B;color:#04140d"><span class="n">Accent</span><span class="h">#12C48B</span></div>
+        <div class="sw" style="background:#0B1020;color:#fff"><span class="n">Text</span><span class="h">#0B1020</span></div>
+        <div class="sw" style="background:#5B6478;color:#fff"><span class="n">Secondary</span><span class="h">#5B6478</span></div>
+        <div class="sw" style="background:#E5484D;color:#fff"><span class="n">Error</span><span class="h">#E5484D</span></div>
+        <div class="sw" style="background:#F5F7FB;color:#0B1020"><span class="n">Background</span><span class="h">#F5F7FB</span></div>
+      </div>
+    </div>
+
+    <!-- Typography -->
+    <div class="mt-16">
+      <div class="flex items-center gap-3 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">Typography</span></div>
+      <!-- specimen + family -->
+      <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:20px">
+        <div class="rounded-2xl border border-white/10 grid place-items-center py-10 overflow-hidden" style="background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 70%)">
+          <span style="font-weight:800;font-size:clamp(120px,20vw,210px);line-height:1;letter-spacing:-.03em;background:linear-gradient(160deg,#F4F0E8,#8B8276);-webkit-background-clip:text;background-clip:text;color:transparent">Aa</span>
+        </div>
+        <div class="rounded-2xl border border-white/10 p-7 flex flex-col" style="background:#141210">
+          <p class="text-4xl sm:text-5xl font-bold text-white" style="letter-spacing:-.02em">Inter</p>
+          <p class="mt-2 text-sm text-[#8a8a8a]">Google font</p>
+          <div class="mt-auto pt-10 space-y-2.5">
+            <p class="text-lg text-[#c7c7cc]" style="font-weight:400">Regular</p>
+            <p class="text-lg text-[#c7c7cc]" style="font-weight:500">Medium</p>
+            <p class="text-lg text-[#c7c7cc]" style="font-weight:600">Semibold</p>
+            <p class="text-lg text-white" style="font-weight:700">Bold</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- type scale -->
+      <div class="mt-5 overflow-x-auto rounded-2xl border border-white/10">
+        <div class="min-w-[820px]">
+          <div class="grid px-6 py-4 text-[11px] uppercase tracking-wider text-[#8a8a8a]" style="grid-template-columns:1.7fr 1fr 0.7fr 1fr 1.9fr;background:rgba(255,255,255,.03)">
+            <span>Style</span><span>Weight</span><span>Size</span><span>Line height</span><span>Rule</span>
+          </div>
+          <div class="grid px-6 py-4 border-t border-white/10" style="grid-template-columns:1.7fr 1fr 0.7fr 1fr 1.9fr;align-items:center"><span class="text-white" style="font-weight:700;font-size:40px;line-height:1">H1</span><span class="text-sm text-[#c7c7cc]">Bold</span><span class="text-sm text-[#c7c7cc]">40px</span><span class="text-sm text-[#c7c7cc]">40</span><span class="text-sm text-[#c7c7cc]">Use for hero text</span></div>
+          <div class="grid px-6 py-4 border-t border-white/10" style="grid-template-columns:1.7fr 1fr 0.7fr 1fr 1.9fr;align-items:center"><span class="text-white" style="font-weight:600;font-size:32px;line-height:1">H2</span><span class="text-sm text-[#c7c7cc]">Semibold</span><span class="text-sm text-[#c7c7cc]">32px</span><span class="text-sm text-[#c7c7cc]">48</span><span class="text-sm text-[#c7c7cc]">Use for dashboard hero text</span></div>
+          <div class="grid px-6 py-4 border-t border-white/10" style="grid-template-columns:1.7fr 1fr 0.7fr 1fr 1.9fr;align-items:center"><span class="text-white" style="font-weight:500;font-size:24px;line-height:1">H3</span><span class="text-sm text-[#c7c7cc]">Medium</span><span class="text-sm text-[#c7c7cc]">24px</span><span class="text-sm text-[#c7c7cc]">36</span><span class="text-sm text-[#c7c7cc]">Use for headings</span></div>
+          <div class="grid px-6 py-4 border-t border-white/10" style="grid-template-columns:1.7fr 1fr 0.7fr 1fr 1.9fr;align-items:center"><span class="text-white" style="font-weight:600;font-size:20px;line-height:1">H4</span><span class="text-sm text-[#c7c7cc]">Semibold</span><span class="text-sm text-[#c7c7cc]">20px</span><span class="text-sm text-[#c7c7cc]">24</span><span class="text-sm text-[#c7c7cc]">Use for section titles</span></div>
+          <div class="grid px-6 py-4 border-t border-white/10" style="grid-template-columns:1.7fr 1fr 0.7fr 1fr 1.9fr;align-items:center"><span class="text-white" style="font-weight:500;font-size:18px;line-height:1">H5</span><span class="text-sm text-[#c7c7cc]">Medium</span><span class="text-sm text-[#c7c7cc]">18px</span><span class="text-sm text-[#c7c7cc]">24</span><span class="text-sm text-[#c7c7cc]">Use for big body text</span></div>
+          <div class="grid px-6 py-4 border-t border-white/10" style="grid-template-columns:1.7fr 1fr 0.7fr 1fr 1.9fr;align-items:center"><span class="text-white" style="font-weight:400;font-size:16px;line-height:1">Body 1</span><span class="text-sm text-[#c7c7cc]">Regular</span><span class="text-sm text-[#c7c7cc]">16px</span><span class="text-sm text-[#c7c7cc]">20</span><span class="text-sm text-[#c7c7cc]">Body text and form field titles</span></div>
+          <div class="grid px-6 py-4 border-t border-white/10" style="grid-template-columns:1.7fr 1fr 0.7fr 1fr 1.9fr;align-items:center"><span class="text-white" style="font-weight:400;font-size:14px;line-height:1">Body 2</span><span class="text-sm text-[#c7c7cc]">Regular</span><span class="text-sm text-[#c7c7cc]">14px</span><span class="text-sm text-[#c7c7cc]">20</span><span class="text-sm text-[#c7c7cc]">Placeholders and small text</span></div>
+          <div class="grid px-6 py-4 border-t border-white/10" style="grid-template-columns:1.7fr 1fr 0.7fr 1fr 1.9fr;align-items:center"><span class="text-white" style="font-weight:500;font-size:14px;line-height:1">Button text</span><span class="text-sm text-[#c7c7cc]">Medium</span><span class="text-sm text-[#c7c7cc]">14px</span><span class="text-sm text-[#c7c7cc]">20</span><span class="text-sm text-[#c7c7cc]">Use for button text</span></div>
+          <div class="grid px-6 py-4 border-t border-white/10" style="grid-template-columns:1.7fr 1fr 0.7fr 1fr 1.9fr;align-items:center"><span class="text-white" style="font-weight:600;font-size:12px;line-height:1">Subtitle</span><span class="text-sm text-[#c7c7cc]">Semibold</span><span class="text-sm text-[#c7c7cc]">12px</span><span class="text-sm text-[#c7c7cc]">18</span><span class="text-sm text-[#c7c7cc]">Use for subtitles</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 · PROTOTYPE ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">Stage 05 · Prototype</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Hi-fidelity mockups, by role.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      The final design, one surface per role. Swap each slot below for an exported screen.
+    </p>
+
+    <!-- Learner -->
+    <p class="mt-12 text-sm font-semibold uppercase tracking-wide text-accent">Learner</p>
+    <div class="mt-6 flex flex-col gap-10">
+      <figure>
+        <p class="font-semibold text-white">Overview</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">The learner's home: progress, the next deliverables, and the recommended path.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2798" loading="lazy" decoding="async" src="assets/sl-learner-overview.webp" alt="Learner Overview screen: progress, next deliverables and recommended path." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">My courses</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Enrolled courses, progress, and the next live sessions in one place.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="1902" loading="lazy" decoding="async" src="assets/sl-learner-courses.webp" alt="Learner My courses screen: enrolled courses with progress and next live sessions." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Assessments</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Quizzes and graded work, with scores and feedback on every attempt.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2418" loading="lazy" decoding="async" src="assets/sl-learner-assessments.webp" alt="Learner Assessments screen: quizzes with scores and feedback." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Group presentation</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Shared documents and uploads for group deliverables.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="1902" loading="lazy" decoding="async" src="assets/sl-learner-group-presentation.webp" alt="Learner Group presentation screen: shared documents and uploads by group." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Career</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">The recommended path and role readiness, drawn from the assessment.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="4172" loading="lazy" decoding="async" src="assets/sl-learner-career.webp" alt="Learner Career screen: recommended path and role readiness." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Communication</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Q&amp;A, feedback and messages with trainers and peers.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="1998" loading="lazy" decoding="async" src="assets/sl-learner-communication.webp" alt="Learner Communication screen: Q and A, feedback and messages." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">AI tutor</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">On-demand help the moment a learner is stuck on a concept.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2584" loading="lazy" decoding="async" src="assets/sl-learner-ai-tutor.webp" alt="Learner AI tutor screen: on-demand help on a concept." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Settings</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Profile, security, notifications and billing, in one place.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="1902" loading="lazy" decoding="async" src="assets/sl-learner-settings.webp" alt="Learner Settings screen: profile, security, notifications and billing." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+    </div>
+
+    <!-- Trainer -->
+    <p class="mt-12 text-sm font-semibold uppercase tracking-wide text-accent">Trainer</p>
+    <div class="mt-6 flex flex-col gap-10">
+      <figure>
+        <p class="font-semibold text-white">Overview</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">The trainer's action list: what needs marking, answering or recording today.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2700" loading="lazy" decoding="async" src="assets/sl-trainer-overview.webp" alt="Trainer Overview screen: a prioritised action list of what needs marking, answering or recording." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Grading</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">The marking queue, against the published rubric, with a comment-not-notes prompt.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="1902" loading="lazy" decoding="async" src="assets/sl-trainer-grading.webp" alt="Trainer Grading screen: submissions waiting to mark against the rubric." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Live sessions</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Scheduled sessions and the live room, with attendance and chat.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="3328" loading="lazy" decoding="async" src="assets/sl-trainer-live-sessions.webp" alt="Trainer Live sessions screen: scheduled sessions and the live room." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Wallet</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Balance, next payout and earnings history for the cohorts run.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2866" loading="lazy" decoding="async" src="assets/sl-trainer-wallet.webp" alt="Trainer Wallet screen: balance, next payout and earnings history." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Performance</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Completion, ratings and where learners drop off across classes.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="3364" loading="lazy" decoding="async" src="assets/sl-trainer-performance.webp" alt="Trainer Performance screen: completion, ratings and drop-off by class." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+    </div>
+
+    <!-- Admin -->
+    <p class="mt-12 text-sm font-semibold uppercase tracking-wide text-accent">Platform admin</p>
+    <div class="mt-6 flex flex-col gap-10">
+      <figure>
+        <p class="font-semibold text-white">Statistics &amp; reports</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Enrollments, sources and completion, broken down by track.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2098" loading="lazy" decoding="async" src="assets/sl-admin-statistics.webp" alt="Admin Statistics and reports screen: enrollments, sources and completion by track." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Management reports</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Scheduled reports for the board, generated over a date range.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2106" loading="lazy" decoding="async" src="assets/sl-admin-management-reports.webp" alt="Admin Management reports screen: scheduled board reports and history." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">User management</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Search, edit, suspend or reset users, with bulk actions.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2120" loading="lazy" decoding="async" src="assets/sl-admin-user-management.webp" alt="Admin User management screen: a searchable user table with roles and status." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Roles &amp; permissions</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Toggle capabilities per role, so the right people have the right access.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="3230" loading="lazy" decoding="async" src="assets/sl-admin-roles-permissions.webp" alt="Admin Roles and permissions screen: capability toggles per role." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Manage courses</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">The catalog with each course's status, ready to publish or unpublish.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="1902" loading="lazy" decoding="async" src="assets/sl-admin-manage-courses.webp" alt="Admin Manage courses screen: the catalog with publish status per course." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Manage PTA</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Edit the pre-training assessment questions and scoring that drive the learner path.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2940" loading="lazy" decoding="async" src="assets/sl-admin-manage-pta.webp" alt="Admin Manage PTA screen: editing pre-training assessment questions and scoring." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+    </div>
+
+    <!-- Enterprise -->
+    <p class="mt-12 text-sm font-semibold uppercase tracking-wide text-accent">Enterprise</p>
+    <div class="mt-6 flex flex-col gap-10">
+      <figure>
+        <p class="font-semibold text-white">Teams</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Every team, its manager and members, with progress at a glance.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="3184" loading="lazy" decoding="async" src="assets/sl-ent-teams.webp" alt="Enterprise Teams screen: teams with managers, members and progress." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Reports</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Completion and progress by team and date range, exportable to CSV or PDF.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2554" loading="lazy" decoding="async" src="assets/sl-ent-reports.webp" alt="Enterprise Reports screen: completion and progress by team and date range." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Our courses</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">The team's assigned courses, with the option to assign more.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="1902" loading="lazy" decoding="async" src="assets/sl-ent-our-courses.webp" alt="Enterprise Our courses screen: assigned courses with the option to assign more." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Seats</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Seats used and available, with the option to buy more.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2634" loading="lazy" decoding="async" src="assets/sl-ent-seats.webp" alt="Enterprise Seats screen: seats used and available, with buy more." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Invites</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Invite people by email or CSV, with a pending list to resend or revoke.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2278" loading="lazy" decoding="async" src="assets/sl-ent-invites.webp" alt="Enterprise Invites screen: invite by email or CSV with a pending list." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Billing</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Invoices, payment method and purchase orders in one place.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2530" loading="lazy" decoding="async" src="assets/sl-ent-billing.webp" alt="Enterprise Billing screen: invoices, payment method and purchase orders." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+      <figure>
+        <p class="font-semibold text-white">Permissions &amp; settings</p>
+        <p class="mt-1 text-sm text-[#8a8a8a] leading-relaxed">Who can act on the account, and the rules that apply to everyone.</p>
+        <div class="mt-3 rounded-xl overflow-hidden border border-white/10"><img width="3010" height="2272" loading="lazy" decoding="async" src="assets/sl-ent-permissions-settings.webp" alt="Enterprise Permissions and settings screen: account roles and rules." class="w-full h-auto block" onerror="this.remove()" /></div>
+      </figure>
+    </div>
+
+    <!-- Demo walkthroughs (hidden for now, restore by removing style="display:none") -->
+    <div class="mt-16" style="display:none">
+      <div class="flex items-center gap-3 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">Demo walkthroughs</span></div>
+      <p class="max-w-4xl text-lg text-[#a1a1aa] leading-relaxed">A short walkthrough for each role, showing the core flow end to end.</p>
+      <div class="mt-8 grid md:grid-cols-2 gap-5">
+        <figure><div class="ph vid"><span class="ic">&#9654;</span><span class="lb">Video · Learner demo, onboarding to completion</span></div></figure>
+        <figure><div class="ph vid"><span class="ic">&#9654;</span><span class="lb">Video · Trainer demo, grading and live session</span></div></figure>
+        <figure><div class="ph vid"><span class="ic">&#9654;</span><span class="lb">Video · Admin demo, user management and reporting</span></div></figure>
+        <figure><div class="ph vid"><span class="ic">&#9654;</span><span class="lb">Video · Enterprise demo, team setup and billing</span></div></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · TEST ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">Stage 06 · Test</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Use cases &amp; UI states.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      How the platform behaves before content loads, when there is nothing to show, when something breaks,
+      and when an action succeeds.
+    </p>
+
+    <div class="mt-10 space-y-8">
+      <div><p class="text-sm font-semibold uppercase tracking-wide text-accent mb-4">Loading state</p><div class="grid md:grid-cols-2 gap-5">
+        <figure><div class="rounded-xl overflow-hidden border border-white/10"><img width="1440" height="1024" loading="lazy" decoding="async" src="assets/sl-state-01.webp" alt="Loading state: skeleton cards on the course catalog." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-2.5 text-sm text-[#8a8a8a]">Course catalog, skeleton cards.</figcaption></figure>
+        <figure><div class="rounded-xl overflow-hidden border border-white/10"><img width="1440" height="1024" loading="lazy" decoding="async" src="assets/sl-state-02.webp" alt="Loading state: admin analytics and reports loading." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-2.5 text-sm text-[#8a8a8a]">Admin analytics and reports.</figcaption></figure>
+      </div></div>
+      <div><p class="text-sm font-semibold uppercase tracking-wide text-accent mb-4">Empty state</p><div class="grid md:grid-cols-2 gap-5">
+        <figure><div class="rounded-xl overflow-hidden border border-white/10"><img width="1440" height="1024" loading="lazy" decoding="async" src="assets/sl-state-03.webp" alt="Empty state: no enrolled courses yet." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-2.5 text-sm text-[#8a8a8a]">Learner, no enrolled courses.</figcaption></figure>
+        <figure><div class="rounded-xl overflow-hidden border border-white/10"><img width="1440" height="1024" loading="lazy" decoding="async" src="assets/sl-state-04.webp" alt="Empty state: admin, no users added yet." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-2.5 text-sm text-[#8a8a8a]">Admin, no users added yet.</figcaption></figure>
+      </div></div>
+      <div><p class="text-sm font-semibold uppercase tracking-wide text-accent mb-4">Error state</p><div class="grid md:grid-cols-2 gap-5">
+        <figure><div class="rounded-xl overflow-hidden border border-white/10"><img width="1440" height="1024" loading="lazy" decoding="async" src="assets/sl-state-05.webp" alt="Error state: a failed payment at checkout." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-2.5 text-sm text-[#8a8a8a]">Checkout, failed payment.</figcaption></figure>
+        <figure><div class="rounded-xl overflow-hidden border border-white/10"><img width="1440" height="1024" loading="lazy" decoding="async" src="assets/sl-state-06.webp" alt="Error state: admin, a failed bulk user import." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-2.5 text-sm text-[#8a8a8a]">Admin, failed bulk import.</figcaption></figure>
+      </div></div>
+      <div><p class="text-sm font-semibold uppercase tracking-wide text-accent mb-4">Success / confirmation state</p><div class="grid md:grid-cols-2 gap-5">
+        <figure><div class="rounded-xl overflow-hidden border border-white/10"><img width="1440" height="1024" loading="lazy" decoding="async" src="assets/sl-state-07.webp" alt="Success state: a course completed." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-2.5 text-sm text-[#8a8a8a]">Learner, course completed.</figcaption></figure>
+        <figure><div class="rounded-xl overflow-hidden border border-white/10"><img width="1440" height="1024" loading="lazy" decoding="async" src="assets/sl-state-08.webp" alt="Success state: admin, users added and permissions saved." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-2.5 text-sm text-[#8a8a8a]">Admin, users added and permissions saved.</figcaption></figure>
+      </div></div>
+      <div><p class="text-sm font-semibold uppercase tracking-wide text-accent mb-4">Admin user states</p><div class="grid md:grid-cols-2 gap-5">
+        <figure><div class="rounded-xl overflow-hidden border border-white/10"><img width="1440" height="1024" loading="lazy" decoding="async" src="assets/sl-state-09.webp" alt="Admin state: user and role management." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-2.5 text-sm text-[#8a8a8a]">User and role management.</figcaption></figure>
+        <figure><div class="rounded-xl overflow-hidden border border-white/10"><img width="1440" height="1024" loading="lazy" decoding="async" src="assets/sl-state-10.webp" alt="Admin state: organisation and permissions settings." class="w-full h-auto block" onerror="this.remove()" /></div><figcaption class="mt-2.5 text-sm text-[#8a8a8a]">Organisation and permissions settings.</figcaption></figure>
+      </div></div>
+    </div>
+
+    <!-- State matrix -->
+    <div class="mt-16">
+      <div class="flex items-center gap-3 mb-5"><span class="text-sm font-medium text-accent tracking-wide uppercase">State matrix</span></div>
+      <h3 class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">Every screen, in every state.</h3>
+      <p class="max-w-4xl mt-4 text-lg text-[#a1a1aa] leading-relaxed">The behaviour each core screen shows while it loads, when there is nothing yet, when something breaks, and when it works.</p>
+
+      <div class="mt-8 overflow-x-auto rounded-2xl border border-white/10">
+        <div class="min-w-[880px]">
+          <!-- header -->
+          <div class="grid" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;background:rgba(255,255,255,.03)">
+            <div class="p-4 text-[11px] uppercase tracking-wider text-[#8a8a8a]">Screen</div>
+            <div class="p-4 border-l border-white/10 flex items-center gap-2 text-sm font-medium text-white"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="color:#8fb4e8"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>Loading</div>
+            <div class="p-4 border-l border-white/10 flex items-center gap-2 text-sm font-medium text-white"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#8B8276"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>Empty</div>
+            <div class="p-4 border-l border-white/10 flex items-center gap-2 text-sm font-medium text-white"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#f87171"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>Error</div>
+            <div class="p-4 border-l border-white/10 flex items-center gap-2 text-sm font-medium text-white"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#34d399"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>Success</div>
+          </div>
+          <!-- rows -->
+          <div class="grid border-t border-white/10" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1fr">
+            <div class="p-4 font-medium text-white flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#8B8276"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>Course catalog</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(143,180,232,.045)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#8fb4e8"></span>Skeleton cards</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#8B8276"></span>No results, suggest paths</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(248,113,113,.05)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#f87171"></span>Retry load</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(52,211,153,.05)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#34d399"></span>Enrolled</div>
+          </div>
+          <div class="grid border-t border-white/10" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1fr">
+            <div class="p-4 font-medium text-white flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#8B8276"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>Dashboard</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(143,180,232,.045)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#8fb4e8"></span>Spinner tiles</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#8B8276"></span>Start assessment prompt</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(248,113,113,.05)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#f87171"></span>Reload data</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(52,211,153,.05)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#34d399"></span>Progress shown</div>
+          </div>
+          <div class="grid border-t border-white/10" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1fr">
+            <div class="p-4 font-medium text-white flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#8B8276"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>Checkout</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(143,180,232,.045)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#8fb4e8"></span>Processing</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#8B8276"></span>Empty cart</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(248,113,113,.05)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#f87171"></span>Payment failed</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(52,211,153,.05)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#34d399"></span>Receipt</div>
+          </div>
+          <div class="grid border-t border-white/10" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1fr">
+            <div class="p-4 font-medium text-white flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#8B8276"><polygon points="6 3 20 12 6 21 6 3"/></svg>Course player</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(143,180,232,.045)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#8fb4e8"></span>Buffering</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#8B8276"></span>No lessons yet</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(248,113,113,.05)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#f87171"></span>Playback error</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(52,211,153,.05)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#34d399"></span>Module done</div>
+          </div>
+          <div class="grid border-t border-white/10" style="grid-template-columns:1.5fr 1fr 1fr 1fr 1fr">
+            <div class="p-4 font-medium text-white flex items-center gap-2.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#8B8276"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Admin, user management</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(143,180,232,.045)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#8fb4e8"></span>Loading table</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#8B8276"></span>No users added</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(248,113,113,.05)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#f87171"></span>Import failed</div>
+            <div class="p-4 border-l border-white/10 flex gap-2.5 text-sm text-[#c7c7cc]" style="background:rgba(52,211,153,.05)"><span style="margin-top:6px;flex:none;width:7px;height:7px;border-radius:50%;background:#34d399"></span>Saved</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS & TAKEAWAYS ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-sm font-medium text-accent tracking-wide uppercase">Results &amp; takeaways</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">What shipped, and what it taught me.</h2>
+    <p class="max-w-4xl mt-5 text-lg text-[#a1a1aa] leading-relaxed">
+      SmartLearning shipped as one platform holding four roles, with the learner journey running from
+      assessment to certification and career support. The biggest shift from the original plan was moving
+      mentorship from a bolt-on to the spine of the experience, which is what makes the credential mean
+      something. Next, I would deepen the enterprise reporting and the AI tutor.
+    </p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6"><p class="text-accent font-semibold">Focus on the MVP</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Scoping to the assessment-to-certificate loop kept the first release shippable and coherent.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6"><p class="text-accent font-semibold">Stay close to the problem</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">Writing each decision against a learner frustration kept the team user-focused.</p></div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6"><p class="text-accent font-semibold">Design for every role</p><p class="mt-2 text-sm text-[#a1a1aa] leading-relaxed">One product holding four roles meant designing the seams, not just the screens.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ NEXT PROJECT ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32">
+    <a href="luxury-marketplace.html" class="group block rounded-2xl border border-white/10 bg-card hover:bg-white/[0.04] transition-colors p-6 sm:p-8">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Next project</p>
+      <div class="mt-3 flex items-center justify-between gap-4">
+        <p class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Dossier · A Marketplace Built on Trust</p>
+        <span class="text-2xl text-[#8a8a8a] group-hover:text-white transition-colors shrink-0">&rarr;</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="relative mt-32 sm:mt-44 overflow-hidden border-t border-white/10">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(120% 100% at 50% -10%, #1b1618 0%, #130f0e 42%, #0b0a0a 100%);"></div>
+    <div class="absolute -z-10 top-[-160px] left-1/2 -translate-x-1/2 size-[560px] rounded-full bg-accent/10 blur-[150px]"></div>
+
+    <div class="max-w-[1520px] mx-auto px-6 py-24 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-accent">Thanks for reading</p>
+      <h2 class="mt-6 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05] mx-auto">Let's Design Products That Move People Forward.</h2>
+      <p class="mt-6 max-w-xl mx-auto text-lg text-[#c7c7cc] leading-relaxed">I'm a product designer who likes hard, technical problems. If that's useful to your team, let's talk.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:toyosi.design@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-white/90 transition"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> toyosi.design@gmail.com</a>
+        <a href="https://calendly.com/toyosi-design" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/5 transition">Book a 30-min intro ↗</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-[1520px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-[#8a8a8a]">© 2026 Omotoyosi Adegbite.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox: click any screen to enlarge -->
+  <div id="lb" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-10 cursor-zoom-out">
+    <img id="lb-img" alt="" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl" />
+    <button id="lb-x" aria-label="Close" class="absolute top-4 right-6 text-white/60 hover:text-white text-4xl leading-none">&times;</button>
+  </div>
+  <script>
+  (function(){
+    var lb=document.getElementById('lb'), img=document.getElementById('lb-img');
+    function open(src,alt){ img.src=src; img.alt=alt||''; lb.classList.remove('hidden'); lb.classList.add('flex'); document.body.style.overflow='hidden'; }
+    function close(){ lb.classList.add('hidden'); lb.classList.remove('flex'); document.body.style.overflow=''; img.removeAttribute('src'); }
+    document.querySelectorAll('img[src^="assets/"]').forEach(function(el){
+      if(el.closest('header')||el.closest('footer')) return;
+      el.style.cursor='zoom-in';
+      el.addEventListener('click', function(){ open(el.currentSrc||el.src, el.alt); });
+    });
+    lb.addEventListener('click', close);
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+  })();
+  </script>
+</body>
+</html>
