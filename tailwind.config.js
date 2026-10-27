@@ -39,6 +39,9 @@ module.exports = {
         blue: { ...colors.blue, DEFAULT: '#3B82F6' },
         violet: { ...colors.violet, DEFAULT: '#8b5cf6' },
         cyan: { ...colors.cyan, DEFAULT: '#38d3ee' },
+        // Light-theme palettes (homepage). Numbered 1 (lightest) → 10 (darkest).
+        grey: { 1: '#e8e8e8', 2: '#c7c7c7', 3: '#9b9b9b', 4: '#6d6d6d', 5: '#414141', 6: '#171717', 7: '#141414', 8: '#101010', 9: '#0d0d0d', 10: '#0a0a0a' },
+        royal: { 1: '#f1f1fe', 2: '#dedefd', 3: '#c4c5fc', 4: '#a9a9fa', 5: '#8f8ff8', 6: '#7677f7', 7: '#6465d2', 8: '#5454af', 9: '#43448d', 10: '#35366f' },
       },
     },
   },
