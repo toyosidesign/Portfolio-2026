@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluent Conveyors · Screens &amp; interactions | Omotoyosi Adegbite</title>
+  <meta name="description" content="Fluent Conveyors customer portal: every key screen and short recordings of the interactions on each, from approving a quote to paying an invoice and tracking a shipment." />
+
+  <!-- Tailwind CSS (precompiled -- rebuild with: npm run build:css) -->
+  <link rel="stylesheet" href="assets/tailwind.css?v=a4627e5e" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Widen the shared body-text measure to fill the 1520px layout */
+    .max-w-4xl{max-width:72rem;}
+    /* Match the Dossier page width (1136px content) */
+    .max-w-\[1520px\]{max-width:1184px}
+    ::selection { background: #ffd8e4; color: #000; }
+  </style>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yneu5n6q1t");
+  </script>
+</head>
+
+<body class="bg-base text-white font-sans antialiased">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="sticky top-0 z-50 pt-6 px-4 sm:px-6">
+    <div class="max-w-[1520px] mx-auto">
+      <nav class="flex items-center justify-between h-[54px] rounded-full border border-[#3d3e3f] bg-header/90 backdrop-blur-xl px-5 shadow-[0_4px_10px_rgba(0,0,0,0.35)]">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="grid place-items-center size-7 rounded-full bg-accent text-black text-xs font-bold">O</span>
+          <span class="text-base font-semibold tracking-tight text-white">Omotoyosi Adegbite</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm">
+          <li><a href="index.html#work" class="font-bold text-accent">Work</a></li>
+          <li><a href="index.html#about" class="text-[#c0c0c0] hover:text-white transition-colors">About</a></li>
+          <li><a href="index.html#contact" class="text-[#c0c0c0] hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <!-- ============ HERO ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 pt-14 sm:pt-20">
+    <div class="flex items-center justify-between mb-10">
+      <a href="index.html#work" class="inline-flex items-center gap-1.5 text-sm text-[#8a8a8a] hover:text-white transition-colors">← Back to all work</a>
+      <a href="https://fluentconveyors.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-white transition-colors">View live project →</a>
+    </div>
+    <p class="text-sm text-[#8a8a8a]">Fluent Conveyors &nbsp;|&nbsp; B2B SaaS &nbsp;·&nbsp; Customer portal</p>
+    <h1 class="mt-3 text-4xl sm:text-6xl font-semibold tracking-[-0.03em] leading-[1.05]">The customer portal, screen by screen.</h1>
+    <p class="max-w-4xl mt-6 text-lg text-[#c7c7cc] leading-relaxed">
+      A self-serve portal where facility operators manage conveyor assets, approve quotes, pay invoices,
+      track shipments and stay ahead of maintenance. Below are the 13 core screens, each with a short
+      recording of the interaction it was designed around.
+    </p>
+    <div class="mt-8 flex flex-wrap items-center gap-3">
+      <a href="Fluent.html" class="inline-flex items-center gap-2 rounded-full bg-accent text-black px-6 py-3.5 text-sm font-semibold hover:bg-white transition-colors">See the case study <span aria-hidden="true">→</span></a>
+      <a href="#dashboard" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-sm font-medium hover:bg-white/5 transition-colors">Browse the screens ↓</a>
+    </div>
+    <nav aria-label="Screens" class="mt-12 flex flex-wrap gap-2"><a href="#dashboard" class="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#c7c7cc] hover:text-white hover:border-white/25 transition-colors">Dashboard</a><a href="#my-assets" class="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#c7c7cc] hover:text-white hover:border-white/25 transition-colors">My Assets</a><a href="#asset-details" class="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#c7c7cc] hover:text-white hover:border-white/25 transition-colors">Asset Details</a><a href="#open-quote-details" class="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#c7c7cc] hover:text-white hover:border-white/25 transition-colors">Open Quote Details</a><a href="#invoice-details" class="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#c7c7cc] hover:text-white hover:border-white/25 transition-colors">Invoice Details</a><a href="#inventory" class="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#c7c7cc] hover:text-white hover:border-white/25 transition-colors">Inventory</a><a href="#shipment-details" class="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#c7c7cc] hover:text-white hover:border-white/25 transition-colors">Shipment Details</a><a href="#maintenance" class="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#c7c7cc] hover:text-white hover:border-white/25 transition-colors">Maintenance</a><a href="#calendar" class="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#c7c7cc] hover:text-white hover:border-white/25 transition-colors">Calendar</a><a href="#help-desk" class="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#c7c7cc] hover:text-white hover:border-white/25 transition-colors">Help Desk</a><a href="#ticket-details" class="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#c7c7cc] hover:text-white hover:border-white/25 transition-colors">Ticket Details</a><a href="#fluent-ai" class="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#c7c7cc] hover:text-white hover:border-white/25 transition-colors">Fluent AI</a><a href="#e-learning" class="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#c7c7cc] hover:text-white hover:border-white/25 transition-colors">E-Learning</a></nav>
+  </section>
+
+  <section id="dashboard" class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-[#8a8a8a] tabular-nums">Screen 01 <span class="text-[#5a5a5a]">/ 13</span></p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Dashboard</h2>
+      </div>
+      <p class="text-lg text-[#a1a1aa] leading-relaxed">A single view of fleet health, open work, spend and shipments, so operators see what needs attention first.</p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img width="1600" height="961" loading="eager" decoding="async" src="assets/fluent-screen-dashboard.webp" alt="Fluent Conveyors Dashboard screen" class="block w-full h-auto" />
+    </div>
+  </section>
+  <section id="my-assets" class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-[#8a8a8a] tabular-nums">Screen 02 <span class="text-[#5a5a5a]">/ 13</span></p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">My Assets</h2>
+      </div>
+      <p class="text-lg text-[#a1a1aa] leading-relaxed">Every conveyor and component on site, with status, location and service history, filterable at a glance.</p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img width="1600" height="1068" loading="lazy" decoding="async" src="assets/fluent-screen-my-assets.webp" alt="Fluent Conveyors My Assets screen" class="block w-full h-auto" />
+    </div><div class="mt-6 grid md:grid-cols-[1.35fr_1fr] gap-6 md:gap-10 items-center rounded-2xl border border-white/10 bg-card p-4 sm:p-6"><div class="fc-video relative overflow-hidden rounded-xl bg-[#EBF3FC] aspect-[4/3]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/fluent-flow-05-asset-view-poster.webp" aria-label="Screen recording: Find &amp; view an asset"><source src="assets/fluent-flow-05-asset-view.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div><div class="md:pr-4"><p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Interaction</p><h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Find &amp; view an asset</h3><ol class="mt-4 space-y-3"><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">1</span><span>Filter the fleet down to late assets.</span></li><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">2</span><span>Open an asset to see its parts, details and spend.</span></li></ol></div></div>
+  </section>
+  <section id="asset-details" class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-[#8a8a8a] tabular-nums">Screen 03 <span class="text-[#5a5a5a]">/ 13</span></p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Asset Details</h2>
+      </div>
+      <p class="text-lg text-[#a1a1aa] leading-relaxed">Deep view of one asset: specifications, maintenance history, related documents and its replacement parts.</p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img width="1600" height="961" loading="lazy" decoding="async" src="assets/fluent-screen-asset-details.webp" alt="Fluent Conveyors Asset Details screen" class="block w-full h-auto" />
+    </div><div class="mt-6 grid md:grid-cols-[1.35fr_1fr] gap-6 md:gap-10 items-center rounded-2xl border border-white/10 bg-card p-4 sm:p-6"><div class="fc-video relative overflow-hidden rounded-xl bg-[#EBF3FC] aspect-[4/3]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/fluent-flow-11-asset-cart-quote-poster.webp" aria-label="Screen recording: Add to cart &amp; request a quote"><source src="assets/fluent-flow-11-asset-cart-quote.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div><div class="md:pr-4"><p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Interaction</p><h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Add to cart &amp; request a quote</h3><ol class="mt-4 space-y-3"><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">1</span><span>Add a replacement part straight from the asset.</span></li><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">2</span><span>Submit the cart as a quote request in one step.</span></li></ol></div></div>
+  </section>
+  <section id="open-quote-details" class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-[#8a8a8a] tabular-nums">Screen 04 <span class="text-[#5a5a5a]">/ 13</span></p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Open Quote Details</h2>
+      </div>
+      <p class="text-lg text-[#a1a1aa] leading-relaxed">Review line items, compare options and approve a quote with a captured signature.</p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img width="1600" height="1068" loading="lazy" decoding="async" src="assets/fluent-screen-open-quote-details.webp" alt="Fluent Conveyors Open Quote Details screen" class="block w-full h-auto" />
+    </div><div class="mt-6 grid md:grid-cols-[1.35fr_1fr] gap-6 md:gap-10 items-center rounded-2xl border border-white/10 bg-card p-4 sm:p-6"><div class="fc-video relative overflow-hidden rounded-xl bg-[#EBF3FC] aspect-[4/3]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/fluent-flow-02-quote-approval-poster.webp" aria-label="Screen recording: Approve a quote"><source src="assets/fluent-flow-02-quote-approval.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div><div class="md:pr-4"><p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Interaction</p><h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Approve a quote</h3><ol class="mt-4 space-y-3"><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">1</span><span>Review line items and totals.</span></li><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">2</span><span>Add a PO number and sign to accept.</span></li></ol></div></div>
+  </section>
+  <section id="invoice-details" class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-[#8a8a8a] tabular-nums">Screen 05 <span class="text-[#5a5a5a]">/ 13</span></p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Invoice Details</h2>
+      </div>
+      <p class="text-lg text-[#a1a1aa] leading-relaxed">Invoice breakdown with tax exemption handling and a guided pay flow from review to paid in full.</p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img width="1600" height="1550" loading="lazy" decoding="async" src="assets/fluent-screen-invoice-details.webp" alt="Fluent Conveyors Invoice Details screen" class="block w-full h-auto" />
+    </div><div class="mt-6 grid md:grid-cols-2 gap-6"><div class="rounded-2xl border border-white/10 bg-card p-4 sm:p-6"><div class="fc-video relative overflow-hidden rounded-xl bg-[#EBF3FC] aspect-[4/3]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/fluent-flow-01-invoice-payment-poster.webp" aria-label="Screen recording: Pay an invoice"><source src="assets/fluent-flow-01-invoice-payment.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div><div class="mt-5 sm:px-1"><p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Interaction</p><h3 class="mt-2 text-xl font-semibold tracking-[-0.01em]">Pay an invoice</h3><ol class="mt-4 space-y-3"><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">1</span><span>Enter card details and apply an exemption.</span></li><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">2</span><span>Sign, pay and see the invoice marked paid in full.</span></li></ol></div></div><div class="rounded-2xl border border-white/10 bg-card p-4 sm:p-6"><div class="fc-video relative overflow-hidden rounded-xl bg-[#EBF3FC] aspect-[4/3]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/fluent-flow-03-tax-exemption-upload-poster.webp" aria-label="Screen recording: Upload a tax exemption"><source src="assets/fluent-flow-03-tax-exemption-upload.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div><div class="mt-5 sm:px-1"><p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Interaction</p><h3 class="mt-2 text-xl font-semibold tracking-[-0.01em]">Upload a tax exemption</h3><ol class="mt-4 space-y-3"><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">1</span><span>Choose a reason, number and validity dates.</span></li><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">2</span><span>Attach the certificate and submit for review.</span></li></ol></div></div></div>
+  </section>
+  <section id="inventory" class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-[#8a8a8a] tabular-nums">Screen 06 <span class="text-[#5a5a5a]">/ 13</span></p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Inventory</h2>
+      </div>
+      <p class="text-lg text-[#a1a1aa] leading-relaxed">Spare parts stock levels across locations, with reorder signals and quick add to cart.</p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img width="1600" height="1046" loading="lazy" decoding="async" src="assets/fluent-screen-inventory.webp" alt="Fluent Conveyors Inventory screen" class="block w-full h-auto" />
+    </div><div class="mt-6 grid md:grid-cols-[1.35fr_1fr] gap-6 md:gap-10 items-center rounded-2xl border border-white/10 bg-card p-4 sm:p-6"><div class="fc-video relative overflow-hidden rounded-xl bg-[#EBF3FC] aspect-[4/3]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/fluent-flow-10-inventory-browse-poster.webp" aria-label="Screen recording: Search &amp; update stock"><source src="assets/fluent-flow-10-inventory-browse.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div><div class="md:pr-4"><p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Interaction</p><h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Search &amp; update stock</h3><ol class="mt-4 space-y-3"><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">1</span><span>Search a part, then open its locations.</span></li><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">2</span><span>Adjust stock at a site and confirm the update.</span></li></ol></div></div>
+  </section>
+  <section id="shipment-details" class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-[#8a8a8a] tabular-nums">Screen 07 <span class="text-[#5a5a5a]">/ 13</span></p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Shipment Details</h2>
+      </div>
+      <p class="text-lg text-[#a1a1aa] leading-relaxed">Live tracking of an order in transit, from dispatch to delivery, with contents and documents.</p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img width="1600" height="1068" loading="lazy" decoding="async" src="assets/fluent-screen-shipment-details.webp" alt="Fluent Conveyors Shipment Details screen" class="block w-full h-auto" />
+    </div><div class="mt-6 grid md:grid-cols-[1.35fr_1fr] gap-6 md:gap-10 items-center rounded-2xl border border-white/10 bg-card p-4 sm:p-6"><div class="fc-video relative overflow-hidden rounded-xl bg-[#EBF3FC] aspect-[4/3]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/fluent-flow-06-shipment-tracking-poster.webp" aria-label="Screen recording: Track a shipment"><source src="assets/fluent-flow-06-shipment-tracking.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div><div class="md:pr-4"><p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Interaction</p><h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Track a shipment</h3><ol class="mt-4 space-y-3"><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">1</span><span>Progress fills from dispatch to delivery.</span></li><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">2</span><span>Tracking history lists every checkpoint.</span></li></ol></div></div>
+  </section>
+  <section id="maintenance" class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-[#8a8a8a] tabular-nums">Screen 08 <span class="text-[#5a5a5a]">/ 13</span></p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Maintenance</h2>
+      </div>
+      <p class="text-lg text-[#a1a1aa] leading-relaxed">Scheduled and reactive work orders in one place, with priority, assignee and due dates.</p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img width="1600" height="1422" loading="lazy" decoding="async" src="assets/fluent-screen-maintenance.webp" alt="Fluent Conveyors Maintenance screen" class="block w-full h-auto" />
+    </div><div class="mt-6 grid md:grid-cols-[1.35fr_1fr] gap-6 md:gap-10 items-center rounded-2xl border border-white/10 bg-card p-4 sm:p-6"><div class="fc-video relative overflow-hidden rounded-xl bg-[#EBF3FC] aspect-[4/3]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/fluent-flow-09-maintenance-filter-poster.webp" aria-label="Screen recording: Complete a task"><source src="assets/fluent-flow-09-maintenance-filter.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div><div class="md:pr-4"><p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Interaction</p><h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Complete a task</h3><ol class="mt-4 space-y-3"><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">1</span><span>Filter to late work orders and open one.</span></li><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">2</span><span>Mark the task complete and the order closes.</span></li></ol></div></div>
+  </section>
+  <section id="calendar" class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-[#8a8a8a] tabular-nums">Screen 09 <span class="text-[#5a5a5a]">/ 13</span></p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Calendar</h2>
+      </div>
+      <p class="text-lg text-[#a1a1aa] leading-relaxed">Service visits, deliveries and shutdowns planned on one calendar with month, week and day views.</p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img width="1600" height="1281" loading="lazy" decoding="async" src="assets/fluent-screen-calendar.webp" alt="Fluent Conveyors Calendar screen" class="block w-full h-auto" />
+    </div><div class="mt-6 grid md:grid-cols-[1.35fr_1fr] gap-6 md:gap-10 items-center rounded-2xl border border-white/10 bg-card p-4 sm:p-6"><div class="fc-video relative overflow-hidden rounded-xl bg-[#EBF3FC] aspect-[4/3]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/fluent-flow-08-calendar-event-poster.webp" aria-label="Screen recording: Open a day"><source src="assets/fluent-flow-08-calendar-event.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div><div class="md:pr-4"><p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Interaction</p><h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Open a day</h3><ol class="mt-4 space-y-3"><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">1</span><span>Select a day to see its events.</span></li><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">2</span><span>Move to next month without losing context.</span></li></ol></div></div>
+  </section>
+  <section id="help-desk" class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-[#8a8a8a] tabular-nums">Screen 10 <span class="text-[#5a5a5a]">/ 13</span></p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Help Desk</h2>
+      </div>
+      <p class="text-lg text-[#a1a1aa] leading-relaxed">Raise and follow support tickets, with status, priority and response times clearly tracked.</p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img width="1600" height="1281" loading="lazy" decoding="async" src="assets/fluent-screen-help-desk.webp" alt="Fluent Conveyors Help Desk screen" class="block w-full h-auto" />
+    </div><div class="mt-6 grid md:grid-cols-[1.35fr_1fr] gap-6 md:gap-10 items-center rounded-2xl border border-white/10 bg-card p-4 sm:p-6"><div class="fc-video relative overflow-hidden rounded-xl bg-[#EBF3FC] aspect-[4/3]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/fluent-flow-07-help-desk-new-ticket-poster.webp" aria-label="Screen recording: Raise a ticket"><source src="assets/fluent-flow-07-help-desk-new-ticket.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div><div class="md:pr-4"><p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Interaction</p><h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Raise a ticket</h3><ol class="mt-4 space-y-3"><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">1</span><span>Open New Ticket and fill in subject, asset and part.</span></li><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">2</span><span>Set urgency, describe the issue and submit.</span></li></ol></div></div>
+  </section>
+  <section id="ticket-details" class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-[#8a8a8a] tabular-nums">Screen 11 <span class="text-[#5a5a5a]">/ 13</span></p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Ticket Details</h2>
+      </div>
+      <p class="text-lg text-[#a1a1aa] leading-relaxed">The full conversation on a ticket, with attachments, status changes and the assigned engineer.</p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img width="1600" height="1281" loading="lazy" decoding="async" src="assets/fluent-screen-ticket-details.webp" alt="Fluent Conveyors Ticket Details screen" class="block w-full h-auto" />
+    </div>
+  </section>
+  <section id="fluent-ai" class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-[#8a8a8a] tabular-nums">Screen 12 <span class="text-[#5a5a5a]">/ 13</span></p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Fluent AI</h2>
+      </div>
+      <p class="text-lg text-[#a1a1aa] leading-relaxed">An assistant that answers questions about assets, orders and maintenance in plain language.</p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img width="1600" height="1281" loading="lazy" decoding="async" src="assets/fluent-screen-fluent-ai.webp" alt="Fluent Conveyors Fluent AI screen" class="block w-full h-auto" />
+    </div><div class="mt-6 grid md:grid-cols-[1.35fr_1fr] gap-6 md:gap-10 items-center rounded-2xl border border-white/10 bg-card p-4 sm:p-6"><div class="fc-video relative overflow-hidden rounded-xl bg-[#EBF3FC] aspect-[4/3]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/fluent-flow-04-fluent-ai-chat-poster.webp" aria-label="Screen recording: Ask Fluent AI"><source src="assets/fluent-flow-04-fluent-ai-chat.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div><div class="md:pr-4"><p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Interaction</p><h3 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Ask Fluent AI</h3><ol class="mt-4 space-y-3"><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">1</span><span>Type a question in plain language.</span></li><li class="flex gap-3 text-[15px] text-[#c7c7cc] leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-white/[0.08] text-xs font-semibold text-white">2</span><span>The answer card streams in with sources.</span></li></ol></div></div>
+  </section>
+  <section id="e-learning" class="max-w-[1520px] mx-auto px-6 mt-24 sm:mt-32 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-[#8a8a8a] tabular-nums">Screen 13 <span class="text-[#5a5a5a]">/ 13</span></p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">E-Learning</h2>
+      </div>
+      <p class="text-lg text-[#a1a1aa] leading-relaxed">Training courses for operators and technicians, with progress tracking and certificates.</p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      <img width="1600" height="1881" loading="lazy" decoding="async" src="assets/fluent-screen-e-learning.webp" alt="Fluent Conveyors E-Learning screen" class="block w-full h-auto" />
+    </div>
+  </section>
+
+  <!-- ============ CASE STUDY CTA ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44">
+    <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-card px-6 py-14 sm:px-14 sm:py-20 text-center">
+      <div class="absolute -z-0 top-[-140px] left-1/2 -translate-x-1/2 size-[420px] rounded-full bg-accent/10 blur-[120px] pointer-events-none"></div>
+      <div class="relative">
+        <p class="text-sm font-semibold tracking-[0.14em] uppercase text-accent">The thinking behind it</p>
+        <h2 class="mt-5 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] max-w-3xl mx-auto">How a phone-and-PDF aftermarket became a self-serve platform.</h2>
+        <p class="mt-5 max-w-2xl mx-auto text-lg text-[#a1a1aa] leading-relaxed">The business case, research, roles and the design decisions behind these screens.</p>
+        <div class="mt-9"><a href="Fluent.html" class="inline-flex items-center gap-2 rounded-full bg-accent text-black px-6 py-3.5 text-sm font-semibold hover:bg-white transition-colors">See the case study <span aria-hidden="true">→</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEXT PROJECT ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32">
+    <a href="Propel.html" class="group block rounded-2xl border border-white/10 bg-card hover:bg-white/[0.04] transition-colors p-6 sm:p-8">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-accent">Next project</p>
+      <div class="mt-3 flex items-center justify-between gap-4">
+        <p class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Propel · Community-as-a-Service Platform</p>
+        <span class="text-2xl text-[#8a8a8a] group-hover:text-white transition-colors shrink-0">→</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="relative mt-32 sm:mt-44 overflow-hidden border-t border-white/10">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(120% 100% at 50% -10%, #1b1618 0%, #130f0e 42%, #0b0a0a 100%);"></div>
+    <div class="absolute -z-10 top-[-160px] left-1/2 -translate-x-1/2 size-[560px] rounded-full bg-accent/10 blur-[150px]"></div>
+
+    <div class="max-w-[1520px] mx-auto px-6 py-24 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-accent">Thanks for reading</p>
+      <h2 class="mt-6 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05] mx-auto">Let's Design Products That Move People Forward.</h2>
+      <p class="mt-6 max-w-xl mx-auto text-lg text-[#c7c7cc] leading-relaxed">I'm a product designer who likes hard, technical problems. If that's useful to your team, let's talk.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:toyosi.design@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-white/90 transition"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> toyosi.design@gmail.com</a>
+        <a href="https://calendly.com/toyosi-design" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/5 transition">Book a 30-min intro ↗</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-[1520px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-[#8a8a8a]">© 2026 Omotoyosi Adegbite.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Lightbox: click any screen to enlarge -->
+  <div id="lb" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-10 cursor-zoom-out">
+    <img id="lb-img" alt="" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl" />
+    <button id="lb-x" aria-label="Close" class="absolute top-4 right-6 text-white/60 hover:text-white text-4xl leading-none">&times;</button>
+  </div>
+  <div id="zoom-badge" style="position:fixed;display:none;z-index:90;width:34px;height:34px;place-items:center;border-radius:9px;background:rgba(12,14,20,.62);color:#fff;border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);pointer-events:none;box-shadow:0 4px 14px rgba(0,0,0,.35);">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+  </div>
+  <script>
+  (function(){
+    var lb=document.getElementById('lb'), img=document.getElementById('lb-img'), badge=document.getElementById('zoom-badge');
+    function open(src,alt){ img.src=src; img.alt=alt||''; lb.classList.remove('hidden'); lb.classList.add('flex'); badge.style.display='none'; document.body.style.overflow='hidden'; }
+    function close(){ lb.classList.add('hidden'); lb.classList.remove('flex'); document.body.style.overflow=''; img.removeAttribute('src'); }
+    function place(el){ var r=el.getBoundingClientRect(); badge.style.top=(r.top+10)+'px'; badge.style.left=(r.right-44)+'px'; badge.style.display='grid'; }
+    document.querySelectorAll('img[src^="assets/"]').forEach(function(el){
+      if(el.closest('header')||el.closest('footer')) return;
+      el.style.cursor='zoom-in';
+      el.addEventListener('mouseenter', function(){ place(el); });
+      el.addEventListener('mouseleave', function(){ badge.style.display='none'; });
+      el.addEventListener('click', function(){ open(el.currentSrc||el.src, el.alt); });
+    });
+    window.addEventListener('scroll', function(){ badge.style.display='none'; }, {passive:true});
+    lb.addEventListener('click', close);
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.fc-video').forEach(function(box){
+      var v = box.querySelector('video'), btn = box.querySelector('.fc-toggle');
+      var userPaused = reduce;
+      function sync(){ var p = v.paused; btn.querySelector('.fc-i-pause').classList.toggle('hidden', p); btn.querySelector('.fc-i-play').classList.toggle('hidden', !p); btn.setAttribute('aria-label', p ? 'Play recording' : 'Pause recording'); }
+      v.addEventListener('play', sync); v.addEventListener('pause', sync); sync();
+      btn.addEventListener('click', function(){ if (v.paused) { userPaused = false; v.play(); } else { userPaused = true; v.pause(); } });
+      if (!('IntersectionObserver' in window)) { if (!reduce) v.play(); return; }
+      new IntersectionObserver(function(es){ es.forEach(function(e){
+        if (e.isIntersecting) { if (!userPaused) { var p = v.play(); if (p && p.catch) p.catch(function(){}); } }
+        else if (!v.paused) v.pause();
+      }); }, { threshold: 0.35 }).observe(v);
+    });
+  })();
+  </script>
+</body>
+</html>
