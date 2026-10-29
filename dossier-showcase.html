@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dossier · Screens &amp; interactions | Omotoyosi Adegbite</title>
+  <meta name="description" content="Dossier luxury resale marketplace: 16 screens across the guest, buyer and seller journeys, each with a short recording of the interaction it was designed around." />
+
+  <!-- Tailwind CSS (precompiled -- rebuild with: npm run build:css) -->
+  <link rel="stylesheet" href="assets/tailwind.css?v=52c3bb49" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Widen the shared body-text measure to fill the 1520px layout */
+    .max-w-4xl{max-width:72rem;}
+    /* Match the Dossier page width (1136px content) */
+    .max-w-\[1520px\]{max-width:1184px}
+    ::selection { background: #dedefd; color: #101010; }
+  </style>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yneu5n6q1t");
+  </script>
+</head>
+
+<body class="bg-white text-grey-8 font-sans antialiased">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="sticky top-0 z-50 pt-6 px-4 sm:px-6">
+    <div class="max-w-[1520px] mx-auto">
+      <nav class="flex items-center justify-between h-[54px] rounded-full border border-grey-1 bg-white/85 backdrop-blur-xl px-5 shadow-[0_4px_10px_rgba(16,16,16,0.087)]">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="grid place-items-center size-7 rounded-full bg-royal-7 text-white text-xs font-bold">O</span>
+          <span class="text-base font-semibold tracking-tight text-grey-8">Omotoyosi Adegbite</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm">
+          <li><a href="index.html#work" class="font-bold text-royal-7">Work</a></li>
+          <li><a href="index.html#about" class="text-grey-4 hover:text-grey-8 transition-colors">About</a></li>
+          <li><a href="index.html#contact" class="text-grey-4 hover:text-grey-8 transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <!-- ============ HERO ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 pt-14 sm:pt-20">
+    <div class="flex items-center justify-between mb-10">
+      <a href="index.html#work" class="inline-flex items-center gap-1.5 text-sm text-grey-4 hover:text-grey-8 transition-colors">← Back to all work</a>
+    </div>
+    <p class="text-sm text-grey-4">Dossier &nbsp;|&nbsp; Luxury resale &nbsp;·&nbsp; Marketplace, web app</p>
+    <h1 class="mt-3 text-4xl sm:text-6xl font-semibold tracking-[-0.03em] leading-[1.05]">A marketplace built on trust, screen by screen.</h1>
+    <p class="max-w-4xl mt-6 text-lg text-grey-5 leading-relaxed">
+      Resale for bags, shoes, watches and accessories where every piece carries its own authentication
+      record, and money sits in escrow until an independent checkpoint passes it. Below are the 16 core
+      screens across the guest, buyer and seller journeys, each with a short recording of the interaction
+      it was designed around.
+    </p>
+    <div class="mt-8 flex flex-wrap items-center gap-3">
+      <a href="luxury-marketplace.html" class="inline-flex items-center gap-2 rounded-full bg-royal-7 text-white px-6 py-3.5 text-sm font-semibold hover:bg-royal-8 transition-colors">See the case study <span aria-hidden="true">→</span></a>
+      <a href="https://dossierdemo.netlify.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-black/15 px-6 py-3.5 text-sm font-medium hover:bg-black/[0.03] transition-colors">Explore the demo site ↗</a>
+      <a href="#role-guest" class="inline-flex items-center gap-2 rounded-full border border-black/15 px-6 py-3.5 text-sm font-medium hover:bg-black/[0.03] transition-colors">Browse the screens ↓</a>
+    </div>
+    <nav aria-label="Journeys" class="mt-12 flex flex-wrap gap-2"><a href="#role-guest" class="rounded-full border border-black/10 bg-white px-4 py-2 text-sm text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors">Guest <span class="text-grey-4">· 4</span></a><a href="#role-buyer" class="rounded-full border border-black/10 bg-white px-4 py-2 text-sm text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors">Buyer <span class="text-grey-4">· 7</span></a><a href="#role-seller" class="rounded-full border border-black/10 bg-white px-4 py-2 text-sm text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors">Seller <span class="text-grey-4">· 5</span></a></nav>
+  </section>
+
+  <section id="role-guest" class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44 scroll-mt-28">
+    <div class="rounded-3xl border border-royal-2 bg-royal-1/60 px-6 py-10 sm:px-10 sm:py-12">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Journey 01 / 03 &middot; 4 screens</p>
+      <h2 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">Guest</h2>
+      <p class="mt-3 text-lg text-grey-5">The visitor before an account. Everything is readable; gates appear only at the point of commitment.</p>
+      <nav aria-label="Guest screens" class="mt-7 flex flex-wrap gap-2"><a href="#guest-home-guest" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">01</span> Home</a><a href="#guest-catalogue-guest" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">02</span> Catalogue</a><a href="#guest-piece-guest" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">03</span> Piece</a><a href="#guest-signin-offer" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">04</span> Offer gate</a></nav>
+    </div>
+  </section>
+  <section id="guest-home-guest" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 01 <span class="text-grey-3">/ 16</span> &middot; Guest</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Home</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">Arrive signed out. Every piece and its full record are open to read.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="2946" loading="lazy" decoding="async" src="assets/dossier-screen-01-home-guest.webp" alt="Dossier guest Home screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Browse without an account</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Scroll the edit, the categories and the founder&rsquo;s note.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Nothing asks you to sign in yet.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-01-home-guest-poster.webp" aria-label="Screen recording: Browse without an account"><source src="assets/dossier-flow-01-home-guest.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="guest-catalogue-guest" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 02 <span class="text-grey-3">/ 16</span> &middot; Guest</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Catalogue</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">Filter bags, shoes, watches and accessories by house and verification grade.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="1955" loading="lazy" decoding="async" src="assets/dossier-screen-02-catalogue-guest.webp" alt="Dossier guest Catalogue screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Filter the catalogue</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Pick Bags; the grid narrows to that category.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Every card still shows its reading.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-02-catalogue-guest-poster.webp" aria-label="Screen recording: Filter the catalogue"><source src="assets/dossier-flow-02-catalogue-guest.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="guest-piece-guest" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 03 <span class="text-grey-3">/ 16</span> &middot; Guest</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Piece</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">Plates, provenance and price, open to anyone.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="1778" loading="lazy" decoding="async" src="assets/dossier-screen-03-piece-guest.webp" alt="Dossier guest Piece screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Hit the offer gate</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Switch plates, then press Make an offer as a guest.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Land on sign-in with the piece and the action kept.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-03-piece-guest-poster.webp" aria-label="Screen recording: Hit the offer gate"><source src="assets/dossier-flow-03-piece-guest.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="guest-signin-offer" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 04 <span class="text-grey-3">/ 16</span> &middot; Guest</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Offer gate</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">Sign in or join, then return to the offer you started.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="1000" loading="lazy" decoding="async" src="assets/dossier-screen-04-signin-offer.webp" alt="Dossier guest Offer gate screen" class="block w-full h-auto" />
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Sign in and return</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Enter email and password on the buyer sign-in.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Return to the piece with the offer form open.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-04-signin-offer-poster.webp" aria-label="Screen recording: Sign in and return"><source src="assets/dossier-flow-04-signin-offer.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="role-buyer" class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44 scroll-mt-28">
+    <div class="rounded-3xl border border-royal-2 bg-royal-1/60 px-6 py-10 sm:px-10 sm:py-12">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Journey 02 / 03 &middot; 7 screens</p>
+      <h2 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">Buyer</h2>
+      <p class="mt-3 text-lg text-grey-5">The collector who buys with escrow and an independent checkpoint.</p>
+      <nav aria-label="Buyer screens" class="mt-7 flex flex-wrap gap-2"><a href="#buyer-dossier" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">05</span> Dossier</a><a href="#buyer-offer" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">06</span> Make an offer</a><a href="#buyer-deals" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">07</span> Deals</a><a href="#buyer-checkout" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">08</span> Checkout</a><a href="#buyer-track" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">09</span> Checkpoint</a><a href="#buyer-track-fail" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">10</span> Failed check</a><a href="#buyer-account" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">11</span> Account</a></nav>
+    </div>
+  </section>
+  <section id="buyer-dossier" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 05 <span class="text-grey-3">/ 16</span> &middot; Buyer</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Dossier</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">The authentication record: serials, chip read, stitch macros and the verdict.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="2500" loading="lazy" decoding="async" src="assets/dossier-screen-05-dossier.webp" alt="Dossier buyer Dossier screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Replay the reading</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Replay the reading, then run it plate by plate.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Head back to the lot and make an offer.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-05-dossier-poster.webp" aria-label="Screen recording: Replay the reading"><source src="assets/dossier-flow-05-dossier.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="buyer-offer" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 06 <span class="text-grey-3">/ 16</span> &middot; Buyer</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Make an offer</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">Name a price, choose a card and send, without leaving the piece.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="1275" loading="lazy" decoding="async" src="assets/dossier-screen-06-offer.webp" alt="Dossier buyer Make an offer screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Send an offer</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Enter an amount and how long it stands; validation checks it on the spot.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Choose the card and payout, accept the terms and send. Nothing is charged.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-06-offer-poster.webp" aria-label="Screen recording: Send an offer"><source src="assets/dossier-flow-06-offer.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="buyer-deals" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 07 <span class="text-grey-3">/ 16</span> &middot; Buyer</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Deals</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">Every offer, counter and agreed price in one place.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="1052" loading="lazy" decoding="async" src="assets/dossier-screen-07-deals.webp" alt="Dossier buyer Deals screen" class="block w-full h-auto" />
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Follow every deal</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Switch between In escrow and History.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Every way an offer can end sits in the same place.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-07-deals-poster.webp" aria-label="Screen recording: Follow every deal"><source src="assets/dossier-flow-07-deals.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="buyer-checkout" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 08 <span class="text-grey-3">/ 16</span> &middot; Buyer</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Checkout</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">Fund escrow. The seller is paid only after the checkpoint passes the piece.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="1196" loading="lazy" decoding="async" src="assets/dossier-screen-08-checkout.webp" alt="Dossier buyer Checkout screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Fund escrow</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Confirm the agreed price; delivery is the only extra.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Fund it; the order moves to the checkpoint.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-08-checkout-poster.webp" aria-label="Screen recording: Fund escrow"><source src="assets/dossier-flow-08-checkout.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="buyer-track" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 09 <span class="text-grey-3">/ 16</span> &middot; Buyer</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Checkpoint</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">Follow the piece through independent authentication to your door.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="1418" loading="lazy" decoding="async" src="assets/dossier-screen-09-track.webp" alt="Dossier buyer Checkpoint screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Watch the checkpoint</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Both lanes at once: your money in escrow, the piece at the vault.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Open the pre-release check, the only thing that releases the money.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-09-track-poster.webp" aria-label="Screen recording: Watch the checkpoint"><source src="assets/dossier-flow-09-track.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="buyer-track-fail" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 10 <span class="text-grey-3">/ 16</span> &middot; Buyer</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Failed check</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">What the buyer sees when a piece does not pass.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="1418" loading="lazy" decoding="async" src="assets/dossier-screen-10-track-fail.webp" alt="Dossier buyer Failed check screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Get refunded</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Read the finding that failed the piece.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Refunded in full; the outcome goes on the seller&rsquo;s public record.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-10-track-fail-poster.webp" aria-label="Screen recording: Get refunded"><source src="assets/dossier-flow-10-track-fail.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="buyer-account" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 11 <span class="text-grey-3">/ 16</span> &middot; Buyer</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Account</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">Cards, addresses and notifications, saved in place.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="1880" loading="lazy" decoding="async" src="assets/dossier-screen-11-account.webp" alt="Dossier buyer Account screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Review your details</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Scroll cards, delivery addresses and notifications.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Each one saves in place, without leaving the page.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-11-account-poster.webp" aria-label="Screen recording: Review your details"><source src="assets/dossier-flow-11-account.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="role-seller" class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44 scroll-mt-28">
+    <div class="rounded-3xl border border-royal-2 bg-royal-1/60 px-6 py-10 sm:px-10 sm:py-12">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Journey 03 / 03 &middot; 5 screens</p>
+      <h2 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05]">Seller</h2>
+      <p class="mt-3 text-lg text-grey-5">The individual or trade reseller consigning pieces and getting paid.</p>
+      <nav aria-label="Seller screens" class="mt-7 flex flex-wrap gap-2"><a href="#seller-join-seller" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">12</span> Join as seller</a><a href="#seller-sell" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">13</span> Consign a piece</a><a href="#seller-console" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">14</span> Seller desk</a><a href="#seller-console-trade" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">15</span> Inventory</a><a href="#seller-account-seller" class="rounded-full border border-black/10 bg-white px-3 py-1.5 text-[13px] text-grey-5 hover:text-grey-8 hover:border-royal-3 transition-colors"><span class="tabular-nums text-grey-4">16</span> Payouts</a></nav>
+    </div>
+  </section>
+  <section id="seller-join-seller" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 12 <span class="text-grey-3">/ 16</span> &middot; Seller</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Join as seller</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">Register as an individual or a trade seller.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="1734" loading="lazy" decoding="async" src="assets/dossier-screen-12-join-seller.webp" alt="Dossier seller Join as seller screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Sign in to the desk</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Choose As a seller and enter your details.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Sign in; the seller desk opens.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-12-join-seller-poster.webp" aria-label="Screen recording: Sign in to the desk"><source src="assets/dossier-flow-12-join-seller.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="seller-sell" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 13 <span class="text-grey-3">/ 16</span> &middot; Seller</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Consign a piece</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">Single-piece intake: describe it, set the ask, book a collection.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="1423" loading="lazy" decoding="async" src="assets/dossier-screen-13-sell.webp" alt="Dossier seller Consign a piece screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Consign a piece</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Name the piece, pick the house and set the ask.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Book a collection window; it joins inventory as booked.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-13-sell-poster.webp" aria-label="Screen recording: Consign a piece"><source src="assets/dossier-flow-13-sell.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="seller-console" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 14 <span class="text-grey-3">/ 16</span> &middot; Seller</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Seller desk</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">Offers, inventory and payouts on one desk.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="1161" loading="lazy" decoding="async" src="assets/dossier-screen-14-console.webp" alt="Dossier seller Seller desk screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Counter, then accept</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Counter an offer; the panel shows what you would net.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Accept another; the buyer has 24 hours to fund escrow.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-14-console-poster.webp" aria-label="Screen recording: Counter, then accept"><source src="assets/dossier-flow-14-console.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="seller-console-trade" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 15 <span class="text-grey-3">/ 16</span> &middot; Seller</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Inventory</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">The trade tier&rsquo;s inventory, sorted by margin and built for volume.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="1161" loading="lazy" decoding="async" src="assets/dossier-screen-15-console-trade.webp" alt="Dossier seller Inventory screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Reprice a listing</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Edit a listing and set a new ask against its cost.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>Save; the listing reprices and the margin follows.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-15-console-trade-poster.webp" aria-label="Screen recording: Reprice a listing"><source src="assets/dossier-flow-15-console-trade.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+  <section id="seller-account-seller" class="max-w-[1520px] mx-auto px-6 mt-20 sm:mt-28 scroll-mt-28">
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-3 items-end">
+      <div>
+        <p class="text-sm font-medium text-grey-4 tabular-nums">Screen 16 <span class="text-grey-3">/ 16</span> &middot; Seller</p>
+        <h3 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-[-0.02em] leading-[1.1]">Payouts</h3>
+      </div>
+      <p class="text-lg text-[#555555] leading-relaxed">Bank details and withdrawals for released escrow.</p>
+    </div>
+    <div class="relative mt-8 max-h-[720px] overflow-hidden rounded-2xl border border-black/10 bg-[#100F0D] shadow-[0_20px_60px_rgba(16,16,16,0.12)]">
+      <img width="1600" height="2054" loading="lazy" decoding="async" src="assets/dossier-screen-16-account-seller.webp" alt="Dossier seller Payouts screen" class="block w-full h-auto" /><div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div><span class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-grey-8/85 px-3 py-1.5 text-xs font-medium text-white">Click to see the full screen</span>
+    </div>
+    <div class="mt-6 rounded-2xl border border-black/10 bg-[#f7f7fa] p-3 sm:p-5">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-x-12 gap-y-4 items-start px-2 sm:px-3 pt-2 pb-5 sm:pb-6">
+        <div><p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Interaction</p><h4 class="mt-2 text-xl sm:text-2xl font-semibold tracking-[-0.01em]">Read your payouts</h4></div>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-3"><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">1</span><span>Every line is an escrow release, less the fee and the reading.</span></li><li class="flex gap-3 text-[15px] text-grey-5 leading-relaxed"><span class="shrink-0 grid place-items-center size-6 rounded-full bg-royal-1 text-xs font-semibold text-royal-8">2</span><span>A returned piece pays nothing and says so.</span></li></ol>
+      </div>
+      <div class="fc-video relative overflow-hidden rounded-xl bg-[#100F0D] border border-black/5 aspect-[16/10]"><video class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="none" poster="assets/dossier-flow-16-account-seller-poster.webp" aria-label="Screen recording: Read your payouts"><source src="assets/dossier-flow-16-account-seller.mp4" type="video/mp4"></video><button type="button" class="fc-toggle absolute bottom-3 right-3 grid place-items-center size-9 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors" aria-label="Pause recording"><svg class="fc-i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg><svg class="fc-i-play hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg></button></div>
+    </div>
+  </section>
+
+  <!-- ============ CASE STUDY CTA ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32 sm:mt-44">
+    <div class="relative overflow-hidden rounded-3xl border border-royal-2 bg-royal-1 px-6 py-14 sm:px-14 sm:py-20 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-royal-7">The thinking behind it</p>
+      <h2 class="mt-5 text-3xl sm:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] max-w-3xl mx-auto">Trust you can read, not a promise you take on faith.</h2>
+      <p class="mt-5 max-w-2xl mx-auto text-lg text-grey-5 leading-relaxed">The research, the buyer and seller flows, and the design decisions behind these screens.</p>
+      <div class="mt-9"><a href="luxury-marketplace.html" class="inline-flex items-center gap-2 rounded-full bg-royal-7 text-white px-6 py-3.5 text-sm font-semibold hover:bg-royal-8 transition-colors">See the case study <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
+  <!-- ============ NEXT PROJECT ============ -->
+  <section class="max-w-[1520px] mx-auto px-6 mt-32">
+    <a href="dossier-showcase.html" class="group block rounded-2xl border border-black/10 bg-[#f7f7fa] hover:bg-black/[0.03] transition-colors p-6 sm:p-8">
+      <p class="text-xs font-bold tracking-[0.14em] uppercase text-royal-7">Next project</p>
+      <div class="mt-3 flex items-center justify-between gap-4">
+        <p class="text-2xl sm:text-3xl font-semibold tracking-[-0.02em]">Fluent Conveyors · Self-Serve Customer Portal</p>
+        <span class="text-2xl text-grey-4 group-hover:text-grey-8 transition-colors shrink-0">&rarr;</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="relative mt-32 sm:mt-44 overflow-hidden border-t border-black/10">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(120% 100% at 50% -10%, #dedefd 0%, #f1f1fe 42%, #ffffff 100%);"></div>
+    <div class="absolute -z-10 top-[-160px] left-1/2 -translate-x-1/2 size-[560px] rounded-full bg-royal-7/10 blur-[150px]"></div>
+
+    <div class="max-w-[1520px] mx-auto px-6 py-24 text-center">
+      <p class="text-sm font-semibold tracking-[0.14em] uppercase text-royal-7">Thanks for reading</p>
+      <h2 class="mt-6 text-4xl sm:text-6xl font-bold tracking-[-0.03em] leading-[1.05] mx-auto">Let's Design Products That Move People Forward.</h2>
+      <p class="mt-6 max-w-xl mx-auto text-lg text-grey-5 leading-relaxed">I'm a product designer who likes hard, technical problems. If that's useful to your team, let's talk.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="mailto:toyosi.design@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-grey-8 text-white px-5 py-3 text-sm font-semibold hover:bg-grey-5 transition"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> toyosi.design@gmail.com</a>
+        <a href="https://calendly.com/toyosi-design" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-black/20 px-5 py-3 text-sm font-medium hover:bg-black/[0.03] transition">Book a 30-min intro ↗</a>
+      </div>
+    </div>
+
+    <div class="border-t border-black/10 bg-white">
+      <div class="max-w-[1520px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-grey-4">© 2026 Omotoyosi Adegbite.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/omotoyosi-adegbite-b29407200/" aria-label="LinkedIn" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-royal-1 text-royal-8 hover:bg-royal-7 hover:text-grey-8 transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.behance.net/omotoyoadegbit" aria-label="Behance" target="_blank" rel="noopener" class="grid place-items-center size-9 rounded-full bg-royal-1 text-royal-8 hover:bg-royal-7 hover:text-grey-8 transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.799 5.698c.589 0 1.12.051 1.606.156.483.102.895.273 1.238.507.343.235.603.546.79.938.185.39.276.871.276 1.443 0 .617-.14 1.133-.421 1.546-.28.414-.699.753-1.25 1.017.757.218 1.318.6 1.687 1.15.37.549.554 1.21.554 1.984 0 .625-.12 1.166-.362 1.617-.24.454-.567.816-.98 1.086-.414.271-.885.472-1.415.601-.53.13-1.078.195-1.647.195H0V5.698h7.799zm-.35 4.888c.483 0 .881-.114 1.194-.345.312-.23.468-.605.468-1.123 0-.288-.052-.523-.156-.707a1.135 1.135 0 00-.421-.436 1.759 1.759 0 00-.601-.219 3.756 3.756 0 00-.708-.065H3.436v2.895h4.013zm.204 5.132c.267 0 .521-.026.764-.078.242-.052.454-.136.636-.253a1.28 1.28 0 00.43-.481c.104-.203.156-.462.156-.779 0-.62-.176-1.064-.526-1.331-.35-.267-.813-.4-1.39-.4H3.436v3.322h4.222zm7.834-.312c.317.308.772.462 1.365.462.426 0 .793-.107 1.1-.32.307-.214.495-.44.564-.68h1.759c-.282.874-.714 1.499-1.297 1.875-.583.376-1.289.564-2.117.564-.575 0-1.093-.093-1.554-.278a3.234 3.234 0 01-1.174-.796 3.616 3.616 0 01-.744-1.235 4.585 4.585 0 01-.261-1.593c0-.564.09-1.09.27-1.578.18-.489.435-.912.766-1.27.33-.357.726-.64 1.186-.847.46-.208.973-.312 1.537-.312.633 0 1.184.123 1.653.368.469.246.855.578 1.16.994.304.417.522.891.653 1.423.131.532.178 1.09.14 1.675h-5.318c0 .604.204 1.178.521 1.486zm2.401-4.019c-.253-.278-.638-.417-1.156-.417-.338 0-.618.058-.842.173a1.716 1.716 0 00-.531.41 1.46 1.46 0 00-.279.512 2.19 2.19 0 00-.09.443h3.351c-.049-.524-.201-.916-.453-1.194l.007-.007zm-3.505-3.44h4.181V6.884h-4.181v1.014z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox: click any screen to enlarge -->
+  <div id="lb" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-10 cursor-zoom-out">
+    <img id="lb-img" alt="" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl" />
+    <button id="lb-x" aria-label="Close" class="absolute top-4 right-6 text-grey-4 hover:text-grey-8 text-4xl leading-none">&times;</button>
+  </div>
+  <script>
+  (function(){
+    var lb=document.getElementById('lb'), img=document.getElementById('lb-img');
+    function open(src,alt){ img.src=src; img.alt=alt||''; lb.classList.remove('hidden'); lb.classList.add('flex'); document.body.style.overflow='hidden'; }
+    function close(){ lb.classList.add('hidden'); lb.classList.remove('flex'); document.body.style.overflow=''; img.removeAttribute('src'); }
+    document.querySelectorAll('img[src^="assets/"]').forEach(function(el){
+      if(el.closest('header')||el.closest('footer')) return;
+      el.style.cursor='zoom-in';
+      el.addEventListener('click', function(){ open(el.currentSrc||el.src, el.alt); });
+    });
+    lb.addEventListener('click', close);
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+  })();
+  </script>
+  <script>
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.fc-video').forEach(function(box){
+      var v = box.querySelector('video'), btn = box.querySelector('.fc-toggle');
+      var userPaused = reduce;
+      function sync(){ var p = v.paused; btn.querySelector('.fc-i-pause').classList.toggle('hidden', p); btn.querySelector('.fc-i-play').classList.toggle('hidden', !p); btn.setAttribute('aria-label', p ? 'Play recording' : 'Pause recording'); }
+      v.addEventListener('play', sync); v.addEventListener('pause', sync); sync();
+      btn.addEventListener('click', function(){ if (v.paused) { userPaused = false; v.play(); } else { userPaused = true; v.pause(); } });
+      if (!('IntersectionObserver' in window)) { if (!reduce) v.play(); return; }
+      new IntersectionObserver(function(es){ es.forEach(function(e){
+        if (e.isIntersecting) { if (!userPaused) { var p = v.play(); if (p && p.catch) p.catch(function(){}); } }
+        else if (!v.paused) v.pause();
+      }); }, { threshold: 0.35 }).observe(v);
+    });
+  })();
+  </script>
+</body>
+</html>
